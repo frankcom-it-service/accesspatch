@@ -1,0 +1,282 @@
+import assert from 'node:assert/strict';
+import { copyFile, lstat, mkdir, mkdtemp, readFile, readdir, rm, symlink, unlink, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
+import { afterEach, test } from 'node:test';
+import {
+  MANIFEST_HASHED_ENTRIES,
+  PROOF_BUNDLE_OUTPUT_DIRECTORY,
+  REQUIRED_TEST_RESULT_ENTRIES,
+  REQUIRED_TOP_LEVEL_ENTRIES,
+  REVIEWED_SOURCE_HASHES,
+  SOURCE_ARTIFACT_PATHS,
+  createAuditLog,
+  createReportHtml,
+  createWcagMap,
+  generateProofBundle,
+  loadReviewedBundleSources,
+  scanGeneratedText,
+  serializeJson,
+  sha256,
+  validateProofBundle,
+  validateReportHtml,
+  validateReviewedSourceBytes,
+  type ReviewedBundleSources,
+  type ReviewedSourceBytes,
+} from '../../packages/proof-bundle/src/index.ts';
+
+const repositoryRoot = process.cwd();
+const generatedAtUtc = '2026-07-15T18:00:00.000Z';
+const repositoryHead = 'e5fd8646b04d1e3a8153799389597d1e69b90391';
+const temporaryRoots: string[] = [];
+
+async function createTemporaryRoot(): Promise<string> {
+  const root = await mkdtemp(join(tmpdir(), 'accesspatch-proof-test-'));
+  temporaryRoots.push(root);
+  return root;
+}
+
+async function copyReviewedSources(root: string): Promise<void> {
+  for (const path of Object.values(SOURCE_ARTIFACT_PATHS)) {
+    const destination = join(root, path);
+    await mkdir(dirname(destination), { recursive: true });
+    await copyFile(join(repositoryRoot, path), destination);
+  }
+}
+
+async function createSourceFixture(): Promise<string> {
+  const root = await createTemporaryRoot();
+  await copyReviewedSources(root);
+  return root;
+}
+
+async function generateFixture(): Promise<{ root: string; bundle: string }> {
+  const root = await createSourceFixture();
+  await generateProofBundle(root, {
+    generatedAtUtc,
+    repositoryHeadAtGeneration: repositoryHead,
+  });
+  return { root, bundle: join(root, PROOF_BUNDLE_OUTPUT_DIRECTORY) };
+}
+
+async function readReviewedBytes(): Promise<ReviewedSourceBytes> {
+  const entries = await Promise.all(
+    (Object.keys(SOURCE_ARTIFACT_PATHS) as Array<keyof typeof SOURCE_ARTIFACT_PATHS>).map(
+      async (key) => [key, await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS[key]))] as const,
+    ),
+  );
+  return Object.fromEntries(entries) as unknown as ReviewedSourceBytes;
+}
+
+afterEach(async () => {
+  await Promise.all(temporaryRoots.splice(0).map((root) => rm(root, { recursive: true, force: true })));
+});
+
+test('generates and validates the canonical bundle', async () => {
+  const { bundle } = await generateFixture();
+  const result = await validateProofBundle(bundle);
+  assert.equal(result.summary.beforeStateFindingCount, 2);
+  assert.equal(result.summary.repairedFindingCount, 2);
+  assert.deepEqual((await readdir(bundle)).sort(), [...REQUIRED_TOP_LEVEL_ENTRIES].sort());
+});
+
+test('rejects a missing reviewed source artifact', async () => {
+  const root = await createSourceFixture();
+  await unlink(join(root, SOURCE_ARTIFACT_PATHS.evidence));
+  await assert.rejects(
+    generateProofBundle(root, { generatedAtUtc, repositoryHeadAtGeneration: repositoryHead }),
+    /ENOENT/,
+  );
+});
+
+test('rejects a wrong reviewed source hash', async () => {
+  const root = await createSourceFixture();
+  await writeFile(join(root, SOURCE_ARTIFACT_PATHS.patch), 'changed');
+  await assert.rejects(
+    generateProofBundle(root, { generatedAtUtc, repositoryHeadAtGeneration: repositoryHead }),
+    /reviewed_source_hash_mismatch:patch/,
+  );
+});
+
+test('rejects an invalid source schema after hash validation', async () => {
+  const bytes = await readReviewedBytes();
+  const evidence = JSON.parse(bytes.evidence.toString('utf8')) as { findings: unknown[] };
+  evidence.findings = [];
+  const invalidEvidence = Buffer.from(serializeJson(evidence));
+  const modified = { ...bytes, evidence: invalidEvidence };
+  const expected = { ...REVIEWED_SOURCE_HASHES, evidence: sha256(invalidEvidence) };
+  assert.throws(() => validateReviewedSourceBytes(modified, expected), { name: 'ZodError' });
+});
+
+test('enforces the exact top-level inventory', async () => {
+  const { bundle } = await generateFixture();
+  await unlink(join(bundle, 'summary.json'));
+  await assert.rejects(validateProofBundle(bundle), /top_level_inventory_mismatch/);
+});
+
+test('rejects an unexpected top-level file', async () => {
+  const { bundle } = await generateFixture();
+  await writeFile(join(bundle, 'unexpected.txt'), 'unexpected');
+  await assert.rejects(validateProofBundle(bundle), /top_level_inventory_mismatch/);
+});
+
+test('rejects an unsafe output path', async () => {
+  const root = await createSourceFixture();
+  await assert.rejects(
+    generateProofBundle(root, {
+      generatedAtUtc,
+      repositoryHeadAtGeneration: repositoryHead,
+      outputRelativePath: '../escape',
+    }),
+    /unsafe_bundle_path/,
+  );
+});
+
+test('rejects a reviewed source symlink without following it', async (context) => {
+  const root = await createSourceFixture();
+  const path = join(root, SOURCE_ARTIFACT_PATHS.patch);
+  await unlink(path);
+  try {
+    await symlink(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.patch), path);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'EPERM') {
+      context.skip('symlink creation is unavailable');
+      return;
+    }
+    throw error;
+  }
+  await assert.rejects(
+    generateProofBundle(root, { generatedAtUtc, repositoryHeadAtGeneration: repositoryHead }),
+    /reviewed_source_not_regular_file/,
+  );
+});
+
+test('keeps deterministic finding, CSV, and manifest ordering', async () => {
+  const { bundle } = await generateFixture();
+  const findings = JSON.parse(await readFile(join(bundle, 'findings.json'), 'utf8')) as { findings: Array<{ findingId: string }> };
+  const csv = await readFile(join(bundle, 'wcag-map.csv'), 'utf8');
+  const summary = JSON.parse(await readFile(join(bundle, 'summary.json'), 'utf8')) as { generatedEntrySha256: Record<string, string> };
+  assert.deepEqual(findings.findings.map((finding) => finding.findingId), [
+    'CONTROLLED_BARRIER_EMAIL_NAME',
+    'CONTROLLED_BARRIER_FOCUS_VISIBLE',
+  ]);
+  assert.ok(csv.indexOf('CONTROLLED_BARRIER_EMAIL_NAME') < csv.indexOf('CONTROLLED_BARRIER_FOCUS_VISIBLE'));
+  assert.deepEqual(Object.keys(summary.generatedEntrySha256), [...MANIFEST_HASHED_ENTRIES]);
+});
+
+test('copies the patch byte for byte', async () => {
+  const { bundle } = await generateFixture();
+  assert.deepEqual(
+    await readFile(join(bundle, 'patch.diff')),
+    await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.patch)),
+  );
+});
+
+test('copies the replay byte for byte', async () => {
+  const { bundle } = await generateFixture();
+  assert.deepEqual(
+    await readFile(join(bundle, 'replay.spec.ts')),
+    await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.replay)),
+  );
+});
+
+test('escapes commas and quotes in CSV cells', async () => {
+  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const changed = {
+    ...sources,
+    evidence: {
+      ...sources.evidence,
+      findings: [
+        { ...sources.evidence.findings[0], observedCondition: 'A, "quoted" condition' },
+        sources.evidence.findings[1],
+      ],
+    },
+  } as unknown as ReviewedBundleSources;
+  assert.match(createWcagMap(changed), /"A, ""quoted"" condition"/);
+});
+
+test('rejects a missing manual-review disclaimer', async () => {
+  const { bundle } = await generateFixture();
+  await writeFile(join(bundle, 'manual-review.md'), '# Review\n');
+  await assert.rejects(validateProofBundle(bundle), /manual_review_disclaimer_missing/);
+});
+
+test('rejects a forbidden compliance claim', () => {
+  assert.throws(
+    () => scanGeneratedText('report.html', 'This report is WCAG compliant.'),
+    /unsupported_compliance_claim/,
+  );
+});
+
+test('rejects a credential leak', () => {
+  const keyShapedValue = ['sk', 'examplecredentialvalue123456789'].join('-');
+  assert.throws(
+    () => scanGeneratedText('audit-log.json', keyShapedValue),
+    /credential/,
+  );
+});
+
+test('rejects an absolute local path leak', () => {
+  assert.throws(
+    () => scanGeneratedText('audit-log.json', '/home/example/private/file'),
+    /absolute_local_path/,
+  );
+});
+
+test('creates a sanitized seven-entry audit log', async () => {
+  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const audit = createAuditLog(sources, generatedAtUtc, { 'findings.json': 'a'.repeat(64) });
+  const serialized = serializeJson(audit);
+  assert.equal(audit.entries.length, 7);
+  assert.doesNotMatch(serialized, /rawPrompt|rawResponse|OPENAI_API_KEY|\/home\//);
+});
+
+test('cleans temporary output after failed generation', async () => {
+  const root = await createSourceFixture();
+  await unlink(join(root, SOURCE_ARTIFACT_PATHS.manualReview));
+  await assert.rejects(
+    generateProofBundle(root, { generatedAtUtc, repositoryHeadAtGeneration: repositoryHead }),
+  );
+  const parent = join(root, '.accesspatch/runs/phase2');
+  const entries = await readdir(parent).catch(() => []);
+  assert.equal(entries.some((entry) => entry.includes('.proof-bundle.tmp-')), false);
+});
+
+test('preserves the previous final directory when regeneration fails', async () => {
+  const { root, bundle } = await generateFixture();
+  const originalSummary = await readFile(join(bundle, 'summary.json'));
+  await writeFile(join(root, SOURCE_ARTIFACT_PATHS.evidence), 'invalid');
+  await assert.rejects(
+    generateProofBundle(root, { generatedAtUtc, repositoryHeadAtGeneration: repositoryHead }),
+  );
+  assert.deepEqual(await readFile(join(bundle, 'summary.json')), originalSummary);
+});
+
+test('report HTML contains structural and accessibility smoke requirements', async () => {
+  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const html = createReportHtml(sources);
+  assert.doesNotThrow(() => validateReportHtml(html));
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /href="#main-content"/);
+  assert.match(html, /:focus-visible/);
+  assert.doesNotMatch(html, /<script\b|https?:\/\//i);
+});
+
+test('manifest hashes every generated file except summary itself', async () => {
+  const { bundle } = await generateFixture();
+  const summary = JSON.parse(await readFile(join(bundle, 'summary.json'), 'utf8')) as { generatedEntrySha256: Record<string, string> };
+  assert.equal(summary.generatedEntrySha256['summary.json'], undefined);
+  assert.equal(Object.keys(summary.generatedEntrySha256).length, MANIFEST_HASHED_ENTRIES.length);
+  for (const path of MANIFEST_HASHED_ENTRIES) {
+    assert.equal(summary.generatedEntrySha256[path], sha256(await readFile(join(bundle, path))));
+  }
+});
+
+test('test-results inventory contains exactly the five required files', async () => {
+  const { bundle } = await generateFixture();
+  assert.deepEqual(
+    (await readdir(join(bundle, 'test-results'))).sort(),
+    [...REQUIRED_TEST_RESULT_ENTRIES].sort(),
+  );
+  assert.equal((await lstat(join(bundle, 'test-results'))).isDirectory(), true);
+});

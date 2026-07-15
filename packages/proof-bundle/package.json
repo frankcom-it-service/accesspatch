@@ -1,0 +1,16 @@
+{
+  "name": "@accesspatch/proof-bundle",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@accesspatch/patch-engine": "workspace:*",
+    "@accesspatch/repair-reasoner": "workspace:*",
+    "@accesspatch/shared-types": "workspace:*",
+    "zod": "4.4.3"
+  }
+}

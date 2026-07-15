@@ -13,10 +13,13 @@
     "phase1:evidence": "playwright test tests/e2e/evidence.spec.ts",
     "phase1:repair": "node --experimental-strip-types packages/patch-engine/src/run.ts",
     "phase1:reason": "node --experimental-strip-types packages/repair-reasoner/src/run.ts",
+    "phase2:bundle": "node --experimental-strip-types packages/proof-bundle/src/run.ts",
+    "phase2:validate": "node --experimental-strip-types packages/proof-bundle/src/validate-run.ts",
     "test:unit": "node --experimental-strip-types --test --test-isolation=none tests/unit/*.test.ts",
     "typecheck": "pnpm --filter @accesspatch/demo-checkout typecheck && pnpm --filter './packages/**' typecheck && tsc --noEmit -p tests/e2e/tsconfig.json && tsc --noEmit -p tests/unit/tsconfig.json",
     "test:smoke": "playwright test tests/e2e/smoke.spec.ts",
-    "test:baseline": "playwright test tests/e2e/keyboard-baseline.spec.ts"
+    "test:baseline": "playwright test tests/e2e/keyboard-baseline.spec.ts",
+    "test:report": "playwright test tests/e2e/report-smoke.spec.ts --config=playwright.report.config.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.12.1",
