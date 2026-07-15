@@ -59,6 +59,9 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 
 - Environment: Node.js `v24.18.0`, pnpm `11.13.0`, system Chromium `/usr/bin/chromium`.
 - `pnpm install`: initial exit `0` with 31 packages added; exact-specifier reconciliation rerun exit `0`, already up to date, and changed no resolved package.
+- `pnpm install --frozen-lockfile`: final exit `0`; already up to date.
+- `pnpm audit --audit-level=high`: exit `0`; exact result `No known vulnerabilities found`.
+- `pnpm licenses list --json`: initial sandbox-cache attempt exited `1` with `ERR_SQLITE_ERROR`; approved rerun exited `0`. All installed packages were categorized as MIT, Apache-2.0, MPL-2.0, ISC, or BSD-3-Clause. Every direct dependency had an identified license; direct licenses were MIT, Apache-2.0, or MPL-2.0, with MPL-2.0 limited to the expected `@axe-core/playwright` dependency and no GPL/AGPL direct dependency.
 - Direct-specifier scan: no `latest` remains in either package manifest or lockfile importer; exact versions match the resolved dependency graph.
 - Chromium resolution: explicit environment path first, then existing `/usr/bin/chromium`, otherwise Playwright-managed Chromium. This run verified `/usr/bin/chromium`; clean-install and cross-platform verification remain pending.
 - Form instruction: visible `All fields are required.` text is referenced by the form, and the country select is required; neither controlled barrier was repaired.
@@ -76,6 +79,7 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Non-empty OpenAI-variable and sensitive project/organization identifier scan: ripgrep exit `1`, no matches.
 - `git check-ignore` confirmed `apps/demo-checkout/dist`, `node_modules`, `playwright-report`, and `test-results` are ignored; exit `0`.
 - Scope: expected product-barrier failures only. No OpenAI credential access, API call, repair, replay generation, analyzer, or Proof Bundle implementation occurred.
+- Phase 1A implementation commit: `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`).
 
 ## Future Evidence Standard
 

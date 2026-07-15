@@ -29,3 +29,10 @@ Repository inspection and the requested documentation foundation only. The Codex
 ## Human-Supervised API Access Check
 
 On 2026-07-15, the human-supervised setup verified dedicated-project authentication, prepaid billing readiness, and one minimal `gpt-5.6-sol` Responses API result. Codex did not access the secret or execute that request. This evidence verifies access only; the AccessPatch product integration remains **NOT YET IMPLEMENTED**. Details are recorded once in `TEST_EVIDENCE.md`.
+
+## Phase 1A Record
+
+- Implementation commit: `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`).
+- Result: controlled React/Vite checkout fixture, passing build and smoke test, and an intentionally failing Chromium keyboard baseline with exactly two seeded barriers.
+- Environment: Node.js `v24.18.0`, pnpm `11.13.0`, and verified local Chromium `/usr/bin/chromium`; explicit environment override and Playwright-managed fallback are configured but clean-machine and broader-platform verification remain open.
+- Scope boundary: no OpenAI credential file was read and no API/model call occurred during Phase 1A. Structured evidence, GPT-5.6 product integration, repair planning, patching, replay, reporting, and Proof Bundle generation remain **NOT YET IMPLEMENTED**.

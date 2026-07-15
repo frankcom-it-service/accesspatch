@@ -2,7 +2,7 @@
 
 ## Current Status
 
-- Controlled local demo fixture: IMPLEMENTED in Phase 1A; commit PENDING
+- Controlled local demo fixture: PHASE 1A COMPLETE in commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`
 - Product-to-confirmation keyboard journey: VERIFIED locally
 - Deliberately failing two-barrier baseline: VERIFIED locally
 - AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED

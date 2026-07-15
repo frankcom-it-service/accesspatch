@@ -14,7 +14,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Minimal initial README baseline | VERIFIED | Root commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f`; three-line README |
 | Phase 0 documentation foundation | COMPLETE (COMMITTED) | `bbabb9207b0f7ae92b8262b2e02930511dd81521`; `TEST_EVIDENCE.md` |
 | Governance-record follow-up | RECORDED IN FOLLOW-UP COMMIT | Subject `docs: record Phase 0 completion`; hash intentionally not embedded in its own content |
-| Controlled `demo-checkout` fixture | IMPLEMENTED, COMMIT PENDING | `apps/demo-checkout/`; Phase 1A smoke/build evidence |
+| Controlled `demo-checkout` fixture | PHASE 1A COMPLETE | `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`; `apps/demo-checkout/`; `TEST_EVIDENCE.md` |
 | AccessPatch repair product | NOT YET IMPLEMENTED | None |
 | Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
 | Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |

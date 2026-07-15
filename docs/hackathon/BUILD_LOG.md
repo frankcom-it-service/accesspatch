@@ -54,6 +54,8 @@
 - `pnpm build`: exit `0`; Vite production build completed.
 - `pnpm test:smoke`: the first sandboxed attempt exited `1` because local listen was denied with `EPERM`; the approved local-server rerun exited `0` with 1 Chromium test passed. This was an execution-sandbox constraint, not an application defect.
 - `pnpm test:baseline`: expected exit `1`; one test reached confirmation and reported exactly the empty email accessible name plus absent visible focus cue. Axe returned only `label`, impact `critical`, target `#email`.
+- Final dependency gates: `pnpm install --frozen-lockfile` exited `0`; `pnpm audit --audit-level=high` exited `0` with `No known vulnerabilities found`; `pnpm licenses list --json` exited `0` after an initial sandbox-cache error and identified every installed dependency license.
+- Direct license result: MIT, Apache-2.0, or MPL-2.0 only; no direct dependency had a missing or unknown license, and no GPL/AGPL direct dependency was present. The expected MPL-2.0 package is `@axe-core/playwright`.
 - OpenAI: no credential file was read and no API or GPT-5.6 model call was made in this task.
 - Remaining: structured evidence model, repair plan, patch generation, replay artifact, report, and Proof Bundle are **NOT YET IMPLEMENTED**.
-- Commit status: **PENDING / UNCOMMITTED**.
+- Implementation commit: **COMPLETE** — `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`).

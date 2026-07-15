@@ -2,7 +2,7 @@
 
 ## Status
 
-**PARTIAL / NOT SUBMISSION-READY.** The controlled Phase 1A fixture runs locally and its smoke/baseline commands are documented in `README.md`; the AccessPatch product and final judge path remain **NOT YET IMPLEMENTED**.
+**PARTIAL / NOT SUBMISSION-READY.** The controlled Phase 1A fixture is committed at `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`; its build and smoke test pass, while its baseline intentionally fails only for the two controlled barriers. The AccessPatch repair product and final judge path remain **NOT YET IMPLEMENTED**.
 
 The current verified environment uses `/usr/bin/chromium`. A clean environment without system Chromium can run `pnpm browser:install` to install Playwright Chromium only. Clean-install and cross-platform verification remain **NOT YET VERIFIED**.
 

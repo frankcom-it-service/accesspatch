@@ -27,5 +27,5 @@ Phase 1A did not read `$HOME/.config/accesspatch/openai.env` and made no OpenAI 
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.
 - Threat model: `TODO` after architecture selection.
-- Application code and package dependencies now exist. Secret-pattern and repository-hygiene scans passed for Phase 1A; a full dependency vulnerability and license review remains `TODO`.
+- Application code and package dependencies now exist. Phase 1A secret-pattern and repository-hygiene scans passed. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified every direct dependency license; manual review of final redistribution and attribution obligations remains `TODO` before submission.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.

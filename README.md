@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A: controlled demo baseline, commit pending.** A local React checkout fixture, a passing smoke test, and an intentionally failing two-barrier keyboard baseline now exist. The AccessPatch repair engine and GPT-5.6 product integration remain **NOT YET IMPLEMENTED**.
+**Phase 1A complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the local React checkout fixture, passing build and smoke test, and intentionally failing two-barrier keyboard baseline. The controlled fixture is not the AccessPatch repair product; GPT-5.6 product integration remains **NOT YET IMPLEMENTED**.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. Dedicated-project authentication and a minimal `gpt-5.6-sol` Responses API call were human-verified on 2026-07-15. The AccessPatch product integration remains **NOT YET IMPLEMENTED**.
 
@@ -13,6 +13,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 ## Project Record
 
 - Minimal initial README baseline: commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`, 2026-07-15). It contains a three-line README and is not an empty commit.
+- Phase 1A controlled checkout baseline: commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`, 2026-07-15).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
