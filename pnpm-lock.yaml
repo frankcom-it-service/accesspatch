@@ -55,6 +55,18 @@ importers:
         specifier: 1.61.1
         version: 1.61.1
 
+  packages/patch-engine:
+    dependencies:
+      '@accesspatch/repair-reasoner':
+        specifier: workspace:*
+        version: link:../repair-reasoner
+      '@accesspatch/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
+      zod:
+        specifier: 4.4.3
+        version: 4.4.3
+
   packages/repair-reasoner:
     dependencies:
       '@accesspatch/evidence-collector':

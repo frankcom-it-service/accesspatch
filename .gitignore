@@ -41,6 +41,7 @@ logs/
 # A curated judge-visible sample may later use an explicit tracked path or
 # reviewed allowlist; do not place that sample under these ignored paths.
 .accesspatch/runs/
+.accesspatch/work/
 proof-bundles/
 proof-output/
 demo-artifacts/
