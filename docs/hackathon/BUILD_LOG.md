@@ -9,8 +9,8 @@
 - Central session: started 2026-07-15 at 14:11 Europe/Berlin; Codex model `gpt-5.6-sol`, reasoning `high`.
 - Files changed: `README.md`, `AGENTS.md`, `.gitignore`, `.env.example`, and the 14 requested files under `docs/hackathon/`.
 - Validation: `git diff --check` exited `0` with no output; the all-file trailing-whitespace and selected high-risk secret-pattern `rg` commands each exited `1` with no matches; the forbidden-scaffold `find` command exited `0` with no output; `git status --short` exited `0` and showed only `README.md` modified plus `.env.example`, `.gitignore`, `AGENTS.md`, and `docs/` untracked.
-- Commit status: **PENDING / UNCOMMITTED**.
-- Phase 0 commit hash: `PENDING`.
+- Foundation commit status: **COMPLETED**.
+- Phase 0 foundation commit: `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
 - Known issues: no application exists; API access and billing are unverified; `/feedback` Session ID is pending; official Rules-page body appears stale; repository, license, video, demo, and URLs do not exist.
 - Next task: after explicit approval, define the minimal Phase 1 architecture and daily time recalculation; do not implement during Phase 0 correction.
 
@@ -21,5 +21,12 @@
 - Codex correction: expanded every required submission gate into its own unchecked checkbox; added the canonical 11-output Proof Bundle contract and preservation rules; linked the checklist and contract from the ledger and README.
 - Files changed in this correction: `README.md`, `SUBMISSION_CHECKLIST.md`, `DEMO_EVIDENCE.md`, `SUBMISSION_LEDGER.md`, `BUILD_LOG.md`, `AI_CONTRIBUTION_LOG.md`, and `TEST_EVIDENCE.md`.
 - Codex repository validation: `git diff --check` exited `0`; all-file whitespace and selected high-risk secret scans exited `1` with no matches; forbidden-scaffold inventory exited `0` with no files; checked-checkbox scan exited `1` with no matches; all 11 canonical Proof Bundle names appeared exactly once; `git status --short` exited `0`. Exact commands and output are in `TEST_EVIDENCE.md`.
-- Commit status: **PENDING / UNCOMMITTED**.
-- Phase 0 commit hash: `PENDING`.
+- Foundation commit status: **COMPLETED**; included in `bbabb9207b0f7ae92b8262b2e02930511dd81521`.
+- Governance-record update: the following small commit uses subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in the commit it creates.
+
+## Phase 0 Commit Record
+
+- Original minimal baseline: `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`).
+- Phase 0 documentation foundation: `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
+- Governance-record follow-up: the next commit with subject `docs: record Phase 0 completion`; inspect Git history for its hash.
+- Scope: Phase 0 documentation is complete. Product implementation and all previously recorded open risks remain unchanged.

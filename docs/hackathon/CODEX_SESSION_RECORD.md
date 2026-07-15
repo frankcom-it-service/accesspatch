@@ -9,6 +9,8 @@
 - Initial status: clean.
 - Git remote at start: none configured.
 - Root commit: `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`).
+- Phase 0 documentation foundation commit: `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
+- Governance-record follow-up: the following small commit uses subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in that commit.
 - Initial tracked files: a three-line `README.md` only; this is a minimal hackathon baseline, not an empty commit.
 - Codex CLI: `0.144.4` (version command also warned that PATH aliases could not be created on a read-only filesystem).
 - Codex model: `gpt-5.6-sol`.
@@ -22,4 +24,4 @@ Codex is the principal engineering tool, and this continuing session is intended
 
 ## Phase 0 Scope
 
-Repository inspection and the requested documentation foundation only. The Codex session model above is not evidence of an AccessPatch runtime API call. No application build, dependency installation, runtime model integration, commit, push, remote creation, or publication occurred.
+Repository inspection and the requested documentation foundation only. The Codex session model above is not evidence of an AccessPatch runtime API call. Phase 0 produced only the documentation foundation commit and its governance-record follow-up; no application build, dependency installation, runtime model integration, push, remote creation, deployment, or publication occurred.

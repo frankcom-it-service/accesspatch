@@ -38,6 +38,13 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Codex canonical contract check: each required name (`summary.json`, `findings.json`, `journey-map.json`, `repair-plan.json`, `patch.diff`, `replay.spec.ts`, `report.html`, `wcag-map.csv`, `manual-review.md`, `test-results/`, `audit-log.json`) appeared exactly once in `DEMO_EVIDENCE.md`; exit `0`.
 - Codex `git status --short`: exit `0`; `README.md` modified, with `.env.example`, `.gitignore`, `AGENTS.md`, and `docs/` untracked.
 
+## Phase 0 Commit Record
+
+- Original minimal baseline: `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`).
+- Validated Phase 0 foundation: `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
+- Governance-record follow-up: committed separately with subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in the commit content.
+- These are documentation commits only and do not establish application, accessibility, security, or model-runtime test results.
+
 ## Future Evidence Standard
 
 Each test record must include date, commit, environment, exact command, exit status, relevant output, artifact location, and known limitations. Accessibility evidence must distinguish automated signals from disabled-user testing and qualified human review. It must not be presented as complete accessibility, WCAG certification, or BFSG/EAA legal assurance.

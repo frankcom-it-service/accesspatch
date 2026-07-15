@@ -11,7 +11,7 @@
 - Human decision and review: the human set product scope and deadlines, supplied the verified model configuration and official-source findings, accepted the archive structure and secret hygiene, and requested the documented corrections before commit.
 - Affected files: `README.md`, `AGENTS.md`, `.gitignore`, `.env.example`, and all 14 files in `docs/hackathon/`.
 - Validations: complete tracked/untracked review; `git diff --check` passed; all-file whitespace and selected high-risk secret-pattern searches returned no matches; forbidden-scaffold inventory returned no files; working-tree status remained uncommitted. Exact commands and exits are in `TEST_EVIDENCE.md`.
-- Commit status: **PENDING / UNCOMMITTED**; Phase 0 commit hash `PENDING`.
+- Foundation commit status: **COMPLETED**; `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
 - Result: corrected Phase 0 documentation foundation; no application functionality created.
 - Limitations: no AccessPatch runtime GPT-5.6 API call, verified API access, billing readiness, application test, demo, repository URL, submission, or `/feedback` Session ID exists.
 
@@ -24,5 +24,6 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Codex contribution: expanded `SUBMISSION_CHECKLIST.md`; made `DEMO_EVIDENCE.md` the canonical Proof Bundle contract; added the README overview and ledger references; updated governance evidence.
 - Affected files: `README.md`, `SUBMISSION_CHECKLIST.md`, `DEMO_EVIDENCE.md`, `SUBMISSION_LEDGER.md`, `BUILD_LOG.md`, `AI_CONTRIBUTION_LOG.md`, and `TEST_EVIDENCE.md`.
 - Codex validations: diff check passed; all-file whitespace and selected high-risk secret searches returned no matches; no forbidden scaffold files or checked checklist entries were found; all 11 canonical Proof Bundle names appeared exactly once; working tree remained uncommitted. Exact repository commands and results are in `TEST_EVIDENCE.md`.
-- Commit status: **PENDING / UNCOMMITTED**; Phase 0 commit hash `PENDING`.
+- Foundation commit status: **COMPLETED**; included in `bbabb9207b0f7ae92b8262b2e02930511dd81521`.
+- Governance-record follow-up: committed separately with subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in that commit.
 - Result: documentation correction only; Proof Bundle files and application behavior remain **NOT YET IMPLEMENTED**.
