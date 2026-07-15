@@ -1,0 +1,22 @@
+{
+  "name": "accesspatch",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.13.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "browser:install": "playwright install chromium",
+    "build": "pnpm --filter @accesspatch/demo-checkout build",
+    "typecheck": "pnpm --filter @accesspatch/demo-checkout typecheck && tsc --noEmit -p tests/e2e/tsconfig.json",
+    "test:smoke": "playwright test tests/e2e/smoke.spec.ts",
+    "test:baseline": "playwright test tests/e2e/keyboard-baseline.spec.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.61.1",
+    "@types/node": "26.1.1",
+    "typescript": "7.0.2"
+  }
+}

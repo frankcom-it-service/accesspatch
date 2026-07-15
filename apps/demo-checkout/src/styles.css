@@ -1,0 +1,288 @@
+:root {
+  color: #172033;
+  background: #f4f7fb;
+  font-family: system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #1359c5;
+  outline-offset: 3px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.site-header,
+main,
+footer {
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid #cdd6e4;
+}
+
+.brand,
+.cart-status,
+.eyebrow,
+.price,
+footer {
+  margin: 0;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.eyebrow {
+  color: #3c5274;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.cart-status {
+  padding: 0.55rem 0.8rem;
+  color: #203250;
+  background: #e3eaf5;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  align-items: center;
+  padding-block: 3rem;
+}
+
+.page-grid,
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.product-visual {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 2rem;
+  color: #f8fbff;
+  background: linear-gradient(145deg, #24466f, #11233d);
+  box-shadow: 0 1.5rem 3.5rem rgba(22, 42, 70, 0.2);
+}
+
+.product-visual span {
+  display: grid;
+  place-items: center;
+  width: 44%;
+  aspect-ratio: 1;
+  border: 0.65rem solid #dfe9f8;
+  border-radius: 50%;
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+h1 {
+  max-width: 15ch;
+  margin: 0.4rem 0 1rem;
+  color: #10203a;
+  font-size: clamp(2.3rem, 7vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.product-description,
+.checkout-layout p,
+.confirmation p {
+  max-width: 52ch;
+  color: #43536d;
+  line-height: 1.65;
+}
+
+.price {
+  margin-top: 1.5rem;
+  color: #10203a;
+  font-size: 1.6rem;
+  font-weight: 850;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.button {
+  min-height: 3rem;
+  padding: 0.75rem 1.15rem;
+  border: 2px solid transparent;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.button-primary {
+  color: #ffffff;
+  background: #164f9e;
+}
+
+.button-primary:hover {
+  background: #103c79;
+}
+
+.button-secondary {
+  color: #17345d;
+  background: #ffffff;
+  border-color: #17345d;
+}
+
+.checkout-layout {
+  align-items: start;
+}
+
+.checkout-layout h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.checkout-form {
+  display: grid;
+  gap: 1.05rem;
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  background: #ffffff;
+  border: 1px solid #ccd6e5;
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 2.5rem rgba(28, 49, 78, 0.12);
+}
+
+.form-instruction {
+  margin: 0;
+  color: #43536d;
+}
+
+.field,
+.field-row {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field-row {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label,
+.field-label {
+  color: #1d2e48;
+  font-weight: 800;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.65rem 0.75rem;
+  color: #172033;
+  background: #ffffff;
+  border: 2px solid #788ba8;
+  border-radius: 0.55rem;
+}
+
+.checkout-form .button {
+  margin-top: 0.4rem;
+}
+
+/* Controlled Phase 1 fixture: remove every relevant outline and box-shadow focus cue from the primary action. Do not copy this defect into production code. */
+.controlled-focus-defect:focus,
+.controlled-focus-defect:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.confirmation {
+  max-width: 42rem;
+  padding: clamp(2rem, 6vw, 4rem);
+  background: #ffffff;
+  border: 1px solid #ccd6e5;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2.5rem rgba(28, 49, 78, 0.12);
+}
+
+.confirmation h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+}
+
+.confirmation-mark {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #ffffff;
+  background: #17643a;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+footer {
+  padding-block: 1.5rem;
+  color: #4c5e78;
+  border-top: 1px solid #cdd6e4;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .page-grid,
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-visual {
+    max-width: 24rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}

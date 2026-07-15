@@ -33,3 +33,12 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Human-supervised work: created the restricted project and external key storage, applied least-privilege endpoint permissions and prepaid cost controls, and performed the quota and successful access checks.
 - Codex contribution: documented the supplied evidence and updated stale access-status statements; Codex did not handle the secret or perform the model request.
 - Result: authentication, prepaid billing readiness, and minimal `gpt-5.6-sol` response access are verified. The AccessPatch Evidence-Based Repair Reasoner remains **NOT YET IMPLEMENTED**.
+
+## Phase 1A Implementation
+
+- Human assignment: build only the controlled checkout fixture and deterministic two-barrier baseline; explicitly exclude repair, GPT-5.6 product integration, Proof Bundle generation, arbitrary repositories, deployment, and submission work.
+- Codex contribution: created the pnpm workspace, React/Vite fixture, shared TypeScript setup, Chromium Playwright configuration, passing smoke test, soft-assertion keyboard baseline, and structured axe attachment.
+- Human-controlled boundaries: the external OpenAI credential file was not read or used, and no API call occurred.
+- Validation: install, type-check, and build exited `0`; smoke passed 1 test; baseline exited `1` only for the two controlled barriers, with axe reporting only the intended label finding.
+- Commit status: **PENDING / UNCOMMITTED**.
+- Pre-commit correction: Codex replaced floating direct specifications with the already resolved exact versions, added portable Chromium resolution and a Chromium-only install command, associated a visible required-field instruction with the form, and corrected stale security wording after independent human review. The two intentional barriers remain.

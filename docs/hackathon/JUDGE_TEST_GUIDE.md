@@ -2,7 +2,9 @@
 
 ## Status
 
-**NOT YET IMPLEMENTED / NOT YET VERIFIED.** No runnable product exists in Phase 0.
+**PARTIAL / NOT SUBMISSION-READY.** The controlled Phase 1A fixture runs locally and its smoke/baseline commands are documented in `README.md`; the AccessPatch product and final judge path remain **NOT YET IMPLEMENTED**.
+
+The current verified environment uses `/usr/bin/chromium`. A clean environment without system Chromium can run `pnpm browser:install` to install Playwright Chromium only. Clean-install and cross-platform verification remain **NOT YET VERIFIED**.
 
 The current FAQ and official announcement, checked 2026-07-15, require Developer Tools entries to document installation, supported platforms, and a judge testing path that does not require a complete rebuild.
 
@@ -19,6 +21,6 @@ The current FAQ and official announcement, checked 2026-07-15, require Developer
 
 ## Open Requirements
 
-- `TODO`: add exact commands, supported platforms, expected duration, and expected outputs.
+- `TODO`: promote the Phase 1A commands into a complete judge path with supported platforms, expected duration, and expected outputs.
 - `TODO`: add a no-API fallback only if it is genuine and clearly labeled.
 - `TODO`: verify every link and step from a clean environment after feature freeze.

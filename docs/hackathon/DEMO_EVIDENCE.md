@@ -2,7 +2,11 @@
 
 ## Current Status
 
-**NOT YET IMPLEMENTED.** There is no demo application, hosted URL, recording, screenshot set, proof bundle, or verified demo workflow.
+- Controlled local demo fixture: IMPLEMENTED in Phase 1A; commit PENDING
+- Product-to-confirmation keyboard journey: VERIFIED locally
+- Deliberately failing two-barrier baseline: VERIFIED locally
+- AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
+- Hosted or judge-accessible demo: NOT YET AVAILABLE
 
 ## Planned Proof Bundle Contract
 

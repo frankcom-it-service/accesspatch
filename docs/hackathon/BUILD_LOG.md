@@ -39,3 +39,21 @@
 - Evidence: the pre-credit request returned HTTP `429` with `insufficient_quota`; after credit, the Responses API returned HTTP `200`, status `completed`, and exact visible output `ACCESSPATCH_API_OK` using `store: false`.
 - Usage: 16 input tokens, 8 output tokens, 0 reasoning tokens, 24 total tokens.
 - Scope boundary: this was a minimal access-verification call, not the AccessPatch Evidence-Based Repair Reasoner. Product integration, schema and deterministic safety validation, privacy-conscious audit logging, fallback behavior, and a reproducible repair-plan demo remain **NOT YET IMPLEMENTED**.
+
+## 2026-07-15 — Phase 1A Controlled Demo Baseline
+
+- Goal: create one local checkout fixture and a reproducibly failing keyboard journey with exactly two deliberate accessibility barriers.
+- Architecture: pnpm workspace; React `19.2.7`; React DOM `19.2.7`; TypeScript `7.0.2`; Vite `8.1.4`; Playwright `1.61.1`; `@axe-core/playwright` `4.12.1`; Chromium-only browser scope.
+- Reproducibility correction: direct manifest and lockfile importer specifications use those exact versions; no resolved package changed.
+- Browser selection: explicit `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`, otherwise existing `/usr/bin/chromium`, otherwise Playwright-managed Chromium. The verified local path is `/usr/bin/chromium`; `pnpm browser:install` installs only Chromium for a clean machine. Clean-install and cross-platform verification remain pending.
+- Created: root `package.json`, `pnpm-workspace.yaml`, `tsconfig.base.json`, `playwright.config.ts`, and `pnpm-lock.yaml`; the `apps/demo-checkout/` fixture; and both specs plus TypeScript configuration under `tests/e2e/`.
+- Controlled barriers: the visible email text is not programmatically associated with its input; the primary continue button removes outline and box-shadow focus styling. Both source locations warn against production reuse.
+- Form instruction: visible text states that all fields are required, the form references it with `aria-describedby`, and the country field is consistently required; the two deliberate barriers remain unchanged.
+- `pnpm install`: initial exit `0` with 31 packages added; pre-commit correction rerun exit `0`, already up to date, with no resolved version change.
+- `pnpm typecheck`: exit `0`.
+- `pnpm build`: exit `0`; Vite production build completed.
+- `pnpm test:smoke`: the first sandboxed attempt exited `1` because local listen was denied with `EPERM`; the approved local-server rerun exited `0` with 1 Chromium test passed. This was an execution-sandbox constraint, not an application defect.
+- `pnpm test:baseline`: expected exit `1`; one test reached confirmation and reported exactly the empty email accessible name plus absent visible focus cue. Axe returned only `label`, impact `critical`, target `#email`.
+- OpenAI: no credential file was read and no API or GPT-5.6 model call was made in this task.
+- Remaining: structured evidence model, repair plan, patch generation, replay artifact, report, and Proof Bundle are **NOT YET IMPLEMENTED**.
+- Commit status: **PENDING / UNCOMMITTED**.

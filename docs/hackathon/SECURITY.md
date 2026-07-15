@@ -2,7 +2,7 @@
 
 ## Current Posture
 
-Phase 0 contains documentation and configuration examples only. There is no application security implementation to assess yet.
+Phase 1A adds a local static checkout fixture and browser tests only. It has no backend, authentication, payment processing, persistence, remote assets, or network dependency at runtime. It is not the AccessPatch product.
 
 ## Planned Boundaries
 
@@ -21,9 +21,11 @@ The human-supervised development key is stored outside the repository at `$HOME/
 
 The dedicated project is restricted to `gpt-5.6-sol`. Key permissions are model-list read, `/v1/responses` write, and no access to other endpoint groups. Cost exposure is bounded by an initial USD 5 prepaid balance with auto recharge disabled.
 
+Phase 1A did not read `$HOME/.config/accesspatch/openai.env` and made no OpenAI API call. The demo uses sample test values only and states that it stores no orders, payments, or personal data.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.
 - Threat model: `TODO` after architecture selection.
-- Dependency and code scanning: `NOT YET APPLICABLE`; no dependencies or application code exist.
+- Application code and package dependencies now exist. Secret-pattern and repository-hygiene scans passed for Phase 1A; a full dependency vulnerability and license review remains `TODO`.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.

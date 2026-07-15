@@ -48,9 +48,18 @@
 - Secret handling: keep the project-scoped key outside the repository in the user-private configuration directory; never record its value or sensitive platform identifiers.
 - Scope: the successful minimal access test does not establish product integration or repair quality.
 
+## D-009 — Controlled Phase 1A Fixture
+
+- Date: 2026-07-15
+- Decision: use a pnpm TypeScript workspace with one React/Vite checkout fixture and Chromium-only Playwright tests.
+- Deliberate scope: seed exactly two high-confidence barriers—missing email accessible name and missing primary-action focus indicator—and reject unrelated axe findings.
+- Evidence boundary: capture the checkout axe result as structured test attachment only; do not implement the AccessPatch analyzer or Proof Bundle yet.
+- Dependency boundary: use no UI framework or remotely loaded asset; pin resolved packages through `pnpm-lock.yaml`.
+- Reproducibility: use exact direct dependency specifications matching the lockfile.
+- Browser resolution: prefer `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`, then an existing `/usr/bin/chromium`, then Playwright-managed Chromium; install only Chromium with `pnpm browser:install` on a clean machine.
+
 ## Open Decisions
 
-- `OPEN`: minimal architecture and package choices.
 - `OPEN`: supported journey input and proof-bundle formats.
 - `OPEN`: deterministic repair allowlist, rollback, and review gates.
 - `OPEN`: repository visibility path, license, judging addresses, and final applicable Rules-page interpretation.

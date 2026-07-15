@@ -14,7 +14,8 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Minimal initial README baseline | VERIFIED | Root commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f`; three-line README |
 | Phase 0 documentation foundation | COMPLETE (COMMITTED) | `bbabb9207b0f7ae92b8262b2e02930511dd81521`; `TEST_EVIDENCE.md` |
 | Governance-record follow-up | RECORDED IN FOLLOW-UP COMMIT | Subject `docs: record Phase 0 completion`; hash intentionally not embedded in its own content |
-| Working application or demo | NOT YET IMPLEMENTED | None |
+| Controlled `demo-checkout` fixture | IMPLEMENTED, COMMIT PENDING | `apps/demo-checkout/`; Phase 1A smoke/build evidence |
+| AccessPatch repair product | NOT YET IMPLEMENTED | None |
 | Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
 | Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |
 | AccessPatch GPT-5.6 product integration | NOT YET IMPLEMENTED | None |
@@ -30,9 +31,9 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |
 | Voiceover explains project, Codex use, and GPT-5.6 use | Mandatory | DRAFT OUTLINE | `VIDEO_SCRIPT.md` | Demo and submission | 2026-07-21 02:00 CEST | Must reflect actual frozen build |
 | Code repository URL | Mandatory | OPEN | URL TODO | Submission | 2026-07-21 02:00 CEST | No remote; publication requires approval |
-| README setup and testing guidance | Mandatory | NOT YET IMPLEMENTED | `README.md` | Build and verification | 2026-07-20 02:00 CEST | No application commands exist |
+| README setup and testing guidance | Mandatory | PARTIAL: PHASE 1A LOCAL COMMANDS | `README.md` | Build and verification | 2026-07-20 02:00 CEST | Final install, supported-platform, and judge guidance remain open |
 | Primary build-thread `/feedback` Session ID | Mandatory | PENDING | `CODEX_SESSION_RECORD.md` | Submission | 2026-07-21 02:00 CEST | Must be collected from this central session; never invent |
-| Developer Tools installation instructions | Mandatory | NOT YET IMPLEMENTED | `JUDGE_TEST_GUIDE.md`; README TODO | Build and verification | 2026-07-20 02:00 CEST | Stack and install path OPEN |
+| Developer Tools installation instructions | Mandatory | PARTIAL: FIXTURE INSTALL ONLY | `README.md`; `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Final product and judge installation path remain open |
 | Supported platforms | Mandatory | OPEN | `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Compatibility untested |
 | Judge path without complete rebuild | Mandatory | NOT YET IMPLEMENTED | `JUDGE_TEST_GUIDE.md` | Demo and verification | 2026-07-21 02:00 CEST | Packaging approach OPEN |
 | Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |

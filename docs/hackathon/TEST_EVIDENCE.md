@@ -2,7 +2,7 @@
 
 ## Phase 0
 
-No application code or test suite exists. No functional, accessibility, security, performance, or model-integration result is claimed.
+At Phase 0 completion, no application code or test suite existed. That documentation-only phase claimed no functional, accessibility, security, performance, or model-integration result.
 
 Documentation correction validation status:
 
@@ -54,6 +54,28 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Successful access check after credit: Responses API HTTP `200`; model `gpt-5.6-sol`; status `completed`; exact visible output `ACCESSPATCH_API_OK`; `store: false`.
 - Usage: input 16, output 8, reasoning 0, total 24 tokens.
 - Interpretation: real authentication, billing readiness, and model-response evidence for a minimal access test only. AccessPatch integration, JSON schema validation, deterministic safety validation, privacy-conscious audit logging, fallback behavior, and the reproducible repair-plan demo remain **NOT YET IMPLEMENTED**.
+
+## Phase 1A Controlled Baseline — 2026-07-15
+
+- Environment: Node.js `v24.18.0`, pnpm `11.13.0`, system Chromium `/usr/bin/chromium`.
+- `pnpm install`: initial exit `0` with 31 packages added; exact-specifier reconciliation rerun exit `0`, already up to date, and changed no resolved package.
+- Direct-specifier scan: no `latest` remains in either package manifest or lockfile importer; exact versions match the resolved dependency graph.
+- Chromium resolution: explicit environment path first, then existing `/usr/bin/chromium`, otherwise Playwright-managed Chromium. This run verified `/usr/bin/chromium`; clean-install and cross-platform verification remain pending.
+- Form instruction: visible `All fields are required.` text is referenced by the form, and the country select is required; neither controlled barrier was repaired.
+- `pnpm typecheck`: exit `0`.
+- `pnpm build`: exit `0`; Vite `8.1.4` transformed 16 modules and produced `dist/`.
+- `pnpm test:smoke`: latest approved local-server run exit `0`, 1 test passed in Chromium in 2.9 seconds. The earlier sandbox-only Vite `listen EPERM` did not recur outside that restriction.
+- `pnpm test:baseline`: expected exit `1`, 1 test failed in 6.4 seconds after emitting `KEYBOARD_JOURNEY_CONFIRMATION=REACHED`.
+- Barrier 1: `CONTROLLED_BARRIER_EMAIL_NAME`; expected `Email address`, received empty accessible name.
+- Barrier 2: `CONTROLLED_BARRIER_FOCUS_VISIBLE`; computed focus styles reported `outlineStyle: none` and `boxShadow: none`.
+- Axe checkout finding: exactly one violation, id `label`, impact `critical`, target `#email`; no unexpected axe violation was returned.
+- Generated screenshot, trace, HTML report, error context, and structured axe attachment are ignored test artifacts.
+- `git diff --check`: exit `0`, no output.
+- All-current-file trailing-whitespace scan: ripgrep exit `1`, no matches.
+- Selected high-risk credential-pattern scan: ripgrep exit `1`, no matches.
+- Non-empty OpenAI-variable and sensitive project/organization identifier scan: ripgrep exit `1`, no matches.
+- `git check-ignore` confirmed `apps/demo-checkout/dist`, `node_modules`, `playwright-report`, and `test-results` are ignored; exit `0`.
+- Scope: expected product-barrier failures only. No OpenAI credential access, API call, repair, replay generation, analyzer, or Proof Bundle implementation occurred.
 
 ## Future Evidence Standard
 
