@@ -14,17 +14,17 @@ AccessPatch
 
 Accessibility defects often appear across an end-to-end journey rather than in an isolated component. Teams need a reviewable path from observed failure to bounded repair and repeatable evidence.
 
-## Planned Solution
+## Current Solution Direction
 
 AccessPatch is planned to inspect a target journey, assemble local evidence, ask the GPT-5.6 Sol model (`gpt-5.6-sol`, current alias `gpt-5.6`) for a structured repair proposal, validate that proposal against a schema and deterministic safety rules, and generate before/after proof for human review.
 
-**NOT YET IMPLEMENTED. DEDICATED-PROJECT GPT-5.6 ACCESS IS VERIFIED, BUT ACCESSPATCH PRODUCT INTEGRATION IS NOT.**
+**PARTIAL / PHASE 1B PENDING COMMIT.** The controlled fixture now produces normalized evidence, and one real bounded GPT-5.6 call produced a schema-valid, policy-accepted repair plan. Patch application, repaired replay, reporting, Proof Bundle generation, arbitrary-repository support, and the full judge workflow remain **NOT YET IMPLEMENTED**.
 
 ## Built With
 
 - `VERIFIED`: Codex CLI is the principal engineering tool for the project.
-- `PLANNED`: React/TypeScript application tooling; exact stack is OPEN.
-- `PLANNED`: bounded GPT-5.6 Evidence-Based Repair Reasoner with schema validation and deterministic checks.
+- `IMPLEMENTED FOR CONTROLLED FIXTURE`: React, TypeScript, Vite, Playwright, Chromium, and axe in a pnpm workspace.
+- `PHASE 1B PENDING COMMIT`: bounded GPT-5.6 Evidence-Based Repair Reasoner with Zod Structured Outputs and deterministic checks.
 - `OPTIONAL`: Devpost Hackathon plugin for submission support, not engineering-session replacement.
 
 ## Evidence and Links

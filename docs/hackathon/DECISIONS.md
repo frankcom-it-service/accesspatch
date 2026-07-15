@@ -15,7 +15,7 @@
 
 - Date: 2026-07-15
 - Decision: bound GPT-5.6 to the Evidence-Based Repair Reasoner role. Its structured proposals must be grounded in collected evidence and pass schema validation plus deterministic safety checks before any future application step.
-- Status: product role **NOT YET IMPLEMENTED**; dedicated-project authentication and minimal `gpt-5.6-sol` response access verified 2026-07-15.
+- Status: Phase 1B working tree implements and has exercised this bounded planning role for the two controlled findings; commit and broader repair workflow remain pending.
 
 ## D-004 — Fix Internal Delivery Targets
 
@@ -58,8 +58,17 @@
 - Reproducibility: use exact direct dependency specifications matching the lockfile.
 - Browser resolution: prefer `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`, then an existing `/usr/bin/chromium`, then Playwright-managed Chromium; install only Chromium with `pnpm browser:install` on a clean machine.
 
+## D-010 — Phase 1B Evidence and Reasoner Boundary
+
+- Date: 2026-07-15
+- Decision: normalize real Playwright evidence with versioned Zod schemas, bounded allowlisted source excerpts, and stable finding IDs before model use.
+- Model boundary: call `gpt-5.6-sol` through `responses.parse` with Structured Outputs, low reasoning, `store: false`, no tools, no SDK retries, and only the normalized evidence in the prompt.
+- Safety boundary: accept only two low-risk repairs with the exact finding-to-fix mapping and target-file allowlist; reject unsafe paths, dependencies, code, commands, legal claims, unrelated redesign, missing review, or repository mutation.
+- Pre-commit hardening: require exact evidence selector/source/metadata mappings, unique source allowlist entries, realpath containment including symlink resolution, complete-file excerpt rejection, representative CSS/JSX/JavaScript code rejection, and exact returned model identity.
+- Preservation: write only ignored evidence, plan, and sanitized audit artifacts. No patch is generated or applied, and the original demo remains preserved for a later controlled step.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and proof-bundle formats.
-- `OPEN`: deterministic repair allowlist, rollback, and review gates.
+- `OPEN`: controlled patch approval, rollback, and post-repair review gates.
 - `OPEN`: repository visibility path, license, judging addresses, and final applicable Rules-page interpretation.

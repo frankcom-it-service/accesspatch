@@ -59,3 +59,27 @@
 - OpenAI: no credential file was read and no API or GPT-5.6 model call was made in this task.
 - Remaining: structured evidence model, repair plan, patch generation, replay artifact, report, and Proof Bundle are **NOT YET IMPLEMENTED**.
 - Implementation commit: **COMPLETE** — `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`).
+
+## 2026-07-15 — Phase 1B Structured Evidence and Repair Reasoner
+
+- Goal: collect reproducible evidence for exactly the two Phase 1A barriers and obtain one bounded, schema-valid, deterministically approved repair plan without generating or applying a patch.
+- Architecture: added `packages/shared-types/`, `packages/evidence-collector/`, and `packages/repair-reasoner/`; direct additions are OpenAI SDK `6.47.0` and Zod `4.4.3`, specified exactly and locked.
+- Evidence: `pnpm phase1:evidence` completed the real keyboard journey and wrote ignored schema `1.0.0` evidence with exactly `CONTROLLED_BARRIER_EMAIL_NAME` and `CONTROLLED_BARRIER_FOCUS_VISIBLE`; axe contained one `label` violation targeting only `#email`.
+- Bounded context: only allowlisted excerpts from `apps/demo-checkout/src/App.tsx` and `apps/demo-checkout/src/styles.css` were included, capped at 1,200 characters per finding; no complete source file, environment value, Git metadata, or unrelated documentation was sent.
+- Reasoner: one approved `gpt-5.6-sol` Responses API call used `responses.parse`, `zodTextFormat`, low reasoning, `store: false`, no tools, and SDK retries disabled. Status was `completed`; usage was 1,649 input, 795 output, 0 reasoning, and 2,444 total tokens.
+- Result: schema validation and deterministic policy validation accepted exactly two low-risk strategies: associate the existing email label in `App.tsx`, and restore the controlled focus indicator in `styles.css`. The result contains no code, patch, command, dependency request, legal claim, or unrelated redesign.
+- Provenance: evidence SHA-256 `cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2`; plan SHA-256 `9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a`; sanitized audit timestamp `2026-07-15T15:10:53.264Z`.
+- Validation: frozen install, exact-version scan, high-severity audit, license inventory, 21 offline unit/policy tests, type-check, build, smoke, evidence collection, and the preserved intentional baseline were run; exact results are in `TEST_EVIDENCE.md`.
+- Scope: no demo source repair, patch generation or application, replay, report, Proof Bundle, remote, deployment, or publication occurred.
+- Commit status: **PENDING / UNCOMMITTED**.
+- Next task: independent review and Phase 1B commit approval; do not begin the controlled patch step without a new instruction.
+
+### Phase 1B Pre-Commit Hardening
+
+- Independent artifact review: the supplied review passed the actual evidence, repair plan, and sanitized audit for secret hygiene, privacy, unsupported claims, and internal consistency. Reviewed SHA-256 values are evidence `cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2`, plan `9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a`, and audit `3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0`.
+- Schema hardening: controlled IDs now require their exact fix class, selector, source hint, matching source-context file, and correct metadata; the source allowlist must contain both files exactly once.
+- Containment hardening: bounded source reads use portable relative-path and realpath checks, reject symlink escape and complete-file selection, and retain the 1,200-character limit.
+- Policy hardening: representative unwrapped CSS, selector blocks, JSX attributes, and JavaScript/TypeScript assignment expressions are rejected while the reviewed prose-only plan remains accepted.
+- Model hardening: a completed response must return exactly `gpt-5.6-sol`; mismatch removes stale plan output, records sanitized `unexpected_model`, and fails closed.
+- Tests: 17 API-free cases added, increasing the unit suite from 21 to 38; all 38 pass, including the real symlink-escape test on this environment.
+- Scope: no second API call, demo repair, patch, replay, report, or Proof Bundle was produced. Phase 1B remains **PENDING / UNCOMMITTED**.

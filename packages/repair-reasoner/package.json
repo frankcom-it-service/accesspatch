@@ -1,0 +1,16 @@
+{
+  "name": "@accesspatch/repair-reasoner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@accesspatch/evidence-collector": "workspace:*",
+    "@accesspatch/shared-types": "workspace:*",
+    "openai": "6.47.0",
+    "zod": "4.4.3"
+  }
+}

@@ -40,6 +40,7 @@ logs/
 # Generated proof runs and demo bundles (records in docs remain tracked)
 # A curated judge-visible sample may later use an explicit tracked path or
 # reviewed allowlist; do not place that sample under these ignored paths.
+.accesspatch/runs/
 proof-bundles/
 proof-output/
 demo-artifacts/

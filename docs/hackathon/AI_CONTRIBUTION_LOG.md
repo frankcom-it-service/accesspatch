@@ -32,7 +32,7 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 
 - Human-supervised work: created the restricted project and external key storage, applied least-privilege endpoint permissions and prepaid cost controls, and performed the quota and successful access checks.
 - Codex contribution: documented the supplied evidence and updated stale access-status statements; Codex did not handle the secret or perform the model request.
-- Result: authentication, prepaid billing readiness, and minimal `gpt-5.6-sol` response access are verified. The AccessPatch Evidence-Based Repair Reasoner remains **NOT YET IMPLEMENTED**.
+- Result at that checkpoint: authentication, prepaid billing readiness, and minimal `gpt-5.6-sol` response access were verified; the Evidence-Based Repair Reasoner was still **NOT YET IMPLEMENTED**. The later Phase 1B record below supersedes that implementation status.
 
 ## Phase 1A Implementation
 
@@ -43,3 +43,22 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Commit status: **COMPLETE** — implementation commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`.
 - Pre-commit correction: Codex replaced floating direct specifications with the already resolved exact versions, added portable Chromium resolution and a Chromium-only install command, associated a visible required-field instruction with the form, and corrected stale security wording after independent human review. The two intentional barriers remain.
 - Final gates: Codex ran the frozen install, high-severity audit, pnpm license inventory, type-check, build, smoke test, intentional baseline, staged review, and repository-hygiene checks. The audit found no known vulnerabilities; direct dependency licenses were all identified.
+
+## Phase 1B Evidence and Reasoning
+
+- Human assignment: implement only normalized journey evidence and the bounded GPT-5.6 Evidence-Based Repair Reasoner; permit exactly one real call after offline validation and prohibit patching, replay, Proof Bundle, deployment, and publication.
+- Codex contribution: added stable Zod contracts, real Playwright evidence collection, allowlisted source excerpting, bounded prompting, deterministic plan policy, sanitized audit metadata, stale-plan removal on failure, and 21 API-free unit/policy tests.
+- Model contribution: one `gpt-5.6-sol` call with low reasoning proposed exactly two later repairs—associate the existing email label and restore the controlled focus indicator. Structured and deterministic validation accepted the plan; no model output was applied.
+- Privacy and cost controls: `store: false`, no tools, no retries, bounded evidence only, ignored run artifacts, external credential sourcing immediately before the command, and no secret or raw response persisted.
+- Validation: status `completed`; usage 1,649 input, 795 output, 0 reasoning, 2,444 total tokens; evidence and plan hashes are recorded in `TEST_EVIDENCE.md`.
+- Human decision and review: the human defined the findings, allowlists, permitted fix classes, one-call limit, and approval boundary. Final review and commit approval remain pending.
+- Affected files: root workspace configuration; `packages/shared-types/`, `packages/evidence-collector/`, `packages/repair-reasoner/`; `tests/e2e/evidence.spec.ts`; `tests/unit/`; and relevant governance records.
+- Commit status: **PENDING / UNCOMMITTED**.
+- Limitations: the plan covers only the controlled fixture and does not establish repair correctness, complete accessibility, WCAG certification, BFSG/EAA legal assurance, or replacement of disabled-user testing or qualified human review.
+
+### Phase 1B Pre-Commit Hardening
+
+- Human input: supplied the independent artifact-review result and exact three hashes, then required stricter evidence mapping, portable realpath containment, no-code policy detection, returned-model verification, and no second API call.
+- Codex contribution: implemented the requested fail-closed checks, updated stale runtime comments, and added 17 API-free negative tests for 38 total.
+- Independent review versus Codex validation: the external review assessed the existing run artifacts; Codex separately reran repository tests, fresh journey evidence, offline schema/policy parsing, hash verification, and hygiene scans.
+- Result: the reviewed evidence and plan remain valid and byte-identical after hardening; the sanitized audit remains unchanged. Commit status remains **PENDING / UNCOMMITTED**.

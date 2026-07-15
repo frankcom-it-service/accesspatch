@@ -43,6 +43,39 @@ importers:
         specifier: 8.1.4
         version: 8.1.4(@types/node@26.1.1)
 
+  packages/evidence-collector:
+    dependencies:
+      '@accesspatch/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
+      '@axe-core/playwright':
+        specifier: 4.12.1
+        version: 4.12.1(playwright-core@1.61.1)
+      '@playwright/test':
+        specifier: 1.61.1
+        version: 1.61.1
+
+  packages/repair-reasoner:
+    dependencies:
+      '@accesspatch/evidence-collector':
+        specifier: workspace:*
+        version: link:../evidence-collector
+      '@accesspatch/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
+      openai:
+        specifier: 6.47.0
+        version: 6.47.0(zod@4.4.3)
+      zod:
+        specifier: 4.4.3
+        version: 4.4.3
+
+  packages/shared-types:
+    dependencies:
+      zod:
+        specifier: 4.4.3
+        version: 4.4.3
+
 packages:
 
   '@axe-core/playwright@4.12.1':
@@ -427,6 +460,26 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  openai@6.47.0:
+    resolution: {integrity: sha512-xYr+R9woSzWxVxeiqkkNbHhv89tZDEI6eBMbrdPnv3poh+mijHvbhS35a+3o6xHa411/ns8j5ENY3So9DCXWYw==}
+    peerDependencies:
+      '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
+      '@smithy/hash-node': '>=4.3.0 <5'
+      '@smithy/signature-v4': '>=5.4.0 <6'
+      ws: ^8.18.0
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      '@aws-sdk/credential-provider-node':
+        optional: true
+      '@smithy/hash-node':
+        optional: true
+      '@smithy/signature-v4':
+        optional: true
+      ws:
+        optional: true
+      zod:
+        optional: true
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -526,6 +579,9 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
@@ -763,6 +819,10 @@ snapshots:
 
   nanoid@3.3.16: {}
 
+  openai@6.47.0(zod@4.4.3):
+    optionalDependencies:
+      zod: 4.4.3
+
   picocolors@1.1.1: {}
 
   picomatch@4.0.5: {}
@@ -856,3 +916,5 @@ snapshots:
     optionalDependencies:
       '@types/node': 26.1.1
       fsevents: 2.3.3
+
+  zod@4.4.3: {}

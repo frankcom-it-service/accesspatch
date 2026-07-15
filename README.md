@@ -4,9 +4,9 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the local React checkout fixture, passing build and smoke test, and intentionally failing two-barrier keyboard baseline. The controlled fixture is not the AccessPatch repair product; GPT-5.6 product integration remains **NOT YET IMPLEMENTED**.
+**Phase 1A complete; Phase 1B pending commit.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the local React checkout fixture, passing build and smoke test, and intentionally failing two-barrier keyboard baseline. The current working tree adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner, but it does not generate or apply patches.
 
-The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. Dedicated-project authentication and a minimal `gpt-5.6-sol` Responses API call were human-verified on 2026-07-15. The AccessPatch product integration remains **NOT YET IMPLEMENTED**.
+The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
 AccessPatch will support accessibility engineering; it will not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
 
@@ -44,6 +44,21 @@ The verified local run used system Chromium at `/usr/bin/chromium`. On a clean m
 
 `pnpm test:baseline` is intentionally expected to exit non-zero until a later repair step. It reports exactly two controlled barriers: the checkout email input has no accessible name, and the primary continue button has no visible outline or box-shadow focus cue. Generated reports, traces, screenshots, and test artifacts remain ignored.
 
+## Phase 1B Working Tree
+
+- `packages/shared-types/`: versioned Zod schemas for evidence, repair plans, and sanitized audit metadata.
+- `packages/evidence-collector/`: real Playwright journey evidence with allowlisted, bounded source excerpts.
+- `packages/repair-reasoner/`: structured GPT-5.6 planning plus a deterministic rejection policy.
+
+```bash
+pnpm test:unit
+pnpm phase1:evidence
+# Requires OPENAI_API_KEY in the invoking environment; never commit credentials.
+pnpm phase1:reason
+```
+
+Generated Phase 1B runs are written under ignored `.accesspatch/runs/`. The current plan proposes only explicit label association and visible-focus restoration for a later controlled patch step. It is not source code, a patch, a compliance certification, or proof of complete accessibility.
+
 ## Next Phase
 
-`OPEN`: add structured evidence, repair planning, controlled patches, replay, and Proof Bundle generation in later approved phases. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture as the completed AccessPatch product.
+`OPEN`: commit Phase 1B after review, then add controlled patches, repaired replay, reporting, and Proof Bundle generation only in later approved phases. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or repair plan as the completed AccessPatch product.

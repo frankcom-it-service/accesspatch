@@ -18,14 +18,15 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | AccessPatch repair product | NOT YET IMPLEMENTED | None |
 | Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
 | Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |
-| AccessPatch GPT-5.6 product integration | NOT YET IMPLEMENTED | None |
+| AccessPatch GPT-5.6 product integration | PARTIAL — PHASE 1B PENDING COMMIT | Real bounded evidence-to-plan run; `TEST_EVIDENCE.md` |
+| Structured Phase 1 evidence and approved repair plan | VERIFIED LOCALLY; INDEPENDENT ARTIFACT REVIEW PASSED; GENERATED ARTIFACTS IGNORED | Three reviewed hashes plus hardened offline validation; `TEST_EVIDENCE.md` |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
 
 | Requirement | Level | Current status | Evidence file or artifact | Responsible phase | Latest target date | Open risk or blocker |
 | --- | --- | --- | --- | --- | --- | --- |
-| Working project using Codex and GPT-5.6 | Mandatory | NOT YET IMPLEMENTED | Build log; product runtime evidence TODO | Build and integration | 2026-07-20 02:00 CEST | Access verified; integration, validation, and reproducible use case remain open |
+| Working project using Codex and GPT-5.6 | Mandatory | PARTIAL: BOUNDED PLANNING RUN VERIFIED | `BUILD_LOG.md`; `TEST_EVIDENCE.md`; ignored Phase 1B artifacts | Build and integration | 2026-07-20 02:00 CEST | Patch, replay, report, full workflow, and judge-visible reproducibility remain open |
 | One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
 | Project description | Mandatory | DRAFT | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final claims need proof |
 | Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |

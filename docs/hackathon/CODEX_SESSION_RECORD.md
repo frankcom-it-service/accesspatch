@@ -28,7 +28,7 @@ Repository inspection and the requested documentation foundation only. The Codex
 
 ## Human-Supervised API Access Check
 
-On 2026-07-15, the human-supervised setup verified dedicated-project authentication, prepaid billing readiness, and one minimal `gpt-5.6-sol` Responses API result. Codex did not access the secret or execute that request. This evidence verifies access only; the AccessPatch product integration remains **NOT YET IMPLEMENTED**. Details are recorded once in `TEST_EVIDENCE.md`.
+On 2026-07-15, the human-supervised setup verified dedicated-project authentication, prepaid billing readiness, and one minimal `gpt-5.6-sol` Responses API result. Codex did not access the secret or execute that request. At that checkpoint the result verified access only; the later Phase 1B record below separately documents the bounded product call. Details are recorded in `TEST_EVIDENCE.md`.
 
 ## Phase 1A Record
 
@@ -36,3 +36,17 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Result: controlled React/Vite checkout fixture, passing build and smoke test, and an intentionally failing Chromium keyboard baseline with exactly two seeded barriers.
 - Environment: Node.js `v24.18.0`, pnpm `11.13.0`, and verified local Chromium `/usr/bin/chromium`; explicit environment override and Playwright-managed fallback are configured but clean-machine and broader-platform verification remain open.
 - Scope boundary: no OpenAI credential file was read and no API/model call occurred during Phase 1A. Structured evidence, GPT-5.6 product integration, repair planning, patching, replay, reporting, and Proof Bundle generation remain **NOT YET IMPLEMENTED**.
+
+## Phase 1B Record
+
+- Working-tree status: **PENDING / UNCOMMITTED**.
+- Codex result: versioned evidence, plan, and audit schemas; real Playwright evidence for exactly two findings; deterministic policy validation; and API-free invalid-plan tests.
+- Runtime result: one approved `gpt-5.6-sol` call used low reasoning and `store: false`; response status `completed`; usage 1,649 input, 795 output, 0 reasoning, and 2,444 total tokens; policy result `accepted`.
+- Credential boundary: the external environment file was sourced only for that command. Its contents were not printed, inspected, or stored in the repository, and no automatic retry occurred.
+- Scope boundary: no patch was generated or applied. Replay, report, Proof Bundle, remote, deployment, publication, and `/feedback` remain pending.
+
+### Phase 1B Hardening Record
+
+- Added exact controlled-evidence invariants, portable realpath containment, symlink and complete-file rejection, expanded no-source-code policy checks, and exact returned-model enforcement.
+- Added 17 API-free tests for 38 total; the reviewed evidence, plan, and audit hashes remain unchanged and validate offline.
+- No second OpenAI request occurred. Phase 1B remains **PENDING / UNCOMMITTED**.

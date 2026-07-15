@@ -2,7 +2,7 @@
 
 ## Current Posture
 
-Phase 1A adds a local static checkout fixture and browser tests only. It has no backend, authentication, payment processing, persistence, remote assets, or network dependency at runtime. It is not the AccessPatch product.
+Phase 1B adds local evidence collection and one outbound Responses API integration for bounded repair planning. The fixture still has no backend, authentication, payment processing, persistence, or remote runtime assets. No model output can modify the repository in this phase.
 
 ## Planned Boundaries
 
@@ -21,11 +21,15 @@ The human-supervised development key is stored outside the repository at `$HOME/
 
 The dedicated project is restricted to `gpt-5.6-sol`. Key permissions are model-list read, `/v1/responses` write, and no access to other endpoint groups. Cost exposure is bounded by an initial USD 5 prepaid balance with auto recharge disabled.
 
-Phase 1A did not read `$HOME/.config/accesspatch/openai.env` and made no OpenAI API call. The demo uses sample test values only and states that it stores no orders, payments, or personal data.
+Phase 1B sourced `$HOME/.config/accesspatch/openai.env` only in the approved one-call shell immediately before `pnpm phase1:reason`; the key value was not displayed, inspected, logged, or copied. The request used `store: false`, no tools, no retries, and only normalized evidence with narrow allowlisted source excerpts. The demo uses sample values only and stores no orders, payments, or personal data.
+
+The reasoner writes no raw API response. Its ignored audit record contains only timestamp, model and prompt versions, evidence and plan hashes, `store: false`, response status, token usage, policy result, and a sanitized failure category. Missing credentials fail closed; rejected or refused output produces no approved plan or repository change.
+
+Pre-commit hardening adds portable requested-path and realpath containment, symlink-escape rejection, complete-file excerpt rejection, stricter controlled-evidence mappings, representative source-code-content rejection, and exact returned-model verification. An unexpected model records only sanitized `unexpected_model` failure metadata and cannot leave an approved plan.
 
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.
-- Threat model: `TODO` after architecture selection.
-- Application code and package dependencies now exist. Phase 1A secret-pattern and repository-hygiene scans passed. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified every direct dependency license; manual review of final redistribution and attribution obligations remains `TODO` before submission.
+- Threat model: `TODO` before arbitrary-repository support or patch application.
+- Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before the pending commit. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified licenses for OpenAI SDK `6.47.0`, Zod `4.4.3`, and the existing graph; manual review of final redistribution and attribution obligations remains `TODO` before submission.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.
