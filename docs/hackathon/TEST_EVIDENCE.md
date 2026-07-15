@@ -45,6 +45,16 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Governance-record follow-up: committed separately with subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in the commit content.
 - These are documentation commits only and do not establish application, accessibility, security, or model-runtime test results.
 
+## Human-Supervised GPT-5.6 Access Verification — 2026-07-15
+
+- Provenance: results supplied from the human-supervised setup; Codex did not rerun the request or access the secret.
+- Project controls: dedicated `AccessPatch Build Week` project, model restricted to `gpt-5.6-sol`, model-list read and Responses write only, all other endpoint groups disabled.
+- Cost controls: USD 5 prepaid balance; auto recharge disabled.
+- First attempt before credit: HTTP `429`, error `insufficient_quota`.
+- Successful access check after credit: Responses API HTTP `200`; model `gpt-5.6-sol`; status `completed`; exact visible output `ACCESSPATCH_API_OK`; `store: false`.
+- Usage: input 16, output 8, reasoning 0, total 24 tokens.
+- Interpretation: real authentication, billing readiness, and model-response evidence for a minimal access test only. AccessPatch integration, JSON schema validation, deterministic safety validation, privacy-conscious audit logging, fallback behavior, and the reproducible repair-plan demo remain **NOT YET IMPLEMENTED**.
+
 ## Future Evidence Standard
 
 Each test record must include date, commit, environment, exact command, exit status, relevant output, artifact location, and known limitations. Accessibility evidence must distinguish automated signals from disabled-user testing and qualified human review. It must not be presented as complete accessibility, WCAG certification, or BFSG/EAA legal assurance.

@@ -15,7 +15,7 @@
 
 - Date: 2026-07-15
 - Decision: bound GPT-5.6 to the Evidence-Based Repair Reasoner role. Its structured proposals must be grounded in collected evidence and pass schema validation plus deterministic safety checks before any future application step.
-- Status: **NOT YET IMPLEMENTED; ACCESS NOT YET VERIFIED**.
+- Status: product role **NOT YET IMPLEMENTED**; dedicated-project authentication and minimal `gpt-5.6-sol` response access verified 2026-07-15.
 
 ## D-004 — Fix Internal Delivery Targets
 
@@ -39,6 +39,14 @@
 - Date: 2026-07-15
 - Decision: public claims require reproducible evidence recorded in the submission ledger.
 - Reason: prevent fabricated, stale, or broader-than-tested claims.
+
+## D-008 — Least-Privilege API and Cost Controls
+
+- Date: 2026-07-15
+- Decision: use dedicated project `AccessPatch Build Week`, restrict it to `gpt-5.6-sol`, allow only model-list read and Responses write, and disable all other endpoint groups.
+- Cost limit: start with USD 5 prepaid credit and keep auto recharge disabled.
+- Secret handling: keep the project-scoped key outside the repository in the user-private configuration directory; never record its value or sensitive platform identifiers.
+- Scope: the successful minimal access test does not establish product integration or repair quality.
 
 ## Open Decisions
 

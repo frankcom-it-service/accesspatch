@@ -4,7 +4,7 @@
 
 - AccessPatch is documentation-only; no application or demo exists.
 - React/TypeScript inspection, journey execution, repair generation, patch application, proof export, and rollback are **NOT YET IMPLEMENTED**.
-- GPT-5.6 account access, API billing readiness, output quality, latency, cost, and AccessPatch runtime integration are **NOT YET VERIFIED**. Codex credits do not automatically provide OpenAI API credits.
+- Dedicated-project authentication, prepaid billing readiness, and a minimal `gpt-5.6-sol` response are verified. Product output quality, latency, cost profile, and AccessPatch runtime integration remain **NOT YET VERIFIED / NOT YET IMPLEMENTED**. Codex credits do not automatically provide OpenAI API credits.
 - No test, accessibility, security, performance, compatibility, or usability result exists.
 - No repository, demo, or video URL exists. Core requirements were checked on 2026-07-15, but the official Rules-page body appears stale and the final applicable rules remain an open risk.
 - Supported frameworks, browsers, operating systems, journey formats, and accessibility rules remain `OPEN`.

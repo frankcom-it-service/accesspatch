@@ -25,3 +25,7 @@ Codex is the principal engineering tool, and this continuing session is intended
 ## Phase 0 Scope
 
 Repository inspection and the requested documentation foundation only. The Codex session model above is not evidence of an AccessPatch runtime API call. Phase 0 produced only the documentation foundation commit and its governance-record follow-up; no application build, dependency installation, runtime model integration, push, remote creation, deployment, or publication occurred.
+
+## Human-Supervised API Access Check
+
+On 2026-07-15, the human-supervised setup verified dedicated-project authentication, prepaid billing readiness, and one minimal `gpt-5.6-sol` Responses API result. Codex did not access the secret or execute that request. This evidence verifies access only; the AccessPatch product integration remains **NOT YET IMPLEMENTED**. Details are recorded once in `TEST_EVIDENCE.md`.

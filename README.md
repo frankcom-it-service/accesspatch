@@ -6,7 +6,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 **Phase 0: documentation foundation only.** No application, dependency graph, demo, test suite, or model integration is implemented yet.
 
-The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. GPT-5.6 integration is planned as the repair reasoner, but AccessPatch API access and runtime integration are **NOT YET VERIFIED** and **NOT YET IMPLEMENTED**.
+The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. Dedicated-project authentication and a minimal `gpt-5.6-sol` Responses API call were human-verified on 2026-07-15. The AccessPatch product integration remains **NOT YET IMPLEMENTED**.
 
 AccessPatch will support accessibility engineering; it will not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
 

@@ -17,6 +17,10 @@ Phase 0 contains documentation and configuration examples only. There is no appl
 
 Use `.env.example` only as a key-name template. Real `.env*` files, keys, certificates, logs, traces, and generated proof runs are ignored. A future curated judge-visible sample proof requires an explicit reviewed tracked location or allowlist. If a secret is exposed, revoke it outside this repository and remove it from all artifacts before continuing.
 
+The human-supervised development key is stored outside the repository at `$HOME/.config/accesspatch/openai.env`; the file mode is `600` and its containing directory is user-private. The secret value, project and organization identifiers, and payment data must never be recorded here.
+
+The dedicated project is restricted to `gpt-5.6-sol`. Key permissions are model-list read, `/v1/responses` write, and no access to other endpoint groups. Cost exposure is bounded by an initial USD 5 prepaid balance with auto recharge disabled.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.

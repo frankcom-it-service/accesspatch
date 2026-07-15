@@ -18,7 +18,7 @@ Accessibility defects often appear across an end-to-end journey rather than in a
 
 AccessPatch is planned to inspect a target journey, assemble local evidence, ask the GPT-5.6 Sol model (`gpt-5.6-sol`, current alias `gpt-5.6`) for a structured repair proposal, validate that proposal against a schema and deterministic safety rules, and generate before/after proof for human review.
 
-**NOT YET IMPLEMENTED. GPT-5.6 ACCESS IS NOT YET VERIFIED.**
+**NOT YET IMPLEMENTED. DEDICATED-PROJECT GPT-5.6 ACCESS IS VERIFIED, BUT ACCESSPATCH PRODUCT INTEGRATION IS NOT.**
 
 ## Built With
 

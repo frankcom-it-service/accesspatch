@@ -16,14 +16,15 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Governance-record follow-up | RECORDED IN FOLLOW-UP COMMIT | Subject `docs: record Phase 0 completion`; hash intentionally not embedded in its own content |
 | Working application or demo | NOT YET IMPLEMENTED | None |
 | Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
-| AccessPatch GPT-5.6 API access or runtime integration | NOT YET VERIFIED / NOT YET IMPLEMENTED | None |
+| Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |
+| AccessPatch GPT-5.6 product integration | NOT YET IMPLEMENTED | None |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
 
 | Requirement | Level | Current status | Evidence file or artifact | Responsible phase | Latest target date | Open risk or blocker |
 | --- | --- | --- | --- | --- | --- | --- |
-| Working project using Codex and GPT-5.6 | Mandatory | NOT YET IMPLEMENTED | Build log; runtime evidence TODO | Build and integration | 2026-07-20 02:00 CEST | API access and billing NOT YET VERIFIED |
+| Working project using Codex and GPT-5.6 | Mandatory | NOT YET IMPLEMENTED | Build log; product runtime evidence TODO | Build and integration | 2026-07-20 02:00 CEST | Access verified; integration, validation, and reproducible use case remain open |
 | One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
 | Project description | Mandatory | DRAFT | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final claims need proof |
 | Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |

@@ -4,7 +4,7 @@
 
 No application dependencies, vendored assets, datasets, copied code, fonts, icons, or demo fixtures have been added in Phase 0.
 
-Codex CLI `0.144.4` with model `gpt-5.6-sol` and reasoning `high` is used as the principal engineering tool. Planned AccessPatch runtime use of GPT-5.6 Sol (`gpt-5.6-sol`, alias `gpt-5.6`) is **NOT YET IMPLEMENTED** and API access is **NOT YET VERIFIED**. The optional Devpost Hackathon plugin may be used for submission support only.
+Codex CLI `0.144.4` with model `gpt-5.6-sol` and reasoning `high` is used as the principal engineering tool. Dedicated-project API access to `gpt-5.6-sol` was verified by a minimal human-supervised request; planned AccessPatch product use remains **NOT YET IMPLEMENTED**. The optional Devpost Hackathon plugin may be used for submission support only.
 
 ## Required Before Submission
 

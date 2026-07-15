@@ -97,7 +97,7 @@ Core requirements and the deadline were checked against the current FAQ, overvie
 ## GPT-5.6 Evidence
 
 - [ ] GPT-5.6 has a meaningful runtime role.
-- [ ] Current official model identifier is rechecked before integration.
+- [x] Current official model identifier is rechecked before integration.
 - [ ] Technical integration point is documented.
 - [ ] At least one GPT-5.6 use case is reproducible.
 - [ ] Inputs and outputs are logged in a privacy-conscious manner.
@@ -107,7 +107,7 @@ Core requirements and the deadline were checked against the current FAQ, overvie
 - [ ] Video shows or explains the GPT-5.6 function.
 - [ ] Repository contains a traceable GPT-5.6 implementation.
 - [ ] Missing-model-access fallback is documented honestly.
-- [ ] Account API access and billing readiness are verified independently of Codex credits.
+- [x] Account API access and billing readiness are verified independently of Codex credits.
 - [ ] Structured output, schema validation, deterministic safety checks, and negative cases are evidenced.
 
 ## Final Verification

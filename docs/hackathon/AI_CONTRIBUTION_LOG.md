@@ -13,7 +13,7 @@
 - Validations: complete tracked/untracked review; `git diff --check` passed; all-file whitespace and selected high-risk secret-pattern searches returned no matches; forbidden-scaffold inventory returned no files; working-tree status remained uncommitted. Exact commands and exits are in `TEST_EVIDENCE.md`.
 - Foundation commit status: **COMPLETED**; `bbabb9207b0f7ae92b8262b2e02930511dd81521` (`docs: establish Phase 0 hackathon controls`).
 - Result: corrected Phase 0 documentation foundation; no application functionality created.
-- Limitations: no AccessPatch runtime GPT-5.6 API call, verified API access, billing readiness, application test, demo, repository URL, submission, or `/feedback` Session ID exists.
+- Limitations: dedicated-project API access and a minimal human-supervised model response are verified, but no AccessPatch product runtime integration, application test, demo, repository URL, submission, or `/feedback` Session ID exists.
 
 The Devpost Hackathon plugin remains optional submission support and does not replace this central Codex engineering session.
 
@@ -27,3 +27,9 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Foundation commit status: **COMPLETED**; included in `bbabb9207b0f7ae92b8262b2e02930511dd81521`.
 - Governance-record follow-up: committed separately with subject `docs: record Phase 0 completion`; its own hash is intentionally not embedded in that commit.
 - Result: documentation correction only; Proof Bundle files and application behavior remain **NOT YET IMPLEMENTED**.
+
+## GPT-5.6 Access-Verification Record
+
+- Human-supervised work: created the restricted project and external key storage, applied least-privilege endpoint permissions and prepaid cost controls, and performed the quota and successful access checks.
+- Codex contribution: documented the supplied evidence and updated stale access-status statements; Codex did not handle the secret or perform the model request.
+- Result: authentication, prepaid billing readiness, and minimal `gpt-5.6-sol` response access are verified. The AccessPatch Evidence-Based Repair Reasoner remains **NOT YET IMPLEMENTED**.
