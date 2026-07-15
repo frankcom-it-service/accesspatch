@@ -33,6 +33,10 @@ Final Phase 1C isolation hardening explicitly ignores `.accesspatch/work/`, keep
 
 The controlled Phase 1C implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. Its reviewed audit records no credential, environment value, raw prompt, raw response, absolute user path, sensitive identifier, or personal data. No additional model request occurred during Phase 1C.
 
+Phase 2A reads only the eight reviewed Phase 1 artifacts as regular files, rechecks their exact hashes and schemas, reruns both deterministic policies offline, and writes only to ignored `.accesspatch/runs/phase2/`. Bundle generation rejects symlinks, unsafe paths, unexpected inventory, credentials, environment values, absolute local paths, sensitive identifiers, raw prompt/response fields, and unsupported positive compliance claims. It validates a temporary bundle before atomic replacement and removes temporary directories after success or failure.
+
+The real Phase 2A bundle passed these controls and independent full-bundle security review; it contains no remote report resources and remains untracked. Its static report's zero-violation axe smoke is a narrow automated result, not proof of complete accessibility. The generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.

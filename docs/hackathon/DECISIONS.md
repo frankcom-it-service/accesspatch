@@ -76,8 +76,16 @@
 - Status: implemented in `79ed0e60b2c7145f4113ecac3797a119ccb696ee` after one explicitly approved corrected rerun; all five ignored feasibility artifacts exist, while the broader workflow and curated proof remain open.
 - Final isolation hardening: retain source tests in the disposable copy, exclude generated build/test output and common credential paths, reject every included symlink without following it, ignore `.accesspatch/work/`, and expose only repository-relative rejection paths. The corrected audit wording supersedes the earlier inaccurate strategy value.
 
+## D-012 — Use `summary.json` as the Proof Bundle Manifest
+
+- Date: 2026-07-15
+- Decision: generate the exact canonical inventory in deterministic order, hash every generated file except `summary.json`, and store those hashes in `summary.json`; represent `test-results/` through its five contained file hashes.
+- Rationale: a manifest cannot contain its own stable hash without circularity. Independent verification hashes `summary.json` separately and validates every listed entry against actual bytes.
+- Safety: generate in a temporary sibling directory, reject unsafe paths, symlinks, unexpected entries, secrets, absolute local paths, raw prompt/response fields, sensitive IDs, and unsupported positive compliance claims, then replace the ignored final directory only after validation.
+- Status: implemented in Phase 2A commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; the real ignored bundle passed independent full-file review but is not a tracked judge sample.
+
 ## Open Decisions
 
-- `OPEN`: supported journey input and proof-bundle formats.
+- `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.
 - `OPEN`: controlled patch approval, rollback, and post-repair review gates.
 - `OPEN`: repository visibility path, license, judging addresses, and final applicable Rules-page interpretation.

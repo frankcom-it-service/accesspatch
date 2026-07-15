@@ -58,3 +58,10 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - The first artifact finalization failed on an incorrect Git-hash-length schema. After correction, independent review, and explicit approval, exactly one controlled rerun completed all five artifacts without API or credential access.
 - Final pre-commit isolation correction: the audit now accurately excludes build and test output rather than source tests; common credential paths are excluded; included symlinks fail closed; `.accesspatch/work/` is ignored; one authorized regeneration completed without retry or model access.
 - Phase 1C is **COMPLETE** for the controlled feasibility scope in implementation commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. No additional GPT-5.6 call occurred.
+
+## Phase 2A Record
+
+- This central session implemented the canonical Proof Bundle generator and 22 new API-free tests without sourcing credentials, making a model request, rerunning the repair command, or modifying the controlled fixture.
+- Exactly one `pnpm phase2:bundle` execution generated the ignored 11-entry bundle. `summary.json` is the manifest and hashes every generated file except itself.
+- The static report passed structural validation, keyboard skip-link focus, and a Chromium axe smoke with zero violations; this is not a complete accessibility audit.
+- Status: **COMPLETE** in implementation commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`. Independent full-bundle review passed; a curated tracked judge sample, clean-machine verification, and the final judge workflow remain open.

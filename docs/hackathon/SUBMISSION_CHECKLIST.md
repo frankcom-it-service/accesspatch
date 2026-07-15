@@ -4,6 +4,8 @@ Core requirements and the deadline were checked against the current FAQ, overvie
 
 The controlled Phase 1C feasibility implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. This does not complete any unchecked canonical Proof Bundle, judge-path, clean-install, video, publication, `/feedback`, or submission gate.
 
+The Phase 2A generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`, and the ignored 15-file canonical bundle passed independent review. No checkbox is newly completed by that ignored output: the curated tracked judge package, final judge path, clean installation, video, publication, `/feedback`, and submission gates remain unchecked.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.

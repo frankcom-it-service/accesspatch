@@ -111,3 +111,14 @@
 - Commit gate: frozen install, exact-version scan, high-severity audit, license inventory, 64 API-free tests, type-check, build, smoke, expected failing baseline, offline artifact/schema/policy/hash checks, staged diff, credential scans, and generated-artifact checks passed.
 - Evidence: the five final reviewed hashes remain ignored and uncommitted; the repaired replay recorded zero axe violations, visible focus (`solid`, `3px`, `none`), confirmation reached, main fixture unchanged, and cleanup `removed`.
 - Open work: retained application, fallback and rollback, reporting, broad repository support, clean-environment verification, the canonical Proof Bundle, judge workflow, publication, and submission.
+
+## 2026-07-15 — Phase 2A Canonical Proof Bundle
+
+- Goal: generate the exact canonical bundle from reviewed Phase 1 evidence without rerunning GPT-5.6 or the Phase 1C repair workflow.
+- Architecture: added `packages/proof-bundle/`, shared versioned schemas, deterministic renderers, exact inventory and nested test-result validation, a non-circular `summary.json` manifest, content/path/symlink controls, temporary-directory validation, and atomic final-directory replacement.
+- Output: one approved `pnpm phase2:bundle` execution exited `0` and generated the exact 11 top-level entries under ignored `.accesspatch/runs/phase2/proof-bundle/`; 15 files are covered by the manifest strategy.
+- Report: self-contained static HTML with no network resources; structural validation and one Chromium+axe smoke passed with `PHASE2_REPORT_AXE_VIOLATIONS=[]`.
+- Tests: 22 new API-free tests; 86 total passed. Frozen install, exact versions, high-severity audit, license inventory, type-check, build, smoke, intentional baseline, reviewed-source validation, bundle validation, and hygiene checks passed or produced the documented expected baseline exit.
+- Manifest: `summary.json` SHA-256 `19613c7913a91ababb4fbe6cfe02cecc650006f9c80ccb46c18f10d6d9549906`; it hashes every other generated file and omits itself to prevent circular hashing.
+- Independent review: the complete generator, schemas, HTML, inventory, security controls, and all 15 generated files passed human review. The five `test-results` files correctly package prior reviewed evidence rather than claiming new Phase 2A executions; `wcag-map.csv` remains honestly `UNMAPPED`.
+- Commit: **COMPLETE** in `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` (`feat: add canonical proof bundle generator`). The generated bundle remains ignored and is not a tracked judge-visible sample. No additional GPT-5.6 call or repair run occurred.

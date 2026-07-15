@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A, Phase 1B, and the controlled Phase 1C feasibility scope are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings.
+**Phase 1A, Phase 1B, the controlled Phase 1C feasibility scope, and Phase 2A are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
@@ -16,6 +16,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Phase 1A controlled checkout baseline: commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`, 2026-07-15).
 - Phase 1B bounded evidence repair reasoner: commit `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`, 2026-07-15).
 - Phase 1C isolated deterministic repair replay: commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`, 2026-07-15).
+- Phase 2A canonical Proof Bundle generator: commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` (`feat: add canonical proof bundle generator`, 2026-07-15).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
@@ -23,9 +24,9 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Current limitations: `docs/hackathon/LIMITATIONS.md`.
 - Security posture: `docs/hackathon/SECURITY.md`.
 
-## Planned Proof Bundle Contract
+## Canonical Proof Bundle Contract
 
-The MVP is planned to produce a fixed, reviewable Proof Bundle from a real run. Every artifact must be reproducible, tied to a commit, and never fabricated. The exact **NOT YET IMPLEMENTED** inventory and preservation rules are canonical in `docs/hackathon/DEMO_EVIDENCE.md`. Generated proof runs remain ignored by default; any curated judge-visible sample requires an explicitly reviewed tracked location or allowlist.
+Phase 2A generates the fixed 11-entry contract from the reviewed Phase 1 artifacts under ignored `.accesspatch/runs/phase2/proof-bundle/`. `summary.json` is the non-circular manifest: it hashes every generated file except itself. Every artifact comes from real reviewed evidence; no result is fabricated. The implementation is committed and the real 15-file bundle passed independent full-file review. The generated bundle remains ignored and untracked; any curated judge-visible sample still requires a separately approved tracked location or allowlist. The canonical inventory is in `docs/hackathon/DEMO_EVIDENCE.md`.
 
 ## Phase 1A Workspace
 
@@ -72,6 +73,15 @@ An approved controlled rerun completed successfully after correcting the initial
 
 Phase 1C is committed in `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. Its scope remains one controlled React fixture, exactly two finding IDs, and exactly two deterministic fix classes.
 
+## Phase 2A Proof Bundle
+
+- `packages/proof-bundle/`: validates reviewed source hashes and schemas, generates the exact canonical inventory in a temporary directory, scans it for unsafe content, and atomically publishes only after all checks pass.
+- `pnpm phase2:bundle`: generates the ignored canonical bundle once from existing Phase 1 evidence without rerunning the model or repair engine.
+- `pnpm phase2:validate`: independently validates inventory, schemas, manifest hashes, copied bytes, CSV ordering, report structure, safety boundaries, and deterministic policies.
+- `pnpm test:report`: opens the static local report in Chromium and runs structural, keyboard-focus, and axe smoke checks.
+
+The independently reviewed generated static report passed its automated axe smoke with zero violations. This is not a complete accessibility audit or certification; screen-reader, label-adjacency, and visual-focus review remain required.
+
 ## Next Phase
 
-`OPEN`: build the canonical Proof Bundle and report/judge workflow; design retained user-selected patch handling, fallback, and rollback; verify a clean environment; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or feasibility repair as the completed AccessPatch product.
+`OPEN`: curate an explicitly reviewed tracked Proof Bundle sample for judges; build the final judge workflow; design retained user-selected patch handling, fallback, and rollback; verify a clean environment; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, or ignored bundle as the completed AccessPatch product.

@@ -76,3 +76,13 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Human review: independently approved the repairs and artifacts, then identified inaccurate audit wording, stale environment status, missing work-copy ignore protection, and insufficient credential/symlink exclusion.
 - Codex contribution: corrected the stable audit strategy, replaced filtered recursive copy with regular-file-only traversal, added credential exclusions and fail-closed symlink handling, ignored `.accesspatch/work/`, updated current status, and added 7 API-free tests for 64 total.
 - Result: one authorized regeneration exited `0` without retry; four expected artifacts remained byte-identical, the sanitized audit changed only for timestamp and corrected strategy, and the reviewed implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`.
+
+## Phase 2A Canonical Proof Bundle Work
+
+- Human assignment: generate the exact canonical 11-entry Proof Bundle only from the eight reviewed Phase 1 artifacts and current reproducibility metadata, without another model or repair run.
+- Codex contribution: added versioned bundle schemas, reviewed-input validation, deterministic JSON/CSV/static-HTML rendering, a non-circular `summary.json` manifest, exact inventory enforcement, symlink/path/content rejection, atomic directory replacement, and a Chromium+axe report smoke test.
+- Tests: added 22 API-free unit/integration tests, increasing the unit suite from 64 to 86; all 86 pass. One overbroad compliance-claim test regex was narrowed after it correctly failed the initial development run on a negated disclaimer.
+- Result: exactly one `pnpm phase2:bundle` command exited `0` and produced 15 files across the required 11 top-level entries. Independent offline validation and the report smoke passed; the static report axe result was zero violations.
+- Human review: an independent full review passed the source, generator, schemas, HTML, exact inventory, security controls, and all 15 generated artifacts. Human approval authorized the implementation commit while retaining the boundary between the ignored real bundle and a future tracked judge sample.
+- Human boundary: no new checklist item is completed solely by the ignored bundle. No tracked judge sample, model call, credential access, repair rerun, source-fixture change, or Phase 2B work occurred.
+- Commit status: **COMPLETE** in implementation commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`.
