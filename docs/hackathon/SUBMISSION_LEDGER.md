@@ -1,0 +1,59 @@
+# Submission Ledger
+
+Last updated: 2026-07-15
+
+This is the canonical ledger for claims, proof, and submission readiness. A claim may be presented as complete only when its evidence is linked here and reproducible.
+
+## Verified Coordination Facts
+
+| Item | Status | Evidence |
+| --- | --- | --- |
+| Product name: AccessPatch | VERIFIED | Repository and `README.md` |
+| Selected track: Developer Tools | VERIFIED 2026-07-15 | Human coordination review |
+| Product definition: Journey Repair and Proof Agent for React/TypeScript applications | PROJECT-SPECIFIED | Project brief |
+| Minimal initial README baseline | VERIFIED | Root commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f`; three-line README |
+| Phase 0 documentation foundation | COMPLETE (UNCOMMITTED) | Current validated working tree; `TEST_EVIDENCE.md` |
+| Working application or demo | NOT YET IMPLEMENTED | None |
+| Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
+| AccessPatch GPT-5.6 API access or runtime integration | NOT YET VERIFIED / NOT YET IMPLEMENTED | None |
+| Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
+
+## Central Requirements
+
+| Requirement | Level | Current status | Evidence file or artifact | Responsible phase | Latest target date | Open risk or blocker |
+| --- | --- | --- | --- | --- | --- | --- |
+| Working project using Codex and GPT-5.6 | Mandatory | NOT YET IMPLEMENTED | Build log; runtime evidence TODO | Build and integration | 2026-07-20 02:00 CEST | API access and billing NOT YET VERIFIED |
+| One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
+| Project description | Mandatory | DRAFT | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final claims need proof |
+| Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |
+| Voiceover explains project, Codex use, and GPT-5.6 use | Mandatory | DRAFT OUTLINE | `VIDEO_SCRIPT.md` | Demo and submission | 2026-07-21 02:00 CEST | Must reflect actual frozen build |
+| Code repository URL | Mandatory | OPEN | URL TODO | Submission | 2026-07-21 02:00 CEST | No remote; publication requires approval |
+| README setup and testing guidance | Mandatory | NOT YET IMPLEMENTED | `README.md` | Build and verification | 2026-07-20 02:00 CEST | No application commands exist |
+| Primary build-thread `/feedback` Session ID | Mandatory | PENDING | `CODEX_SESSION_RECORD.md` | Submission | 2026-07-21 02:00 CEST | Must be collected from this central session; never invent |
+| Developer Tools installation instructions | Mandatory | NOT YET IMPLEMENTED | `JUDGE_TEST_GUIDE.md`; README TODO | Build and verification | 2026-07-20 02:00 CEST | Stack and install path OPEN |
+| Supported platforms | Mandatory | OPEN | `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Compatibility untested |
+| Judge path without complete rebuild | Mandatory | NOT YET IMPLEMENTED | `JUDGE_TEST_GUIDE.md` | Demo and verification | 2026-07-21 02:00 CEST | Packaging approach OPEN |
+| Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |
+| Judge-accessible demo or sandbox | Recommended | NOT YET IMPLEMENTED | `DEMO_EVIDENCE.md` | Demo | 2026-07-21 02:00 CEST | Hosting and accessibility OPEN |
+| Fresh install and final link verification | Recommended | NOT YET RUN | `TEST_EVIDENCE.md`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Requires feature-frozen artifact |
+| Fixed MVP Proof Bundle inventory | Mandatory internal contract | NOT YET IMPLEMENTED | Canonical contract in `DEMO_EVIDENCE.md` | Build and evidence | 2026-07-20 02:00 CEST | Must come from a real, reproducible, commit-tied run |
+
+The full binding readiness checklist is `SUBMISSION_CHECKLIST.md`. The canonical Planned Proof Bundle Contract and exact required filenames are in `DEMO_EVIDENCE.md`; generated runs remain ignored unless a curated judge sample receives an explicitly reviewed tracked location or allowlist.
+
+## Official Verification Status
+
+The current OpenAI Build Week FAQ, overview, and official current announcement were checked on 2026-07-15 and support the requirements above. They currently show the deadline as 2026-07-21 at 17:00 PDT, corresponding to 2026-07-22 at 02:00 CEST.
+
+`OPEN OFFICIAL-SOURCE INCONSISTENCY`: the body currently returned by the official Rules page appears to contain the title, dates, and content of an older 2025 OpenAI Open Model Hackathon. Do not silently treat that stale body as the applicable Build Week rules. Recheck all official sources, the applicable rules, judging addresses, and Devpost fields immediately before submission.
+
+## Timeline and Freeze
+
+- Central Codex session start: 2026-07-15 at 14:11 Europe/Berlin.
+- Internal feature freeze: 2026-07-20 at 02:00 CEST.
+- Internal submission-ready target: 2026-07-21 at 02:00 CEST.
+- Current official deadline: 2026-07-22 at 02:00 CEST.
+- Final 24 hours: fixes, evidence, video, links, Devpost, and unexpected submission issues only.
+- Coordination check at approximately 2026-07-15 14:19 CEST: about 107h40m to freeze, 131h40m to submission-ready, and 155h40m to the official deadline.
+- `REQUIRED`: recalculate remaining time at the beginning of each project day.
+
+After freeze, accept only evidence, documentation, and critical correctness or security fixes. Record every exception in `DECISIONS.md` and rerun affected proof.

@@ -1,0 +1,65 @@
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets/
+
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# Builds and generated output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Tests, traces, and runtime artifacts
+test-results/
+playwright-report/
+blob-report/
+.nyc_output/
+traces/
+trace*.zip
+*.trace
+*.log
+logs/
+
+# Generated proof runs and demo bundles (records in docs remain tracked)
+# A curated judge-visible sample may later use an explicit tracked path or
+# reviewed allowlist; do not place that sample under these ignored paths.
+proof-bundles/
+proof-output/
+demo-artifacts/
+artifacts/
+*.proof.zip
+
+# Caches and temporary files
+.cache/
+.turbo/
+.parcel-cache/
+tmp/
+temp/
+*.tmp
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
