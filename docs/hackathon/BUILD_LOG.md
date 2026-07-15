@@ -71,8 +71,8 @@
 - Provenance: evidence SHA-256 `cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2`; plan SHA-256 `9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a`; sanitized audit timestamp `2026-07-15T15:10:53.264Z`.
 - Validation: frozen install, exact-version scan, high-severity audit, license inventory, 21 offline unit/policy tests, type-check, build, smoke, evidence collection, and the preserved intentional baseline were run; exact results are in `TEST_EVIDENCE.md`.
 - Scope: no demo source repair, patch generation or application, replay, report, Proof Bundle, remote, deployment, or publication occurred.
-- Commit status: **PENDING / UNCOMMITTED**.
-- Next task: independent review and Phase 1B commit approval; do not begin the controlled patch step without a new instruction.
+- Implementation commit: **COMPLETE** — `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`).
+- Next task: wait for explicit approval before any controlled patch or Phase 1C work.
 
 ### Phase 1B Pre-Commit Hardening
 
@@ -82,4 +82,4 @@
 - Policy hardening: representative unwrapped CSS, selector blocks, JSX attributes, and JavaScript/TypeScript assignment expressions are rejected while the reviewed prose-only plan remains accepted.
 - Model hardening: a completed response must return exactly `gpt-5.6-sol`; mismatch removes stale plan output, records sanitized `unexpected_model`, and fails closed.
 - Tests: 17 API-free cases added, increasing the unit suite from 21 to 38; all 38 pass, including the real symlink-escape test on this environment.
-- Scope: no second API call, demo repair, patch, replay, report, or Proof Bundle was produced. Phase 1B remains **PENDING / UNCOMMITTED**.
+- Scope: no second API call, demo repair, patch, replay, report, or Proof Bundle was produced. Phase 1B is **COMPLETE** in `207e0559d0d7664a24dcb297fb40b37700f36208`.

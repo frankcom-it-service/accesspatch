@@ -66,6 +66,7 @@
 - Safety boundary: accept only two low-risk repairs with the exact finding-to-fix mapping and target-file allowlist; reject unsafe paths, dependencies, code, commands, legal claims, unrelated redesign, missing review, or repository mutation.
 - Pre-commit hardening: require exact evidence selector/source/metadata mappings, unique source allowlist entries, realpath containment including symlink resolution, complete-file excerpt rejection, representative CSS/JSX/JavaScript code rejection, and exact returned model identity.
 - Preservation: write only ignored evidence, plan, and sanitized audit artifacts. No patch is generated or applied, and the original demo remains preserved for a later controlled step.
+- Status: implemented in `207e0559d0d7664a24dcb297fb40b37700f36208`; current scope remains exactly two controlled findings and two safe-fix classes.
 
 ## Open Decisions
 

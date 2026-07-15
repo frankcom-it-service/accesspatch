@@ -83,7 +83,7 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 
 ## Phase 1B Structured Evidence and Reasoner — 2026-07-15
 
-- Environment: Node.js `v24.18.0`, pnpm `11.13.0`, system Chromium `/usr/bin/chromium`; Phase 1B commit status **PENDING / UNCOMMITTED**.
+- Environment: Node.js `v24.18.0`, pnpm `11.13.0`, system Chromium `/usr/bin/chromium`; implementation commit `207e0559d0d7664a24dcb297fb40b37700f36208`.
 - `pnpm install --frozen-lockfile`: exit `0`; all 5 workspace projects already up to date; completed with pnpm `11.13.0`.
 - Exact-specifier scan: ripgrep found no `latest` in any package manifest or lockfile importer; exit `1`, no matches. New external direct dependencies are OpenAI SDK `6.47.0` and Zod `4.4.3`.
 - `pnpm audit --audit-level=high`: exit `0`; exact result `No known vulnerabilities found`.
@@ -125,7 +125,22 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - `pnpm test:baseline`: expected exit `1`; confirmation reached and the only soft failures were `CONTROLLED_BARRIER_EMAIL_NAME` plus `CONTROLLED_BARRIER_FOCUS_VISIBLE`; axe returned exactly one `label` violation targeting only `#email`.
 - Hardened offline artifact validation: evidence, plan, and audit schemas valid; deterministic policy accepted; audit references matched evidence and plan; no raw prompt, raw response, credential, or sensitive identifier field was present.
 - Model-call count: no second request was made; `pnpm phase1:reason` was not executed during hardening.
-- Scope: no demo source changed; no patch, replay, report, or Proof Bundle was generated; Phase 1B remains **PENDING / UNCOMMITTED**.
+- Scope: no demo source changed; no patch, replay, report, or Proof Bundle was generated; Phase 1B is **COMPLETE** in `207e0559d0d7664a24dcb297fb40b37700f36208`.
+
+### Phase 1B Commit Gate
+
+- `pnpm install --frozen-lockfile`: exit `0`; all 5 workspaces already up to date in 392 ms.
+- Exact-version scan: ripgrep exit `1`, no floating `latest` specification.
+- `pnpm audit --audit-level=high`: exit `0`; `No known vulnerabilities found`.
+- `pnpm licenses list --json`: exit `0`; no missing direct license and no new license category.
+- `pnpm test:unit`: exit `0`; 38 passed, 0 failed, 0 skipped in 373.47 ms.
+- `pnpm typecheck`: exit `0`; all packages, app, e2e tests, and unit tests passed.
+- `pnpm build`: exit `0`; 16 modules transformed in 220 ms.
+- `pnpm test:smoke`: exit `0`; 1 Chromium test passed in 3.4 seconds.
+- `pnpm test:baseline`: expected exit `1`; confirmation reached, only the two controlled assertions failed, and axe returned one `label` violation targeting `#email`.
+- Offline reviewed-artifact validation: all schemas valid, policy accepted, audit references matched, no forbidden audit content, and all three approved hashes were unchanged.
+- Repository hygiene: diff, whitespace, credential, sensitive-ID, ignored-artifact, staged-path, tracked-path, and prohibited-output checks passed.
+- Implementation commit: `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`).
 
 ## Future Evidence Standard
 

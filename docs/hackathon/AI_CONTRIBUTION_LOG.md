@@ -51,9 +51,9 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Model contribution: one `gpt-5.6-sol` call with low reasoning proposed exactly two later repairs—associate the existing email label and restore the controlled focus indicator. Structured and deterministic validation accepted the plan; no model output was applied.
 - Privacy and cost controls: `store: false`, no tools, no retries, bounded evidence only, ignored run artifacts, external credential sourcing immediately before the command, and no secret or raw response persisted.
 - Validation: status `completed`; usage 1,649 input, 795 output, 0 reasoning, 2,444 total tokens; evidence and plan hashes are recorded in `TEST_EVIDENCE.md`.
-- Human decision and review: the human defined the findings, allowlists, permitted fix classes, one-call limit, and approval boundary. Final review and commit approval remain pending.
+- Human decision and review: the human defined the findings, allowlists, permitted fix classes, one-call limit, and approval boundary, then approved the independently reviewed Phase 1B implementation for commit.
 - Affected files: root workspace configuration; `packages/shared-types/`, `packages/evidence-collector/`, `packages/repair-reasoner/`; `tests/e2e/evidence.spec.ts`; `tests/unit/`; and relevant governance records.
-- Commit status: **PENDING / UNCOMMITTED**.
+- Commit status: **COMPLETE** — `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`).
 - Limitations: the plan covers only the controlled fixture and does not establish repair correctness, complete accessibility, WCAG certification, BFSG/EAA legal assurance, or replacement of disabled-user testing or qualified human review.
 
 ### Phase 1B Pre-Commit Hardening
@@ -61,4 +61,4 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Human input: supplied the independent artifact-review result and exact three hashes, then required stricter evidence mapping, portable realpath containment, no-code policy detection, returned-model verification, and no second API call.
 - Codex contribution: implemented the requested fail-closed checks, updated stale runtime comments, and added 17 API-free negative tests for 38 total.
 - Independent review versus Codex validation: the external review assessed the existing run artifacts; Codex separately reran repository tests, fresh journey evidence, offline schema/policy parsing, hash verification, and hygiene scans.
-- Result: the reviewed evidence and plan remain valid and byte-identical after hardening; the sanitized audit remains unchanged. Commit status remains **PENDING / UNCOMMITTED**.
+- Result: the reviewed evidence and plan remain valid and byte-identical after hardening; the sanitized audit remains unchanged. Phase 1B is committed at `207e0559d0d7664a24dcb297fb40b37700f36208`.

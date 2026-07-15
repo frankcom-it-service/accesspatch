@@ -5,8 +5,8 @@
 - Controlled local demo fixture: PHASE 1A COMPLETE in commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`
 - Product-to-confirmation keyboard journey: VERIFIED locally
 - Deliberately failing two-barrier baseline: VERIFIED locally
-- Normalized two-finding journey evidence: VERIFIED locally in ignored Phase 1B run output
-- Schema-valid, deterministic-policy-approved GPT-5.6 repair plan: VERIFIED locally in ignored Phase 1B run output; commit pending
+- Normalized two-finding journey evidence: PHASE 1B COMPLETE in `207e0559d0d7664a24dcb297fb40b37700f36208`; reviewed run output remains ignored
+- Schema-valid, deterministic-policy-approved GPT-5.6 repair plan: PHASE 1B COMPLETE; reviewed run output remains ignored and is not the curated Proof Bundle
 - AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
 - Hosted or judge-accessible demo: NOT YET AVAILABLE
 

@@ -24,26 +24,26 @@ Core requirements and the deadline were checked against the current FAQ, overvie
 
 ## Repository
 
-- [ ] Working source code is present.
-- [ ] Commit history is traceable.
+- [x] Working source code is present.
+- [x] Commit history is traceable.
 - [ ] License file is present.
 - [ ] Third-party and license notices are complete.
-- [ ] README is in English.
-- [ ] Installation instructions are documented.
+- [x] README is in English.
+- [x] Installation instructions are documented.
 - [ ] Supported platforms are documented.
 - [ ] Start instructions are documented.
-- [ ] Test instructions are documented.
-- [ ] Example data or fixtures are included and documented.
-- [ ] Security boundaries are documented.
-- [ ] Known limitations are documented.
-- [ ] Architecture overview is documented.
-- [ ] Codex collaboration is documented.
-- [ ] GPT-5.6 integration is documented.
-- [ ] Human decisions are documented.
+- [x] Test instructions are documented.
+- [x] Example data or fixtures are included and documented.
+- [x] Security boundaries are documented.
+- [x] Known limitations are documented.
+- [x] Architecture overview is documented.
+- [x] Codex collaboration is documented.
+- [x] GPT-5.6 integration is documented.
+- [x] Human decisions are documented.
 - [ ] Fresh installation is successfully tested.
-- [ ] Repository contains no secrets or credentials.
-- [ ] Repository contains no unnecessary personal data.
-- [ ] Repository contains no harmful or unauthorized third-party files.
+- [x] Repository contains no secrets or credentials.
+- [x] Repository contains no unnecessary personal data.
+- [x] Repository contains no harmful or unauthorized third-party files.
 - [ ] Dependencies, fixtures, fonts, icons, media, and generated assets have verified licenses and attribution.
 
 ## Developer Tool and Judge Testing
@@ -83,32 +83,32 @@ Core requirements and the deadline were checked against the current FAQ, overvie
 
 ## Codex Evidence
 
-- [ ] One central Codex primary session is maintained.
+- [x] One central Codex primary session is maintained.
 - [ ] Primary session or thread identifier is recorded internally when available.
 - [ ] `/feedback` is executed in time.
 - [ ] Returned `/feedback` Session ID is stored.
-- [ ] Majority of core development exists in the primary session.
-- [ ] Important prompts and results are documented chronologically.
-- [ ] Codex contributions are linked to commits and files.
+- [x] Majority of core development exists in the primary session.
+- [x] Important prompts and results are documented chronologically.
+- [x] Codex contributions are linked to commits and files.
 - [ ] README explains where Codex accelerated work.
 - [ ] README explains relevant human decisions.
 - [ ] Video concretely explains the Codex workflow.
 
 ## GPT-5.6 Evidence
 
-- [ ] GPT-5.6 has a meaningful runtime role.
+- [x] GPT-5.6 has a meaningful runtime role.
 - [x] Current official model identifier is rechecked before integration.
-- [ ] Technical integration point is documented.
-- [ ] At least one GPT-5.6 use case is reproducible.
-- [ ] Inputs and outputs are logged in a privacy-conscious manner.
-- [ ] GPT-5.6 output is technically validated.
-- [ ] Unsafe model suggestions are never applied directly without review.
-- [ ] README explains the GPT-5.6 task.
+- [x] Technical integration point is documented.
+- [x] At least one GPT-5.6 use case is reproducible.
+- [x] Inputs and outputs are logged in a privacy-conscious manner.
+- [x] GPT-5.6 output is technically validated.
+- [x] Unsafe model suggestions are never applied directly without review.
+- [x] README explains the GPT-5.6 task.
 - [ ] Video shows or explains the GPT-5.6 function.
-- [ ] Repository contains a traceable GPT-5.6 implementation.
+- [x] Repository contains a traceable GPT-5.6 implementation.
 - [ ] Missing-model-access fallback is documented honestly.
 - [x] Account API access and billing readiness are verified independently of Codex credits.
-- [ ] Structured output, schema validation, deterministic safety checks, and negative cases are evidenced.
+- [x] Structured output, schema validation, deterministic safety checks, and negative cases are evidenced.
 
 ## Final Verification
 

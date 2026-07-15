@@ -39,7 +39,7 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 
 ## Phase 1B Record
 
-- Working-tree status: **PENDING / UNCOMMITTED**.
+- Implementation commit: `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`).
 - Codex result: versioned evidence, plan, and audit schemas; real Playwright evidence for exactly two findings; deterministic policy validation; and API-free invalid-plan tests.
 - Runtime result: one approved `gpt-5.6-sol` call used low reasoning and `store: false`; response status `completed`; usage 1,649 input, 795 output, 0 reasoning, and 2,444 total tokens; policy result `accepted`.
 - Credential boundary: the external environment file was sourced only for that command. Its contents were not printed, inspected, or stored in the repository, and no automatic retry occurred.
@@ -49,4 +49,4 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 
 - Added exact controlled-evidence invariants, portable realpath containment, symlink and complete-file rejection, expanded no-source-code policy checks, and exact returned-model enforcement.
 - Added 17 API-free tests for 38 total; the reviewed evidence, plan, and audit hashes remain unchanged and validate offline.
-- No second OpenAI request occurred. Phase 1B remains **PENDING / UNCOMMITTED**.
+- No second OpenAI request occurred. Phase 1B is **COMPLETE**; the following governance commit records completion without embedding its own hash.

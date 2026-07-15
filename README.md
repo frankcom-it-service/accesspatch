@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A complete; Phase 1B pending commit.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the local React checkout fixture, passing build and smoke test, and intentionally failing two-barrier keyboard baseline. The current working tree adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner, but it does not generate or apply patches.
+**Phase 1A and Phase 1B complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. It does not generate or apply patches.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
@@ -14,6 +14,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 
 - Minimal initial README baseline: commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`, 2026-07-15). It contains a three-line README and is not an empty commit.
 - Phase 1A controlled checkout baseline: commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`, 2026-07-15).
+- Phase 1B bounded evidence repair reasoner: commit `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`, 2026-07-15).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
@@ -44,7 +45,7 @@ The verified local run used system Chromium at `/usr/bin/chromium`. On a clean m
 
 `pnpm test:baseline` is intentionally expected to exit non-zero until a later repair step. It reports exactly two controlled barriers: the checkout email input has no accessible name, and the primary continue button has no visible outline or box-shadow focus cue. Generated reports, traces, screenshots, and test artifacts remain ignored.
 
-## Phase 1B Working Tree
+## Phase 1B Components
 
 - `packages/shared-types/`: versioned Zod schemas for evidence, repair plans, and sanitized audit metadata.
 - `packages/evidence-collector/`: real Playwright journey evidence with allowlisted, bounded source excerpts.
@@ -61,4 +62,4 @@ Generated Phase 1B runs are written under ignored `.accesspatch/runs/`. The curr
 
 ## Next Phase
 
-`OPEN`: commit Phase 1B after review, then add controlled patches, repaired replay, reporting, and Proof Bundle generation only in later approved phases. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or repair plan as the completed AccessPatch product.
+`OPEN`: add controlled patches, repaired replay, reporting, and Proof Bundle generation only in later approved phases. Clean-machine and broader-platform verification remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or repair plan as the completed AccessPatch product.

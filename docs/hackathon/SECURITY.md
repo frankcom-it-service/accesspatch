@@ -31,5 +31,5 @@ Pre-commit hardening adds portable requested-path and realpath containment, syml
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.
 - Threat model: `TODO` before arbitrary-repository support or patch application.
-- Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before the pending commit. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified licenses for OpenAI SDK `6.47.0`, Zod `4.4.3`, and the existing graph; manual review of final redistribution and attribution obligations remains `TODO` before submission.
+- Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before commit `207e0559d0d7664a24dcb297fb40b37700f36208`. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified licenses for OpenAI SDK `6.47.0`, Zod `4.4.3`, and the existing graph; manual review of final redistribution and attribution obligations remains `TODO` before submission.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.
