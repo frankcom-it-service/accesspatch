@@ -83,3 +83,31 @@
 - Model hardening: a completed response must return exactly `gpt-5.6-sol`; mismatch removes stale plan output, records sanitized `unexpected_model`, and fails closed.
 - Tests: 17 API-free cases added, increasing the unit suite from 21 to 38; all 38 pass, including the real symlink-escape test on this environment.
 - Scope: no second API call, demo repair, patch, replay, report, or Proof Bundle was produced. Phase 1B is **COMPLETE** in `207e0559d0d7664a24dcb297fb40b37700f36208`.
+
+## 2026-07-15 — Phase 1C Isolated Repair Feasibility
+
+- Goal: map the approved Phase 1B plan to two exact templates in a disposable working copy, preserve the broken main fixture, and verify the repaired keyboard journey without another model call.
+- Architecture: added `packages/patch-engine/`, runtime-validated verification and patch-audit schemas, exact precondition templates, file and diff policy gates, generated `replay.spec.ts`, temporary external Vite/Playwright configuration, and isolated-copy cleanup.
+- Files changed: root script and lockfile; `packages/patch-engine/`; three Phase 1C unit-test files; README and relevant governance records. The main `App.tsx` and `styles.css` are unchanged.
+- Offline gates: frozen install, exact-version scan, high-severity audit, license inventory, 57 API-free tests, type-check, build, smoke, reviewed Phase 1B artifact validation, and the intentionally failing original baseline produced the expected results.
+- Single repair execution: `pnpm phase1:repair` was run once. The isolated build and replay passed; focus computed as `outlineStyle=solid`, `outlineWidth=3px`, `boxShadow=none`, axe returned zero violations, confirmation was reached, and cleanup removed the copy.
+- Corrected rerun: after independent pre-rerun review, one approved rerun exited `0`; reproduced patch SHA-256 `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6` and replay SHA-256 `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; wrote verification SHA-256 `c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887`, audit SHA-256 `7086f12aa238e325565566797f1d73cc895b97e7acf3adb54a247f57e7a6d6a8`, and manual-review SHA-256 `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`.
+- Status: **VALIDATED / UNCOMMITTED**. All five ignored feasibility artifacts exist and validate. No additional GPT-5.6 call, main-source repair, report, or complete Proof Bundle occurred.
+
+### Phase 1C Final Pre-Commit Isolation Correction
+
+- Independent review finding: the earlier audit strategy inaccurately said source tests were excluded, `.env.example` status was stale, ephemeral working copies lacked an explicit ignore, and the copy needed broader credential and symlink protection.
+- Correction: strategy is now `disposable-copy-with-excluded-git-dependencies-build-output-test-output-and-prior-runs`; source tests remain eligible. Manual traversal copies regular files only, excludes `.env*` except `.env.example`, `.npmrc`, `.netrc`, `.pem`, `.key`, `.p12`, `.pfx`, and `secrets/`, and rejects included symlinks with repository-relative errors.
+- Protection: `.accesspatch/work/` is ignored alongside `.accesspatch/runs/`; `.env.example` now reflects the validated Phase 1C capability and remaining unimplemented workflow.
+- Tests: 7 API-free copy-policy tests were added, increasing the suite from 57 to 64; all 64 passed without skips.
+- Single authorized regeneration: exit `0`, no retry; isolated replay passed, axe returned zero violations, focus was visible, confirmation was reached, cleanup succeeded, and main source remained unchanged.
+- Stable artifacts: patch `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6`; replay `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; verification `c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887`; manual review `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`.
+- Superseding audit: `0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b`; it supersedes the earlier reviewed audit hash only because timestamp and corrected strategy changed. No additional model call occurred.
+
+### Phase 1C Commit Record
+
+- Status: **COMPLETE** for the controlled two-finding feasibility scope.
+- Implementation commit: `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`).
+- Commit gate: frozen install, exact-version scan, high-severity audit, license inventory, 64 API-free tests, type-check, build, smoke, expected failing baseline, offline artifact/schema/policy/hash checks, staged diff, credential scans, and generated-artifact checks passed.
+- Evidence: the five final reviewed hashes remain ignored and uncommitted; the repaired replay recorded zero axe violations, visible focus (`solid`, `3px`, `none`), confirmation reached, main fixture unchanged, and cleanup `removed`.
+- Open work: retained application, fallback and rollback, reporting, broad repository support, clean-environment verification, the canonical Proof Bundle, judge workflow, publication, and submission.

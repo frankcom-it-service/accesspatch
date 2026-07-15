@@ -7,7 +7,8 @@
 - Deliberately failing two-barrier baseline: VERIFIED locally
 - Normalized two-finding journey evidence: PHASE 1B COMPLETE in `207e0559d0d7664a24dcb297fb40b37700f36208`; reviewed run output remains ignored
 - Schema-valid, deterministic-policy-approved GPT-5.6 repair plan: PHASE 1B COMPLETE; reviewed run output remains ignored and is not the curated Proof Bundle
-- AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
+- Isolated deterministic patch and repaired replay: PHASE 1C COMPLETE in `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; all five reviewed feasibility artifacts remain ignored and are not the curated Proof Bundle
+- Complete AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
 - Hosted or judge-accessible demo: NOT YET AVAILABLE
 
 ## Planned Proof Bundle Contract

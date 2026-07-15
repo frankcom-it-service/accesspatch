@@ -142,6 +142,59 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Repository hygiene: diff, whitespace, credential, sensitive-ID, ignored-artifact, staged-path, tracked-path, and prohibited-output checks passed.
 - Implementation commit: `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`).
 
+## Phase 1C Isolated Repair — 2026-07-15 (Pending)
+
+- Starting gate: `git status --short --branch` showed clean `main`; the three Phase 1B hashes matched their reviewed values; all schemas parsed; audit references matched; deterministic plan policy returned `ACCEPTED`.
+- `pnpm install --frozen-lockfile`: exit `0`, all 6 workspace projects already up to date with pnpm `11.13.0`. An earlier sandboxed cache attempt failed with SQLite access and was superseded by the approved run.
+- Exact-version scan: no floating `latest` specification found.
+- `pnpm audit --audit-level=high`: exit `0`; exact result `No known vulnerabilities found`.
+- `pnpm licenses list --json`: exit `0`; valid groups were Apache-2.0, BSD-3-Clause, ISC, MIT, and MPL-2.0.
+- `pnpm test:unit`: exit `0`; 57 passed, 0 failed, 0 skipped. Phase 1C added 19 API-free tests covering template preconditions, already-repaired states, reviewed hashes, plan targets, change gates, manifests, patch paths, replay content, and artifact schemas.
+- `pnpm typecheck`: exit `0` across the app, four packages, e2e tests, and unit tests after correcting Zod tuple inference.
+- `pnpm build`: exit `0`; Vite transformed 16 modules. `pnpm test:smoke`: approved local-server run exit `0`, 1 Chromium test passed.
+- `pnpm test:baseline`: expected exit `1`; emitted `KEYBOARD_JOURNEY_CONFIRMATION=REACHED`, reported only `CONTROLLED_BARRIER_EMAIL_NAME` and `CONTROLLED_BARRIER_FOCUS_VISIBLE`, and axe returned exactly one `label` violation for `#email`.
+- Single `pnpm phase1:repair` execution: exit `1`. Before finalization it built the isolated copy and passed 1 generated Chromium replay in 1.8 seconds. Recorded result: focus `solid`/`3px`/`none` with indicator detected; zero axe violations; confirmation reached.
+- Failure: `baseGitCommit` was 40 characters, but the initial schema incorrectly required a 64-character SHA-256. Cleanup removed the disposable copy and the main source diff remained empty. The schema and atomic artifact ordering were corrected; the command was not rerun.
+- Real partial ignored artifacts: `patch.diff` SHA-256 `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6`; `replay.spec.ts` SHA-256 `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; `manual-review.md` SHA-256 `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`. `verification.json` and `patch-audit.json` are **NOT YET PRODUCED**.
+- Corrected offline validation: exit `0`; 57 tests and type-check passed; the reviewed Phase 1B schemas, audit references, hashes, and policy passed; the partial patch passed deterministic patch policy; generated replay bytes matched the real artifact; manual-review claim boundaries were present.
+- Final hygiene: `git diff --check` exit `0`; all-current-file trailing-whitespace, high-risk credential, and non-empty OpenAI/sensitive-ID scans each exited `1` with no matches across 70 files; all five Phase 1C output paths are ignored; no `.accesspatch` file is staged or tracked; no disposable copy remains; main fixture diff is empty.
+- Scope: Phase 1C remains **PENDING / UNCOMMITTED**. No credential access, API call, main-fixture repair, report, complete Proof Bundle, remote, deployment, publication, or Phase 2 work occurred.
+
+### Phase 1C Approved Corrected Rerun
+
+- Preflight: expected Phase 1C working tree only; main source diff empty; all three reviewed Phase 1B hashes exact; evidence, plan, and audit schemas passed; audit references passed; repair policy accepted; 57 unit tests passed; type-check passed.
+- Obsolete partial output: only `.accesspatch/runs/phase1c/` was removed; absence confirmed; Phase 1B hashes remained unchanged.
+- Single approved rerun: `pnpm phase1:repair` exit `0`; no retry. Isolated replay passed 1 test in 2.6 seconds; focus was `solid`/`3px`/`none` with visible indicator; axe violations `0`; confirmation reached; original demo unchanged; cleanup removed the copy.
+- Five artifact hashes: patch `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6`; replay `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; verification `c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887`; audit `7086f12aa238e325565566797f1d73cc895b97e7acf3adb54a247f57e7a6d6a8`; manual review `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`.
+- Offline result: verification and audit schemas passed; patch policy accepted exactly `App.tsx` and `styles.css`; replay contained no soft assertions and all required gates; audit sanitization passed; all artifacts remain ignored, unstaged, and untracked.
+- Preserved main baseline: expected exit `1`, confirmation reached, only both controlled barriers failed, and axe returned one `label` violation targeting `#email`. Smoke exit `0`, 1 passed; build exit `0`, 16 modules transformed.
+- Status: Phase 1C is **VALIDATED / UNCOMMITTED**. No API request, credential access, commit, push, remote, deployment, publication, complete Proof Bundle, or Phase 2 work occurred.
+
+### Phase 1C Final Pre-Commit Correction and Regeneration
+
+- Reviewed pre-correction hashes were exact: patch `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6`; replay `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; verification `c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887`; audit `7086f12aa238e325565566797f1d73cc895b97e7acf3adb54a247f57e7a6d6a8`; manual review `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`.
+- Isolation correction: audit strategy now says build output and test output are excluded, while source tests remain eligible. Manual copy excludes common credential paths and rejects included symlinks without following them. `.accesspatch/work/` is explicitly ignored.
+- Unit coverage: 7 API-free cases added for 64 total; `.env.example`, ordinary source, and tests remain eligible; `.env*`, `.npmrc`, `.netrc`, key files, `secrets/`, generated outputs, and symlinks are handled as required. Final unit result before regeneration: 64 passed, 0 failed, 0 skipped.
+- Offline gate: frozen install, exact-version scan, type-check, build, smoke, Phase 1B schemas/hashes/audit references/policy, main-source preservation, diff check, whitespace scan, and credential/sensitive-ID scans all passed.
+- Single authorized regeneration: `pnpm phase1:repair` exit `0`; no retry. Isolated replay passed in 1.6 seconds; focus `solid`/`3px`/`none` was visible; axe violations `0`; confirmation reached; cleanup removed the copy; main source remained unchanged.
+- Regenerated hashes: patch `3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6`; replay `8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e`; verification `c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887`; audit `0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b`; manual review `0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1`.
+- Post-run: all JSON schemas passed; patch policy accepted exactly `App.tsx` and `styles.css`; four stable hashes were identical; the new audit contained the corrected strategy and no prohibited data. Baseline expected exit `1` with only both controlled barriers and one `label` target `#email`; smoke exit `0`; build exit `0`.
+- Status at that gate: Phase 1C remained **VALIDATED / UNCOMMITTED**. Retained application, report viewer, rollback, broad repositories, clean-machine verification, complete Proof Bundle, publication, and submission remained open. No additional GPT-5.6 call occurred.
+
+### Phase 1C Commit Gate
+
+- `pnpm install --frozen-lockfile`: exit `0`; all 6 workspace projects were already up to date using pnpm `11.13.0`.
+- Exact-version scan: no floating `latest` dependency specification.
+- `pnpm audit --audit-level=high`: exit `0`; exact result `No known vulnerabilities found`.
+- `pnpm licenses list --json`: exit `0`; valid license groups were Apache-2.0, BSD-3-Clause, ISC, MIT, and MPL-2.0.
+- `pnpm test:unit`: exit `0`; 64 passed, 0 failed, 0 skipped.
+- `pnpm typecheck`, `pnpm build`, and `pnpm test:smoke`: exit `0`; smoke passed 1 Chromium test.
+- `pnpm test:baseline`: expected exit `1`; confirmation reached, only `CONTROLLED_BARRIER_EMAIL_NAME` and `CONTROLLED_BARRIER_FOCUS_VISIBLE` failed, and axe returned one `label` violation targeting only `#email`.
+- Offline artifact gate: current schemas parsed, both deterministic policies accepted, Phase 1B and Phase 1C hashes were exact, the patch changed only `App.tsx` and `styles.css`, replay contained no soft assertion, and audit sanitization passed.
+- Repaired result: axe violations `0`; focus `solid`/`3px`/`none` with visible indicator `true`; confirmation reached; original fixture unchanged; cleanup `removed`.
+- Repository hygiene: diff, whitespace, credential, sensitive-ID, ignored/staged/tracked generated-artifact, and disposable-copy checks passed. No repair rerun, model call, or credential access occurred at the commit gate.
+- Implementation commit: `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`). Phase 1C is **COMPLETE** for the controlled two-finding feasibility scope; the canonical Proof Bundle and broader product workflow remain open.
+
 ## Future Evidence Standard
 
 Each test record must include date, commit, environment, exact command, exit status, relevant output, artifact location, and known limitations. Accessibility evidence must distinguish automated signals from disabled-user testing and qualified human review. It must not be presented as complete accessibility, WCAG certification, or BFSG/EAA legal assurance.

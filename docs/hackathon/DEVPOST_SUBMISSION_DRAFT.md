@@ -18,13 +18,14 @@ Accessibility defects often appear across an end-to-end journey rather than in a
 
 AccessPatch is planned to inspect a target journey, assemble local evidence, ask the GPT-5.6 Sol model (`gpt-5.6-sol`, current alias `gpt-5.6`) for a structured repair proposal, validate that proposal against a schema and deterministic safety rules, and generate before/after proof for human review.
 
-**PARTIAL PRODUCT / PHASE 1B COMPLETE.** The controlled fixture produces normalized evidence, and one real bounded GPT-5.6 call produced a schema-valid, policy-accepted repair plan in commit `207e0559d0d7664a24dcb297fb40b37700f36208`. Patch application, repaired replay, reporting, Proof Bundle generation, arbitrary-repository support, and the full judge workflow remain **NOT YET IMPLEMENTED**.
+**PARTIAL PRODUCT / PHASE 1C CONTROLLED FEASIBILITY COMPLETE.** The controlled fixture produces normalized evidence, and one real bounded GPT-5.6 call produced a schema-valid, policy-accepted repair plan in commit `207e0559d0d7664a24dcb297fb40b37700f36208`. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` demonstrates isolated deterministic repair and a successful keyboard replay for exactly the two controlled findings. Reporting, the canonical Proof Bundle, retained application to a user-selected repository, broad repository support, a clean-machine judge workflow, and submission assets remain **NOT YET IMPLEMENTED**.
 
 ## Built With
 
 - `VERIFIED`: Codex CLI is the principal engineering tool for the project.
 - `IMPLEMENTED FOR CONTROLLED FIXTURE`: React, TypeScript, Vite, Playwright, Chromium, and axe in a pnpm workspace.
 - `PHASE 1B COMPLETE`: bounded GPT-5.6 Evidence-Based Repair Reasoner with Zod Structured Outputs and deterministic checks.
+- `PHASE 1C CONTROLLED SCOPE COMPLETE`: isolated deterministic two-template repair, patch validation, and repaired replay.
 - `OPTIONAL`: Devpost Hackathon plugin for submission support, not engineering-session replacement.
 
 ## Evidence and Links

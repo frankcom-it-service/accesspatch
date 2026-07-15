@@ -2,6 +2,8 @@
 
 Core requirements and the deadline were checked against the current FAQ, overview, and announcement on 2026-07-15. The official Rules-page body is inconsistent and must be checked again with all official sources immediately before submission. Keep every unfinished item unchecked.
 
+The controlled Phase 1C feasibility implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. This does not complete any unchecked canonical Proof Bundle, judge-path, clean-install, video, publication, `/feedback`, or submission gate.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.

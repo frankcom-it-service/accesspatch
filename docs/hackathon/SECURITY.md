@@ -2,7 +2,7 @@
 
 ## Current Posture
 
-Phase 1B adds local evidence collection and one outbound Responses API integration for bounded repair planning. The fixture still has no backend, authentication, payment processing, persistence, or remote runtime assets. No model output can modify the repository in this phase.
+Phase 1B adds local evidence collection and one outbound Responses API integration for bounded repair planning. Phase 1C maps only approved safe-fix classes to deterministic templates inside a disposable copy; model output is not executed as source code and the controlled main fixture is not modified. The fixture still has no backend, authentication, payment processing, persistence, or remote runtime assets.
 
 ## Planned Boundaries
 
@@ -26,6 +26,12 @@ Phase 1B sourced `$HOME/.config/accesspatch/openai.env` only in the approved one
 The reasoner writes no raw API response. Its ignored audit record contains only timestamp, model and prompt versions, evidence and plan hashes, `store: false`, response status, token usage, policy result, and a sanitized failure category. Missing credentials fail closed; rejected or refused output produces no approved plan or repository change.
 
 Pre-commit hardening adds portable requested-path and realpath containment, symlink-escape rejection, complete-file excerpt rejection, stricter controlled-evidence mappings, representative source-code-content rejection, and exact returned-model verification. An unexpected model records only sanitized `unexpected_model` failure metadata and cannot leave an approved plan.
+
+Phase 1C keeps mutation inside a disposable ignored copy, excludes Git metadata, credentials, dependencies, builds, Playwright output, and prior runs, and accepts only exact transformations of the two allowlisted files. The approved corrected rerun removed temporary runtime configuration and the disposable copy, preserved the main fixture, and produced a validated sanitized audit containing no absolute user path, environment value, prompt, response, credential, sensitive identifier, or personal data.
+
+Final Phase 1C isolation hardening explicitly ignores `.accesspatch/work/`, keeps ordinary source and test files eligible, excludes generated build/test output, `.env*` except `.env.example`, `.npmrc`, `.netrc`, private-key or certificate extensions `.pem`, `.key`, `.p12`, `.pfx`, and directories named `secrets`. The copy traverses regular files only and rejects an included symlink without following it; errors contain only repository-relative paths and never file contents. The corrected audit strategy supersedes the earlier wording that inaccurately implied source tests were excluded.
+
+The controlled Phase 1C implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. Its reviewed audit records no credential, environment value, raw prompt, raw response, absolute user path, sensitive identifier, or personal data. No additional model request occurred during Phase 1C.
 
 ## Reporting and Open Work
 

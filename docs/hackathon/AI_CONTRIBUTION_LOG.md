@@ -62,3 +62,17 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Codex contribution: implemented the requested fail-closed checks, updated stale runtime comments, and added 17 API-free negative tests for 38 total.
 - Independent review versus Codex validation: the external review assessed the existing run artifacts; Codex separately reran repository tests, fresh journey evidence, offline schema/policy parsing, hash verification, and hygiene scans.
 - Result: the reviewed evidence and plan remain valid and byte-identical after hardening; the sanitized audit remains unchanged. Phase 1B is committed at `207e0559d0d7664a24dcb297fb40b37700f36208`.
+
+## Phase 1C Isolated Repair Work
+
+- Human assignment: apply only the approved two-finding plan through deterministic templates in an isolated copy, generate a real diff and replay, preserve the main fixture, prohibit further API use, and keep Phase 1C uncommitted.
+- Codex contribution: implemented the patch-engine package, fail-closed preconditions, reviewed-hash and plan gates, two-file patch policy, disposable copy and cleanup, generated keyboard replay, sanitized artifact schemas, and 19 additional API-free tests for 57 total.
+- Human boundary: the reviewed plan selected the only permitted strategies; Codex did not reinterpret model prose as source code and did not access or source credentials.
+- Result: the first command produced a real passing replay but failed artifact finalization on a corrected Git-hash schema defect. After independent review and explicit approval, one controlled rerun exited `0`, reproduced the patch and replay, wrote all five validated artifacts, and preserved the original fixture.
+- Commit status: **COMPLETE** — `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`). Reporting, broad repository support, retained patch application, and the complete Proof Bundle remain pending.
+
+### Phase 1C Final Isolation Correction
+
+- Human review: independently approved the repairs and artifacts, then identified inaccurate audit wording, stale environment status, missing work-copy ignore protection, and insufficient credential/symlink exclusion.
+- Codex contribution: corrected the stable audit strategy, replaced filtered recursive copy with regular-file-only traversal, added credential exclusions and fail-closed symlink handling, ignored `.accesspatch/work/`, updated current status, and added 7 API-free tests for 64 total.
+- Result: one authorized regeneration exited `0` without retry; four expected artifacts remained byte-identical, the sanitized audit changed only for timestamp and corrected strategy, and the reviewed implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`.

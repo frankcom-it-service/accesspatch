@@ -50,3 +50,11 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Added exact controlled-evidence invariants, portable realpath containment, symlink and complete-file rejection, expanded no-source-code policy checks, and exact returned-model enforcement.
 - Added 17 API-free tests for 38 total; the reviewed evidence, plan, and audit hashes remain unchanged and validate offline.
 - No second OpenAI request occurred. Phase 1B is **COMPLETE**; the following governance commit records completion without embedding its own hash.
+
+## Phase 1C Record
+
+- This central session implemented deterministic isolated repair and replay infrastructure without reading the external credential file or making an API call.
+- The one permitted repair command reached a passing isolated Chromium replay, zero axe violations, visible computed focus, confirmation, and successful disposable-copy cleanup.
+- The first artifact finalization failed on an incorrect Git-hash-length schema. After correction, independent review, and explicit approval, exactly one controlled rerun completed all five artifacts without API or credential access.
+- Final pre-commit isolation correction: the audit now accurately excludes build and test output rather than source tests; common credential paths are excluded; included symlinks fail closed; `.accesspatch/work/` is ignored; one authorized regeneration completed without retry or model access.
+- Phase 1C is **COMPLETE** for the controlled feasibility scope in implementation commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. No additional GPT-5.6 call occurred.

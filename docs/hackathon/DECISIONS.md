@@ -68,6 +68,14 @@
 - Preservation: write only ignored evidence, plan, and sanitized audit artifacts. No patch is generated or applied, and the original demo remains preserved for a later controlled step.
 - Status: implemented in `207e0559d0d7664a24dcb297fb40b37700f36208`; current scope remains exactly two controlled findings and two safe-fix classes.
 
+## D-011 — Isolate Deterministic Phase 1C Repairs
+
+- Date: 2026-07-15
+- Decision: never apply Phase 1C templates to the controlled main fixture. Validate reviewed hashes and policy, create an ignored disposable copy, apply exact templates, accept only the two allowlisted source changes, run the repaired replay, copy sanitized evidence out, and remove the copy.
+- Rationale: preserve the reproducibly broken baseline while proving the repaired contrast and preventing model prose from acting as executable source.
+- Status: implemented in `79ed0e60b2c7145f4113ecac3797a119ccb696ee` after one explicitly approved corrected rerun; all five ignored feasibility artifacts exist, while the broader workflow and curated proof remain open.
+- Final isolation hardening: retain source tests in the disposable copy, exclude generated build/test output and common credential paths, reject every included symlink without following it, ignore `.accesspatch/work/`, and expose only repository-relative rejection paths. The corrected audit wording supersedes the earlier inaccurate strategy value.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and proof-bundle formats.

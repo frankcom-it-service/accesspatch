@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A and Phase 1B complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. It does not generate or apply patches.
+**Phase 1A, Phase 1B, and the controlled Phase 1C feasibility scope are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
@@ -15,6 +15,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Minimal initial README baseline: commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f` (`chore: document initial hackathon repository`, 2026-07-15). It contains a three-line README and is not an empty commit.
 - Phase 1A controlled checkout baseline: commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` (`feat: add controlled checkout baseline`, 2026-07-15).
 - Phase 1B bounded evidence repair reasoner: commit `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`, 2026-07-15).
+- Phase 1C isolated deterministic repair replay: commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`, 2026-07-15).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
@@ -58,8 +59,19 @@ pnpm phase1:evidence
 pnpm phase1:reason
 ```
 
-Generated Phase 1B runs are written under ignored `.accesspatch/runs/`. The current plan proposes only explicit label association and visible-focus restoration for a later controlled patch step. It is not source code, a patch, a compliance certification, or proof of complete accessibility.
+Generated Phase 1B runs are written under ignored `.accesspatch/runs/`. The plan selected only explicit label association and visible-focus restoration; Phase 1C mapped those bounded strategies to deterministic templates rather than interpreting model output as source code. The plan is not a patch, a compliance certification, or proof of complete accessibility.
+
+## Phase 1C Isolated Feasibility Proof
+
+- `packages/patch-engine/`: validates the reviewed Phase 1B hashes and plan, copies the repository without Git, credentials, dependencies, builds, test output, or prior runs, and maps the two approved fix classes to exact deterministic templates.
+- `pnpm phase1:repair`: applies those templates only in a disposable working copy, produces a two-file unified diff, builds the copy, and runs a generated keyboard replay before cleanup.
+- Generated Phase 1C feasibility artifacts remain ignored under `.accesspatch/runs/phase1c/`; they are not the complete Proof Bundle.
+- Ephemeral copies under `.accesspatch/work/` are ignored. The copy step retains source tests, excludes generated build/test output and common credential files, and rejects included symlinks without following them.
+
+An approved controlled rerun completed successfully after correcting the initial Git-hash schema defect. It reproduced the reviewed patch and replay hashes, reached confirmation with zero axe violations and a computed `3px solid` focus outline, wrote all five Phase 1C artifacts, and removed the disposable copy. The controlled main fixture remains unchanged and intentionally failing. These ignored feasibility artifacts are not the complete Proof Bundle.
+
+Phase 1C is committed in `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. Its scope remains one controlled React fixture, exactly two finding IDs, and exactly two deterministic fix classes.
 
 ## Next Phase
 
-`OPEN`: add controlled patches, repaired replay, reporting, and Proof Bundle generation only in later approved phases. Clean-machine and broader-platform verification remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or repair plan as the completed AccessPatch product.
+`OPEN`: build the canonical Proof Bundle and report/judge workflow; design retained user-selected patch handling, fallback, and rollback; verify a clean environment; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture or feasibility repair as the completed AccessPatch product.

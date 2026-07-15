@@ -20,13 +20,14 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |
 | AccessPatch GPT-5.6 product integration | PARTIAL PRODUCT; PHASE 1B COMPLETE | `207e0559d0d7664a24dcb297fb40b37700f36208`; real bounded evidence-to-plan run; `TEST_EVIDENCE.md` |
 | Structured Phase 1 evidence and approved repair plan | PHASE 1B COMPLETE; INDEPENDENT ARTIFACT REVIEW PASSED; GENERATED ARTIFACTS IGNORED | Three reviewed hashes plus hardened offline validation; `TEST_EVIDENCE.md` |
+| Isolated deterministic repair and replay | PHASE 1C COMPLETE; GENERATED ARTIFACTS IGNORED | `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; five runtime-validated feasibility artifacts and `TEST_EVIDENCE.md`; not the curated Proof Bundle |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
 
 | Requirement | Level | Current status | Evidence file or artifact | Responsible phase | Latest target date | Open risk or blocker |
 | --- | --- | --- | --- | --- | --- | --- |
-| Working project using Codex and GPT-5.6 | Mandatory | PARTIAL PRODUCT: BOUNDED PLANNING RUN COMMITTED | `207e0559d0d7664a24dcb297fb40b37700f36208`; `BUILD_LOG.md`; `TEST_EVIDENCE.md` | Build and integration | 2026-07-20 02:00 CEST | Patch, replay, report, full workflow, and judge-visible reproducibility remain open |
+| Working project using Codex and GPT-5.6 | Mandatory | PARTIAL PRODUCT: CONTROLLED PLANNING AND ISOLATED REPAIR COMMITTED | `207e0559d0d7664a24dcb297fb40b37700f36208`; `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; ignored Phase 1C artifacts; `TEST_EVIDENCE.md` | Build and integration | 2026-07-20 02:00 CEST | Report, retained application, full workflow, and judge-visible reproducibility remain open |
 | One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
 | Project description | Mandatory | DRAFT | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final claims need proof |
 | Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |
