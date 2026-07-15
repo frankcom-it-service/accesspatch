@@ -9,6 +9,7 @@
 - No public repository, demo, or video URL exists. Core requirements were checked on 2026-07-15, but the official Rules-page body appears stale and the final applicable rules remain an open risk.
 - Support beyond the controlled React fixture and Chromium-only test scope, including clean-install and cross-platform verification, remains `OPEN`; only two finding types and two safe-fix classes are currently allowed.
 - The generated static report passed one automated Chromium axe smoke, but it has not received complete accessibility review. The bundle passed independent source-and-artifact review but remains ignored and untracked; no curated judge sample exists.
+- The committed Phase 2B WCAG 2.2 mapping covers only three criteria for the two controlled findings. It does not assess other criteria, the whole page, the complete process, accessibility-supported usage, or WCAG conformance. Criterion expansion requires separate official-source review.
 
 ## Permanent Claim Boundaries
 

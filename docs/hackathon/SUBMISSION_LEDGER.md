@@ -22,6 +22,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Structured Phase 1 evidence and approved repair plan | PHASE 1B COMPLETE; INDEPENDENT ARTIFACT REVIEW PASSED; GENERATED ARTIFACTS IGNORED | Three reviewed hashes plus hardened offline validation; `TEST_EVIDENCE.md` |
 | Isolated deterministic repair and replay | PHASE 1C COMPLETE; GENERATED ARTIFACTS IGNORED | `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; five runtime-validated feasibility artifacts and `TEST_EVIDENCE.md`; not the curated Proof Bundle |
 | Canonical Proof Bundle generator and real bundle | PHASE 2A COMPLETE; INDEPENDENT FULL-BUNDLE REVIEW PASSED; OUTPUT IGNORED | `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; ignored `.accesspatch/runs/phase2/proof-bundle/`; manifest SHA-256 `19613c7913a91ababb4fbe6cfe02cecc650006f9c80ccb46c18f10d6d9549906`; `TEST_EVIDENCE.md` |
+| Controlled WCAG 2.2 mapping | PHASE 2B COMPLETE; INDEPENDENT FULL REVIEW PASSED; OUTPUT IGNORED | `e3811c8bf968dc78701f8d264dc1377543059d64`; `WCAG_MAPPING_SOURCES.md`; ignored regenerated bundle; `TEST_EVIDENCE.md` |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements

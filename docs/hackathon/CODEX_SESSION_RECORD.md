@@ -65,3 +65,10 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Exactly one `pnpm phase2:bundle` execution generated the ignored 11-entry bundle. `summary.json` is the manifest and hashes every generated file except itself.
 - The static report passed structural validation, keyboard skip-link focus, and a Chromium axe smoke with zero violations; this is not a complete accessibility audit.
 - Status: **COMPLETE** in implementation commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`. Independent full-bundle review passed; a curated tracked judge sample, clean-machine verification, and the final judge workflow remain open.
+
+## Phase 2B Record
+
+- This continuing central session added the binding three-row WCAG 2.2 mapping and official W3C provenance without accessing credentials, calling a model, or rerunning Phase 1 reasoning or repair.
+- One authorized `pnpm phase2:bundle` regeneration exited `0` without retry after all offline gates passed. The ignored bundle and report validate; 98 API-free tests and a zero-violation report axe smoke passed.
+- Independent review covered the complete source, mapping, report, manifest, security, and 15-artifact archive.
+- Status: **COMPLETE** in implementation commit `e3811c8bf968dc78701f8d264dc1377543059d64`. Mapping scope remains the two controlled findings and is not a conformance determination or certification.

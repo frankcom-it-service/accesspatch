@@ -122,3 +122,13 @@
 - Manifest: `summary.json` SHA-256 `19613c7913a91ababb4fbe6cfe02cecc650006f9c80ccb46c18f10d6d9549906`; it hashes every other generated file and omits itself to prevent circular hashing.
 - Independent review: the complete generator, schemas, HTML, inventory, security controls, and all 15 generated files passed human review. The five `test-results` files correctly package prior reviewed evidence rather than claiming new Phase 2A executions; `wcag-map.csv` remains honestly `UNMAPPED`.
 - Commit: **COMPLETE** in `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` (`feat: add canonical proof bundle generator`). The generated bundle remains ignored and is not a tracked judge-visible sample. No additional GPT-5.6 call or repair run occurred.
+
+## 2026-07-15 — Phase 2B Source-Backed WCAG Mapping
+
+- Goal: replace the Phase 2A `UNMAPPED` placeholder with exactly three officially sourced WCAG 2.2 mappings for the two controlled findings.
+- Decision: email maps to `1.3.1` Info and Relationships (A) and `4.1.2` Name, Role, Value (A); focus maps to `2.4.7` Focus Visible (AA). The email finding is explicitly not mapped to `3.3.2` because visible identifying text already exists and the controlled failures are association and accessible name.
+- Implementation: versioned finding and summary schemas, exact CSV contract, official-URL allowlist, findings/CSV/report agreement, external-link identification, positive-conformance-claim rejection, and report mapping validation.
+- Tests: 12 new API-free tests; 98 total passed. Frozen install, exact versions, high-severity audit, license inventory, type-check, build, smoke, Phase 1 source/policy validation, diff, whitespace, and secret scans passed before regeneration.
+- Run: the archived Phase 2A hashes were rechecked, only the old ignored bundle was removed, and exactly one authorized `pnpm phase2:bundle` execution exited `0` without retry. Bundle validation passed; the Chromium report smoke passed with zero axe violations.
+- Independent review: complete source, schema, official-source, CSV, HTML, inventory, manifest, security, and all-15-artifact review passed.
+- Commit: **COMPLETE** in `e3811c8bf968dc78701f8d264dc1377543059d64` (`feat: add source-backed WCAG mappings`). The regenerated bundle remains ignored and is not the tracked judge sample. No API call, credential access, reasoner run, repair run, or fixture change occurred.

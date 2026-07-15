@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A, Phase 1B, the controlled Phase 1C feasibility scope, and Phase 2A are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator.
+**Phase 1A, Phase 1B, the controlled Phase 1C feasibility scope, Phase 2A, and Phase 2B are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
@@ -17,6 +17,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Phase 1B bounded evidence repair reasoner: commit `207e0559d0d7664a24dcb297fb40b37700f36208` (`feat: add bounded evidence repair reasoner`, 2026-07-15).
 - Phase 1C isolated deterministic repair replay: commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` (`feat: add isolated deterministic repair replay`, 2026-07-15).
 - Phase 2A canonical Proof Bundle generator: commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` (`feat: add canonical proof bundle generator`, 2026-07-15).
+- Phase 2B source-backed WCAG mappings: commit `e3811c8bf968dc78701f8d264dc1377543059d64` (`feat: add source-backed WCAG mappings`, 2026-07-15).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
@@ -26,7 +27,7 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 
 ## Canonical Proof Bundle Contract
 
-Phase 2A generates the fixed 11-entry contract from the reviewed Phase 1 artifacts under ignored `.accesspatch/runs/phase2/proof-bundle/`. `summary.json` is the non-circular manifest: it hashes every generated file except itself. Every artifact comes from real reviewed evidence; no result is fabricated. The implementation is committed and the real 15-file bundle passed independent full-file review. The generated bundle remains ignored and untracked; any curated judge-visible sample still requires a separately approved tracked location or allowlist. The canonical inventory is in `docs/hackathon/DEMO_EVIDENCE.md`.
+Phase 2A generates the fixed 11-entry contract from the reviewed Phase 1 artifacts under ignored `.accesspatch/runs/phase2/proof-bundle/`. `summary.json` is the non-circular manifest: it hashes every generated file except itself. Every artifact comes from real reviewed evidence; no result is fabricated. Phase 2B adds exactly three source-backed WCAG 2.2 mappings for the two controlled findings. The generated bundle remains ignored and untracked; any curated judge-visible sample still requires a separately approved tracked location or allowlist. The canonical inventory is in `docs/hackathon/DEMO_EVIDENCE.md`, and mapping provenance is in `docs/hackathon/WCAG_MAPPING_SOURCES.md`.
 
 ## Phase 1A Workspace
 
@@ -80,7 +81,11 @@ Phase 1C is committed in `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. Its scope r
 - `pnpm phase2:validate`: independently validates inventory, schemas, manifest hashes, copied bytes, CSV ordering, report structure, safety boundaries, and deterministic policies.
 - `pnpm test:report`: opens the static local report in Chromium and runs structural, keyboard-focus, and axe smoke checks.
 
-The independently reviewed generated static report passed its automated axe smoke with zero violations. This is not a complete accessibility audit or certification; screen-reader, label-adjacency, and visual-focus review remain required.
+The independently reviewed Phase 2B regenerated static report passed its structural and automated axe smoke with zero violations. The independent review covered the source, mapping files, report, manifest, and all 15 ignored artifacts. This is not a complete accessibility audit or certification; screen-reader, label-adjacency, and visual-focus review remain required.
+
+## Phase 2B Controlled WCAG Mapping
+
+The committed Phase 2B mapping is limited to WCAG 2.2 criteria `1.3.1` and `4.1.2` for the email accessible-name finding, and `2.4.7` for the focus-visible finding. The visible email text means the controlled defect is not mapped to `3.3.2`. The generator validates exact criterion labels, levels, official W3C URLs, cross-file agreement, manual-review requirements, and non-certification boundaries. WCAG criteria are normative; the cited Understanding documents are informative. This mapping is evidence-oriented, not a conformance determination or certification.
 
 ## Next Phase
 

@@ -86,3 +86,13 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Human review: an independent full review passed the source, generator, schemas, HTML, exact inventory, security controls, and all 15 generated artifacts. Human approval authorized the implementation commit while retaining the boundary between the ignored real bundle and a future tracked judge sample.
 - Human boundary: no new checklist item is completed solely by the ignored bundle. No tracked judge sample, model call, credential access, repair rerun, source-fixture change, or Phase 2B work occurred.
 - Commit status: **COMPLETE** in implementation commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`.
+
+## Phase 2B Controlled WCAG Mapping Work
+
+- Human assignment: bind the two controlled findings to exactly three officially sourced WCAG 2.2 criteria, explicitly exclude `3.3.2`, regenerate the ignored bundle once, and preserve all claim boundaries.
+- Codex contribution: verified the W3C criterion titles, levels, and explanatory 3.3.2 distinction; implemented one deterministic mapping allowlist across schemas, findings, CSV, summary, report, and validators; added source provenance and 12 API-free tests.
+- Human decision: the binding mappings are email → `1.3.1` and `4.1.2`, focus → `2.4.7`; no other criterion is permitted without a separate source-backed review.
+- Result: 98 API-free tests passed; one authorized bundle regeneration exited `0` without retry; exact mapping, manifest, privacy, and report checks passed with zero report axe violations.
+- Independent review: complete source, schema, official-source, CSV, report, inventory, manifest, security, and all-15-artifact review passed.
+- Limitations: evidence-oriented mapping only; no conformance determination, certification, complete WCAG coverage, tracked judge sample, clean-machine verification, or broader repository support.
+- Commit status: **COMPLETE** in implementation commit `e3811c8bf968dc78701f8d264dc1377543059d64`. No model call, credential access, reasoner run, repair run, or fixture change occurred.

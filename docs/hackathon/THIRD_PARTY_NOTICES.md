@@ -10,6 +10,8 @@ The Phase 1A `pnpm licenses list --json` inventory identified all installed lice
 
 Codex CLI `0.144.4` with model `gpt-5.6-sol` and reasoning `high` is used as the principal engineering tool. A separate Phase 1B runtime call used `gpt-5.6-sol` with low reasoning for bounded repair planning; the broader workflow remains incomplete. The optional Devpost Hackathon plugin may be used for submission support only.
 
+Committed Phase 2B implementation `e3811c8bf968dc78701f8d264dc1377543059d64` references the official W3C WCAG 2.2 Recommendation and W3C Understanding documents by URL. No W3C code, asset, stylesheet, font, image, or document body is vendored. The exact source record and normative/informative distinction are in `WCAG_MAPPING_SOURCES.md`.
+
 ## Required Before Submission
 
 `TODO`: inventory every dependency and asset with name, version, source, license, modifications, and required attribution. Verify that demo inputs and media can be redistributed. Generated lockfiles and license reports do not replace manual review of obligations.

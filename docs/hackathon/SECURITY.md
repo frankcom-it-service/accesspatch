@@ -37,6 +37,8 @@ Phase 2A reads only the eight reviewed Phase 1 artifacts as regular files, reche
 
 The real Phase 2A bundle passed these controls and independent full-bundle security review; it contains no remote report resources and remains untracked. Its static report's zero-violation axe smoke is a narrow automated result, not proof of complete accessibility. The generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`.
 
+Phase 2B allows only six exact W3C hyperlinks in `report.html`: one normative and one informative source for each of the three approved mappings. The report loads no remote resource automatically, identifies every external link visually and programmatically, rejects altered sources and unsupported criteria, and fails on positive certification or full-conformance language. The implementation is committed at `e3811c8bf968dc78701f8d264dc1377543059d64`; the generated bundle remains ignored, untracked, and independently reviewed.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.

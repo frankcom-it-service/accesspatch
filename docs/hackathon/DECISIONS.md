@@ -84,6 +84,15 @@
 - Safety: generate in a temporary sibling directory, reject unsafe paths, symlinks, unexpected entries, secrets, absolute local paths, raw prompt/response fields, sensitive IDs, and unsupported positive compliance claims, then replace the ignored final directory only after validation.
 - Status: implemented in Phase 2A commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; the real ignored bundle passed independent full-file review but is not a tracked judge sample.
 
+## D-013 — Bind the Controlled WCAG 2.2 Mapping
+
+- Date: 2026-07-15
+- Decision: map `CONTROLLED_BARRIER_EMAIL_NAME` only to `1.3.1` Info and Relationships (A) and `4.1.2` Name, Role, Value (A); map `CONTROLLED_BARRIER_FOCUS_VISIBLE` only to `2.4.7` Focus Visible (AA).
+- Exclusion: do not map the email defect to `3.3.2 Labels or Instructions`; visible identifying text exists, while the controlled failures concern programmatic association and accessible name.
+- Sources: normative WCAG 2.2 criteria and informative W3C Understanding documents recorded in `WCAG_MAPPING_SOURCES.md`, checked 2026-07-15.
+- Boundary: evidence-oriented mapping for one controlled journey only; not a conformance determination, certification, or complete WCAG coverage.
+- Status: implemented and independently reviewed in Phase 2B commit `e3811c8bf968dc78701f8d264dc1377543059d64`; no additional criterion may be added without separate source-backed review.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.

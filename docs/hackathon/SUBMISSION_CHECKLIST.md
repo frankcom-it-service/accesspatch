@@ -6,6 +6,8 @@ The controlled Phase 1C feasibility implementation is committed at `79ed0e60b2c7
 
 The Phase 2A generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`, and the ignored 15-file canonical bundle passed independent review. No checkbox is newly completed by that ignored output: the curated tracked judge package, final judge path, clean installation, video, publication, `/feedback`, and submission gates remain unchecked.
 
+Phase 2B’s source-backed three-criterion mapping is committed at `e3811c8bf968dc78701f8d264dc1377543059d64` and independently reviewed. It does not complete any tracked-package, judge-path, human-review, publication, or submission gate, so no checkbox is newly marked complete.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
