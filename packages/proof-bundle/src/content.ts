@@ -12,6 +12,8 @@ import {
   JOURNEY_MAP_SCHEMA_VERSION,
   NON_CERTIFICATION_STATEMENT,
   PROOF_FINDINGS_SCHEMA_VERSION,
+  WCAG_MAPPING_CLAIM_BOUNDARY,
+  WCAG_MAPPING_DEFINITIONS,
 } from '@accesspatch/shared-types';
 import {
   PHASE1C_IMPLEMENTATION_COMMIT,
@@ -22,6 +24,16 @@ import type { ReviewedBundleSources } from './input.ts';
 const PHASE1A_COMMIT = '18c3828431348c8eadfc93aaae3e4d92ec4f3bcf';
 const PHASE1B_COMMIT = '207e0559d0d7664a24dcb297fb40b37700f36208';
 
+function mappingsForFinding(findingId: string) {
+  return WCAG_MAPPING_DEFINITIONS.filter(
+    (mapping) => mapping.findingId === findingId,
+  ).map(({ findingId: _findingId, ...mapping }) => ({
+    ...mapping,
+    manualReviewRequired: true as const,
+    claimBoundary: WCAG_MAPPING_CLAIM_BOUNDARY,
+  }));
+}
+
 export function createFindings(sources: ReviewedBundleSources): ProofFindings {
   return {
     schemaVersion: PROOF_FINDINGS_SCHEMA_VERSION,
@@ -31,11 +43,13 @@ export function createFindings(sources: ReviewedBundleSources): ProofFindings {
         ...sources.evidence.findings[0],
         repairStatus: 'verified_repaired_in_isolated_copy',
         verificationArtifact: 'test-results/verification.json',
+        wcagMappings: mappingsForFinding(sources.evidence.findings[0].findingId),
       },
       {
         ...sources.evidence.findings[1],
         repairStatus: 'verified_repaired_in_isolated_copy',
         verificationArtifact: 'test-results/verification.json',
+        wcagMappings: mappingsForFinding(sources.evidence.findings[1].findingId),
       },
     ],
   };
@@ -114,31 +128,43 @@ function csvCell(value: string): string {
   return /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
 }
 
-export function createWcagMap(sources: ReviewedBundleSources): string {
+export function createWcagMap(findings: ProofFindings): string {
   const headers = [
     'finding_id',
     'journey_step',
     'selector',
     'safe_fix_class',
+    'wcag_version',
     'wcag_reference',
     'reference_label',
+    'conformance_level',
+    'normative_source_url',
+    'understanding_source_url',
+    'mapping_basis',
     'automated_evidence',
     'repair_verification',
     'manual_review_required',
     'claim_boundary',
   ];
-  const rows = sources.evidence.findings.map((finding) => [
-    finding.findingId,
-    finding.stepId,
-    finding.affectedSelector,
-    finding.safeFixClass,
-    'UNMAPPED',
-    'No WCAG criterion assigned in the reviewed source evidence',
-    finding.observedCondition,
-    finding.expectedCondition,
-    finding.requiredHumanReview.join(' | '),
-    NON_CERTIFICATION_STATEMENT,
-  ]);
+  const rows = findings.findings.flatMap((finding) =>
+    finding.wcagMappings.map((mapping) => [
+      finding.findingId,
+      finding.stepId,
+      finding.affectedSelector,
+      finding.safeFixClass,
+      mapping.wcagVersion,
+      mapping.wcagReference,
+      mapping.referenceLabel,
+      mapping.conformanceLevel,
+      mapping.normativeSourceUrl,
+      mapping.understandingSourceUrl,
+      mapping.mappingBasis,
+      finding.observedCondition,
+      finding.expectedCondition,
+      finding.requiredHumanReview.join(' | '),
+      mapping.claimBoundary,
+    ]),
+  );
   return `${[headers, ...rows].map((row) => row.map(csvCell).join(',')).join('\n')}\n`;
 }
 
@@ -243,16 +269,16 @@ export function createAuditLog(
       },
       {
         timestampUtc: generatedAtUtc,
-        phase: 'Phase 2A',
-        action: 'Generate and validate the canonical ignored Proof Bundle.',
+        phase: 'Phase 2B',
+        action: 'Generate and validate the canonical ignored Proof Bundle with source-backed WCAG mappings.',
         tool: 'AccessPatch proof-bundle generator',
         model: null,
         inputArtifactHashes: { ...REVIEWED_SOURCE_HASHES },
         outputArtifactHashes: preAuditHashes,
         status: 'generated',
-        gate: 'Exact inventory, schemas, hashes, CSV, report structure, safety scan, and atomic replacement passed.',
+        gate: 'Exact inventory, schemas, hashes, three allowlisted WCAG mappings, report structure, safety scan, and atomic replacement passed.',
         relevantCommit: null,
-        privacySafetyNotes: 'Phase 2A is uncommitted; the bundle is ignored and is not a tracked judge sample.',
+        privacySafetyNotes: 'Phase 2B is uncommitted; the bundle is ignored, narrowly mapped, and is not a tracked judge sample or certification.',
       },
     ],
   };
@@ -267,8 +293,11 @@ function escapeHtml(value: string): string {
     .replaceAll("'", '&#39;');
 }
 
-export function createReportHtml(sources: ReviewedBundleSources): string {
-  const findingCards = sources.evidence.findings
+export function createReportHtml(
+  sources: ReviewedBundleSources,
+  findings: ProofFindings,
+): string {
+  const findingCards = findings.findings
     .map(
       (finding) => `<article class="card" aria-labelledby="${escapeHtml(finding.findingId)}">
         <h3 id="${escapeHtml(finding.findingId)}">${escapeHtml(finding.findingId)}</h3>
@@ -277,6 +306,23 @@ export function createReportHtml(sources: ReviewedBundleSources): string {
         <p><strong>Verified repair:</strong> ${escapeHtml(finding.expectedCondition)}</p>
         <p><strong>Strategy:</strong> <code>${escapeHtml(finding.safeFixClass)}</code></p>
       </article>`,
+    )
+    .join('\n');
+  const wcagMappingCards = findings.findings
+    .flatMap((finding) =>
+      finding.wcagMappings.map(
+        (mapping) => `<article class="card mapping-card" data-wcag-reference="${mapping.wcagReference}">
+        <h3>WCAG 2.2 ${mapping.wcagReference}: ${escapeHtml(mapping.referenceLabel)}</h3>
+        <p><strong>Level:</strong> ${mapping.conformanceLevel}</p>
+        <p><strong>Controlled finding:</strong> <code>${escapeHtml(finding.findingId)}</code></p>
+        <p><strong>Evidence basis:</strong> ${escapeHtml(mapping.mappingBasis)}</p>
+        <ul>
+          <li><a class="external-link" data-external="true" href="${mapping.normativeSourceUrl}">Normative WCAG 2.2 criterion ${mapping.wcagReference} <span class="external-indicator">(external, W3C)</span></a></li>
+          <li><a class="external-link" data-external="true" href="${mapping.understandingSourceUrl}">Understanding ${mapping.wcagReference} <span class="external-indicator">(external, W3C)</span></a></li>
+        </ul>
+        <p><strong>Boundary:</strong> ${escapeHtml(mapping.claimBoundary)}</p>
+      </article>`,
+      ),
     )
     .join('\n');
   const sourceHashes = Object.entries(REVIEWED_SOURCE_HASHES)
@@ -311,6 +357,7 @@ export function createReportHtml(sources: ReviewedBundleSources): string {
     * { box-sizing: border-box; }
     body { margin: 0; line-height: 1.55; }
     a { color: #0848a6; }
+    a.external-link { text-decoration-thickness: .12em; text-underline-offset: .15em; }
     a:focus-visible { outline: 3px solid #b83b00; outline-offset: 3px; }
     .skip-link { position: absolute; left: 1rem; top: -4rem; background: #fff; padding: .75rem; z-index: 2; }
     .skip-link:focus { top: 1rem; }
@@ -351,6 +398,11 @@ export function createReportHtml(sources: ReviewedBundleSources): string {
       <h2 id="reasoning-heading">GPT-5.6 repair-plan summary</h2>
       <p>${escapeHtml(sources.repairPlan.evidenceBasedSummary)}</p>
       <p>The plan selected <code>associate_explicit_label</code> and <code>restore_focus_visible</code>. Deterministic templates—not model-generated code—implemented the isolated patch.</p>
+    </section>
+    <section aria-labelledby="wcag-heading">
+      <h2 id="wcag-heading">Source-backed WCAG 2.2 mappings</h2>
+      <p>The WCAG 2.2 standard links are normative. The Understanding documents are explanatory and informative. These mappings cover only the two controlled findings and do not establish conformance.</p>
+      <div class="grid">${wcagMappingCards}</div>
     </section>
     <section aria-labelledby="changes-heading">
       <h2 id="changes-heading">Exact changed files</h2>

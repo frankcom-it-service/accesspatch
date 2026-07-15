@@ -11,6 +11,7 @@ import {
   REVIEWED_SOURCE_HASHES,
   SOURCE_ARTIFACT_PATHS,
   createAuditLog,
+  createFindings,
   createReportHtml,
   createWcagMap,
   generateProofBundle,
@@ -20,10 +21,16 @@ import {
   sha256,
   validateProofBundle,
   validateReportHtml,
+  validateWcagCsv,
   validateReviewedSourceBytes,
   type ReviewedBundleSources,
   type ReviewedSourceBytes,
 } from '../../packages/proof-bundle/src/index.ts';
+import {
+  ProofFindingsSchema,
+  WCAG_MAPPING_DEFINITIONS,
+  type ProofFindings,
+} from '../../packages/shared-types/src/index.ts';
 
 const repositoryRoot = process.cwd();
 const generatedAtUtc = '2026-07-15T18:00:00.000Z';
@@ -153,14 +160,21 @@ test('rejects a reviewed source symlink without following it', async (context) =
 
 test('keeps deterministic finding, CSV, and manifest ordering', async () => {
   const { bundle } = await generateFixture();
-  const findings = JSON.parse(await readFile(join(bundle, 'findings.json'), 'utf8')) as { findings: Array<{ findingId: string }> };
+  const findings = ProofFindingsSchema.parse(
+    JSON.parse(await readFile(join(bundle, 'findings.json'), 'utf8')),
+  );
   const csv = await readFile(join(bundle, 'wcag-map.csv'), 'utf8');
   const summary = JSON.parse(await readFile(join(bundle, 'summary.json'), 'utf8')) as { generatedEntrySha256: Record<string, string> };
   assert.deepEqual(findings.findings.map((finding) => finding.findingId), [
     'CONTROLLED_BARRIER_EMAIL_NAME',
     'CONTROLLED_BARRIER_FOCUS_VISIBLE',
   ]);
-  assert.ok(csv.indexOf('CONTROLLED_BARRIER_EMAIL_NAME') < csv.indexOf('CONTROLLED_BARRIER_FOCUS_VISIBLE'));
+  const csvRows = validateWcagCsv(csv, findings);
+  assert.deepEqual(csvRows.slice(1).map((row) => [row[0], row[5]]), [
+    ['CONTROLLED_BARRIER_EMAIL_NAME', '1.3.1'],
+    ['CONTROLLED_BARRIER_EMAIL_NAME', '4.1.2'],
+    ['CONTROLLED_BARRIER_FOCUS_VISIBLE', '2.4.7'],
+  ]);
   assert.deepEqual(Object.keys(summary.generatedEntrySha256), [...MANIFEST_HASHED_ENTRIES]);
 });
 
@@ -192,7 +206,124 @@ test('escapes commas and quotes in CSV cells', async () => {
       ],
     },
   } as unknown as ReviewedBundleSources;
-  assert.match(createWcagMap(changed), /"A, ""quoted"" condition"/);
+  const findings = ProofFindingsSchema.parse(createFindings(changed));
+  const csv = createWcagMap(findings);
+  assert.match(csv, /"A, ""quoted"" condition"/);
+  assert.doesNotThrow(() => validateWcagCsv(csv, findings));
+});
+
+async function createWcagFixture(): Promise<{
+  findings: ProofFindings;
+  csv: string;
+  html: string;
+}> {
+  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const findings = ProofFindingsSchema.parse(createFindings(sources));
+  return {
+    findings,
+    csv: createWcagMap(findings),
+    html: createReportHtml(sources, findings),
+  };
+}
+
+test('accepts exactly the three source-backed WCAG mappings', async () => {
+  const { findings, csv } = await createWcagFixture();
+  const rows = validateWcagCsv(csv, findings);
+  assert.equal(rows.length, 4);
+  assert.deepEqual(
+    findings.findings.flatMap((finding) =>
+      finding.wcagMappings.map((mapping) => [finding.findingId, mapping.wcagReference]),
+    ),
+    WCAG_MAPPING_DEFINITIONS.map((mapping) => [
+      mapping.findingId,
+      mapping.wcagReference,
+    ]),
+  );
+});
+
+test('rejects a missing WCAG mapping row', async () => {
+  const { findings, csv } = await createWcagFixture();
+  const rows = csv.trimEnd().split('\n');
+  rows.splice(2, 1);
+  assert.throws(() => validateWcagCsv(`${rows.join('\n')}\n`, findings), /wcag_csv_structure_invalid/);
+});
+
+test('rejects a duplicate WCAG mapping row', async () => {
+  const { findings, csv } = await createWcagFixture();
+  const rows = csv.trimEnd().split('\n');
+  rows.push(rows[1]);
+  assert.throws(() => validateWcagCsv(`${rows.join('\n')}\n`, findings), /wcag_csv_structure_invalid/);
+});
+
+test('rejects an unsupported WCAG criterion', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace(',1.3.1,Info and Relationships,', ',9.9.9,Info and Relationships,'), findings),
+    /wcag_csv_mapping_mismatch/,
+  );
+});
+
+test('rejects a wrong finding-to-criterion relationship', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace('\nCONTROLLED_BARRIER_EMAIL_NAME,', '\nCONTROLLED_BARRIER_FOCUS_VISIBLE,'), findings),
+    /wcag_csv_mapping_mismatch/,
+  );
+});
+
+test('rejects a wrong WCAG criterion label', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace('Info and Relationships', 'Incorrect Label'), findings),
+    /wcag_csv_mapping_mismatch/,
+  );
+});
+
+test('rejects a wrong WCAG conformance level', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace(',2.4.7,Focus Visible,AA,', ',2.4.7,Focus Visible,A,'), findings),
+    /wcag_csv_mapping_mismatch/,
+  );
+});
+
+test('rejects an altered WCAG source URL', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace('https://www.w3.org/TR/WCAG22/#focus-visible', 'https://example.com/focus-visible'), findings),
+    /wcag_csv_mapping_mismatch/,
+  );
+});
+
+test('rejects reintroduced UNMAPPED output', async () => {
+  const { findings, csv } = await createWcagFixture();
+  assert.throws(
+    () => validateWcagCsv(csv.replace(',1.3.1,', ',UNMAPPED,'), findings),
+    /wcag_csv_unmapped_rejected/,
+  );
+});
+
+test('rejects findings and CSV mapping disagreement', async () => {
+  const { findings, csv } = await createWcagFixture();
+  const changed = structuredClone(findings);
+  changed.findings[0].wcagMappings.reverse();
+  assert.throws(() => validateWcagCsv(csv, changed));
+});
+
+test('rejects a report missing a controlled WCAG mapping', async () => {
+  const { findings, html } = await createWcagFixture();
+  assert.throws(
+    () => validateReportHtml(html.replace('data-wcag-reference="2.4.7"', 'data-wcag-reference="missing"'), findings),
+    /wcag_mapping_inventory/,
+  );
+});
+
+test('rejects report language claiming full WCAG conformance', async () => {
+  const { findings, html } = await createWcagFixture();
+  assert.throws(
+    () => validateReportHtml(`${html}<p>This report establishes full WCAG conformance.</p>`, findings),
+    /unsupported_conformance_claim/,
+  );
 });
 
 test('rejects a missing manual-review disclaimer', async () => {
@@ -254,12 +385,14 @@ test('preserves the previous final directory when regeneration fails', async () 
 
 test('report HTML contains structural and accessibility smoke requirements', async () => {
   const sources = await loadReviewedBundleSources(repositoryRoot);
-  const html = createReportHtml(sources);
-  assert.doesNotThrow(() => validateReportHtml(html));
+  const findings = ProofFindingsSchema.parse(createFindings(sources));
+  const html = createReportHtml(sources, findings);
+  assert.doesNotThrow(() => validateReportHtml(html, findings));
   assert.match(html, /<html lang="en">/);
   assert.match(html, /href="#main-content"/);
   assert.match(html, /:focus-visible/);
-  assert.doesNotMatch(html, /<script\b|https?:\/\//i);
+  assert.doesNotMatch(html, /<script\b|<img\b|<link\b/i);
+  assert.equal((html.match(/data-external="true"/g) ?? []).length, 6);
 });
 
 test('manifest hashes every generated file except summary itself', async () => {

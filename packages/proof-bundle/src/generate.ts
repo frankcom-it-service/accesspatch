@@ -20,6 +20,9 @@ import {
   PROOF_SUMMARY_SCHEMA_VERSION,
   ProofFindingsSchema,
   ProofSummarySchema,
+  WCAG_MAPPING_CLAIM_BOUNDARY,
+  WCAG_MAPPING_SCOPE,
+  WCAG_VERSION,
 } from '@accesspatch/shared-types';
 import {
   MANIFEST_HASHED_ENTRIES,
@@ -109,8 +112,8 @@ export async function generateProofBundle(
     const journeyMap = JourneyMapSchema.parse(createJourneyMap());
     const beforeResult = BeforeBaselineResultSchema.parse(createBeforeResult(sources));
     const afterResult = AfterReplayResultSchema.parse(createAfterResult(sources));
-    const report = createReportHtml(sources);
-    const wcagMap = createWcagMap(sources);
+    const report = createReportHtml(sources, findings);
+    const wcagMap = createWcagMap(findings);
 
     const files = new Map<string, Buffer>([
       ['findings.json', Buffer.from(serializeJson(findings))],
@@ -162,6 +165,13 @@ export async function generateProofBundle(
       repairedFindingCount: 2,
       unresolvedAutomatedFindingCount: 0,
       manualReviewItemCount,
+      wcagMapping: {
+        version: WCAG_VERSION,
+        criterionMappingCount: 3,
+        mappedFindingCount: 2,
+        scope: WCAG_MAPPING_SCOPE,
+        conclusion: WCAG_MAPPING_CLAIM_BOUNDARY,
+      },
       model: {
         id: 'gpt-5.6-sol',
         responseStatus: 'completed',

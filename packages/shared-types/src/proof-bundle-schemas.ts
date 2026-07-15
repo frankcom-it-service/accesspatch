@@ -7,9 +7,9 @@ import {
   MODEL_ID,
 } from './schemas.ts';
 
-export const PROOF_BUNDLE_VERSION = '1.0.0-phase2a' as const;
-export const PROOF_SUMMARY_SCHEMA_VERSION = 'accesspatch.proof-summary.v1' as const;
-export const PROOF_FINDINGS_SCHEMA_VERSION = 'accesspatch.proof-findings.v1' as const;
+export const PROOF_BUNDLE_VERSION = '1.1.0-phase2b' as const;
+export const PROOF_SUMMARY_SCHEMA_VERSION = 'accesspatch.proof-summary.v2' as const;
+export const PROOF_FINDINGS_SCHEMA_VERSION = 'accesspatch.proof-findings.v2' as const;
 export const JOURNEY_MAP_SCHEMA_VERSION = 'accesspatch.journey-map.v1' as const;
 export const BEFORE_RESULT_SCHEMA_VERSION = 'accesspatch.test-result.before.v1' as const;
 export const AFTER_RESULT_SCHEMA_VERSION = 'accesspatch.test-result.after.v1' as const;
@@ -18,6 +18,98 @@ export const NON_CERTIFICATION_STATEMENT =
   'This Proof Bundle is not a compliance certification and does not prove complete accessibility.' as const;
 export const MANIFEST_STRATEGY =
   'summary.json hashes every generated file except itself; directories are represented by their contained file hashes.' as const;
+export const WCAG_VERSION = '2.2' as const;
+export const WCAG_MAPPING_SCOPE =
+  'Evidence-oriented mapping limited to the two controlled findings in the demo-checkout keyboard journey.' as const;
+export const WCAG_MAPPING_CLAIM_BOUNDARY =
+  'This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage.' as const;
+
+export const WCAG_MAPPING_DEFINITIONS = [
+  {
+    findingId: 'CONTROLLED_BARRIER_EMAIL_NAME',
+    wcagVersion: WCAG_VERSION,
+    wcagReference: '1.3.1',
+    referenceLabel: 'Info and Relationships',
+    conformanceLevel: 'A',
+    normativeSourceUrl: 'https://www.w3.org/TR/WCAG22/#info-and-relationships',
+    understandingSourceUrl:
+      'https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html',
+    mappingBasis:
+      'The visible Email address relationship is not programmatically associated with #email.',
+  },
+  {
+    findingId: 'CONTROLLED_BARRIER_EMAIL_NAME',
+    wcagVersion: WCAG_VERSION,
+    wcagReference: '4.1.2',
+    referenceLabel: 'Name, Role, Value',
+    conformanceLevel: 'A',
+    normativeSourceUrl: 'https://www.w3.org/TR/WCAG22/#name-role-value',
+    understandingSourceUrl:
+      'https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html',
+    mappingBasis:
+      'The #email form control has no programmatically determinable accessible name.',
+  },
+  {
+    findingId: 'CONTROLLED_BARRIER_FOCUS_VISIBLE',
+    wcagVersion: WCAG_VERSION,
+    wcagReference: '2.4.7',
+    referenceLabel: 'Focus Visible',
+    conformanceLevel: 'AA',
+    normativeSourceUrl: 'https://www.w3.org/TR/WCAG22/#focus-visible',
+    understandingSourceUrl:
+      'https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html',
+    mappingBasis:
+      'The keyboard-focused primary action has no visible focus indicator because controlled CSS suppresses its outline and box shadow.',
+  },
+] as const;
+
+export const WcagMappingReferenceSchema = z.discriminatedUnion('wcagReference', [
+  z
+    .object({
+      wcagVersion: z.literal(WCAG_MAPPING_DEFINITIONS[0].wcagVersion),
+      wcagReference: z.literal(WCAG_MAPPING_DEFINITIONS[0].wcagReference),
+      referenceLabel: z.literal(WCAG_MAPPING_DEFINITIONS[0].referenceLabel),
+      conformanceLevel: z.literal(WCAG_MAPPING_DEFINITIONS[0].conformanceLevel),
+      normativeSourceUrl: z.literal(WCAG_MAPPING_DEFINITIONS[0].normativeSourceUrl),
+      understandingSourceUrl: z.literal(
+        WCAG_MAPPING_DEFINITIONS[0].understandingSourceUrl,
+      ),
+      mappingBasis: z.literal(WCAG_MAPPING_DEFINITIONS[0].mappingBasis),
+      manualReviewRequired: z.literal(true),
+      claimBoundary: z.literal(WCAG_MAPPING_CLAIM_BOUNDARY),
+    })
+    .strict(),
+  z
+    .object({
+      wcagVersion: z.literal(WCAG_MAPPING_DEFINITIONS[1].wcagVersion),
+      wcagReference: z.literal(WCAG_MAPPING_DEFINITIONS[1].wcagReference),
+      referenceLabel: z.literal(WCAG_MAPPING_DEFINITIONS[1].referenceLabel),
+      conformanceLevel: z.literal(WCAG_MAPPING_DEFINITIONS[1].conformanceLevel),
+      normativeSourceUrl: z.literal(WCAG_MAPPING_DEFINITIONS[1].normativeSourceUrl),
+      understandingSourceUrl: z.literal(
+        WCAG_MAPPING_DEFINITIONS[1].understandingSourceUrl,
+      ),
+      mappingBasis: z.literal(WCAG_MAPPING_DEFINITIONS[1].mappingBasis),
+      manualReviewRequired: z.literal(true),
+      claimBoundary: z.literal(WCAG_MAPPING_CLAIM_BOUNDARY),
+    })
+    .strict(),
+  z
+    .object({
+      wcagVersion: z.literal(WCAG_MAPPING_DEFINITIONS[2].wcagVersion),
+      wcagReference: z.literal(WCAG_MAPPING_DEFINITIONS[2].wcagReference),
+      referenceLabel: z.literal(WCAG_MAPPING_DEFINITIONS[2].referenceLabel),
+      conformanceLevel: z.literal(WCAG_MAPPING_DEFINITIONS[2].conformanceLevel),
+      normativeSourceUrl: z.literal(WCAG_MAPPING_DEFINITIONS[2].normativeSourceUrl),
+      understandingSourceUrl: z.literal(
+        WCAG_MAPPING_DEFINITIONS[2].understandingSourceUrl,
+      ),
+      mappingBasis: z.literal(WCAG_MAPPING_DEFINITIONS[2].mappingBasis),
+      manualReviewRequired: z.literal(true),
+      claimBoundary: z.literal(WCAG_MAPPING_CLAIM_BOUNDARY),
+    })
+    .strict(),
+]);
 
 export const Sha256Schema = z.string().regex(/^[a-f0-9]{64}$/);
 export const GitCommitSchema = z.string().regex(/^[a-f0-9]{40}$/);
@@ -56,6 +148,15 @@ export const ProofSummarySchema = z
     repairedFindingCount: z.literal(2),
     unresolvedAutomatedFindingCount: z.literal(0),
     manualReviewItemCount: z.number().int().positive(),
+    wcagMapping: z
+      .object({
+        version: z.literal(WCAG_VERSION),
+        criterionMappingCount: z.literal(3),
+        mappedFindingCount: z.literal(2),
+        scope: z.literal(WCAG_MAPPING_SCOPE),
+        conclusion: z.literal(WCAG_MAPPING_CLAIM_BOUNDARY),
+      })
+      .strict(),
     model: z
       .object({
         id: z.literal(MODEL_ID),
@@ -96,6 +197,7 @@ export const ProofSummarySchema = z
 export const ProofFindingSchema = FindingSchema.extend({
   repairStatus: z.literal('verified_repaired_in_isolated_copy'),
   verificationArtifact: z.literal('test-results/verification.json'),
+  wcagMappings: z.array(WcagMappingReferenceSchema).min(1).max(2),
 }).strict();
 
 export const ProofFindingsSchema = z
@@ -113,6 +215,22 @@ export const ProofFindingsSchema = z
         path: ['findings'],
         message: 'Proof findings must retain deterministic controlled ordering.',
       });
+    }
+    for (const finding of value.findings) {
+      const expected = WCAG_MAPPING_DEFINITIONS.filter(
+        (mapping) => mapping.findingId === finding.findingId,
+      ).map(({ findingId: _findingId, ...mapping }) => ({
+        ...mapping,
+        manualReviewRequired: true as const,
+        claimBoundary: WCAG_MAPPING_CLAIM_BOUNDARY,
+      }));
+      if (JSON.stringify(finding.wcagMappings) !== JSON.stringify(expected)) {
+        context.addIssue({
+          code: 'custom',
+          path: ['findings', finding.findingId, 'wcagMappings'],
+          message: 'Proof finding WCAG mappings must match the controlled allowlist.',
+        });
+      }
     }
   });
 
@@ -247,6 +365,7 @@ export const AuditLogSchema = z
 
 export type ProofSummary = z.infer<typeof ProofSummarySchema>;
 export type ProofFindings = z.infer<typeof ProofFindingsSchema>;
+export type WcagMappingReference = z.infer<typeof WcagMappingReferenceSchema>;
 export type JourneyMap = z.infer<typeof JourneyMapSchema>;
 export type BeforeBaselineResult = z.infer<typeof BeforeBaselineResultSchema>;
 export type AfterReplayResult = z.infer<typeof AfterReplayResultSchema>;

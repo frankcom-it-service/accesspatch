@@ -9,6 +9,7 @@ import {
   ProofFindingsSchema,
   ProofSummarySchema,
   RepairPlanSchema,
+  type ProofFindings,
 } from '@accesspatch/shared-types';
 import {
   PatchAuditSchema,
@@ -47,7 +48,7 @@ async function readJson(path: string): Promise<unknown> {
   return JSON.parse(await readFile(path, 'utf8'));
 }
 
-function parseCsv(input: string): string[][] {
+export function parseWcagCsv(input: string): string[][] {
   const rows: string[][] = [];
   let row: string[] = [];
   let cell = '';
@@ -85,31 +86,65 @@ function parseCsv(input: string): string[][] {
   return rows;
 }
 
-function validateWcagCsv(csv: string): void {
-  const rows = parseCsv(csv);
-  const expectedHeader = [
+export const WCAG_CSV_HEADERS = [
     'finding_id',
     'journey_step',
     'selector',
     'safe_fix_class',
+    'wcag_version',
     'wcag_reference',
     'reference_label',
+    'conformance_level',
+    'normative_source_url',
+    'understanding_source_url',
+    'mapping_basis',
     'automated_evidence',
     'repair_verification',
     'manual_review_required',
     'claim_boundary',
-  ];
-  if (rows.length !== 3 || JSON.stringify(rows[0]) !== JSON.stringify(expectedHeader)) {
+] as const;
+
+function expectedWcagRows(findings: ProofFindings): string[][] {
+  return findings.findings.flatMap((finding) =>
+    finding.wcagMappings.map((mapping) => [
+      finding.findingId,
+      finding.stepId,
+      finding.affectedSelector,
+      finding.safeFixClass,
+      mapping.wcagVersion,
+      mapping.wcagReference,
+      mapping.referenceLabel,
+      mapping.conformanceLevel,
+      mapping.normativeSourceUrl,
+      mapping.understandingSourceUrl,
+      mapping.mappingBasis,
+      finding.observedCondition,
+      finding.expectedCondition,
+      finding.requiredHumanReview.join(' | '),
+      mapping.claimBoundary,
+    ]),
+  );
+}
+
+export function validateWcagCsv(csv: string, findings: ProofFindings): string[][] {
+  const validatedFindings = ProofFindingsSchema.parse(findings);
+  const rows = parseWcagCsv(csv);
+  if (csv.includes('UNMAPPED')) throw new Error('wcag_csv_unmapped_rejected');
+  if (
+    rows.length !== 4 ||
+    JSON.stringify(rows[0]) !== JSON.stringify(WCAG_CSV_HEADERS)
+  ) {
     throw new Error('wcag_csv_structure_invalid');
   }
-  if (
-    rows[1]?.[0] !== 'CONTROLLED_BARRIER_EMAIL_NAME' ||
-    rows[2]?.[0] !== 'CONTROLLED_BARRIER_FOCUS_VISIBLE' ||
-    rows[1]?.length !== expectedHeader.length ||
-    rows[2]?.length !== expectedHeader.length
-  ) {
-    throw new Error('wcag_csv_order_invalid');
+  const expectedRows = expectedWcagRows(validatedFindings);
+  const actualRows = rows.slice(1);
+  if (actualRows.some((row) => row.length !== WCAG_CSV_HEADERS.length)) {
+    throw new Error('wcag_csv_column_count_invalid');
   }
+  if (JSON.stringify(actualRows) !== JSON.stringify(expectedRows)) {
+    throw new Error('wcag_csv_mapping_mismatch');
+  }
+  return rows;
 }
 
 function validateManualReview(content: string): void {
@@ -197,9 +232,15 @@ export async function validateProofBundle(bundleDirectory: string): Promise<{
   if (sha256(replay) !== REVIEWED_SOURCE_HASHES.replay) throw new Error('bundle_replay_hash_mismatch');
   validateGeneratedPatch(patch.toString('utf8'));
 
-  validateWcagCsv(await readFile(join(bundleDirectory, 'wcag-map.csv'), 'utf8'));
+  validateWcagCsv(
+    await readFile(join(bundleDirectory, 'wcag-map.csv'), 'utf8'),
+    findings,
+  );
   validateManualReview(await readFile(join(bundleDirectory, 'manual-review.md'), 'utf8'));
-  validateReportHtml(await readFile(join(bundleDirectory, 'report.html'), 'utf8'));
+  validateReportHtml(
+    await readFile(join(bundleDirectory, 'report.html'), 'utf8'),
+    findings,
+  );
 
   const files = await collectFiles(bundleDirectory);
   const fileHashes = Object.fromEntries(

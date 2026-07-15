@@ -7,6 +7,7 @@ const forbiddenContentPatterns = [
   { category: 'sensitive_identifier', pattern: /\b(?:proj|org)-[A-Za-z0-9_-]{8,}\b/ },
   { category: 'raw_prompt_or_response', pattern: /"(?:rawPrompt|rawResponse|promptText|responseBody)"\s*:/i },
   { category: 'unsupported_compliance_claim', pattern: /\b(?:is|are)\s+(?:fully\s+)?(?:WCAG|BFSG|EAA)\s+(?:certified|compliant)\b|(?<!not )\bprovides?\s+(?:WCAG|BFSG|EAA)\s+certification\b|\b(?:guarantees?|certifies?)\s+(?:WCAG|BFSG|EAA|legal compliance)\b/i },
+  { category: 'unsupported_conformance_claim', pattern: /\b(?:achieves?|establishes?|proves?|demonstrates?|guarantees?)\s+(?:full\s+)?WCAG(?:\s+2\.2)?\s+conformance\b/i },
 ] as const;
 
 export function assertSafeRelativePath(path: string): void {
