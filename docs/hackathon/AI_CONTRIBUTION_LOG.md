@@ -116,3 +116,11 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Corrected proof run: after final independent pre-run archive review SHA-256 `1e458514f2737234765705a7063afa8658c8e887233a727d91e45eb05c2ec9b9`, the second lifetime workflow execution exited `0`; all eight stages started and passed exactly once, 139 tests passed, the exact controlled baseline and zero-violation report were confirmed, and no retry or third execution occurred.
 - Preservation: `.accesspatch/runs/` was absent during execution; all 17 Judge Sample hashes and mtimes and all 23 ignored-run hashes remained unchanged after restoration. Runtime configuration and temporary workflow output were removed.
 - Result: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. No API call, credential access, reasoner run, repair run, bundle regeneration, fixture change, remote, deployment, or publication occurred.
+
+## Phase 3B Clean-Clone Evidence Integration
+
+- Human assignment: preserve and integrate the independently reviewed clean-clone proof without rerunning installation, tests, the Judge Workflow, or any generator.
+- Prior verified execution: one fresh Git clone of committed source HEAD `7d0653cd344cf15be448ed9ef62b41b74c0d67ef` completed one frozen-lockfile install and one `pnpm judge:verify` execution, both exit `0` without retry. This was lifetime Judge Workflow execution number 3.
+- Codex contribution in this task: revalidated the approved sanitized archive, copied it byte-for-byte, safely extracted the exact 13 evidence files, added deterministic checksums and an evidence README, and updated only project governance documentation.
+- Human review: independent review confirmed the final archive has neutral numeric ownership, normalized metadata, sanitized contents, and internally consistent proof of all eight stages and 139 API-free tests.
+- Result: **COMPLETE** in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. The reviewed archive is tracked as non-executable mode `100644`. No installation, project test, Judge Workflow, API call, credential access, reasoner, repair, bundle generation, implementation change, fixture change, remote, deployment, publication, or video work occurred during integration.

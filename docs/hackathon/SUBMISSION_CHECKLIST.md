@@ -10,6 +10,8 @@ Phase 2B’s source-backed three-criterion mapping is committed at `e3811c8bf968
 
 Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after independent review. Exactly the reviewed tracked-location/allowlist control is newly complete; the checklist now has 31 checked and 86 unchecked items. Clean installation, final judge workflow, publication, video, `/feedback`, and submission remain unchecked.
 
+Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B evidence is committed at `8d2afef856d48d07ffb77013ad7385dd3810a4ed` after independent review. The committed-content judge path was validated in a fresh Git clone on Debian GNU/Linux 13 x86_64. Installation and `pnpm judge:verify` each ran once and exited `0` without retry. The checklist remains at 39 checked and 78 unchecked items. Broader platforms, public access, video, `/feedback`, Devpost, and submission remain unchecked.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -38,7 +40,7 @@ Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after indepe
 - [ ] Third-party and license notices are complete.
 - [x] README is in English.
 - [x] Installation instructions are documented.
-- [ ] Supported platforms are documented.
+- [x] Supported platforms are documented.
 - [ ] Start instructions are documented.
 - [x] Test instructions are documented.
 - [x] Example data or fixtures are included and documented.
@@ -48,7 +50,7 @@ Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after indepe
 - [x] Codex collaboration is documented.
 - [x] GPT-5.6 integration is documented.
 - [x] Human decisions are documented.
-- [ ] Fresh installation is successfully tested.
+- [x] Fresh installation is successfully tested.
 - [x] Repository contains no secrets or credentials.
 - [x] Repository contains no unnecessary personal data.
 - [x] Repository contains no harmful or unauthorized third-party files.
@@ -56,13 +58,13 @@ Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after indepe
 
 ## Developer Tool and Judge Testing
 
-- [ ] Installation instructions are clear.
-- [ ] Supported operating systems and platforms are stated from actual tests.
+- [x] Installation instructions are clear.
+- [x] Supported operating systems and platforms are stated from actual tests.
 - [ ] A simple test path works without a complete rebuild.
-- [ ] A one-command demo or comparably simple path is documented.
-- [ ] A working demo, sandbox, or test build is available.
+- [x] A one-command demo or comparably simple path is documented.
+- [x] A working demo, sandbox, or test build is available.
 - [ ] Judge access remains free during evaluation.
-- [ ] Judge Test Instructions are clear and complete.
+- [x] Judge Test Instructions are clear and complete.
 - [ ] Expected inputs, outputs, duration, failure behavior, and cleanup are documented.
 - [ ] Demo credentials or fallback instructions are safe, minimal, and verified if needed.
 - [ ] Demo content exposes no private data or secrets.
@@ -123,7 +125,7 @@ Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after indepe
 - [ ] Repository is accessible.
 - [ ] Demo or judge test path is accessible.
 - [ ] No links are broken.
-- [ ] Clean-environment test is completed.
+- [x] Clean-environment test is completed.
 - [ ] YouTube video is public.
 - [ ] Submission texts are complete in English.
 - [ ] Session ID is correct.

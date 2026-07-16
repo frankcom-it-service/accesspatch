@@ -2,9 +2,9 @@
 
 ## Status
 
-**IMPLEMENTED / CLEAN-MACHINE VERIFICATION PENDING.** Phase 3A is complete in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. The corrected second lifetime workflow execution passed all eight stages with ignored runs absent. This establishes the local committed one-command path; clean-machine and broader-platform verification remain open.
+**IMPLEMENTED / CLEAN-CLONE VERIFIED ON ONE PLATFORM.** Phase 3A is complete in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B is complete in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. The committed path was validated from a fresh Git clone at source HEAD `7d0653cd344cf15be448ed9ef62b41b74c0d67ef`: frozen installation and `pnpm judge:verify` each ran exactly once, exited `0`, and were not retried.
 
-The current verified environment uses `/usr/bin/chromium`. A clean environment without system Chromium can run `pnpm browser:install` to install Playwright Chromium only. Clean-install and cross-platform verification remain **NOT YET VERIFIED**.
+The verified clean-clone environment is Debian GNU/Linux 13, x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 selected from `/usr/bin/chromium`. A clean environment without system Chromium can run `pnpm browser:install` to install Playwright Chromium only. That fallback and other operating systems or browser configurations remain **NOT YET VERIFIED**.
 
 The current FAQ and official announcement, checked 2026-07-15, require Developer Tools entries to document installation, supported platforms, and a judge testing path that does not require a complete rebuild.
 
@@ -39,7 +39,9 @@ JUDGE_WORKFLOW_SECURITY=passed
 JUDGE_WORKFLOW_VALID
 ```
 
+The sanitized clean-clone evidence is tracked at `docs/hackathon/evidence/phase3b-clean-clone/`. The installation required registry access and encountered transient retry warnings. The Judge Workflow itself is API-free; `.accesspatch/runs/` remained absent, and the workflow monitor observed no external TCP connection.
+
 ## Open Requirements
 
-- `TODO`: verify every link and step from a clean environment after feature freeze.
-- `TODO`: confirm supported platforms beyond the current Node 24, pnpm 11.13.0, Chromium, and Linux environment.
+- `TODO`: confirm supported platforms beyond the verified Debian GNU/Linux 13 x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 environment.
+- `TODO`: verify the Playwright-managed Chromium fallback and final public links after feature freeze.

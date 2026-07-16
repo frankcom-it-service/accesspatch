@@ -1,6 +1,6 @@
 # Submission Ledger
 
-Last updated: 2026-07-15
+Last updated: 2026-07-16
 
 This is the canonical ledger for claims, proof, and submission readiness. A claim may be presented as complete only when its evidence is linked here and reproducible.
 
@@ -25,6 +25,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Controlled WCAG 2.2 mapping | PHASE 2B COMPLETE; INDEPENDENT FULL REVIEW PASSED; OUTPUT IGNORED | `e3811c8bf968dc78701f8d264dc1377543059d64`; `WCAG_MAPPING_SOURCES.md`; ignored regenerated bundle; `TEST_EVIDENCE.md` |
 | Curated tracked Judge Sample | PHASE 2C COMPLETE; INDEPENDENT FULL REVIEW PASSED | `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files; byte-identical 15-file bundle plus `README.md` and `SHA256SUMS`; read-only validator and zero-violation report smoke |
 | One-command Judge workflow | PHASE 3A COMPLETE; LOCAL END-TO-END PROOF PASSED | `84db92f9e27b6f7872495516f166a8bcaed8ef03`; corrected second lifetime `pnpm judge:verify` run passed all eight stages with ignored runs absent; 139 tests; stable success output; no third run |
+| Clean-clone Judge verification | PHASE 3B COMPLETE; INDEPENDENT EVIDENCE REVIEW PASSED | Evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; fresh clone of `7d0653cd344cf15be448ed9ef62b41b74c0d67ef`; one frozen install and one Judge Workflow run exited `0` without retry; `docs/hackathon/evidence/phase3b-clean-clone/` |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
@@ -37,15 +38,15 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |
 | Voiceover explains project, Codex use, and GPT-5.6 use | Mandatory | DRAFT OUTLINE | `VIDEO_SCRIPT.md` | Demo and submission | 2026-07-21 02:00 CEST | Must reflect actual frozen build |
 | Code repository URL | Mandatory | OPEN | URL TODO | Submission | 2026-07-21 02:00 CEST | No remote; publication requires approval |
-| README setup and testing guidance | Mandatory | PARTIAL: PHASE 1A LOCAL COMMANDS | `README.md` | Build and verification | 2026-07-20 02:00 CEST | Final install, supported-platform, and judge guidance remain open |
+| README setup and testing guidance | Mandatory | VERIFIED FOR CONTROLLED JUDGE PATH | `README.md`; `JUDGE_TEST_GUIDE.md`; Phase 3B clean-clone evidence | Build and verification | 2026-07-20 02:00 CEST | Broader-platform and final public-link guidance remain open |
 | Primary build-thread `/feedback` Session ID | Mandatory | PENDING | `CODEX_SESSION_RECORD.md` | Submission | 2026-07-21 02:00 CEST | Must be collected from this central session; never invent |
-| Developer Tools installation instructions | Mandatory | PARTIAL: FIXTURE INSTALL ONLY | `README.md`; `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Final product and judge installation path remain open |
-| Supported platforms | Mandatory | OPEN | `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Compatibility untested |
-| Judge path without complete rebuild | Mandatory | LOCAL ONE-COMMAND PATH VERIFIED; CLEAN-MACHINE CHECK OPEN | `JUDGE_TEST_GUIDE.md`; `pnpm judge:verify`; `84db92f9e27b6f7872495516f166a8bcaed8ef03` | Demo and verification | 2026-07-21 02:00 CEST | Command includes a deterministic production build; clean-machine and broader-platform verification remain open |
+| Developer Tools installation instructions | Mandatory | VERIFIED IN ONE CLEAN CLONE | `README.md`; `JUDGE_TEST_GUIDE.md`; `docs/hackathon/evidence/phase3b-clean-clone/` | Build and verification | 2026-07-20 02:00 CEST | Other operating systems and Playwright-managed browser fallback remain open |
+| Supported platforms | Mandatory | VERIFIED LIMITED: DEBIAN 13 X86_64 | `JUDGE_TEST_GUIDE.md`; `environment-summary.txt` in Phase 3B evidence | Build and verification | 2026-07-20 02:00 CEST | Windows, macOS, other Linux distributions, architectures, and browser configurations unverified |
+| Judge path without complete rebuild | Mandatory | ONE-COMMAND CLEAN-CLONE PATH VERIFIED; REQUIREMENT INTERPRETATION OPEN | `JUDGE_TEST_GUIDE.md`; `pnpm judge:verify`; `84db92f9e27b6f7872495516f166a8bcaed8ef03`; Phase 3B evidence | Demo and verification | 2026-07-21 02:00 CEST | Command intentionally performs a deterministic production build; confirm this satisfies final judging interpretation |
 | Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |
 | Judge-accessible demo or sandbox | Recommended | NOT YET IMPLEMENTED | `DEMO_EVIDENCE.md` | Demo | 2026-07-21 02:00 CEST | Hosting and accessibility OPEN |
-| Fresh install and final link verification | Recommended | NOT YET RUN | `TEST_EVIDENCE.md`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Requires feature-frozen artifact |
-| Fixed MVP Proof Bundle inventory | Mandatory internal contract | GENERATOR AND REVIEWED TRACKED SAMPLE COMMITTED | Canonical contract in `DEMO_EVIDENCE.md`; generator `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; Judge Sample `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` | Build and evidence | 2026-07-20 02:00 CEST | Final clean-machine judge workflow remains open |
+| Fresh install and final link verification | Recommended | FRESH INSTALL VERIFIED ON DEBIAN; FINAL LINKS OPEN | `TEST_EVIDENCE.md`; `docs/hackathon/evidence/phase3b-clean-clone/`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Public repository, demo, video, and Devpost links do not yet exist |
+| Fixed MVP Proof Bundle inventory | Mandatory internal contract | GENERATOR, REVIEWED TRACKED SAMPLE, AND CLEAN-CLONE VALIDATION COMPLETE | Canonical contract in `DEMO_EVIDENCE.md`; generator `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; Judge Sample `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; Phase 3B evidence | Build and evidence | 2026-07-20 02:00 CEST | Broader platforms and final public judge access remain open |
 
 The full binding readiness checklist is `SUBMISSION_CHECKLIST.md`. The canonical Proof Bundle Contract and exact required filenames are in `DEMO_EVIDENCE.md`; generated runs remain ignored except for the independently reviewed `examples/judge-sample/` allowlist.
 

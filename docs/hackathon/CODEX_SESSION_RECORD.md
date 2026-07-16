@@ -89,3 +89,12 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - After final independent pre-run review, the second lifetime workflow execution passed all eight stages exactly once with `.accesspatch/runs/` absent. No retry or third execution occurred. Evidence bytes, sample mtimes, ignored-run hashes, fixture source, and repository state were preserved.
 - Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Clean-machine verification remains open.
 - No OpenAI call, credential access, reasoner, repair, bundle generator, fixture repair, commit, push, remote, deployment, publication, or clean-machine verification occurred.
+
+## Phase 3B Record
+
+- A fresh clone from committed source HEAD `7d0653cd344cf15be448ed9ef62b41b74c0d67ef` completed one frozen-lockfile installation and one `pnpm judge:verify` run, both exit `0` without retry. The workflow run was lifetime execution number 3.
+- All eight stages and 139 API-free tests passed with `.accesspatch/runs/` absent. The Judge Sample, source repository, and temporary-cleanup boundaries were preserved.
+- The verified environment was Debian GNU/Linux 13, x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178. Other platforms remain unverified.
+- An initial evidence archive exposed local owner/group names only in TAR metadata. The byte-identical replacement uses neutral ownership and normalized metadata and passed independent review.
+- The sanitized evidence record is **COMPLETE** in commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; the archive is tracked as non-executable Git mode `100644`.
+- No installation, Judge Workflow, OpenAI call, credential access, reasoner, repair, bundle generation, implementation change, fixture repair, commit, push, remote, deployment, publication, or video work occurred in this integration task.

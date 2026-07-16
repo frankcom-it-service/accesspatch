@@ -109,7 +109,16 @@
 - Isolation: before preflight, the workflow creates empty restricted Git and npm/pnpm configuration under its reserved ignored directory. Child environments omit credentials, redirect Git and package-manager configuration away from user/system files, disable Git prompts and interactive credential handling, block proxy-routed external traffic while allowing local loopback, disable pnpm automatic dependency verification, update notification, audit, and funding behavior, and clean the reserved directory on success or failure.
 - Untracked policy: execution-sensitive untracked files under `apps/`, `packages/`, `scripts/`, `tests/`, or `examples/judge-sample/` are rejected; unrelated non-ignored files outside those paths may remain when they cannot override the fixed workflow inputs.
 - Result: the first lifetime run failed at the unit stage and remains part of the audit history. After fixture and home-configuration isolation corrections, the second lifetime run passed all eight stages exactly once with ignored runs absent; no third execution occurred.
-- Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Clean-machine and broader-platform verification remain open.
+- Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B later verified one clean Debian clone; broader-platform verification remains open.
+
+## D-016 — Track Sanitized Clean-Clone Evidence
+
+- Date: 2026-07-16
+- Decision: preserve the independently reviewed Phase 3B proof under `docs/hackathon/evidence/phase3b-clean-clone/` as one byte-identical sanitized archive, the exact 13 extracted evidence files, deterministic checksums, and a concise scope README.
+- Provenance: the clean clone came only from committed Git history at `7d0653cd344cf15be448ed9ef62b41b74c0d67ef`; installation and the Judge Workflow each ran once and exited `0` without retry.
+- Archive boundary: reject unsafe TAR entries and local identity metadata. The approved archive uses numeric ownership `0/0`, empty stored owner/group names, mode `0600`, normalized UTC timestamps, and no PAX atime/ctime metadata.
+- Claim boundary: this proves the controlled judge path on Debian GNU/Linux 13 x86_64 only. It does not establish broader-platform support, complete accessibility, WCAG conformance, certification, or BFSG/EAA assurance.
+- Status: **COMPLETE** in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. Independent review passed the final 16-file evidence directory; the archive is tracked as non-executable Git mode `100644`.
 
 ## Open Decisions
 

@@ -156,3 +156,18 @@
 - Stable output: `JUDGE_WORKFLOW_SAMPLE_PATH=examples/judge-sample/proof-bundle`; `JUDGE_WORKFLOW_FINDINGS=2`; `JUDGE_WORKFLOW_WCAG_MAPPINGS=3`; `JUDGE_WORKFLOW_BASELINE=expected-controlled-defects-confirmed`; `JUDGE_WORKFLOW_REPAIRED_EVIDENCE=validated`; `JUDGE_WORKFLOW_REPORT_AXE_VIOLATIONS=0`; `JUDGE_WORKFLOW_SECURITY=passed`; `JUDGE_WORKFLOW_VALID`.
 - Preservation: `.accesspatch/runs/` was absent throughout the successful execution; all 17 Judge Sample hashes and mtimes and all 23 ignored-run file hashes remained unchanged after restoration; reserved runtime configuration and workflow output were removed.
 - Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Clean-machine and broader-platform verification remain later phases.
+
+## 2026-07-16 — Phase 3B Clean-Clone Verification Evidence
+
+- Phase goal: prove that committed repository contents alone can be cloned, installed, and verified through the Phase 3A Judge Workflow in an isolated environment.
+- Execution result: a local Git-history clone at source HEAD `7d0653cd344cf15be448ed9ef62b41b74c0d67ef` ran `pnpm install --frozen-lockfile` exactly once and `pnpm judge:verify` exactly once; both exited `0` without retry.
+- Judge result: all eight stages passed, 139 API-free tests passed, `.accesspatch/runs/` remained absent, the tracked Judge Sample remained unchanged, and the workflow monitor observed no external TCP connection.
+- Environment: Debian GNU/Linux 13, x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, Chromium 148.0.7778.178.
+- Evidence correction: the original content-sanitized archive retained local owner/group names in TAR headers. It was repackaged byte-identically with neutral numeric ownership, empty stored names, restrictive permissions, normalized UTC timestamps, and no PAX atime/ctime metadata.
+- Files changed in this integration: the new `docs/hackathon/evidence/phase3b-clean-clone/` record plus current Phase 3B governance documentation only.
+- Validation: archive hash and metadata, exact 13-file inventory, extracted-file hashes, byte identity, Judge Sample validation and hashes, diff and hygiene scans, tracked-evidence inventory, and Git status.
+- Commit status and hash: **COMPLETE** in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` (`docs: add Phase 3B clean-clone evidence`).
+- Final file-mode correction: the archive content remained SHA-256 `27ac06541e02d3bfd554581beafaca4541dc8953316a6a5e4acc0572c5bdf0fd` while its repository mode was corrected from executable filesystem mode `0755` to non-executable Git mode `100644`.
+- Known issues: broader operating systems and browser configurations remain unverified; the Playwright-managed Chromium fallback was not exercised; public links and submission assets do not exist.
+- Independent final review: the complete 16-file evidence directory, archive metadata, checksums, byte identity, supported documentation claims, and eight unchanged checklist selections passed review before commit.
+- Next task: broader-platform and submission-readiness work only after separate authorization.

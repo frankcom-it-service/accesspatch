@@ -4,7 +4,7 @@ AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript a
 
 ## Status
 
-**Phase 1A, Phase 1B, the controlled Phase 1C feasibility scope, Phase 2A, Phase 2B, and Phase 2C are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation.
+**Phase 1A through Phase 3B are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation. Commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` adds the one-command Judge Workflow. Commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` adds the reviewed Phase 3B clean-clone evidence.
 
 The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
 
@@ -19,6 +19,8 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Phase 2A canonical Proof Bundle generator: commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` (`feat: add canonical proof bundle generator`, 2026-07-15).
 - Phase 2B source-backed WCAG mappings: commit `e3811c8bf968dc78701f8d264dc1377543059d64` (`feat: add source-backed WCAG mappings`, 2026-07-15).
 - Phase 2C curated Judge Sample: commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` (`feat: add curated judge sample`, 2026-07-16).
+- Phase 3A one-command Judge Workflow: commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` (`feat: add one-command judge verification`, 2026-07-16).
+- Phase 3B clean-clone evidence: commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` (`docs: add Phase 3B clean-clone evidence`, 2026-07-16).
 - Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
@@ -45,7 +47,7 @@ pnpm test:smoke
 pnpm test:baseline
 ```
 
-The verified local run used system Chromium at `/usr/bin/chromium`. On a clean machine, run `pnpm browser:install` to install Playwright Chromium when no explicit `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` or local system Chromium is available. Clean-install and cross-platform verification remain **NOT YET VERIFIED**.
+The local and Phase 3B clean-clone runs used system Chromium at `/usr/bin/chromium`. On a machine without an explicit `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` or local system Chromium, run `pnpm browser:install` to install Playwright Chromium. That fallback and platforms beyond the verified Debian GNU/Linux 13 x86_64 environment remain **NOT YET VERIFIED**.
 
 `pnpm test:baseline` is intentionally expected to exit non-zero until a later repair step. It reports exactly two controlled barriers: the checkout email input has no accessible name, and the primary continue button has no visible outline or box-shadow focus cue. Generated reports, traces, screenshots, and test artifacts remain ignored.
 
@@ -107,6 +109,12 @@ The first lifetime workflow execution failed at the unit stage because legacy Pr
 
 The corrected second lifetime execution passed all eight stages exactly once with `.accesspatch/runs/` absent and 139 API-free tests passing. The Judge Sample remained byte- and mtime-identical, all 23 ignored reviewed-run hashes were restored unchanged, and no third execution occurred. The stable result ended with `JUDGE_WORKFLOW_VALID`.
 
+## Phase 3B Clean-Clone Evidence
+
+On 2026-07-16, a fresh clone created from committed Git history at source HEAD `7d0653cd344cf15be448ed9ef62b41b74c0d67ef` completed `pnpm install --frozen-lockfile` once and `pnpm judge:verify` once, both with exit `0` and no retry. The workflow passed all eight stages and 139 API-free tests while `.accesspatch/runs/` was absent. The verified environment was Debian GNU/Linux 13, x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178.
+
+The independently reviewed sanitized evidence archive and extracted checksum-protected records are committed under `docs/hackathon/evidence/phase3b-clean-clone/` in `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. The archive is tracked as non-executable Git mode `100644`. Installation used package-registry access and emitted transient retry warnings; the Judge Workflow itself remained API-free, and its monitor observed no external TCP connection. Other operating systems and browser configurations remain unverified.
+
 ## Next Phase
 
-`OPEN`: verify the committed judge workflow from a clean environment; design retained user-selected patch handling, fallback, and rollback; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.
+`OPEN`: verify additional operating systems and browser configurations; design retained user-selected patch handling, fallback, and rollback; and prepare submission assets. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.

@@ -11,6 +11,8 @@
 - Canonical Proof Bundle: PHASE 2A COMPLETE in `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; exact inventory, manifest, and all 15 generated files independently reviewed; generated output remains ignored and untracked
 - Controlled WCAG 2.2 mapping: PHASE 2B COMPLETE in `e3811c8bf968dc78701f8d264dc1377543059d64`; exactly `1.3.1`, `4.1.2`, and `2.4.7` with official W3C provenance; regenerated output remains ignored and untracked
 - Curated tracked Judge Sample: PHASE 2C COMPLETE in `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files comprising `README.md`, `SHA256SUMS`, and 15 byte-identical reviewed Proof Bundle files
+- One-command Judge Workflow: PHASE 3A COMPLETE in `84db92f9e27b6f7872495516f166a8bcaed8ef03`
+- Clean-clone proof: PHASE 3B COMPLETE in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; one frozen install and one Judge Workflow run passed from committed source with ignored runs absent
 - Complete AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
 - Hosted or judge-accessible demo: NOT YET AVAILABLE
 
@@ -34,7 +36,7 @@ The Phase 2A generator produced all entries from the reviewed Phase 1 source art
 
 The independently reviewed Phase 2B bundle replaces `UNMAPPED` with exactly three deterministic WCAG 2.2 rows: email → `1.3.1` and `4.1.2`; focus → `2.4.7`. `3.3.2` is explicitly excluded for this controlled email defect. The mapping sources and rationale are in `WCAG_MAPPING_SOURCES.md`. This limited mapping is not certification or a full-conformance conclusion.
 
-Phase 2C commits that reviewed bundle in the explicit tracked location without changing any canonical file. Recursive `diff -qr --no-dereference` returned exit `0` with no output. The read-only, network-free validator uses only tracked content, and the tracked report smoke reported zero axe violations. This sample is independently reviewed but is not the final judge workflow or clean-machine proof.
+Phase 2C commits that reviewed bundle in the explicit tracked location without changing any canonical file. Recursive `diff -qr --no-dereference` returned exit `0` with no output. The read-only, network-free validator uses only tracked content, and the tracked report smoke reported zero axe violations. Phase 3A integrates that sample into the one-command workflow, and Phase 3B verifies the committed path in one fresh Debian GNU/Linux 13 x86_64 clone. Broader-platform behavior and public judge access remain open.
 
 ## Required Demo Record
 
