@@ -194,4 +194,6 @@
 - Organization boundary: default repository permission is `none`; the repository owner retains admin access.
 - Invitation state: `testing@devpost.com` resolved to `devposttesting` with read permission and remains pending; `build-week-event@openai.com` has a direct email invitation with read permission and remains pending.
 - Open access gate: neither invitation acceptance nor an independent judge clone is verified.
-- Status: **VALIDATED / UNCOMMITTED**. This documentation task changed no implementation, evidence, collaborator, role, visibility, remote reference, or baseline reference and performed no push.
+- Status: **COMPLETE** in `079b191ade0ee8eee457c0f8060586488386213a` (`docs: record private repository access state`).
+- Preservation: no invitation, collaborator, role, organization member, visibility, permission, implementation, evidence, immutable baseline reference, or external backup changed during the Phase 4C documentation work.
+- Remaining: invitation acceptance and independent judge cloning; `/feedback`; video and YouTube publication; external Devpost entry; any server demo or deployment; and final submission.

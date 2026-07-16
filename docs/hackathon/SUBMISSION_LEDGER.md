@@ -12,7 +12,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Selected track: Developer Tools | VERIFIED 2026-07-15 | Human coordination review |
 | Product definition: Journey Repair and Proof Agent for React/TypeScript applications | PROJECT-SPECIFIED | Project brief |
 | Legal owner and approved attribution | VERIFIED BY USER 2026-07-16 | `OWNERSHIP.md`; Frank Heilmann, trading as “Frankcom IT Service” |
-| Repository publication model | PRIVATE ORGANIZATION REPOSITORY VERIFIED; PHASE 4C UNCOMMITTED | `https://github.com/frankcom-it-service/accesspatch`; `PRIVATE_RELEASE_AND_PRIVACY_DECISION.md`; `PRIVATE_REPOSITORY_RELEASE_PLAN.md` |
+| Repository publication model | PHASE 4C COMPLETE: PRIVATE ORGANIZATION REPOSITORY VERIFIED; ACCESS PENDING | `079b191ade0ee8eee457c0f8060586488386213a`; `https://github.com/frankcom-it-service/accesspatch`; `PRIVATE_RELEASE_AND_PRIVACY_DECISION.md`; `PRIVATE_REPOSITORY_RELEASE_PLAN.md` |
 | Private release surface and ownership record | PHASE 4B COMPLETE | `f3953994883af959fdd80d2d5e5985b7cb987fd5`; `OWNERSHIP.md`; `THIRD_PARTY_NOTICES.md`; `README.md` |
 | Minimal initial README baseline | VERIFIED | Root commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f`; three-line README |
 | Phase 0 documentation foundation | COMPLETE (COMMITTED) | `bbabb9207b0f7ae92b8262b2e02930511dd81521`; `TEST_EVIDENCE.md` |

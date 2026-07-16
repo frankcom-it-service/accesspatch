@@ -111,4 +111,6 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Read-only verification confirmed the canonical private repository `https://github.com/frankcom-it-service/accesspatch`, private visibility, default branch `main`, exact three-reference remote inventory, organization default permission `none`, and repository admin access for the authenticated owner.
 - The required invitations both have read permission and remain pending: `testing@devpost.com` resolves to `devposttesting`; `build-week-event@openai.com` remains a direct email invitation.
 - Acceptance and independent judge cloning remain unverified. No invitation, collaborator, role, visibility, branch protection, secret, action, deployment, or remote reference was changed in this phase.
-- Status: **VALIDATED / UNCOMMITTED**. No push, credential inspection, implementation or evidence change, `/feedback`, video, external Devpost action, server access, deployment, publication, or submission occurred.
+- Status: **COMPLETE** in `079b191ade0ee8eee457c0f8060586488386213a` (`docs: record private repository access state`).
+- No invitation, collaborator, role, organization member, repository visibility, permission, implementation, or evidence changed during Phase 4C documentation. Invitation acceptance and independent judge cloning remain open.
+- No credential inspection, `/feedback`, video, YouTube publication, external Devpost entry, server demo, deployment, public source release, or submission occurred.

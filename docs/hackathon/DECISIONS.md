@@ -138,7 +138,7 @@
 - Access boundary: repository visibility remains private, the organization default repository permission is `none`, and judging access is limited to explicit read invitations.
 - Reference boundary: publish only `main`, `backup/submission-baseline-2026-07-16`, and tag `submission-baseline-2026-07-16`; keep `release/phase4b-private-readiness` local-only.
 - Invitation state: both required read invitations were issued and remain pending. Acceptance and independent judge cloning are separate verification gates.
-- Status: **VALIDATED / UNCOMMITTED**. Phase 4C records existing state only and changes no GitHub access, visibility, roles, collaborators, references, or repository content outside approved documentation.
+- Status: **COMPLETE** in `079b191ade0ee8eee457c0f8060586488386213a` (`docs: record private repository access state`). Phase 4C changed no invitation, collaborator, role, organization member, visibility, permission, implementation, evidence, or immutable baseline reference.
 
 ## Open Decisions
 
