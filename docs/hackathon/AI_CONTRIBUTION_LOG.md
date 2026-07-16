@@ -96,3 +96,12 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Independent review: complete source, schema, official-source, CSV, report, inventory, manifest, security, and all-15-artifact review passed.
 - Limitations: evidence-oriented mapping only; no conformance determination, certification, complete WCAG coverage, tracked judge sample, clean-machine verification, or broader repository support.
 - Commit status: **COMPLETE** in implementation commit `e3811c8bf968dc78701f8d264dc1377543059d64`. No model call, credential access, reasoner run, repair run, or fixture change occurred.
+
+## Phase 2C Curated Judge Sample Work
+
+- Human assignment: copy the reviewed Phase 2B bundle byte-for-byte into an explicit tracked sample and add read-only validation without regenerating evidence.
+- Codex contribution: added the fixed 15-hash contract, shared report assertions, tracked-sample validator, browser smoke, checksum manifest, sample README, sanitized failure reporting, and 16 API-free tests.
+- Human boundary: the sample is limited to the controlled fixture and is not the final judge workflow, clean-machine proof, arbitrary-repository evidence, accessibility certification, or legal assurance.
+- Current result: the tracked and ignored bundles compare byte-for-byte; 114 API-free tests, both report smokes, and the read-only validator pass.
+- Independent review: source, validator, tests, tracked sample, manifest, report, security, inventory, and byte identity passed full review.
+- Commit status: **COMPLETE** in implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`. No API call, credential access, reasoner run, repair run, bundle regeneration, or fixture change occurred.

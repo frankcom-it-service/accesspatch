@@ -72,3 +72,10 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - One authorized `pnpm phase2:bundle` regeneration exited `0` without retry after all offline gates passed. The ignored bundle and report validate; 98 API-free tests and a zero-violation report axe smoke passed.
 - Independent review covered the complete source, mapping, report, manifest, security, and 15-artifact archive.
 - Status: **COMPLETE** in implementation commit `e3811c8bf968dc78701f8d264dc1377543059d64`. Mapping scope remains the two controlled findings and is not a conformance determination or certification.
+
+## Phase 2C Record
+
+- This continuing central session copied the reviewed Phase 2B bundle byte-for-byte into `examples/judge-sample/proof-bundle/` and added an independent `SHA256SUMS`, read-only validator, and tracked-report smoke.
+- The validator depends only on tracked files, performs no writes or network access, and reuses the committed bundle, policy, mapping, report, and security checks.
+- Independent review passed the source, validator, tests, tracked sample, manifest, report, security, inventory, hashes, and byte identity.
+- Status: **COMPLETE** in implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after 114 API-free tests and zero-violation ignored/tracked report smokes. Clean-machine verification and the final judge workflow remain open. No API call, credential access, Phase 1 run, bundle regeneration, or fixture change occurred.

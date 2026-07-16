@@ -93,6 +93,14 @@
 - Boundary: evidence-oriented mapping for one controlled journey only; not a conformance determination, certification, or complete WCAG coverage.
 - Status: implemented and independently reviewed in Phase 2B commit `e3811c8bf968dc78701f8d264dc1377543059d64`; no additional criterion may be added without separate source-backed review.
 
+## D-014 — Track Only the Reviewed Judge Sample
+
+- Date: 2026-07-15
+- Decision: allowlist `examples/judge-sample/` as the sole tracked proof sample and require its `proof-bundle/` to remain byte-identical to the independently reviewed Phase 2B run.
+- Verification: pin all 15 hashes in `SHA256SUMS`; validate only tracked files with reused canonical policies; keep the ignored source run unchanged.
+- Boundary: the sample is controlled-fixture evidence, not an arbitrary-repository result, complete accessibility test, conformance determination, certification, or final clean-machine judge workflow.
+- Status: **COMPLETE** in independently reviewed Phase 2C implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.

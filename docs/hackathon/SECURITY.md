@@ -15,7 +15,7 @@ Phase 1B adds local evidence collection and one outbound Responses API integrati
 
 ## Secret Handling
 
-Use `.env.example` only as a key-name template. Real `.env*` files, keys, certificates, logs, traces, and generated proof runs are ignored. A future curated judge-visible sample proof requires an explicit reviewed tracked location or allowlist. If a secret is exposed, revoke it outside this repository and remove it from all artifacts before continuing.
+Use `.env.example` only as a key-name template. Real `.env*` files, keys, certificates, logs, traces, and generated proof runs are ignored. The independently reviewed `examples/judge-sample/` is the only explicit tracked generated-evidence allowlist. If a secret is exposed, revoke it outside this repository and remove it from all artifacts before continuing.
 
 The human-supervised development key is stored outside the repository at `$HOME/.config/accesspatch/openai.env`; the file mode is `600` and its containing directory is user-private. The secret value, project and organization identifiers, and payment data must never be recorded here.
 
@@ -38,6 +38,8 @@ Phase 2A reads only the eight reviewed Phase 1 artifacts as regular files, reche
 The real Phase 2A bundle passed these controls and independent full-bundle security review; it contains no remote report resources and remains untracked. Its static report's zero-violation axe smoke is a narrow automated result, not proof of complete accessibility. The generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`.
 
 Phase 2B allows only six exact W3C hyperlinks in `report.html`: one normative and one informative source for each of the three approved mappings. The report loads no remote resource automatically, identifies every external link visually and programmatically, rejects altered sources and unsupported criteria, and fails on positive certification or full-conformance language. The implementation is committed at `e3811c8bf968dc78701f8d264dc1377543059d64`; the generated bundle remains ignored, untracked, and independently reviewed.
+
+Committed Phase 2C implementation `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` allowlists only `examples/judge-sample/` for tracked proof. Its bundle is byte-identical to the reviewed ignored run, and its external `SHA256SUMS` pins every file. The validator is read-only, network-free, independent of `.accesspatch/runs/`, rejects symlinks, special files, unsafe checksum paths, hash drift, unsafe report links, credentials, environment values, absolute local paths, sensitive identifiers, raw prompt/response fields, and unsupported claims. CLI-visible failures sanitize absolute and traversal paths rather than echoing them.
 
 ## Reporting and Open Work
 

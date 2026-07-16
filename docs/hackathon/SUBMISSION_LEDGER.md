@@ -23,6 +23,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Isolated deterministic repair and replay | PHASE 1C COMPLETE; GENERATED ARTIFACTS IGNORED | `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; five runtime-validated feasibility artifacts and `TEST_EVIDENCE.md`; not the curated Proof Bundle |
 | Canonical Proof Bundle generator and real bundle | PHASE 2A COMPLETE; INDEPENDENT FULL-BUNDLE REVIEW PASSED; OUTPUT IGNORED | `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; ignored `.accesspatch/runs/phase2/proof-bundle/`; manifest SHA-256 `19613c7913a91ababb4fbe6cfe02cecc650006f9c80ccb46c18f10d6d9549906`; `TEST_EVIDENCE.md` |
 | Controlled WCAG 2.2 mapping | PHASE 2B COMPLETE; INDEPENDENT FULL REVIEW PASSED; OUTPUT IGNORED | `e3811c8bf968dc78701f8d264dc1377543059d64`; `WCAG_MAPPING_SOURCES.md`; ignored regenerated bundle; `TEST_EVIDENCE.md` |
+| Curated tracked Judge Sample | PHASE 2C COMPLETE; INDEPENDENT FULL REVIEW PASSED | `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files; byte-identical 15-file bundle plus `README.md` and `SHA256SUMS`; read-only validator and zero-violation report smoke |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
@@ -43,9 +44,9 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |
 | Judge-accessible demo or sandbox | Recommended | NOT YET IMPLEMENTED | `DEMO_EVIDENCE.md` | Demo | 2026-07-21 02:00 CEST | Hosting and accessibility OPEN |
 | Fresh install and final link verification | Recommended | NOT YET RUN | `TEST_EVIDENCE.md`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Requires feature-frozen artifact |
-| Fixed MVP Proof Bundle inventory | Mandatory internal contract | GENERATOR COMMITTED; REAL BUNDLE INDEPENDENTLY REVIEWED | Canonical contract in `DEMO_EVIDENCE.md`; `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; ignored real bundle and manifest | Build and evidence | 2026-07-20 02:00 CEST | Curated tracked judge-visible sample and final judge workflow remain open |
+| Fixed MVP Proof Bundle inventory | Mandatory internal contract | GENERATOR AND REVIEWED TRACKED SAMPLE COMMITTED | Canonical contract in `DEMO_EVIDENCE.md`; generator `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; Judge Sample `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` | Build and evidence | 2026-07-20 02:00 CEST | Final clean-machine judge workflow remains open |
 
-The full binding readiness checklist is `SUBMISSION_CHECKLIST.md`. The canonical Planned Proof Bundle Contract and exact required filenames are in `DEMO_EVIDENCE.md`; generated runs remain ignored unless a curated judge sample receives an explicitly reviewed tracked location or allowlist.
+The full binding readiness checklist is `SUBMISSION_CHECKLIST.md`. The canonical Proof Bundle Contract and exact required filenames are in `DEMO_EVIDENCE.md`; generated runs remain ignored except for the independently reviewed `examples/judge-sample/` allowlist.
 
 ## Official Verification Status
 

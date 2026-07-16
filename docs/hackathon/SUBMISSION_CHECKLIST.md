@@ -8,6 +8,8 @@ The Phase 2A generator is committed at `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3
 
 Phase 2B’s source-backed three-criterion mapping is committed at `e3811c8bf968dc78701f8d264dc1377543059d64` and independently reviewed. It does not complete any tracked-package, judge-path, human-review, publication, or submission gate, so no checkbox is newly marked complete.
 
+Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after independent review. Exactly the reviewed tracked-location/allowlist control is newly complete; the checklist now has 31 checked and 86 unchecked items. Clean installation, final judge workflow, publication, video, `/feedback`, and submission remain unchecked.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -144,7 +146,7 @@ Phase 2B’s source-backed three-criterion mapping is committed at `e3811c8bf968
 - [ ] Submission-ready state is reached by 2026-07-21 at 02:00 CEST and the final 24 hours remain reserved for fixes, evidence, video, links, Devpost, and submission issues.
 - [ ] All official sources, the inconsistent Rules page, deadlines, judging addresses, and field requirements receive a fresh final check.
 - [ ] Repository, demo, YouTube, documentation, and Devpost links are tested in a signed-out context.
-- [ ] Generated proof runs remain ignored; any curated judge sample uses an explicitly reviewed tracked location or allowlist.
+- [x] Generated proof runs remain ignored; any curated judge sample uses an explicitly reviewed tracked location or allowlist.
 - [ ] Secret, high-risk token, dependency, and security checks are run on the frozen tree.
 - [ ] Optional Devpost Hackathon plugin output is manually reviewed and used only for submission support.
 - [ ] Submission occurs only with explicit human approval by the current 2026-07-22 02:00 CEST deadline.

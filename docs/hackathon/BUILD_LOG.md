@@ -132,3 +132,13 @@
 - Run: the archived Phase 2A hashes were rechecked, only the old ignored bundle was removed, and exactly one authorized `pnpm phase2:bundle` execution exited `0` without retry. Bundle validation passed; the Chromium report smoke passed with zero axe violations.
 - Independent review: complete source, schema, official-source, CSV, HTML, inventory, manifest, security, and all-15-artifact review passed.
 - Commit: **COMPLETE** in `e3811c8bf968dc78701f8d264dc1377543059d64` (`feat: add source-backed WCAG mappings`). The regenerated bundle remains ignored and is not the tracked judge sample. No API call, credential access, reasoner run, repair run, or fixture change occurred.
+
+## 2026-07-15 — Phase 2C Curated Tracked Judge Sample
+
+- Goal: preserve the independently reviewed Phase 2B evidence byte-for-byte in an explicit tracked sample with independent read-only verification.
+- Structure: `examples/judge-sample/README.md`, `SHA256SUMS`, and `proof-bundle/`; the bundle retains exactly 11 top-level entries and 15 files.
+- Tooling: `pnpm judge:sample:validate` reuses the canonical schemas, manifest, repair-plan, patch, mapping, report-link, and security validators without reading ignored runs or writing output. `pnpm test:judge-sample-report` uses the shared report assertions against only the tracked HTML.
+- Tests: 16 new API-free cases; 114 total passed in the final run. The ignored source and tracked copy compare byte-for-byte.
+- Validation: frozen install completed in 434 ms; no floating versions; high-severity audit found no known vulnerabilities after the sandboxed registry request was repeated with approved network access; license inventory returned Apache-2.0, BSD-3-Clause, ISC, MIT, and MPL-2.0. Type-check, build, smoke, expected baseline, both bundle validators, both report smokes, inventory, hash, byte comparison, security, whitespace, and fixture-preservation checks passed.
+- Independent review: source, validator, tests, exact 17-file tracked sample, 14-entry non-circular manifest, report, security, inventory, all 15 hashes, and recursive byte identity passed.
+- Commit: **COMPLETE** in `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` (`feat: add curated judge sample`). Final clean-machine verification and the final judge workflow remain open. No model call, credential access, reasoner run, repair run, bundle regeneration, or fixture change occurred.
