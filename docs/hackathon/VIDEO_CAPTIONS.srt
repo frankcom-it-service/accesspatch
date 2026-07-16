@@ -1,0 +1,145 @@
+1
+00:00:00,000 --> 00:00:06,000
+Accessibility barriers can break a user journey
+even when a page still looks finished.
+
+2
+00:00:06,000 --> 00:00:12,000
+AccessPatch finds a controlled problem,
+repairs it, and proves the result.
+
+3
+00:00:12,000 --> 00:00:18,500
+Here is one React checkout journey.
+I use only the keyboard
+
+4
+00:00:18,500 --> 00:00:25,000
+to add the sample product, open checkout,
+enter synthetic data,
+
+5
+00:00:25,000 --> 00:00:31,500
+and move to the primary action.
+The email field shows visible text,
+
+6
+00:00:31,500 --> 00:00:38,000
+but it has no programmatically associated accessible name.
+The primary action receives keyboard focus,
+but no visible focus cue appears.
+
+7
+00:00:38,000 --> 00:00:43,000
+The form still reaches confirmation.
+
+8
+00:00:43,000 --> 00:00:48,000
+AccessPatch records barriers in the real journey state,
+not only in isolated components.
+
+9
+00:00:48,000 --> 00:00:55,000
+The evidence contains exactly two findings.
+Axe reports one label violation on the email field.
+
+10
+00:00:55,000 --> 00:01:02,000
+Browser evidence records no visible outline
+or box shadow on the focused button.
+
+11
+00:01:02,000 --> 00:01:07,000
+One bounded GPT-5.6 call reviewed this evidence
+with store false.
+
+12
+00:01:07,000 --> 00:01:12,000
+It used 2,444 recorded tokens
+and selected two allowlisted repair strategies.
+
+13
+00:01:12,000 --> 00:01:17,000
+It did not write or directly apply source code.
+
+14
+00:01:17,000 --> 00:01:23,000
+Deterministic templates perform the repair
+in a disposable copy.
+
+15
+00:01:23,000 --> 00:01:29,000
+One associates the visible email label with the input.
+
+16
+00:01:29,000 --> 00:01:34,000
+The other removes only the controlled rule
+that suppresses the focus indicator.
+
+17
+00:01:34,000 --> 00:01:39,500
+The same journey is replayed after repair.
+It reaches confirmation,
+
+18
+00:01:39,500 --> 00:01:45,000
+axe reports zero violations, and keyboard focus
+has a visible solid three-pixel outline.
+
+19
+00:01:45,000 --> 00:01:50,000
+The original fixture remains unchanged.
+
+20
+00:01:50,000 --> 00:01:56,000
+The fifteen-file Proof Bundle connects the findings,
+repair plan, exact diff, replay, audit records,
+
+21
+00:01:56,000 --> 00:02:02,000
+and human-review boundaries.
+
+22
+00:02:02,000 --> 00:02:07,000
+Its report shows the before and after states
+and three source-backed WCAG mappings,
+
+23
+00:02:07,000 --> 00:02:12,000
+without claiming certification.
+
+24
+00:02:12,000 --> 00:02:17,500
+As a prevention bonus, Mutation Guard injects
+one controlled aria-hidden regression
+
+25
+00:02:17,500 --> 00:02:23,000
+into another disposable copy.
+AccessPatch detects it once,
+
+26
+00:02:23,000 --> 00:02:28,000
+preserves the original fixture,
+and cleans the temporary runtime.
+
+27
+00:02:28,000 --> 00:02:33,000
+Codex was the primary engineering environment.
+Under human coordination,
+
+28
+00:02:33,000 --> 00:02:37,500
+it implemented most code, tests,
+security hardening, review, and reproducibility work.
+
+29
+00:02:37,500 --> 00:02:42,000
+The final suite has 178 API-free tests,
+an eight-stage Judge Workflow,
+and a successful seventeen-stage clean-clone verification.
+
+30
+00:02:42,000 --> 00:02:46,000
+AccessPatch remains a controlled demonstration.
+Human accessibility review is still required.
