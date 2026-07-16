@@ -3,6 +3,7 @@ export * from './content.ts';
 export * from './generate.ts';
 export * from './hash.ts';
 export * from './input.ts';
+export * from './judge-sample.ts';
 export * from './report-validation.ts';
 export * from './security.ts';
 export * from './validation.ts';

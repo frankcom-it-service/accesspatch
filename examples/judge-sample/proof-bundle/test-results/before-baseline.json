@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "accesspatch.test-result.before.v1",
+  "sourcePhase": "Phase 1A/1B",
+  "executedDuringPhase2A": false,
+  "command": "pnpm test:baseline",
+  "expectedExitBehavior": "non-zero because both controlled barriers remain",
+  "status": "intentionally_failed",
+  "findingIds": [
+    "CONTROLLED_BARRIER_EMAIL_NAME",
+    "CONTROLLED_BARRIER_FOCUS_VISIBLE"
+  ],
+  "axeResult": {
+    "violationCount": 1,
+    "ruleIds": [
+      "label"
+    ],
+    "targets": [
+      "#email"
+    ]
+  },
+  "focusValues": {
+    "outlineStyle": "none",
+    "outlineWidth": "3px",
+    "boxShadow": "none",
+    "visibleIndicatorDetected": false
+  },
+  "confirmationReached": true,
+  "sourceArtifact": "findings.json"
+}

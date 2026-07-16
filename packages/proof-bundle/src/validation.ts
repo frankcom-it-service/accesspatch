@@ -24,7 +24,10 @@ import {
   REVIEWED_SOURCE_HASHES,
 } from './constants.ts';
 import { sha256 } from './hash.ts';
-import { validateReportHtml } from './report-validation.ts';
+import {
+  validateReportHtml,
+  validateReportRelativeLinks,
+} from './report-validation.ts';
 import { scanGeneratedText } from './security.ts';
 
 function sorted(values: readonly string[]): string[] {
@@ -243,6 +246,10 @@ export async function validateProofBundle(bundleDirectory: string): Promise<{
   );
 
   const files = await collectFiles(bundleDirectory);
+  validateReportRelativeLinks(
+    await readFile(join(bundleDirectory, 'report.html'), 'utf8'),
+    new Set(files.keys()),
+  );
   const fileHashes = Object.fromEntries(
     [...files.entries()].map(([path, content]) => [path, sha256(content)]),
   );

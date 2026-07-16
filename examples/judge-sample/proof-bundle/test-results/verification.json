@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "accesspatch.verification.v1",
+  "baseGitCommit": "74b7de57c40f0889727296cf92a1b69cdab3c478",
+  "evidenceSha256": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+  "repairPlanSha256": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+  "patchSha256": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+  "replaySpecSha256": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e",
+  "journeyId": "demo-checkout-keyboard-v1",
+  "repairedFindingIds": [
+    "CONTROLLED_BARRIER_EMAIL_NAME",
+    "CONTROLLED_BARRIER_FOCUS_VISIBLE"
+  ],
+  "filesChanged": [
+    "apps/demo-checkout/src/App.tsx",
+    "apps/demo-checkout/src/styles.css"
+  ],
+  "buildResult": "passed",
+  "replayResult": "passed",
+  "axeResult": {
+    "violationCount": 0,
+    "ruleIds": [],
+    "emailLabelViolationPresent": false
+  },
+  "repairedFocusComputedValues": {
+    "outlineStyle": "solid",
+    "outlineWidth": "3px",
+    "boxShadow": "none",
+    "visibleIndicatorDetected": true
+  },
+  "confirmationReached": true,
+  "originalRepositoryUnchanged": true,
+  "overallVerificationStatus": "passed"
+}

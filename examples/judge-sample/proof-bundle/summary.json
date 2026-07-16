@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "accesspatch.proof-summary.v2",
+  "productName": "AccessPatch",
+  "bundleVersion": "1.1.0-phase2b",
+  "generatedAtUtc": "2026-07-15T19:59:14.384Z",
+  "manifestStrategy": "summary.json hashes every generated file except itself; directories are represented by their contained file hashes.",
+  "baseImplementationCommit": "79ed0e60b2c7145f4113ecac3797a119ccb696ee",
+  "repositoryHeadAtGeneration": "fce7d1b769038cdd2510b22087c1bbede4803a9f",
+  "journeyId": "demo-checkout-keyboard-v1",
+  "scopeStatement": "One controlled React checkout keyboard journey, two reviewed findings, and two deterministic isolated repair templates.",
+  "beforeStateFindingCount": 2,
+  "repairedFindingCount": 2,
+  "unresolvedAutomatedFindingCount": 0,
+  "manualReviewItemCount": 6,
+  "wcagMapping": {
+    "version": "2.2",
+    "criterionMappingCount": 3,
+    "mappedFindingCount": 2,
+    "scope": "Evidence-oriented mapping limited to the two controlled findings in the demo-checkout keyboard journey.",
+    "conclusion": "This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage."
+  },
+  "model": {
+    "id": "gpt-5.6-sol",
+    "responseStatus": "completed",
+    "store": false,
+    "usage": {
+      "inputTokens": 1649,
+      "outputTokens": 795,
+      "reasoningTokens": 0,
+      "totalTokens": 2444
+    }
+  },
+  "deterministicPolicyResult": "accepted",
+  "patchVerificationResult": "passed",
+  "replayResult": "passed",
+  "axe": {
+    "before": {
+      "violationCount": 1,
+      "ruleIds": [
+        "label"
+      ],
+      "targets": [
+        "#email"
+      ]
+    },
+    "after": {
+      "violationCount": 0,
+      "ruleIds": [],
+      "emailLabelViolationPresent": false
+    }
+  },
+  "confirmationReached": true,
+  "originalFixturePreserved": true,
+  "sourceArtifactSha256": {
+    "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+    "repairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+    "modelAudit": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0",
+    "patch": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+    "replay": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e",
+    "verification": "c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887",
+    "patchAudit": "0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b",
+    "manualReview": "0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1"
+  },
+  "generatedEntrySha256": {
+    "findings.json": "4e932780223584f14512d7fac593b188bf113778bac95756e418eb38aebd2e32",
+    "journey-map.json": "8a08377c297a217297616725b0244d2c84f3dc9b74d5eca405fd069332fbecf5",
+    "repair-plan.json": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+    "patch.diff": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+    "replay.spec.ts": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e",
+    "report.html": "f32888eb7b712d151bf140c95e76e98e6bb0ef98818b9f4e8f6231dfa1c45369",
+    "wcag-map.csv": "4d933d0aa5494a581f7b025459b08b2ef7f8e4eb76ce92de423168570eeae49c",
+    "manual-review.md": "0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1",
+    "test-results/before-baseline.json": "381a7e969e5bf9ed0160f9df1cfbfafb55955525b00d4efa14c0e2ef0c9543b5",
+    "test-results/after-replay.json": "1d7ac030dc292fef6ffed764bbf198ecabb5387d5a1092587228775c8fca5209",
+    "test-results/verification.json": "c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887",
+    "test-results/model-audit.json": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0",
+    "test-results/patch-audit.json": "0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b",
+    "audit-log.json": "02ec294b7870d27a91d2dc8ba98e2dff5dac1c64d1e9cb569df446222d3b7551"
+  },
+  "nonCertificationStatement": "This Proof Bundle is not a compliance certification and does not prove complete accessibility."
+}

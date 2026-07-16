@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AccessPatch Controlled Journey Proof Bundle</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f4f7fb; color: #172033; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.55; }
+    a { color: #0848a6; }
+    a.external-link { text-decoration-thickness: .12em; text-underline-offset: .15em; }
+    a:focus-visible { outline: 3px solid #b83b00; outline-offset: 3px; }
+    .skip-link { position: absolute; left: 1rem; top: -4rem; background: #fff; padding: .75rem; z-index: 2; }
+    .skip-link:focus { top: 1rem; }
+    header, main, footer { width: min(72rem, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding-block: 2rem 1rem; }
+    main { padding-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; }
+    .card, section { background: #fff; border: 1px solid #c9d3e2; border-radius: .6rem; padding: 1rem; margin-block: 1rem; }
+    .metric { font-size: 1.2rem; font-weight: 700; }
+    code { overflow-wrap: anywhere; }
+    footer { border-top: 1px solid #c9d3e2; padding-block: 1.5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to proof content</a>
+  <header>
+    <p>AccessPatch · Controlled feasibility evidence</p>
+    <h1>Checkout keyboard journey Proof Bundle</h1>
+    <p>This static report summarizes real reviewed Phase 1 artifacts. It makes no complete accessibility or legal compliance claim.</p>
+  </header>
+  <nav aria-label="Bundle files" class="card">
+    <h2>Bundle files</h2>
+    <ul><li><a href="summary.json">summary.json</a></li>
+<li><a href="findings.json">findings.json</a></li>
+<li><a href="journey-map.json">journey-map.json</a></li>
+<li><a href="repair-plan.json">repair-plan.json</a></li>
+<li><a href="patch.diff">patch.diff</a></li>
+<li><a href="replay.spec.ts">replay.spec.ts</a></li>
+<li><a href="wcag-map.csv">wcag-map.csv</a></li>
+<li><a href="manual-review.md">manual-review.md</a></li>
+<li><a href="audit-log.json">audit-log.json</a></li>
+<li><a href="test-results/before-baseline.json">test-results/before-baseline.json</a></li>
+<li><a href="test-results/after-replay.json">test-results/after-replay.json</a></li>
+<li><a href="test-results/verification.json">test-results/verification.json</a></li>
+<li><a href="test-results/model-audit.json">test-results/model-audit.json</a></li>
+<li><a href="test-results/patch-audit.json">test-results/patch-audit.json</a></li></ul>
+  </nav>
+  <main id="main-content">
+    <section aria-labelledby="journey-summary">
+      <h2 id="journey-summary">Before and after journey</h2>
+      <div class="grid">
+        <div><p class="metric">Before: 2 findings</p><p>One axe <code>label</code> violation targeted <code>#email</code>; the focused primary control had no visible indicator.</p></div>
+        <div><p class="metric">After: 0 automated findings</p><p>The isolated replay recorded zero axe violations, a <code>3px solid</code> outline, and confirmation reached.</p></div>
+      </div>
+    </section>
+    <section aria-labelledby="findings-heading">
+      <h2 id="findings-heading">Controlled findings</h2>
+      <div class="grid"><article class="card" aria-labelledby="CONTROLLED_BARRIER_EMAIL_NAME">
+        <h3 id="CONTROLLED_BARRIER_EMAIL_NAME">CONTROLLED_BARRIER_EMAIL_NAME</h3>
+        <p><strong>Selector:</strong> <code>#email</code></p>
+        <p><strong>Before:</strong> The input has zero associated labels and no aria-label or aria-labelledby value; axe reports the label rule for #email.</p>
+        <p><strong>Verified repair:</strong> The visible Email address text is programmatically associated with the email input and supplies its accessible name.</p>
+        <p><strong>Strategy:</strong> <code>associate_explicit_label</code></p>
+      </article>
+<article class="card" aria-labelledby="CONTROLLED_BARRIER_FOCUS_VISIBLE">
+        <h3 id="CONTROLLED_BARRIER_FOCUS_VISIBLE">CONTROLLED_BARRIER_FOCUS_VISIBLE</h3>
+        <p><strong>Selector:</strong> <code>.controlled-focus-defect</code></p>
+        <p><strong>Before:</strong> The focused control computed outlineStyle=none, outlineWidth=3px, and boxShadow=none; no visible outline or box-shadow indicator was detected.</p>
+        <p><strong>Verified repair:</strong> The keyboard-focused primary action has a clearly visible focus indicator without changing unrelated controls.</p>
+        <p><strong>Strategy:</strong> <code>restore_focus_visible</code></p>
+      </article></div>
+    </section>
+    <section aria-labelledby="reasoning-heading">
+      <h2 id="reasoning-heading">GPT-5.6 repair-plan summary</h2>
+      <p>The supplied evidence identifies two controlled barriers in the completed checkout keyboard journey: the required email field lacks a programmatic association with its visible label, and the keyboard-focused primary action has no detected visible focus indicator. The plan limits each repair to its allowlisted file and affected area for a later controlled patch step.</p>
+      <p>The plan selected <code>associate_explicit_label</code> and <code>restore_focus_visible</code>. Deterministic templates—not model-generated code—implemented the isolated patch.</p>
+    </section>
+    <section aria-labelledby="wcag-heading">
+      <h2 id="wcag-heading">Source-backed WCAG 2.2 mappings</h2>
+      <p>The WCAG 2.2 standard links are normative. The Understanding documents are explanatory and informative. These mappings cover only the two controlled findings and do not establish conformance.</p>
+      <div class="grid"><article class="card mapping-card" data-wcag-reference="1.3.1">
+        <h3>WCAG 2.2 1.3.1: Info and Relationships</h3>
+        <p><strong>Level:</strong> A</p>
+        <p><strong>Controlled finding:</strong> <code>CONTROLLED_BARRIER_EMAIL_NAME</code></p>
+        <p><strong>Evidence basis:</strong> The visible Email address relationship is not programmatically associated with #email.</p>
+        <ul>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/TR/WCAG22/#info-and-relationships">Normative WCAG 2.2 criterion 1.3.1 <span class="external-indicator">(external, W3C)</span></a></li>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html">Understanding 1.3.1 <span class="external-indicator">(external, W3C)</span></a></li>
+        </ul>
+        <p><strong>Boundary:</strong> This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage.</p>
+      </article>
+<article class="card mapping-card" data-wcag-reference="4.1.2">
+        <h3>WCAG 2.2 4.1.2: Name, Role, Value</h3>
+        <p><strong>Level:</strong> A</p>
+        <p><strong>Controlled finding:</strong> <code>CONTROLLED_BARRIER_EMAIL_NAME</code></p>
+        <p><strong>Evidence basis:</strong> The #email form control has no programmatically determinable accessible name.</p>
+        <ul>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/TR/WCAG22/#name-role-value">Normative WCAG 2.2 criterion 4.1.2 <span class="external-indicator">(external, W3C)</span></a></li>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">Understanding 4.1.2 <span class="external-indicator">(external, W3C)</span></a></li>
+        </ul>
+        <p><strong>Boundary:</strong> This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage.</p>
+      </article>
+<article class="card mapping-card" data-wcag-reference="2.4.7">
+        <h3>WCAG 2.2 2.4.7: Focus Visible</h3>
+        <p><strong>Level:</strong> AA</p>
+        <p><strong>Controlled finding:</strong> <code>CONTROLLED_BARRIER_FOCUS_VISIBLE</code></p>
+        <p><strong>Evidence basis:</strong> The keyboard-focused primary action has no visible focus indicator because controlled CSS suppresses its outline and box shadow.</p>
+        <ul>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/TR/WCAG22/#focus-visible">Normative WCAG 2.2 criterion 2.4.7 <span class="external-indicator">(external, W3C)</span></a></li>
+          <li><a class="external-link" data-external="true" href="https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html">Understanding 2.4.7 <span class="external-indicator">(external, W3C)</span></a></li>
+        </ul>
+        <p><strong>Boundary:</strong> This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage.</p>
+      </article></div>
+    </section>
+    <section aria-labelledby="changes-heading">
+      <h2 id="changes-heading">Exact changed files</h2>
+      <ul><li><code>apps/demo-checkout/src/App.tsx</code></li><li><code>apps/demo-checkout/src/styles.css</code></li></ul>
+      <p>The original controlled fixture remains preserved and intentionally broken for comparison.</p>
+    </section>
+    <section aria-labelledby="review-heading">
+      <h2 id="review-heading">Manual review and claim boundaries</h2>
+      <p>Screen-reader announcement, label adjacency and wording, and visual focus appearance across backgrounds and states still require qualified human review.</p>
+      <p><strong>This Proof Bundle is not a compliance certification and does not prove complete accessibility.</strong> This evidence covers only the defined checkout journey and two controlled findings; it does not provide WCAG certification or BFSG or EAA legal assurance and does not replace disabled-user testing.</p>
+    </section>
+    <details>
+      <summary>Reviewed source artifact hashes</summary>
+      <ul><li><code>evidence</code>: <code>cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2</code></li>
+<li><code>repairPlan</code>: <code>9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a</code></li>
+<li><code>modelAudit</code>: <code>3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0</code></li>
+<li><code>patch</code>: <code>3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6</code></li>
+<li><code>replay</code>: <code>8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e</code></li>
+<li><code>verification</code>: <code>c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887</code></li>
+<li><code>patchAudit</code>: <code>0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b</code></li>
+<li><code>manualReview</code>: <code>0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1</code></li></ul>
+    </details>
+  </main>
+  <footer><p>Generated locally without remote scripts, styles, fonts, images, or network calls.</p></footer>
+</body>
+</html>

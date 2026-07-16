@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "accesspatch.test-result.after.v1",
+  "sourcePhase": "Phase 1C",
+  "executedDuringPhase2A": false,
+  "command": "playwright test replay.spec.ts --config=<ephemeral-config>",
+  "expectedExitBehavior": "zero",
+  "status": "passed",
+  "repairedFindingIds": [
+    "CONTROLLED_BARRIER_EMAIL_NAME",
+    "CONTROLLED_BARRIER_FOCUS_VISIBLE"
+  ],
+  "axeResult": {
+    "violationCount": 0,
+    "ruleIds": [],
+    "emailLabelViolationPresent": false
+  },
+  "focusValues": {
+    "outlineStyle": "solid",
+    "outlineWidth": "3px",
+    "boxShadow": "none",
+    "visibleIndicatorDetected": true
+  },
+  "confirmationReached": true,
+  "sourceArtifact": "test-results/verification.json"
+}

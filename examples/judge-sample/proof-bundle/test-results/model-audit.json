@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "timestampUtc": "2026-07-15T15:10:53.264Z",
+  "modelId": "gpt-5.6-sol",
+  "promptVersion": "phase1-repair-plan-v1",
+  "evidenceSha256": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+  "repairPlanSha256": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+  "store": false,
+  "responseStatus": "completed",
+  "usage": {
+    "inputTokens": 1649,
+    "outputTokens": 795,
+    "reasoningTokens": 0,
+    "totalTokens": 2444
+  },
+  "policyValidation": "accepted",
+  "failureCategory": null
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "journeyId": "demo-checkout-keyboard-v1",
+  "evidenceBasedSummary": "The supplied evidence identifies two controlled barriers in the completed checkout keyboard journey: the required email field lacks a programmatic association with its visible label, and the keyboard-focused primary action has no detected visible focus indicator. The plan limits each repair to its allowlisted file and affected area for a later controlled patch step.",
+  "repairs": [
+    {
+      "findingId": "CONTROLLED_BARRIER_EMAIL_NAME",
+      "safeFixClass": "associate_explicit_label",
+      "priority": "high",
+      "rationale": "DOM inspection found no associated label or alternative accessible name for the email input, and the checkout accessibility scan reported the label rule specifically for #email. A direct association with the existing visible Email address text is a narrow repair.",
+      "userImpact": "A screen-reader user may otherwise encounter the required email field without hearing its visible purpose.",
+      "riskLevel": "low",
+      "confidence": 0.99,
+      "intendedTargetFile": "apps/demo-checkout/src/App.tsx",
+      "intendedTargetSelectorOrArea": "#email",
+      "permittedChangeDescription": "Programmatically associate the existing visible Email address label text with the existing email input while preserving the field's current identity, purpose, required state, and surrounding interface.",
+      "forbiddenChanges": [
+        "Do not add or change dependencies.",
+        "Do not rewrite content or redesign unrelated UI.",
+        "Do not alter authentication or payment processing.",
+        "Do not claim compliance or legal certification.",
+        "Do not merge, push, or apply changes automatically.",
+        "Do not modify files outside the allowed target."
+      ],
+      "automatedVerificationSteps": [
+        "Verify that the email input has the accessible name Email address.",
+        "Verify that the checkout accessibility scan no longer reports the label rule for #email.",
+        "Rerun the predefined checkout keyboard journey and verify that confirmation remains reachable."
+      ],
+      "humanReviewSteps": [
+        "Confirm that the visible Email address label remains clear and adjacent to the email field.",
+        "Review the field announcement with a screen reader because automated evidence is not a substitute for disabled-user testing."
+      ]
+    },
+    {
+      "findingId": "CONTROLLED_BARRIER_FOCUS_VISIBLE",
+      "safeFixClass": "restore_focus_visible",
+      "priority": "high",
+      "rationale": "The keyboard journey confirmed that the primary action held focus, while computed styles showed no visible outline or box-shadow indicator. Restoring a visible keyboard-focus cue only for the controlled selector is a narrow repair.",
+      "userImpact": "A keyboard user may otherwise be unable to visually locate the primary action before continuing.",
+      "riskLevel": "low",
+      "confidence": 0.99,
+      "intendedTargetFile": "apps/demo-checkout/src/styles.css",
+      "intendedTargetSelectorOrArea": ".controlled-focus-defect",
+      "permittedChangeDescription": "Restore a clearly visible focus indicator for the controlled primary action in its keyboard-focused state without changing unrelated controls, layout, content, or behavior.",
+      "forbiddenChanges": [
+        "Do not add or change dependencies.",
+        "Do not rewrite content or redesign unrelated UI.",
+        "Do not alter authentication or payment processing.",
+        "Do not claim compliance or legal certification.",
+        "Do not merge, push, or apply changes automatically.",
+        "Do not modify files outside the allowed target."
+      ],
+      "automatedVerificationSteps": [
+        "Verify that keyboard focus on Continue to confirmation produces a visible outline or box-shadow indicator.",
+        "Rerun the predefined checkout keyboard journey through confirmation and verify that its behavior remains intact."
+      ],
+      "humanReviewSteps": [
+        "Confirm that the focus indicator is visually clear against the primary button in relevant states.",
+        "Review keyboard usability with qualified human judgment because automation alone is incomplete."
+      ]
+    }
+  ],
+  "overallResidualRisks": [
+    "Only excerpts rather than complete files were supplied, so nearby style interactions and broader application behavior require review during the later controlled patch step.",
+    "Automated checks cannot establish complete accessibility or replace testing by disabled users and qualified human reviewers.",
+    "The evidence covers only the specified checkout keyboard journey and two findings; accessibility issues outside that scope may remain."
+  ],
+  "preserveOriginalDemoRepository": true,
+  "notComplianceCertification": "This repair plan is not a compliance certification."
+}

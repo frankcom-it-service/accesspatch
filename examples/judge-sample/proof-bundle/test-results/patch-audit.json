@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "accesspatch.patch-audit.v1",
+  "timestampUtc": "2026-07-15T17:21:26.475Z",
+  "patchEngineVersion": "1.0.0-phase1c",
+  "approvedInputHashes": {
+    "evidenceSha256": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+    "repairPlanSha256": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+    "modelAuditSha256": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0"
+  },
+  "allowedFiles": [
+    "apps/demo-checkout/src/App.tsx",
+    "apps/demo-checkout/src/styles.css"
+  ],
+  "safeFixClasses": [
+    "associate_explicit_label",
+    "restore_focus_visible"
+  ],
+  "isolatedWorkingCopyStrategy": "disposable-copy-with-excluded-git-dependencies-build-output-test-output-and-prior-runs",
+  "changedFiles": [
+    "apps/demo-checkout/src/App.tsx",
+    "apps/demo-checkout/src/styles.css"
+  ],
+  "policyResult": "accepted",
+  "verificationResult": "passed",
+  "cleanupResult": "removed"
+}

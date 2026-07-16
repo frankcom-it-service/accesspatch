@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "accesspatch.audit-log.v1",
+  "entries": [
+    {
+      "timestampUtc": null,
+      "phase": "Phase 1A",
+      "action": "Run the original controlled keyboard baseline.",
+      "tool": "Playwright and axe",
+      "model": null,
+      "inputArtifactHashes": {},
+      "outputArtifactHashes": {
+        "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2"
+      },
+      "status": "passed",
+      "gate": "Expected non-zero baseline reached confirmation and reported only both controlled barriers.",
+      "relevantCommit": "18c3828431348c8eadfc93aaae3e4d92ec4f3bcf",
+      "privacySafetyNotes": "No screenshots, traces, personal data, or credentials are included."
+    },
+    {
+      "timestampUtc": "2026-07-15T15:04:08.957Z",
+      "phase": "Phase 1B",
+      "action": "Collect normalized keyboard-journey evidence.",
+      "tool": "Playwright, axe, and AccessPatch evidence collector",
+      "model": null,
+      "inputArtifactHashes": {},
+      "outputArtifactHashes": {
+        "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2"
+      },
+      "status": "completed",
+      "gate": "Evidence schema accepted exactly two controlled findings and bounded source context.",
+      "relevantCommit": "207e0559d0d7664a24dcb297fb40b37700f36208",
+      "privacySafetyNotes": "Only allowlisted bounded excerpts and normalized test evidence were retained."
+    },
+    {
+      "timestampUtc": "2026-07-15T15:10:53.264Z",
+      "phase": "Phase 1B",
+      "action": "Produce one structured evidence-based repair plan.",
+      "tool": "OpenAI Responses API Structured Outputs",
+      "model": "gpt-5.6-sol",
+      "inputArtifactHashes": {
+        "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2"
+      },
+      "outputArtifactHashes": {
+        "repairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+        "modelAudit": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0"
+      },
+      "status": "completed",
+      "gate": "Schema validation completed with store false.",
+      "relevantCommit": "207e0559d0d7664a24dcb297fb40b37700f36208",
+      "privacySafetyNotes": "No raw prompt, raw response, credential, or unrelated repository content is stored."
+    },
+    {
+      "timestampUtc": "2026-07-15T15:10:53.264Z",
+      "phase": "Phase 1B",
+      "action": "Accept the repair plan under deterministic policy.",
+      "tool": "AccessPatch repair-reasoner policy validator",
+      "model": null,
+      "inputArtifactHashes": {
+        "repairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a"
+      },
+      "outputArtifactHashes": {
+        "approvedRepairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a"
+      },
+      "status": "accepted",
+      "gate": "Exactly two approved finding-to-fix mappings and allowlisted target files passed.",
+      "relevantCommit": "207e0559d0d7664a24dcb297fb40b37700f36208",
+      "privacySafetyNotes": "Model prose was not interpreted as executable source code."
+    },
+    {
+      "timestampUtc": "2026-07-15T17:21:26.475Z",
+      "phase": "Phase 1C",
+      "action": "Generate an isolated deterministic two-file repair patch.",
+      "tool": "AccessPatch patch engine",
+      "model": null,
+      "inputArtifactHashes": {
+        "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+        "repairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a"
+      },
+      "outputArtifactHashes": {
+        "patch": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6"
+      },
+      "status": "accepted",
+      "gate": "Patch policy accepted only App.tsx and styles.css changes.",
+      "relevantCommit": "79ed0e60b2c7145f4113ecac3797a119ccb696ee",
+      "privacySafetyNotes": "Mutation occurred only in a disposable copy; the original fixture was preserved."
+    },
+    {
+      "timestampUtc": "2026-07-15T17:21:26.475Z",
+      "phase": "Phase 1C",
+      "action": "Verify the isolated repaired keyboard replay.",
+      "tool": "Playwright, axe, and AccessPatch patch engine",
+      "model": null,
+      "inputArtifactHashes": {
+        "patch": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+        "replay": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e"
+      },
+      "outputArtifactHashes": {
+        "verification": "c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887",
+        "patchAudit": "0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b",
+        "manualReview": "0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1"
+      },
+      "status": "passed",
+      "gate": "Zero axe violations, visible focus, confirmation reached, and cleanup removed the copy.",
+      "relevantCommit": "79ed0e60b2c7145f4113ecac3797a119ccb696ee",
+      "privacySafetyNotes": "No trace, screenshot, absolute path, environment value, or credential was retained."
+    },
+    {
+      "timestampUtc": "2026-07-15T19:59:14.384Z",
+      "phase": "Phase 2B",
+      "action": "Generate and validate the canonical ignored Proof Bundle with source-backed WCAG mappings.",
+      "tool": "AccessPatch proof-bundle generator",
+      "model": null,
+      "inputArtifactHashes": {
+        "evidence": "cc61b701c94fbd6653fa1d8ee8e05e30791761544c4fe0576771532c36a925c2",
+        "repairPlan": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+        "modelAudit": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0",
+        "patch": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+        "replay": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e",
+        "verification": "c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887",
+        "patchAudit": "0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b",
+        "manualReview": "0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1"
+      },
+      "outputArtifactHashes": {
+        "findings.json": "4e932780223584f14512d7fac593b188bf113778bac95756e418eb38aebd2e32",
+        "journey-map.json": "8a08377c297a217297616725b0244d2c84f3dc9b74d5eca405fd069332fbecf5",
+        "repair-plan.json": "9071ab61c85a36a10634efd4e3f6cfc90cdd213faf4907d5b566ef5848b8d77a",
+        "patch.diff": "3303f8d8556f2d7e752e058093472a25af542e40244249f026a8231888ae9ac6",
+        "replay.spec.ts": "8eced10a99c8785fcbceebc800ecbd4aa781b70895bad4fe08bdeb549c2dec7e",
+        "report.html": "f32888eb7b712d151bf140c95e76e98e6bb0ef98818b9f4e8f6231dfa1c45369",
+        "wcag-map.csv": "4d933d0aa5494a581f7b025459b08b2ef7f8e4eb76ce92de423168570eeae49c",
+        "manual-review.md": "0c6a71ed05fde2ce9a3d9bb714973b292936ce6e5c3ba09c69e3545f197681b1",
+        "test-results/before-baseline.json": "381a7e969e5bf9ed0160f9df1cfbfafb55955525b00d4efa14c0e2ef0c9543b5",
+        "test-results/after-replay.json": "1d7ac030dc292fef6ffed764bbf198ecabb5387d5a1092587228775c8fca5209",
+        "test-results/verification.json": "c85c56743496be7a615c4c3fc17c5c042c9cc431d20720eda62915ff6653b887",
+        "test-results/model-audit.json": "3369c907622f0d6de9c0077e08ac50f28d8313803df213320570af6039e907c0",
+        "test-results/patch-audit.json": "0e588e5975cc55a648bce92451c700af6303fca17503e35c19135fb45f3eea0b"
+      },
+      "status": "generated",
+      "gate": "Exact inventory, schemas, hashes, three allowlisted WCAG mappings, report structure, safety scan, and atomic replacement passed.",
+      "relevantCommit": null,
+      "privacySafetyNotes": "Phase 2B is uncommitted; the bundle is ignored, narrowly mapped, and is not a tracked judge sample or certification."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+--- a/apps/demo-checkout/src/App.tsx
++++ b/apps/demo-checkout/src/App.tsx
+@@ -170,8 +170,10 @@
+               </div>
+ 
+               <div className="field">
+-                {/* Controlled Phase 1 fixture: visible text intentionally is not programmatically associated with this input. Do not copy this defect into production code. */}
+-                <span className="field-label">Email address</span>
++                {/* Controlled Phase 1 repair: associate the existing visible text with the existing email input. */}
++                <label className="field-label" htmlFor="email">
++                  Email address
++                </label>
+                 <input
+                   id="email"
+                   data-testid="checkout-email"
+--- a/apps/demo-checkout/src/styles.css
++++ b/apps/demo-checkout/src/styles.css
+@@ -226,12 +226,6 @@
+   margin-top: 0.4rem;
+ }
+ 
+-/* Controlled Phase 1 fixture: remove every relevant outline and box-shadow focus cue from the primary action. Do not copy this defect into production code. */
+-.controlled-focus-defect:focus,
+-.controlled-focus-defect:focus-visible {
+-  outline: none;
+-  box-shadow: none;
+-}
+ 
+ .confirmation {
+   max-width: 42rem;

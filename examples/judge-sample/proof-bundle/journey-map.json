@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "accesspatch.journey-map.v1",
+  "journeyId": "demo-checkout-keyboard-v1",
+  "inputMode": "keyboard",
+  "states": [
+    {
+      "stateId": "product-page",
+      "label": "Product page rendered",
+      "evidenceReference": "findings.json"
+    },
+    {
+      "stateId": "cart-populated",
+      "label": "Product added to cart",
+      "evidenceReference": "findings.json"
+    },
+    {
+      "stateId": "checkout-opened",
+      "label": "Checkout opened",
+      "evidenceReference": "findings.json"
+    },
+    {
+      "stateId": "checkout-form",
+      "label": "Checkout form reached",
+      "evidenceReference": "findings.json"
+    },
+    {
+      "stateId": "barriers-observed",
+      "label": "Email-name and focus-visible barriers observed",
+      "evidenceReference": "test-results/before-baseline.json"
+    },
+    {
+      "stateId": "sample-form-completed",
+      "label": "Sample shipping and contact data entered",
+      "evidenceReference": "test-results/before-baseline.json"
+    },
+    {
+      "stateId": "confirmation-reached",
+      "label": "Original controlled journey reached confirmation",
+      "evidenceReference": "test-results/before-baseline.json"
+    },
+    {
+      "stateId": "isolated-replay-completed",
+      "label": "Isolated repaired replay completed",
+      "evidenceReference": "test-results/after-replay.json"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "product-page",
+      "to": "cart-populated",
+      "keyboardAction": "Tab to Add product to cart, then press Enter."
+    },
+    {
+      "from": "cart-populated",
+      "to": "checkout-opened",
+      "keyboardAction": "Tab to Open checkout, then press Enter."
+    },
+    {
+      "from": "checkout-opened",
+      "to": "checkout-form",
+      "keyboardAction": "Verify keyboard focus reaches the checkout heading and form sequence."
+    },
+    {
+      "from": "checkout-form",
+      "to": "barriers-observed",
+      "keyboardAction": "Tab through fields to the primary action and inspect accessible name and computed focus styles."
+    },
+    {
+      "from": "barriers-observed",
+      "to": "sample-form-completed",
+      "keyboardAction": "Enter the predefined sample data using keyboard input."
+    },
+    {
+      "from": "sample-form-completed",
+      "to": "confirmation-reached",
+      "keyboardAction": "Press Enter on Continue to confirmation."
+    },
+    {
+      "from": "confirmation-reached",
+      "to": "isolated-replay-completed",
+      "keyboardAction": "Run the same generated keyboard replay in the isolated repaired copy."
+    }
+  ],
+  "screenshotsOrTracesIncluded": false
+}

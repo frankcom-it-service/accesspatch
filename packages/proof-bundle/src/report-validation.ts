@@ -3,8 +3,9 @@ import {
   WCAG_MAPPING_DEFINITIONS,
   type ProofFindings,
 } from '@accesspatch/shared-types';
+import { assertSafeRelativePath } from './security.ts';
 
-const REQUIRED_LINKS = [
+export const REQUIRED_REPORT_LINKS = [
   'summary.json',
   'findings.json',
   'journey-map.json',
@@ -20,6 +21,26 @@ const REQUIRED_LINKS = [
   'test-results/model-audit.json',
   'test-results/patch-audit.json',
 ] as const;
+
+export function validateReportRelativeLinks(
+  html: string,
+  availablePaths: ReadonlySet<string>,
+): string[] {
+  const links = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
+  const relativeLinks = links.filter(
+    (link) => !link.startsWith('#') && !link.startsWith('https://'),
+  );
+  for (const link of relativeLinks) {
+    if (/^[a-z][a-z0-9+.-]*:/i.test(link) || link.includes('?') || link.includes('#')) {
+      throw new Error(`report_relative_link_unsafe:${link}`);
+    }
+    assertSafeRelativePath(link);
+    if (!availablePaths.has(link)) {
+      throw new Error(`report_relative_link_missing:${link}`);
+    }
+  }
+  return relativeLinks;
+}
 
 function escapeHtml(value: string): string {
   return value
@@ -54,7 +75,7 @@ export function validateReportHtml(html: string, findings: ProofFindings): void 
   for (const [name, pattern] of requirements) {
     if (!pattern.test(html)) issues.push(name);
   }
-  for (const link of REQUIRED_LINKS) {
+  for (const link of REQUIRED_REPORT_LINKS) {
     if (!html.includes(`href="${link}"`)) issues.push(`link:${link}`);
   }
 

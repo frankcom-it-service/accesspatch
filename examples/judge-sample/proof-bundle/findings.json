@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "accesspatch.proof-findings.v2",
+  "journeyId": "demo-checkout-keyboard-v1",
+  "findings": [
+    {
+      "schemaVersion": "1.0.0",
+      "findingId": "CONTROLLED_BARRIER_EMAIL_NAME",
+      "journeyId": "demo-checkout-keyboard-v1",
+      "stepId": "checkout-contact-email",
+      "routeOrState": "/checkout with the shipping and contact form visible",
+      "affectedSelector": "#email",
+      "userFacingImpact": "A screen-reader user may encounter the required email field without its visible purpose being announced.",
+      "observedCondition": "The input has zero associated labels and no aria-label or aria-labelledby value; axe reports the label rule for #email.",
+      "expectedCondition": "The visible Email address text is programmatically associated with the email input and supplies its accessible name.",
+      "safeFixClass": "associate_explicit_label",
+      "sourceFileHint": "apps/demo-checkout/src/App.tsx",
+      "sourceContext": {
+        "schemaVersion": "1.0.0",
+        "file": "apps/demo-checkout/src/App.tsx",
+        "selectionBasis": "Allowlisted excerpt containing only the controlled email field.",
+        "excerpt": "{/* Controlled Phase 1 fixture: visible text intentionally is not programmatically associated with this input. Do not copy this defect into production code. */}\n                <span className=\"field-label\">Email address</span>\n                <input\n                  id=\"email\"\n                  data-testid=\"checkout-email\"\n                  name=\"email\"\n                  type=\"email\"\n                  autoComplete=\"email\"\n                  required\n                />\n              </div>",
+        "completeFile": false
+      },
+      "axeMetadata": {
+        "ruleId": "label",
+        "impact": "critical",
+        "target": "#email",
+        "help": "Form elements must have labels"
+      },
+      "focusMetadata": null,
+      "confidenceBasis": [
+        "DOM inspection found no programmatic label association.",
+        "The checkout axe scan returned only the label violation targeting #email."
+      ],
+      "requiredAutomatedVerification": [
+        "Verify the email input has the accessible name Email address.",
+        "Verify the checkout axe scan no longer reports the label rule for #email."
+      ],
+      "requiredHumanReview": [
+        "Confirm the visible label remains clear and adjacent to the email field.",
+        "Review the field announcement with a screen reader; automated evidence is not a substitute for disabled-user testing."
+      ],
+      "repairStatus": "verified_repaired_in_isolated_copy",
+      "verificationArtifact": "test-results/verification.json",
+      "wcagMappings": [
+        {
+          "wcagVersion": "2.2",
+          "wcagReference": "1.3.1",
+          "referenceLabel": "Info and Relationships",
+          "conformanceLevel": "A",
+          "normativeSourceUrl": "https://www.w3.org/TR/WCAG22/#info-and-relationships",
+          "understandingSourceUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
+          "mappingBasis": "The visible Email address relationship is not programmatically associated with #email.",
+          "manualReviewRequired": true,
+          "claimBoundary": "This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage."
+        },
+        {
+          "wcagVersion": "2.2",
+          "wcagReference": "4.1.2",
+          "referenceLabel": "Name, Role, Value",
+          "conformanceLevel": "A",
+          "normativeSourceUrl": "https://www.w3.org/TR/WCAG22/#name-role-value",
+          "understandingSourceUrl": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+          "mappingBasis": "The #email form control has no programmatically determinable accessible name.",
+          "manualReviewRequired": true,
+          "claimBoundary": "This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage."
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "findingId": "CONTROLLED_BARRIER_FOCUS_VISIBLE",
+      "journeyId": "demo-checkout-keyboard-v1",
+      "stepId": "checkout-continue-focus",
+      "routeOrState": "/checkout with Continue to confirmation keyboard-focused",
+      "affectedSelector": ".controlled-focus-defect",
+      "userFacingImpact": "A keyboard user may be unable to visually locate the primary action before continuing.",
+      "observedCondition": "The focused control computed outlineStyle=none, outlineWidth=3px, and boxShadow=none; no visible outline or box-shadow indicator was detected.",
+      "expectedCondition": "The keyboard-focused primary action has a clearly visible focus indicator without changing unrelated controls.",
+      "safeFixClass": "restore_focus_visible",
+      "sourceFileHint": "apps/demo-checkout/src/styles.css",
+      "sourceContext": {
+        "schemaVersion": "1.0.0",
+        "file": "apps/demo-checkout/src/styles.css",
+        "selectionBasis": "Allowlisted excerpt containing only the controlled focus-style rule.",
+        "excerpt": "/* Controlled Phase 1 fixture: remove every relevant outline and box-shadow focus cue from the primary action. Do not copy this defect into production code. */\n.controlled-focus-defect:focus,\n.controlled-focus-defect:focus-visible {\n  outline: none;\n  box-shadow: none;\n}",
+        "completeFile": false
+      },
+      "axeMetadata": null,
+      "focusMetadata": {
+        "outlineStyle": "none",
+        "outlineWidth": "3px",
+        "boxShadow": "none",
+        "visibleIndicatorDetected": false
+      },
+      "confidenceBasis": [
+        "The keyboard journey confirmed the primary action held focus.",
+        "Computed styles showed no visible outline or box-shadow focus indicator."
+      ],
+      "requiredAutomatedVerification": [
+        "Verify keyboard focus on Continue to confirmation has a visible outline or box-shadow.",
+        "Rerun the predefined checkout keyboard journey through confirmation."
+      ],
+      "requiredHumanReview": [
+        "Confirm the focus indicator is visually clear against the primary button in relevant states.",
+        "Review keyboard usability with qualified human judgment; automation alone is incomplete."
+      ],
+      "repairStatus": "verified_repaired_in_isolated_copy",
+      "verificationArtifact": "test-results/verification.json",
+      "wcagMappings": [
+        {
+          "wcagVersion": "2.2",
+          "wcagReference": "2.4.7",
+          "referenceLabel": "Focus Visible",
+          "conformanceLevel": "AA",
+          "normativeSourceUrl": "https://www.w3.org/TR/WCAG22/#focus-visible",
+          "understandingSourceUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+          "mappingBasis": "The keyboard-focused primary action has no visible focus indicator because controlled CSS suppresses its outline and box shadow.",
+          "manualReviewRequired": true,
+          "claimBoundary": "This mapping is not a WCAG conformance determination or certification and does not establish full WCAG coverage."
+        }
+      ]
+    }
+  ]
+}

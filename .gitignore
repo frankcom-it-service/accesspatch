@@ -28,6 +28,8 @@ coverage/
 
 # Tests, traces, and runtime artifacts
 test-results/
+!examples/judge-sample/proof-bundle/test-results/
+!examples/judge-sample/proof-bundle/test-results/*.json
 playwright-report/
 blob-report/
 .nyc_output/
@@ -38,8 +40,8 @@ trace*.zip
 logs/
 
 # Generated proof runs and demo bundles (records in docs remain tracked)
-# A curated judge-visible sample may later use an explicit tracked path or
-# reviewed allowlist; do not place that sample under these ignored paths.
+# The independently reviewed curated judge sample is explicitly allowlisted
+# under examples/judge-sample/; all other generated proof runs remain ignored.
 .accesspatch/runs/
 .accesspatch/work/
 proof-bundles/
