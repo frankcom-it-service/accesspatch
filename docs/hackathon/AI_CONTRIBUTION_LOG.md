@@ -105,3 +105,14 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Current result: the tracked and ignored bundles compare byte-for-byte; 114 API-free tests, both report smokes, and the read-only validator pass.
 - Independent review: source, validator, tests, tracked sample, manifest, report, security, inventory, and byte identity passed full review.
 - Commit status: **COMPLETE** in implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`. No API call, credential access, reasoner run, repair run, bundle regeneration, or fixture change occurred.
+
+## Phase 3A Judge Workflow Work
+
+- Human assignment: create a deterministic one-command judge workflow without modifying or regenerating reviewed evidence.
+- Codex contribution: added a hard-assertion controlled-baseline contract, repository/sample preflight, fixed stage plan, local-only child environment, tracked-byte and sample-mtime snapshots, reserved-output cleanup, stable summary contract, and 25 API-free tests.
+- Validation result: direct build, smoke, developer baseline, judge baseline, sample validator, and report smoke passed. The corrected unit suite has 139 passing tests with ignored runs absent.
+- Single full run: exactly one `pnpm judge:verify` execution was attempted. It stopped at stage 2 because existing proof-bundle unit fixtures copied ignored source artifacts. No retry occurred.
+- Corrections: proof-bundle unit fixtures now reconstruct the reviewed evidence hash from tracked sample facts and use byte-identical tracked artifacts. After independent review archive `2f328fbe97d1088945ba9291b8669f5bdd768137196b800356a779ba535df7a5` identified a remaining isolation gap, Codex added empty restricted runtime Git/npm configuration, Git system/global-config and credential-prompt blocking, npm/pnpm user/global-config redirection, automatic-install/audit/funding/update-notifier suppression, and cleanup covering preflight failures. Fake-home Git and pnpm tests confirm their marker configuration is not observed.
+- Corrected proof run: after final independent pre-run archive review SHA-256 `1e458514f2737234765705a7063afa8658c8e887233a727d91e45eb05c2ec9b9`, the second lifetime workflow execution exited `0`; all eight stages started and passed exactly once, 139 tests passed, the exact controlled baseline and zero-violation report were confirmed, and no retry or third execution occurred.
+- Preservation: `.accesspatch/runs/` was absent during execution; all 17 Judge Sample hashes and mtimes and all 23 ignored-run hashes remained unchanged after restoration. Runtime configuration and temporary workflow output were removed.
+- Result: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. No API call, credential access, reasoner run, repair run, bundle regeneration, fixture change, remote, deployment, or publication occurred.

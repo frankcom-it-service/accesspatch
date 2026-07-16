@@ -92,6 +92,21 @@ The committed Phase 2B mapping is limited to WCAG 2.2 criteria `1.3.1` and `4.1.
 
 `examples/judge-sample/` is the committed, independently reviewed Judge Sample. Its 17 tracked files comprise `README.md`, `SHA256SUMS`, and 15 Proof Bundle files byte-identical to the reviewed Phase 2B run. Run `pnpm judge:sample:validate` for read-only, network-free validation and `pnpm test:judge-sample-report` for the tracked report smoke. Phase 2C is not the final clean-machine or one-command judge workflow.
 
+## Phase 3A Judge Workflow
+
+**COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. After installing the locked dependencies, the primary judge path is:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm judge:verify
+```
+
+The eight stages are repository-contract preflight, API-free unit tests, TypeScript type-check, production build, application smoke, passing controlled-baseline proof, tracked Judge Sample validation, and tracked report smoke. `pnpm test:baseline` remains the intentionally failing developer diagnostic; `pnpm test:judge-baseline` is the hard-assertion passing proof that the exact two controlled defects still exist.
+
+The first lifetime workflow execution failed at the unit stage because legacy Proof Bundle tests depended on ignored Phase 1 artifacts. The tests now reconstruct hash-verified fixtures from the committed Judge Sample. Independent review then identified incomplete Git/npm home-configuration isolation; the committed workflow creates empty restricted Git and npm/pnpm configuration under its reserved ignored directory, redirects every Git and pnpm child away from user and system configuration, disables credential prompting, and cleans the runtime configuration on every exit path.
+
+The corrected second lifetime execution passed all eight stages exactly once with `.accesspatch/runs/` absent and 139 API-free tests passing. The Judge Sample remained byte- and mtime-identical, all 23 ignored reviewed-run hashes were restored unchanged, and no third execution occurred. The stable result ended with `JUDGE_WORKFLOW_VALID`.
+
 ## Next Phase
 
-`OPEN`: build the final judge workflow; design retained user-selected patch handling, fallback, and rollback; verify a clean environment; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, or Judge Sample as the completed AccessPatch product.
+`OPEN`: verify the committed judge workflow from a clean environment; design retained user-selected patch handling, fallback, and rollback; and prepare submission assets. Broad-repository and broader-platform support remain open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.

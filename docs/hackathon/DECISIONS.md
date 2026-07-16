@@ -101,6 +101,16 @@
 - Boundary: the sample is controlled-fixture evidence, not an arbitrary-repository result, complete accessibility test, conformance determination, certification, or final clean-machine judge workflow.
 - Status: **COMPLETE** in independently reviewed Phase 2C implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`.
 
+## D-015 — One Command Verifies but Never Regenerates Evidence
+
+- Date: 2026-07-16
+- Decision: `pnpm judge:verify` runs only repository preflight, API-free unit tests, type-check, build, smoke, the passing expected-defect proof, tracked-sample validation, and tracked-report smoke.
+- Exclusions: installation, audit, license inventory, ignored-run validation, the intentionally failing developer baseline, model calls, evidence generation, repair, and bundle generation remain outside the command.
+- Isolation: before preflight, the workflow creates empty restricted Git and npm/pnpm configuration under its reserved ignored directory. Child environments omit credentials, redirect Git and package-manager configuration away from user/system files, disable Git prompts and interactive credential handling, block proxy-routed external traffic while allowing local loopback, disable pnpm automatic dependency verification, update notification, audit, and funding behavior, and clean the reserved directory on success or failure.
+- Untracked policy: execution-sensitive untracked files under `apps/`, `packages/`, `scripts/`, `tests/`, or `examples/judge-sample/` are rejected; unrelated non-ignored files outside those paths may remain when they cannot override the fixed workflow inputs.
+- Result: the first lifetime run failed at the unit stage and remains part of the audit history. After fixture and home-configuration isolation corrections, the second lifetime run passed all eight stages exactly once with ignored runs absent; no third execution occurred.
+- Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Clean-machine and broader-platform verification remain open.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.

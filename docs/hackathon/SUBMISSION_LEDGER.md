@@ -24,6 +24,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Canonical Proof Bundle generator and real bundle | PHASE 2A COMPLETE; INDEPENDENT FULL-BUNDLE REVIEW PASSED; OUTPUT IGNORED | `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; ignored `.accesspatch/runs/phase2/proof-bundle/`; manifest SHA-256 `19613c7913a91ababb4fbe6cfe02cecc650006f9c80ccb46c18f10d6d9549906`; `TEST_EVIDENCE.md` |
 | Controlled WCAG 2.2 mapping | PHASE 2B COMPLETE; INDEPENDENT FULL REVIEW PASSED; OUTPUT IGNORED | `e3811c8bf968dc78701f8d264dc1377543059d64`; `WCAG_MAPPING_SOURCES.md`; ignored regenerated bundle; `TEST_EVIDENCE.md` |
 | Curated tracked Judge Sample | PHASE 2C COMPLETE; INDEPENDENT FULL REVIEW PASSED | `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files; byte-identical 15-file bundle plus `README.md` and `SHA256SUMS`; read-only validator and zero-violation report smoke |
+| One-command Judge workflow | PHASE 3A COMPLETE; LOCAL END-TO-END PROOF PASSED | `84db92f9e27b6f7872495516f166a8bcaed8ef03`; corrected second lifetime `pnpm judge:verify` run passed all eight stages with ignored runs absent; 139 tests; stable success output; no third run |
 | Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
 
 ## Central Requirements
@@ -40,7 +41,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Primary build-thread `/feedback` Session ID | Mandatory | PENDING | `CODEX_SESSION_RECORD.md` | Submission | 2026-07-21 02:00 CEST | Must be collected from this central session; never invent |
 | Developer Tools installation instructions | Mandatory | PARTIAL: FIXTURE INSTALL ONLY | `README.md`; `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Final product and judge installation path remain open |
 | Supported platforms | Mandatory | OPEN | `JUDGE_TEST_GUIDE.md` | Build and verification | 2026-07-20 02:00 CEST | Compatibility untested |
-| Judge path without complete rebuild | Mandatory | NOT YET IMPLEMENTED | `JUDGE_TEST_GUIDE.md` | Demo and verification | 2026-07-21 02:00 CEST | Packaging approach OPEN |
+| Judge path without complete rebuild | Mandatory | LOCAL ONE-COMMAND PATH VERIFIED; CLEAN-MACHINE CHECK OPEN | `JUDGE_TEST_GUIDE.md`; `pnpm judge:verify`; `84db92f9e27b6f7872495516f166a8bcaed8ef03` | Demo and verification | 2026-07-21 02:00 CEST | Command includes a deterministic production build; clean-machine and broader-platform verification remain open |
 | Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |
 | Judge-accessible demo or sandbox | Recommended | NOT YET IMPLEMENTED | `DEMO_EVIDENCE.md` | Demo | 2026-07-21 02:00 CEST | Hosting and accessibility OPEN |
 | Fresh install and final link verification | Recommended | NOT YET RUN | `TEST_EVIDENCE.md`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Requires feature-frozen artifact |

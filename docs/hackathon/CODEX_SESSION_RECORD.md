@@ -79,3 +79,13 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - The validator depends only on tracked files, performs no writes or network access, and reuses the committed bundle, policy, mapping, report, and security checks.
 - Independent review passed the source, validator, tests, tracked sample, manifest, report, security, inventory, hashes, and byte identity.
 - Status: **COMPLETE** in implementation commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after 114 API-free tests and zero-violation ignored/tracked report smokes. Clean-machine verification and the final judge workflow remain open. No API call, credential access, Phase 1 run, bundle regeneration, or fixture change occurred.
+
+## Phase 3A Record
+
+- This continuing central session implemented the pending `pnpm judge:verify` workflow and passing hard-assertion `pnpm test:judge-baseline` proof.
+- Exactly one full workflow run was authorized. Repository preflight passed, then the API-free unit stage exposed a real dependency on ignored Phase 1 artifacts in legacy proof-bundle tests. The run exited `1`; no retry occurred.
+- Codex corrected the fixtures to use only committed Judge Sample data. Independent review then found that Git and pnpm could still consult home configuration, so Codex added empty restricted runtime configuration files, explicit Git and npm/pnpm configuration redirection, non-interactive credential controls, and cleanup covering preflight failures.
+- Offline after correction, all 139 tests passed with `.accesspatch/runs/` absent. Fake-home Git and pnpm configuration markers were not observed.
+- After final independent pre-run review, the second lifetime workflow execution passed all eight stages exactly once with `.accesspatch/runs/` absent. No retry or third execution occurred. Evidence bytes, sample mtimes, ignored-run hashes, fixture source, and repository state were preserved.
+- Status: **COMPLETE** in implementation commit `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Clean-machine verification remains open.
+- No OpenAI call, credential access, reasoner, repair, bundle generator, fixture repair, commit, push, remote, deployment, publication, or clean-machine verification occurred.

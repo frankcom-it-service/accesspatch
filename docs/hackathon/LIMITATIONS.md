@@ -8,8 +8,9 @@
 - Only the controlled build, smoke, keyboard-baseline, and checkout axe results are verified; product-level accessibility, security, performance, compatibility, and usability remain **NOT YET VERIFIED**.
 - No public repository, demo, or video URL exists. Core requirements were checked on 2026-07-15, but the official Rules-page body appears stale and the final applicable rules remain an open risk.
 - Support beyond the controlled React fixture and Chromium-only test scope, including clean-install and cross-platform verification, remains `OPEN`; only two finding types and two safe-fix classes are currently allowed.
-- The generated static report passed automated Chromium axe smokes, but it has not received complete accessibility review. Phase 2C commits an independently reviewed tracked byte-identical sample; clean-machine verification and integration into the final judge workflow remain open.
+- The generated static report passed automated Chromium axe smokes, but it has not received complete accessibility review. Phase 2C commits an independently reviewed tracked byte-identical sample, and Phase 3A integrates it into the committed judge workflow; clean-machine verification remains open.
 - The committed Phase 2B WCAG 2.2 mapping covers only three criteria for the two controlled findings. It does not assess other criteria, the whole page, the complete process, accessibility-supported usage, or WCAG conformance. Criterion expansion requires separate official-source review.
+- Phase 3A’s workflow is verified locally, but clean-machine and broader-platform behavior remain unverified. The first lifetime run failed on a corrected ignored-run test dependency; the second passed after fixture and Git/npm isolation corrections. This does not establish arbitrary-repository support.
 
 ## Permanent Claim Boundaries
 
