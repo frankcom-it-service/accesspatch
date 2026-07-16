@@ -13,8 +13,12 @@ import { dirname, join } from 'node:path';
 import test from 'node:test';
 import {
   copyPathDisposition,
+  assertAllowedMutationFixturePath,
+  copyMutationFixtureWithoutSymlinks,
   copyRepositoryWithoutSymlinks,
+  mutationCopyPathDisposition,
 } from '../../packages/patch-engine/src/copy-policy.ts';
+import { MUTATION_GUARD_FIXTURE_FILES } from '../../packages/patch-engine/src/constants.ts';
 
 test('.env.example remains eligible for the isolated copy', () => {
   assert.equal(copyPathDisposition('.env.example'), 'include');
@@ -142,6 +146,106 @@ test('included source symlink is rejected without following it', async (context)
     await assert.rejects(access(join(workingCopy, 'src/linked.txt')), {
       code: 'ENOENT',
     });
+  } finally {
+    await rm(base, { recursive: true, force: true });
+  }
+});
+
+test('mutation copy allowlist contains only the controlled fixture files', () => {
+  for (const path of MUTATION_GUARD_FIXTURE_FILES) {
+    assert.equal(mutationCopyPathDisposition(path), 'include', path);
+  }
+  assert.equal(mutationCopyPathDisposition('README.md'), 'exclude');
+  assert.equal(mutationCopyPathDisposition('tests/e2e/smoke.spec.ts'), 'exclude');
+});
+
+test('mutation copy excludes environment and credential files', () => {
+  for (const path of [
+    '.env',
+    '.env.example',
+    '.npmrc',
+    '.netrc',
+    'secrets/token.txt',
+    'private.key',
+  ]) {
+    assert.equal(mutationCopyPathDisposition(path), 'exclude', path);
+  }
+});
+
+test('mutation fixture path rejects traversal and non-allowlisted source', () => {
+  assert.throws(
+    () => assertAllowedMutationFixturePath('../apps/demo-checkout/src/App.tsx'),
+    /mutation_fixture_path_not_allowed/,
+  );
+  assert.throws(
+    () => assertAllowedMutationFixturePath('/apps/demo-checkout/src/App.tsx'),
+    /mutation_fixture_path_not_allowed/,
+  );
+  assert.throws(
+    () => assertAllowedMutationFixturePath('apps/demo-checkout/package.json'),
+    /mutation_fixture_path_not_allowed/,
+  );
+});
+
+test('mutation fixture copy includes exact source and omits unrelated files', async () => {
+  const base = await mkdtemp(join(tmpdir(), 'accesspatch-mutation-copy-'));
+  const repository = join(base, 'repository');
+  const workingCopy = join(base, 'working-copy');
+
+  try {
+    for (const path of MUTATION_GUARD_FIXTURE_FILES) {
+      const file = join(repository, path);
+      await mkdir(dirname(file), { recursive: true });
+      await writeFile(file, `${path}\n`, 'utf8');
+    }
+    await writeFile(join(repository, '.env'), 'not-a-real-secret\n', 'utf8');
+    await writeFile(join(repository, 'README.md'), 'unrelated\n', 'utf8');
+
+    await copyMutationFixtureWithoutSymlinks(repository, workingCopy);
+    for (const path of MUTATION_GUARD_FIXTURE_FILES) {
+      assert.equal(
+        await readFile(join(workingCopy, path), 'utf8'),
+        `${path}\n`,
+      );
+    }
+    await assert.rejects(access(join(workingCopy, '.env')), { code: 'ENOENT' });
+    await assert.rejects(access(join(workingCopy, 'README.md')), {
+      code: 'ENOENT',
+    });
+  } finally {
+    await rm(base, { recursive: true, force: true });
+  }
+});
+
+test('mutation fixture copy rejects an included symlink', async (context) => {
+  const base = await mkdtemp(join(tmpdir(), 'accesspatch-mutation-symlink-'));
+  const repository = join(base, 'repository');
+  const workingCopy = join(base, 'working-copy');
+  const outsideFile = join(base, 'outside.tsx');
+
+  try {
+    for (const path of MUTATION_GUARD_FIXTURE_FILES) {
+      const file = join(repository, path);
+      await mkdir(dirname(file), { recursive: true });
+      await writeFile(file, `${path}\n`, 'utf8');
+    }
+    await writeFile(outsideFile, 'outside\n', 'utf8');
+    const target = join(repository, 'apps/demo-checkout/src/App.tsx');
+    await rm(target);
+    try {
+      await symlink(outsideFile, target, 'file');
+    } catch (error) {
+      const code = (error as NodeJS.ErrnoException).code;
+      if (code === 'EPERM' || code === 'EACCES' || code === 'ENOTSUP') {
+        context.skip(`Symlink creation unavailable: ${code}`);
+        return;
+      }
+      throw error;
+    }
+    await assert.rejects(
+      copyMutationFixtureWithoutSymlinks(repository, workingCopy),
+      /included_source_symlink:apps\/demo-checkout\/src\/App\.tsx/,
+    );
   } finally {
     await rm(base, { recursive: true, force: true });
   }

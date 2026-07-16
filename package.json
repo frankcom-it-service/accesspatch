@@ -17,6 +17,7 @@
     "phase2:validate": "node --experimental-strip-types packages/proof-bundle/src/validate-run.ts",
     "judge:sample:validate": "node --experimental-strip-types packages/proof-bundle/src/validate-judge-sample-run.ts",
     "judge:verify": "node --experimental-strip-types scripts/judge-verify.ts",
+    "mutation:guard": "node --experimental-strip-types packages/patch-engine/src/run.ts mutation-guard",
     "test:unit": "node --experimental-strip-types --test --test-isolation=none tests/unit/*.test.ts",
     "typecheck": "pnpm --filter @accesspatch/demo-checkout typecheck && pnpm --filter './packages/**' typecheck && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p tests/e2e/tsconfig.json && tsc --noEmit -p tests/unit/tsconfig.json",
     "test:smoke": "playwright test tests/e2e/smoke.spec.ts",

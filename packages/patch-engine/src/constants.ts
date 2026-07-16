@@ -28,3 +28,26 @@ export const PHASE1C_SAFE_FIX_CLASSES = [
   'associate_explicit_label',
   'restore_focus_visible',
 ] as const;
+
+export const MUTATION_GUARD_SCHEMA_VERSION =
+  'accesspatch.mutation-guard-result.v1';
+export const MUTATION_GUARD_ID =
+  'CONTROLLED_MUTATION_ARIA_HIDDEN_FOCUSABLE';
+export const MUTATION_GUARD_TYPE = 'aria_hidden_focusable';
+export const MUTATION_GUARD_RULE = 'FOCUSABLE_ELEMENT_ARIA_HIDDEN';
+export const MUTATION_GUARD_FIXTURE_ID = 'demo-checkout-controlled-v1';
+export const MUTATION_GUARD_EXPECTED_FIXTURE_SHA256 =
+  '50a88ce11e4afc62f66c595b313156f2f1a7f1fc98eb2f6ad1206b8260fbbfd4';
+export const MUTATION_GUARD_TARGET_PATH =
+  'apps/demo-checkout/src/App.tsx';
+export const MUTATION_GUARD_TARGET_SELECTOR = '.controlled-focus-defect';
+export const MUTATION_GUARD_OUTPUT_DIRECTORY =
+  '.accesspatch/runs/phase5a/mutation-guard';
+export const MUTATION_GUARD_WORK_DIRECTORY =
+  '.accesspatch/work';
+export const MUTATION_GUARD_FIXTURE_FILES = [
+  'apps/demo-checkout/index.html',
+  'apps/demo-checkout/src/App.tsx',
+  'apps/demo-checkout/src/main.tsx',
+  'apps/demo-checkout/src/styles.css',
+] as const;

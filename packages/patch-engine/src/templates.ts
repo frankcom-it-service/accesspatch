@@ -14,6 +14,17 @@ const FOCUS_DEFECT = `/* Controlled Phase 1 fixture: remove every relevant outli
 }
 `;
 
+const MUTATION_GUARD_TARGET = `              <button
+                type="submit"
+                className="button button-primary controlled-focus-defect"
+              >`;
+
+const MUTATION_GUARD_INJECTED_TARGET = `              <button
+                type="submit"
+                className="button button-primary controlled-focus-defect"
+                aria-hidden="true"
+              >`;
+
 export class PatchTemplateError extends Error {}
 
 function occurrenceCount(content: string, expected: string): number {
@@ -44,8 +55,21 @@ export function applyFocusVisibleTemplate(content: string): string {
   return content.replace(FOCUS_DEFECT, '');
 }
 
+export function injectAriaHiddenFocusableMutation(content: string): string {
+  if (content.includes(MUTATION_GUARD_INJECTED_TARGET)) {
+    throw new PatchTemplateError('mutation_target_already_mutated');
+  }
+  requireSinglePrecondition(content, MUTATION_GUARD_TARGET, 'mutation_target');
+  return content.replace(
+    MUTATION_GUARD_TARGET,
+    MUTATION_GUARD_INJECTED_TARGET,
+  );
+}
+
 export const controlledTemplateFixtures = {
   emailDefect: EMAIL_DEFECT,
   emailRepair: EMAIL_REPAIR,
   focusDefect: FOCUS_DEFECT,
+  mutationGuardTarget: MUTATION_GUARD_TARGET,
+  mutationGuardInjectedTarget: MUTATION_GUARD_INJECTED_TARGET,
 } as const;
