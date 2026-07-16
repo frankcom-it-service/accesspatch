@@ -105,3 +105,10 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Codex documentation contribution: added the ownership record, private-release and privacy decision, private repository release plan, complete third-party notice, README collaboration and human-decision explanation, current Devpost draft, and corrected video status.
 - Privacy correction: replaced the tracked local absolute repository path with `<repository-root>`; Git author metadata remains only in private Git history and must not be repeated in public-facing material.
 - Status: **COMPLETE** in release-surface commit `f3953994883af959fdd80d2d5e5985b7cb987fd5`. No remote, publication, `/feedback`, video, server access, subdomain work, model call, mutation, implementation change, history rewrite, or baseline-reference change occurred.
+
+## Phase 4C Record
+
+- Read-only verification confirmed the canonical private repository `https://github.com/frankcom-it-service/accesspatch`, private visibility, default branch `main`, exact three-reference remote inventory, organization default permission `none`, and repository admin access for the authenticated owner.
+- The required invitations both have read permission and remain pending: `testing@devpost.com` resolves to `devposttesting`; `build-week-event@openai.com` remains a direct email invitation.
+- Acceptance and independent judge cloning remain unverified. No invitation, collaborator, role, visibility, branch protection, secret, action, deployment, or remote reference was changed in this phase.
+- Status: **VALIDATED / UNCOMMITTED**. No push, credential inspection, implementation or evidence change, `/feedback`, video, external Devpost action, server access, deployment, publication, or submission occurred.

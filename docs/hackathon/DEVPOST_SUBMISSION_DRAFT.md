@@ -7,7 +7,7 @@ This English draft is ready for later human review and form entry. External URLs
 - Title: AccessPatch
 - Category: Developer Tools
 - Tagline: Evidence-guided journey repair and reproducible proof for React and TypeScript applications.
-- Private repository URL: `TODO_PRIVATE_REPOSITORY_URL`
+- Private repository URL: `https://github.com/frankcom-it-service/accesspatch`
 - Public YouTube URL: `TODO_PUBLIC_YOUTUBE_URL`
 - Primary Codex `/feedback` Session ID: `TODO_CODEX_FEEDBACK_SESSION_ID`
 - Final Devpost project URL: `TODO_FINAL_DEVPOST_PROJECT_URL`
@@ -81,7 +81,7 @@ Then open `examples/judge-sample/proof-bundle/report.html`. Windows, macOS, othe
 
 ## Repository and Access
 
-The planned submission repository is private and is not offered under an open-source project license. After separate approval it will be shared with `testing@devpost.com` and `build-week-event@openai.com`. No repository remote or URL exists yet.
+The submission repository is private at `https://github.com/frankcom-it-service/accesspatch` and is not offered under an open-source project license. Read-only invitations were issued to `testing@devpost.com` and `build-week-event@openai.com`; both remain pending. Invitation acceptance and independent judge cloning are not yet verified.
 
 ## Third-Party Acknowledgments
 
@@ -94,7 +94,7 @@ AccessPatch uses package-managed React, Vite, TypeScript, Playwright, axe-core i
 - Human screen-reader, wording and label-adjacency, and visual-focus review remain required.
 - The controlled WCAG mapping covers three criteria for two findings only.
 - AccessPatch does not establish complete accessibility, WCAG conformance or certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
-- A public video, external repository access, `/feedback` Session ID, and Devpost submission remain pending.
+- A public video, accepted judging access, independent judge cloning, `/feedback` Session ID, and Devpost submission remain pending.
 
 ## Final Human Review
 

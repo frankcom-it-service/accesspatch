@@ -131,8 +131,17 @@
 - External boundary: no remote, hosting, server, subdomain, invitation, or publication action is authorized in Phase 4B.
 - Status: **COMPLETE** in release-surface commit `f3953994883af959fdd80d2d5e5985b7cb987fd5`. Execution steps remain unexecuted and are documented in `PRIVATE_REPOSITORY_RELEASE_PLAN.md`.
 
+## D-018 — Use the Organization Private Repository as the Canonical URL
+
+- Date: 2026-07-16
+- Decision: use `https://github.com/frankcom-it-service/accesspatch` as the only canonical repository URL.
+- Access boundary: repository visibility remains private, the organization default repository permission is `none`, and judging access is limited to explicit read invitations.
+- Reference boundary: publish only `main`, `backup/submission-baseline-2026-07-16`, and tag `submission-baseline-2026-07-16`; keep `release/phase4b-private-readiness` local-only.
+- Invitation state: both required read invitations were issued and remain pending. Acceptance and independent judge cloning are separate verification gates.
+- Status: **VALIDATED / UNCOMMITTED**. Phase 4C records existing state only and changes no GitHub access, visibility, roles, collaborators, references, or repository content outside approved documentation.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.
 - `OPEN`: controlled patch approval, rollback, and post-repair review gates.
-- `OPEN`: final private hosting provider, repository URL, judging-account access verification, and final applicable Rules-page interpretation.
+- `OPEN`: judging-invitation acceptance, independent private clone verification, server/demo decision, and final applicable Rules-page interpretation.

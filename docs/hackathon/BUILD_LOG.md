@@ -185,3 +185,13 @@
 - Commit status: **COMPLETE** in `f3953994883af959fdd80d2d5e5985b7cb987fd5` (`docs: prepare private release surface`).
 - Preservation: no implementation, fixture, evidence, package, lockfile, baseline ref, external backup, remote, push, server, subdomain, `/feedback`, video, Devpost external action, deployment, or publication changed.
 - Remaining: create and verify the private repository and judging access after separate approval; collect `/feedback`; produce the video; enter and verify external URLs and Devpost fields; perform the fresh final rules check.
+
+## 2026-07-16 — Phase 4C Private Repository Publication Record
+
+- Phase goal: record the already verified private GitHub publication state and the pending read-only judging invitations without changing repository access or code.
+- Repository: `https://github.com/frankcom-it-service/accesspatch`, owned by `frankcom-it-service`, private, default branch `main`.
+- Remote contract: only `main`, `backup/submission-baseline-2026-07-16`, and tag `submission-baseline-2026-07-16` exist remotely. `release/phase4b-private-readiness` remains local-only.
+- Organization boundary: default repository permission is `none`; the repository owner retains admin access.
+- Invitation state: `testing@devpost.com` resolved to `devposttesting` with read permission and remains pending; `build-week-event@openai.com` has a direct email invitation with read permission and remains pending.
+- Open access gate: neither invitation acceptance nor an independent judge clone is verified.
+- Status: **VALIDATED / UNCOMMITTED**. This documentation task changed no implementation, evidence, collaborator, role, visibility, remote reference, or baseline reference and performed no push.

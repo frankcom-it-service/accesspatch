@@ -8,6 +8,12 @@ The verified clean-clone environment is Debian GNU/Linux 13, x86_64, Node.js 24.
 
 The current FAQ and official announcement, checked 2026-07-15, require Developer Tools entries to document installation, supported platforms, and a judge testing path that does not require a complete rebuild.
 
+## Repository Access
+
+Canonical private repository: `https://github.com/frankcom-it-service/accesspatch`.
+
+The repository is not publicly cloneable. Judges require granted GitHub access. Read-only invitations to the two required judging recipients remain pending, so acceptance and an independent judge clone are not yet verified.
+
 ## Current Evaluation Path
 
 1. Install the exact locked dependencies:
@@ -45,3 +51,4 @@ The sanitized clean-clone evidence is tracked at `docs/hackathon/evidence/phase3
 
 - `TODO`: confirm supported platforms beyond the verified Debian GNU/Linux 13 x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 environment.
 - `TODO`: verify the Playwright-managed Chromium fallback and final public links after feature freeze.
+- `TODO`: verify both judging invitations are accepted and a judge can clone the private repository.

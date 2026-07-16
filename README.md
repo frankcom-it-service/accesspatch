@@ -4,7 +4,7 @@ AccessPatch is a **Journey Repair and Proof Agent for React/TypeScript applicati
 
 ## Status
 
-**Phase 1A through Phase 4B are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation. Commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` adds the one-command Judge Workflow. Commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` adds the reviewed Phase 3B clean-clone evidence. Commit `f3953994883af959fdd80d2d5e5985b7cb987fd5` adds the private release surface, ownership record, privacy decision, third-party notices, and current submission drafts.
+**Phase 1A through Phase 4B are complete; Phase 4C is validated and uncommitted.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation. Commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` adds the one-command Judge Workflow. Commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` adds the reviewed Phase 3B clean-clone evidence. Commit `f3953994883af959fdd80d2d5e5985b7cb987fd5` adds the private release surface, ownership record, privacy decision, third-party notices, and current submission drafts.
 
 The controlled end-to-end submission workflow is implemented and verified: it reproduces two defined barriers, collects bounded evidence, obtains a constrained repair plan, applies deterministic templates in an isolated copy, verifies the repaired replay, packages the reviewed proof, and provides a one-command Judge Workflow. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced the schema-valid, policy-accepted plan using bounded evidence and `store: false`. General arbitrary-repository support, retained patch application, complete fallback, and rollback remain incomplete.
 
@@ -13,10 +13,13 @@ AccessPatch supports accessibility engineering; it does not claim complete acces
 ## Ownership and Repository Access
 
 - Owner: Frank Heilmann, trading as “Frankcom IT Service”.
-- This repository is intended for private hackathon judging.
+- Canonical private repository: `https://github.com/frankcom-it-service/accesspatch`.
+- The repository is owned by the `frankcom-it-service` organization, remains private, and uses `main` as its default branch.
 - AccessPatch is not offered under an open-source project license.
 - Ownership and reuse boundaries are recorded in `OWNERSHIP.md`.
-- Private judging access will be provided later after separate approval; no repository remote or public repository URL exists yet.
+- The immutable baseline backup branch and tag are present remotely. The Phase 4B release branch remains local-only.
+- Both required judging invitations were issued with read permission and remain pending. Acceptance and independent judge cloning are not yet verified.
+- The organization repository URL above is the only canonical repository URL; no public source-code release exists.
 
 ## Project Record
 
@@ -173,4 +176,4 @@ The full path is verified only on Debian GNU/Linux 13 x86_64 with the environmen
 
 ## Next Phase
 
-`OPEN`: create and verify the private judging repository after separate approval; collect `/feedback`; produce and publish the reviewed video; enter and verify Devpost fields and links; verify additional operating systems and browser configurations; and design retained user-selected patch handling, fallback, and rollback. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.
+`OPEN`: verify acceptance of both pending read-only judging invitations and an independent judge clone; collect `/feedback`; produce and publish the reviewed video; enter and verify Devpost fields and links; verify additional operating systems and browser configurations; and design retained user-selected patch handling, fallback, and rollback. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.
