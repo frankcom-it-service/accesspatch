@@ -1,0 +1,10 @@
+CLONE_HEAD=d75954b672cbc88569d5502198effc57c4390c63
+CLONE_BRANCH=feature/accessibility-mutation-guard
+CLONE_WORKTREE=clean
+GIT_FSCK=passed
+NODE_MODULES=absent
+IGNORED_RUNS=absent
+WORK_RUNTIME=absent
+BUILD_OUTPUT=absent
+PREINSTALL_FIXTURE_SHA256=50a88ce11e4afc62f66c595b313156f2f1a7f1fc98eb2f6ad1206b8260fbbfd4
+HASH_IMPLEMENTATION=built-in-node-fs-promises-and-crypto

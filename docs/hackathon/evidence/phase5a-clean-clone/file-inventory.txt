@@ -1,0 +1,14 @@
+cleanup-result.txt
+clone-integrity.txt
+clone-postflight.txt
+environment-summary.txt
+judge-workflow-output.txt
+mutation-evidence-hashes.txt
+mutation-guard-output.txt
+offline-installation.txt
+path-length-summary.txt
+source-postflight.txt
+source-preflight.txt
+stage-status.tsv
+success-summary.txt
+temporary-trust-lockfile-override.txt

@@ -1,0 +1,312 @@
+$ node --experimental-strip-types scripts/judge-verify.ts
+JUDGE_STAGE_START=1:repository-contract-preflight
+JUDGE_STAGE_PASS=1:repository-contract-preflight
+JUDGE_STAGE_START=2:api-free-unit-tests
+! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.13.0.tgz
+$ node --experimental-strip-types --test --test-isolation=none tests/unit/*.test.ts
+✔ .env.example remains eligible for the isolated copy (1.839878ms)
+✔ common local credential files are excluded (0.2515ms)
+✔ directories named secrets are excluded (0.251103ms)
+✔ ordinary source and test files remain eligible (0.169989ms)
+✔ generated output directories remain excluded (0.183998ms)
+✔ copy keeps ordinary source and tests while omitting credentials and output (12.378493ms)
+✔ included source symlink is rejected without following it (2.087197ms)
+✔ mutation copy allowlist contains only the controlled fixture files (0.214937ms)
+✔ mutation copy excludes environment and credential files (0.196497ms)
+✔ mutation fixture path rejects traversal and non-allowlisted source (0.311167ms)
+✔ mutation fixture copy includes exact source and omits unrelated files (5.731227ms)
+✔ mutation fixture copy rejects an included symlink (3.66067ms)
+✔ accepts the exact passing judge baseline proof (0.571645ms)
+✔ rejects a repaired email accessible name (0.128755ms)
+✔ rejects restored focus visibility (0.10367ms)
+✔ rejects an extra axe violation (0.083426ms)
+✔ rejects a journey that does not reach confirmation (0.07753ms)
+✔ validates the tracked judge sample (27.189182ms)
+✔ rejects a missing tracked bundle file (9.959929ms)
+✔ rejects an unexpected tracked bundle file (7.728214ms)
+✔ rejects an altered tracked bundle hash (18.396424ms)
+✔ rejects an incorrect SHA256SUMS hash (24.224625ms)
+✔ rejects a duplicate SHA256SUMS path (7.807674ms)
+✔ rejects absolute and traversal SHA256SUMS paths (0.463827ms)
+✔ sanitizes absolute and traversal paths from CLI-visible failures (0.235284ms)
+✔ rejects a symlink without following it (8.680895ms)
+✔ validates independently from ignored AccessPatch runs (18.76789ms)
+✔ performs validation without changing tracked sample bytes or mtimes (18.919675ms)
+✔ pins the exact approved 15-file hash contract (0.410035ms)
+✔ retains exactly the three approved WCAG mappings (2.237553ms)
+✔ requires every report-relative link to remain inside the sample (0.519925ms)
+✔ rejects credential and absolute-path leaks (0.15172ms)
+✔ requires the judge-sample README limitations (0.36732ms)
+✔ defines the exact required judge workflow stage order (0.111263ms)
+✔ workflow plan excludes install audit model repair bundle and network commands (0.316659ms)
+✔ runs every stage once in the exact order and emits the stable summary (0.346017ms)
+✔ propagates a failed child stage and does not emit success summary (0.216397ms)
+✔ rejects invocation outside the expected repository root (7.604969ms)
+✔ rejects a missing repository-contract file (8.844283ms)
+✔ rejects a missing Judge Sample file (7.531042ms)
+✔ rejects a modified tracked Judge Sample (8.12266ms)
+✔ rejects an execution-sensitive untracked file but tolerates unrelated notes (9.390936ms)
+✔ requires both approved Phase 2C commits to be ancestors (9.232578ms)
+✔ repository contract is independent of absent ignored runs (8.383717ms)
+✔ child environment excludes secrets and enables local-only network guards (0.511616ms)
+✔ creates empty regular runtime configuration beneath reserved output (9.218929ms)
+✔ isolated Git configuration does not observe fake HOME configuration (20.668176ms)
+✔ isolated pnpm configuration does not observe fake HOME configuration (346.292408ms)
+✔ does not create a persistent workflow result file (8.635587ms)
+✔ preserves tracked and Judge Sample state after success (0.151939ms)
+✔ rejects changed tracked bytes, sample mtimes, or repository status (0.232103ms)
+✔ cleans reserved output after a failed child stage (8.707439ms)
+✔ cleans reserved output after repository preflight failure (8.131068ms)
+✔ exact controlled templates repair only their intended source regions (0.6768ms)
+✔ missing expected TSX precondition fails closed (0.228866ms)
+✔ duplicate expected TSX precondition fails closed (0.17713ms)
+✔ missing expected CSS precondition fails closed (0.130798ms)
+✔ duplicate expected CSS precondition fails closed (0.142717ms)
+✔ already-repaired input is rejected (0.094785ms)
+✔ already-repaired focus rule is rejected (0.080226ms)
+✔ wrong reviewed evidence hash is rejected (0.190376ms)
+✔ wrong reviewed repair-plan hash is rejected (0.12366ms)
+✔ disallowed repair-plan target file is rejected (0.311589ms)
+✔ unexpected third changed file is rejected (0.2303ms)
+✔ attempted dependency or manifest change is rejected (0.228121ms)
+✔ patch output containing an unauthorized path is rejected (0.120618ms)
+✔ valid two-file patch passes deterministic patch policy (0.138091ms)
+✔ unexpected created or deleted files are rejected (0.13188ms)
+✔ generated replay contains all repaired journey gates (0.182515ms)
+✔ valid mutation guard result schema is accepted (1.258287ms)
+✔ invalid mutation guard result schema is rejected (0.568106ms)
+✔ exact one-target mutation injection adds aria-hidden only once (0.201835ms)
+✔ zero mutation target fails closed (0.176548ms)
+✔ multiple mutation targets fail closed (0.112222ms)
+✔ already-mutated target fails closed (0.082121ms)
+✔ selected native button evidence is deterministically focusable (0.084182ms)
+✔ detector accepts aria-hidden true on the focused target (0.549769ms)
+✔ detector has no false positive before mutation (0.180365ms)
+✔ detector rejects multiple controlled mutation matches (0.108245ms)
+✔ mutation core preserves original fixture and removes disposable copy (15.182643ms)
+✔ mutation core removes disposable copy after detector failure (10.760462ms)
+✔ mutation guard success output is stable (0.499619ms)
+✔ generated mutation detector uses hard keyboard and DOM assertions (0.136527ms)
+✔ mutation child environment isolates every user and temporary directory (0.32086ms)
+✔ mutation runtime paths safely create a missing fixed directory chain (2.04664ms)
+✔ mutation runtime paths accept existing normal directories (2.264631ms)
+✔ mutation runtime rejects a symlinked .accesspatch directory (1.015987ms)
+✔ mutation runtime rejects a symlinked work directory (1.115162ms)
+✔ mutation runtime rejects a symlinked runs ancestor (1.370621ms)
+✔ mutation runtime rejects a symlinked Phase 5A ancestor (1.435059ms)
+✔ mutation runtime rejects a non-directory ancestor (1.180835ms)
+✔ unsafe evidence output symlink is rejected without deleting external content (2.439196ms)
+✔ approved fixture ID is explicitly bound to the approved four-file hash (1.659515ms)
+✔ one-byte fixture change fails before runtime creation (3.837748ms)
+✔ already-mutated retained fixture fails integrity preflight (3.070083ms)
+✔ missing allowlisted fixture file fails integrity preflight (2.513934ms)
+✔ abort signal removes disposable state and writes no success artifact (10.348342ms)
+✔ mutation detector completes all configuration preparation before spawning Vite (3.755422ms)
+✔ mutation detector sanitizes an asynchronous Vite spawn error (2.881924ms)
+✔ mutation detector always stops Vite after a post-start exception (2.965809ms)
+✔ abort during mutation server waiting always stops Vite (3.036156ms)
+✔ external runtime cleanup is attempted when contained cleanup fails (11.44376ms)
+✔ contained cleanup is attempted when external runtime cleanup fails (16.835345ms)
+✔ valid Phase 1C verification artifact is accepted (0.355548ms)
+✔ verification artifact rejects an unsuccessful or incomplete replay (0.248518ms)
+✔ valid sanitized patch audit is accepted and has no sensitive fields (0.32544ms)
+✔ valid deterministic plan is accepted (0.396956ms)
+✔ duplicate findings are rejected (0.354165ms)
+✔ missing findings are rejected (0.362902ms)
+✔ disallowed fix class is rejected (0.377719ms)
+✔ wrong finding-to-fix mapping is rejected (0.198599ms)
+✔ disallowed target path is rejected (0.213267ms)
+✔ absolute target path is rejected (0.182677ms)
+✔ path traversal target is rejected (0.164174ms)
+✔ missing automated verification is rejected (0.325955ms)
+✔ missing human review is rejected (0.319205ms)
+✔ positive legal or compliance claim is rejected (0.183084ms)
+✔ dependency change request is rejected (0.141091ms)
+✔ unwrapped CSS declaration is rejected (0.163454ms)
+✔ CSS selector block is rejected (0.165187ms)
+✔ JSX-style attribute assignment is rejected (0.146847ms)
+✔ JavaScript assignment expression is rejected (0.815772ms)
+✔ generates and validates the canonical bundle (43.020887ms)
+✔ rejects a missing reviewed source artifact (5.530976ms)
+✔ rejects a wrong reviewed source hash (5.112163ms)
+✔ rejects an invalid source schema after hash validation (2.117026ms)
+✔ enforces the exact top-level inventory (30.534897ms)
+✔ rejects an unexpected top-level file (37.624798ms)
+✔ rejects an unsafe output path (5.668142ms)
+✔ rejects a reviewed source symlink without following it (6.607952ms)
+✔ keeps deterministic finding, CSV, and manifest ordering (27.740124ms)
+✔ copies the patch byte for byte (27.403682ms)
+✔ copies the replay byte for byte (33.622217ms)
+✔ escapes commas and quotes in CSV cells (2.421993ms)
+✔ accepts exactly the three source-backed WCAG mappings (2.532926ms)
+✔ rejects a missing WCAG mapping row (2.638095ms)
+✔ rejects a duplicate WCAG mapping row (2.367513ms)
+✔ rejects an unsupported WCAG criterion (2.686332ms)
+✔ rejects a wrong finding-to-criterion relationship (2.623367ms)
+✔ rejects a wrong WCAG criterion label (2.278072ms)
+✔ rejects a wrong WCAG conformance level (2.147154ms)
+✔ rejects an altered WCAG source URL (2.413447ms)
+✔ rejects reintroduced UNMAPPED output (2.102421ms)
+✔ rejects findings and CSV mapping disagreement (3.29165ms)
+✔ rejects a report missing a controlled WCAG mapping (2.376169ms)
+✔ rejects report language claiming full WCAG conformance (2.2043ms)
+✔ rejects a missing manual-review disclaimer (31.047436ms)
+✔ rejects a forbidden compliance claim (0.186636ms)
+✔ rejects a credential leak (0.111757ms)
+✔ rejects an absolute local path leak (0.116108ms)
+✔ creates a sanitized seven-entry audit log (5.746065ms)
+✔ cleans temporary output after failed generation (5.118747ms)
+✔ preserves the previous final directory when regeneration fails (30.997547ms)
+✔ report HTML contains structural and accessibility smoke requirements (2.573144ms)
+✔ manifest hashes every generated file except summary itself (30.307161ms)
+✔ test-results inventory contains exactly the five required files (28.22769ms)
+✔ missing API key fails without searching or fabricating a plan (0.309119ms)
+✔ missing API key removes stale plan and records only sanitized failure (2.582836ms)
+✔ unexpected returned model removes stale plan and records sanitized failure (2.662563ms)
+✔ sanitized audit contains no credential, prompt, or raw response field (0.368339ms)
+✔ valid evidence schema accepts the controlled evidence shape (0.297398ms)
+✔ malformed evidence is rejected (0.307719ms)
+✔ duplicate evidence findings are rejected (0.216579ms)
+✔ missing evidence finding is rejected (0.189317ms)
+✔ duplicate source-context allowlist entries are rejected (0.288633ms)
+✔ mismatched controlled affected selector is rejected (0.296263ms)
+✔ mismatched controlled source-file hint is rejected (0.276639ms)
+✔ source-context file differing from its finding hint is rejected (0.295623ms)
+✔ focus evidence claiming a visible indicator is rejected (0.20995ms)
+✔ email finding with focus metadata instead of axe metadata is rejected (0.217294ms)
+✔ focus finding with axe metadata instead of focus metadata is rejected (0.317283ms)
+✔ valid repair-plan schema accepts the bounded plan shape (0.20632ms)
+✔ repair-plan schema rejects a disallowed fix class (0.2233ms)
+✔ valid bounded source context is accepted (7.14344ms)
+✔ missing source markers are rejected (1.966926ms)
+✔ over-limit source context is rejected (1.763953ms)
+✔ complete trimmed source file selection is rejected (1.777576ms)
+✔ allowlisted symlink resolving outside repository is rejected (1.782936ms)
+ℹ tests 178
+ℹ suites 0
+ℹ pass 178
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1381.265977
+JUDGE_STAGE_PASS=2:api-free-unit-tests
+JUDGE_STAGE_START=3:typescript-type-check
+$ pnpm --filter @accesspatch/demo-checkout typecheck && pnpm --filter './packages/**' typecheck && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p tests/e2e/tsconfig.json && tsc --noEmit -p tests/unit/tsconfig.json
+$ tsc --noEmit
+Scope: 5 of 7 workspace projects
+packages/shared-types typecheck$ tsc --noEmit
+packages/shared-types typecheck: Done
+packages/evidence-collector typecheck$ tsc --noEmit
+packages/evidence-collector typecheck: Done
+packages/repair-reasoner typecheck$ tsc --noEmit
+packages/repair-reasoner typecheck: Done
+packages/patch-engine typecheck$ tsc --noEmit
+packages/patch-engine typecheck: Done
+packages/proof-bundle typecheck$ tsc --noEmit
+packages/proof-bundle typecheck: Done
+JUDGE_STAGE_PASS=3:typescript-type-check
+JUDGE_STAGE_START=4:production-build
+$ pnpm --filter @accesspatch/demo-checkout build
+$ tsc --noEmit && vite build
+vite v8.1.4 building client environment for production...
+[2Ktransforming...✓ 16 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.53 kB │ gzip:  0.33 kB
+dist/assets/index-Bh6nXJE7.css    3.53 kB │ gzip:  1.33 kB
+dist/assets/index-INQ9Mv04.js   195.22 kB │ gzip: 61.33 kB
+
+✓ built in 135ms
+JUDGE_STAGE_PASS=4:production-build
+JUDGE_STAGE_START=5:application-smoke
+$ playwright test tests/e2e/smoke.spec.ts
+
+[WebServer] (node:13949) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] $ vite --host 127.0.0.1 --port 4173 --strictPort
+
+[WebServer] (node:13962) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+
+(node:14004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] [chromium] › tests/e2e/smoke.spec.ts:3:1 › demo-checkout renders and opens checkout
+  1 passed (1.9s)
+JUDGE_STAGE_PASS=5:application-smoke
+JUDGE_STAGE_START=6:controlled-baseline-proof
+$ playwright test tests/e2e/judge-baseline.spec.ts
+
+[WebServer] (node:14174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] $ vite --host 127.0.0.1 --port 4173 --strictPort
+
+[WebServer] (node:14187) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+
+(node:14214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] [chromium] › tests/e2e/judge-baseline.spec.ts:9:1 › judge proof confirms the exact controlled broken checkout baseline
+[chromium] › tests/e2e/judge-baseline.spec.ts:9:1 › judge proof confirms the exact controlled broken checkout baseline
+JUDGE_BASELINE_PRODUCT=REACHED
+
+JUDGE_BASELINE_CART=PRODUCT_ADDED
+
+JUDGE_BASELINE_CHECKOUT=FORM_REACHED
+
+JUDGE_BASELINE_FINDINGS=["CONTROLLED_BARRIER_EMAIL_NAME","CONTROLLED_BARRIER_FOCUS_VISIBLE"]
+
+JUDGE_BASELINE_FOCUS={"outlineStyle":"none","outlineWidth":"3px","boxShadow":"none","visibleIndicatorDetected":false}
+
+JUDGE_BASELINE_AXE_VIOLATIONS=[{"id":"label","targets":["#email"]}]
+
+JUDGE_BASELINE_CONFIRMATION=REACHED
+
+JUDGE_BASELINE_VALID
+
+  1 passed (2.5s)
+JUDGE_STAGE_PASS=6:controlled-baseline-proof
+JUDGE_STAGE_START=7:tracked-judge-sample-validator
+$ node --experimental-strip-types packages/proof-bundle/src/validate-judge-sample-run.ts
+JUDGE_SAMPLE_PATH=examples/judge-sample/proof-bundle
+JUDGE_SAMPLE_FILE_COUNT=15
+JUDGE_SAMPLE_FINDING_COUNT=2
+JUDGE_SAMPLE_WCAG_MAPPING_COUNT=3
+JUDGE_SAMPLE_MANIFEST=passed
+JUDGE_SAMPLE_POLICY=passed
+JUDGE_SAMPLE_SECURITY=passed
+JUDGE_SAMPLE_VALID
+JUDGE_STAGE_PASS=7:tracked-judge-sample-validator
+JUDGE_STAGE_START=8:tracked-report-smoke
+$ playwright test tests/e2e/judge-sample-report.spec.ts --config=playwright.report.config.ts
+
+Running 1 test using 1 worker
+
+
+(node:14434) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] [chromium] › tests/e2e/judge-sample-report.spec.ts:4:1 › tracked judge-sample report passes shared structural and axe checks
+[chromium] › tests/e2e/judge-sample-report.spec.ts:4:1 › tracked judge-sample report passes shared structural and axe checks
+JUDGE_SAMPLE_REPORT_AXE_VIOLATIONS=[]
+
+  1 passed (1.5s)
+JUDGE_STAGE_PASS=8:tracked-report-smoke
+JUDGE_WORKFLOW_SAMPLE_PATH=examples/judge-sample/proof-bundle
+JUDGE_WORKFLOW_FINDINGS=2
+JUDGE_WORKFLOW_WCAG_MAPPINGS=3
+JUDGE_WORKFLOW_BASELINE=expected-controlled-defects-confirmed
+JUDGE_WORKFLOW_REPAIRED_EVIDENCE=validated
+JUDGE_WORKFLOW_REPORT_AXE_VIOLATIONS=0
+JUDGE_WORKFLOW_SECURITY=passed
+JUDGE_WORKFLOW_VALID

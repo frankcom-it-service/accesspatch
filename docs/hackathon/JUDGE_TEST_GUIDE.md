@@ -47,6 +47,14 @@ JUDGE_WORKFLOW_VALID
 
 The sanitized clean-clone evidence is tracked at `docs/hackathon/evidence/phase3b-clean-clone/`. The installation required registry access and encountered transient retry warnings. The Judge Workflow itself is API-free; `.accesspatch/runs/` remained absent, and the workflow monitor observed no external TCP connection.
 
+## Optional Phase 5A Clean-Clone Evidence
+
+The optional Mutation Guard feature remains on local branch `feature/accessibility-mutation-guard` and is not part of remote `main`. Its committed HEAD `d75954b672cbc88569d5502198effc57c4390c63` passed a separate 17-stage clean-clone acceptance on Debian GNU/Linux 13 x86_64 with Node `v24.18.0`, pnpm `11.13.0`, Git `2.47.3`, and Chromium `148.0.7778.178`.
+
+The isolated installation ran once with `--offline --frozen-lockfile`, reused 33 packages, and downloaded zero. A temporary `trustLockfile: true` key existed only in the disposable clone and the original `pnpm-workspace.yaml` was restored byte-for-byte before `pnpm mutation:guard` and `pnpm judge:verify`. The guard detected exactly one mutation, and the Judge Workflow passed all eight stages with 178 tests and zero axe violations in the tracked repaired report.
+
+The reviewed evidence is tracked under `docs/hackathon/evidence/phase5a-clean-clone/`; archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`. This is evidence for one fixed mutation class, one controlled fixture, and one Debian/Chromium path only. It does not establish broader platform or repository support.
+
 ## Open Requirements
 
 - `TODO`: confirm supported platforms beyond the verified Debian GNU/Linux 13 x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 environment.
