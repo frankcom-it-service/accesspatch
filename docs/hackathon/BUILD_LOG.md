@@ -171,3 +171,17 @@
 - Known issues: broader operating systems and browser configurations remain unverified; the Playwright-managed Chromium fallback was not exercised; public links and submission assets do not exist.
 - Independent final review: the complete 16-file evidence directory, archive metadata, checksums, byte identity, supported documentation claims, and eight unchanged checklist selections passed review before commit.
 - Next task: broader-platform and submission-readiness work only after separate authorization.
+
+## 2026-07-16 — Phase 4B Private Release Readiness
+
+- Phase goal: establish an accurate private-repository ownership, privacy, attribution, README, Devpost-draft, and video-status surface without creating or publishing any external repository.
+- Human decisions: owner attribution is `Frank Heilmann, trading as “Frankcom IT Service”`; repository model is private judging; no open-source project license is granted; Git history and immutable baseline references will not be rewritten.
+- Codex assignment: create the ownership and release-plan records, remove current local-path exposure, complete third-party notices from installed metadata, explain Codex acceleration and human decisions in the README, refresh submission drafts, and update governance.
+- Files: `OWNERSHIP.md`; `README.md`; private release/privacy documents; third-party notices; Devpost and video drafts; and the relevant Phase 4B governance records only.
+- License result: the offline installed inventory contains Apache-2.0, BSD-3-Clause, ISC, MIT, and MPL-2.0. Every direct external dependency has a declared MIT, Apache-2.0, or MPL-2.0 license; no direct license is unknown, missing, or contradictory.
+- Privacy result: the real local repository path was replaced with `<repository-root>`; Git author history remains private and is not repeated in public-facing text.
+- Validation: `pnpm licenses list --json` exited `0`; `pnpm judge:sample:validate` returned `JUDGE_SAMPLE_VALID`; all 15 Judge Sample and 14 Phase 3B checksum entries passed; baseline refs and four external backup hashes remained exact; `git diff --check`, changed-file allowlist, checklist count, whitespace, credential, key, identifier, real-local-path, author-email, placeholder, and unsupported-claim checks passed. The only trailing spaces remain the three reviewed unified-diff context lines in the immutable Judge Sample.
+- Final wording correction: README status now describes the implemented and verified controlled end-to-end workflow in present tense, while retaining the incomplete arbitrary-repository, retained-application, fallback, and rollback boundaries. Third-party notices now state that internal workspace packages are not separately licensed rather than implying that AccessPatch had a separate project license.
+- Commit status: **COMPLETE** in `f3953994883af959fdd80d2d5e5985b7cb987fd5` (`docs: prepare private release surface`).
+- Preservation: no implementation, fixture, evidence, package, lockfile, baseline ref, external backup, remote, push, server, subdomain, `/feedback`, video, Devpost external action, deployment, or publication changed.
+- Remaining: create and verify the private repository and judging access after separate approval; collect `/feedback`; produce the video; enter and verify external URLs and Devpost fields; perform the fresh final rules check.

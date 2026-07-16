@@ -12,6 +12,8 @@ Phase 2C is committed at `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` after indepe
 
 Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B evidence is committed at `8d2afef856d48d07ffb77013ad7385dd3810a4ed` after independent review. The committed-content judge path was validated in a fresh Git clone on Debian GNU/Linux 13 x86_64. Installation and `pnpm judge:verify` each ran once and exited `0` without retry. The checklist remains at 39 checked and 78 unchecked items. Broader platforms, public access, video, `/feedback`, Devpost, and submission remain unchecked.
 
+Phase 4B release-surface commit `f3953994883af959fdd80d2d5e5985b7cb987fd5` records the private repository and ownership decisions, completes the current third-party notice and dependency attribution review, expands the README collaboration and human-decision sections, and refreshes the English Devpost draft. Six items are supported; the checklist remains at 45 checked and 72 unchecked items. Repository creation and access, external form entry, video, `/feedback`, publication, and submission remain unchecked. Phase 4B is **COMPLETE**.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -37,7 +39,7 @@ Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B ev
 - [x] Working source code is present.
 - [x] Commit history is traceable.
 - [ ] License file is present.
-- [ ] Third-party and license notices are complete.
+- [x] Third-party and license notices are complete.
 - [x] README is in English.
 - [x] Installation instructions are documented.
 - [x] Supported platforms are documented.
@@ -54,7 +56,7 @@ Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B ev
 - [x] Repository contains no secrets or credentials.
 - [x] Repository contains no unnecessary personal data.
 - [x] Repository contains no harmful or unauthorized third-party files.
-- [ ] Dependencies, fixtures, fonts, icons, media, and generated assets have verified licenses and attribution.
+- [x] Dependencies, fixtures, fonts, icons, media, and generated assets have verified licenses and attribution.
 
 ## Developer Tool and Judge Testing
 
@@ -100,8 +102,8 @@ Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B ev
 - [x] Majority of core development exists in the primary session.
 - [x] Important prompts and results are documented chronologically.
 - [x] Codex contributions are linked to commits and files.
-- [ ] README explains where Codex accelerated work.
-- [ ] README explains relevant human decisions.
+- [x] README explains where Codex accelerated work.
+- [x] README explains relevant human decisions.
 - [ ] Video concretely explains the Codex workflow.
 
 ## GPT-5.6 Evidence
@@ -129,13 +131,13 @@ Phase 3A is committed at `84db92f9e27b6f7872495516f166a8bcaed8ef03`. Phase 3B ev
 - [ ] YouTube video is public.
 - [ ] Submission texts are complete in English.
 - [ ] Session ID is correct.
-- [ ] License information is complete.
+- [x] License information is complete.
 - [ ] Final repository contains no secrets.
 - [ ] Submission contains no unsupported legal claims.
 - [ ] Before/after evidence uses the same journey and states its scope.
 - [ ] Disabled-user testing, qualified human review, and unresolved limitations are described honestly.
 - [ ] Product behaves as shown in the video.
-- [ ] Devpost draft is complete.
+- [x] Devpost draft is complete.
 - [ ] Final submission is confirmed.
 - [ ] Submission receipt, confirmation, or timestamped screenshot is retained.
 

@@ -15,7 +15,7 @@
 
 - Date: 2026-07-15
 - Decision: bound GPT-5.6 to the Evidence-Based Repair Reasoner role. Its structured proposals must be grounded in collected evidence and pass schema validation plus deterministic safety checks before any future application step.
-- Status: Phase 1B working tree implements and has exercised this bounded planning role for the two controlled findings; commit and broader repair workflow remain pending.
+- Status: implemented for the two controlled findings in Phase 1B commit `207e0559d0d7664a24dcb297fb40b37700f36208`; broader repair support remains open.
 
 ## D-004 — Fix Internal Delivery Targets
 
@@ -120,8 +120,19 @@
 - Claim boundary: this proves the controlled judge path on Debian GNU/Linux 13 x86_64 only. It does not establish broader-platform support, complete accessibility, WCAG conformance, certification, or BFSG/EAA assurance.
 - Status: **COMPLETE** in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. Independent review passed the final 16-file evidence directory; the archive is tracked as non-executable Git mode `100644`.
 
+## D-017 — Use a Private Judging Repository Without an Open-Source License
+
+- Date: 2026-07-16
+- Owner: Frank Heilmann, trading as “Frankcom IT Service”.
+- Decision: keep the submission repository private and later share it only with `testing@devpost.com` and `build-week-event@openai.com`.
+- License boundary: AccessPatch is not offered under an open-source project license. Private judging access does not grant general reuse, redistribution, sublicensing, or public-republication rights; third-party packages retain their own licenses.
+- Privacy: do not copy local usernames, paths, credential locations, account screens, API settings, or Git author email addresses into public materials.
+- History: do not rewrite Git history because committed hashes anchor the evidence record. Preserve the immutable submission baseline tag, backup branch, bundle, and source snapshot.
+- External boundary: no remote, hosting, server, subdomain, invitation, or publication action is authorized in Phase 4B.
+- Status: **COMPLETE** in release-surface commit `f3953994883af959fdd80d2d5e5985b7cb987fd5`. Execution steps remain unexecuted and are documented in `PRIVATE_REPOSITORY_RELEASE_PLAN.md`.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.
 - `OPEN`: controlled patch approval, rollback, and post-repair review gates.
-- `OPEN`: repository visibility path, license, judging addresses, and final applicable Rules-page interpretation.
+- `OPEN`: final private hosting provider, repository URL, judging-account access verification, and final applicable Rules-page interpretation.

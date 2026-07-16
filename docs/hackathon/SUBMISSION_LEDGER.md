@@ -11,11 +11,14 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Product name: AccessPatch | VERIFIED | Repository and `README.md` |
 | Selected track: Developer Tools | VERIFIED 2026-07-15 | Human coordination review |
 | Product definition: Journey Repair and Proof Agent for React/TypeScript applications | PROJECT-SPECIFIED | Project brief |
+| Legal owner and approved attribution | VERIFIED BY USER 2026-07-16 | `OWNERSHIP.md`; Frank Heilmann, trading as “Frankcom IT Service” |
+| Repository publication model | PHASE 4B COMPLETE: PRIVATE JUDGING DECIDED; REPOSITORY NOT YET CREATED | `f3953994883af959fdd80d2d5e5985b7cb987fd5`; `PRIVATE_RELEASE_AND_PRIVACY_DECISION.md`; `PRIVATE_REPOSITORY_RELEASE_PLAN.md` |
+| Private release surface and ownership record | PHASE 4B COMPLETE | `f3953994883af959fdd80d2d5e5985b7cb987fd5`; `OWNERSHIP.md`; `THIRD_PARTY_NOTICES.md`; `README.md` |
 | Minimal initial README baseline | VERIFIED | Root commit `0ac10988053a301c89689b8ce8fbd7e6aecd481f`; three-line README |
 | Phase 0 documentation foundation | COMPLETE (COMMITTED) | `bbabb9207b0f7ae92b8262b2e02930511dd81521`; `TEST_EVIDENCE.md` |
 | Governance-record follow-up | RECORDED IN FOLLOW-UP COMMIT | Subject `docs: record Phase 0 completion`; hash intentionally not embedded in its own content |
 | Controlled `demo-checkout` fixture | PHASE 1A COMPLETE | `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`; `apps/demo-checkout/`; `TEST_EVIDENCE.md` |
-| AccessPatch repair product | NOT YET IMPLEMENTED | None |
+| AccessPatch repair product | CONTROLLED FEASIBILITY WORKFLOW IMPLEMENTED; GENERAL PRODUCT NOT YET IMPLEMENTED | Controlled Phase 1–3 commits and evidence |
 | Codex central-session model | VERIFIED BY USER | `gpt-5.6-sol`, reasoning `high`; `CODEX_SESSION_RECORD.md` |
 | Dedicated-project API authentication and minimal `gpt-5.6-sol` response access | VERIFIED 2026-07-15 | Human-supervised evidence in `TEST_EVIDENCE.md` |
 | AccessPatch GPT-5.6 product integration | PARTIAL PRODUCT; PHASE 1B COMPLETE | `207e0559d0d7664a24dcb297fb40b37700f36208`; real bounded evidence-to-plan run; `TEST_EVIDENCE.md` |
@@ -26,25 +29,26 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Curated tracked Judge Sample | PHASE 2C COMPLETE; INDEPENDENT FULL REVIEW PASSED | `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files; byte-identical 15-file bundle plus `README.md` and `SHA256SUMS`; read-only validator and zero-violation report smoke |
 | One-command Judge workflow | PHASE 3A COMPLETE; LOCAL END-TO-END PROOF PASSED | `84db92f9e27b6f7872495516f166a8bcaed8ef03`; corrected second lifetime `pnpm judge:verify` run passed all eight stages with ignored runs absent; 139 tests; stable success output; no third run |
 | Clean-clone Judge verification | PHASE 3B COMPLETE; INDEPENDENT EVIDENCE REVIEW PASSED | Evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; fresh clone of `7d0653cd344cf15be448ed9ef62b41b74c0d67ef`; one frozen install and one Judge Workflow run exited `0` without retry; `docs/hackathon/evidence/phase3b-clean-clone/` |
-| Repository URL or demo URL | OPEN | No Git remote configured; no demo deployed |
+| Repository URL or demo URL | OPEN | Private repository selected, but no Git remote, URL, judging access, or demo deployment exists |
 
 ## Central Requirements
 
 | Requirement | Level | Current status | Evidence file or artifact | Responsible phase | Latest target date | Open risk or blocker |
 | --- | --- | --- | --- | --- | --- | --- |
-| Working project using Codex and GPT-5.6 | Mandatory | PARTIAL PRODUCT: CONTROLLED PLANNING AND ISOLATED REPAIR COMMITTED | `207e0559d0d7664a24dcb297fb40b37700f36208`; `79ed0e60b2c7145f4113ecac3797a119ccb696ee`; ignored Phase 1C artifacts; `TEST_EVIDENCE.md` | Build and integration | 2026-07-20 02:00 CEST | Report, retained application, full workflow, and judge-visible reproducibility remain open |
+| Working project using Codex and GPT-5.6 | Mandatory | CONTROLLED END-TO-END FEASIBILITY WORKFLOW COMMITTED | Phase 1–3 commits; tracked Judge Sample; Phase 3B evidence | Build and integration | 2026-07-20 02:00 CEST | Retained application, broad repositories, fallback/rollback, and production hosting remain open |
 | One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
-| Project description | Mandatory | DRAFT | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final claims need proof |
-| Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Product and recording absent |
+| Project description | Mandatory | CURRENT ENGLISH DRAFT; EXTERNAL FORM PENDING | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final form limits and official rules require recheck |
+| Public YouTube demo, at most three minutes | Mandatory | NOT YET IMPLEMENTED | `VIDEO_SCRIPT.md`; public URL TODO | Demo and submission | 2026-07-21 02:00 CEST | Recording, review, upload, and public-link verification absent |
 | Voiceover explains project, Codex use, and GPT-5.6 use | Mandatory | DRAFT OUTLINE | `VIDEO_SCRIPT.md` | Demo and submission | 2026-07-21 02:00 CEST | Must reflect actual frozen build |
-| Code repository URL | Mandatory | OPEN | URL TODO | Submission | 2026-07-21 02:00 CEST | No remote; publication requires approval |
+| Code repository URL | Mandatory | PRIVATE MODEL DECIDED; URL OPEN | `PRIVATE_REPOSITORY_RELEASE_PLAN.md`; URL placeholder | Submission | 2026-07-21 02:00 CEST | No remote or private repository created; judging access requires separate approval and verification |
 | README setup and testing guidance | Mandatory | VERIFIED FOR CONTROLLED JUDGE PATH | `README.md`; `JUDGE_TEST_GUIDE.md`; Phase 3B clean-clone evidence | Build and verification | 2026-07-20 02:00 CEST | Broader-platform and final public-link guidance remain open |
 | Primary build-thread `/feedback` Session ID | Mandatory | PENDING | `CODEX_SESSION_RECORD.md` | Submission | 2026-07-21 02:00 CEST | Must be collected from this central session; never invent |
 | Developer Tools installation instructions | Mandatory | VERIFIED IN ONE CLEAN CLONE | `README.md`; `JUDGE_TEST_GUIDE.md`; `docs/hackathon/evidence/phase3b-clean-clone/` | Build and verification | 2026-07-20 02:00 CEST | Other operating systems and Playwright-managed browser fallback remain open |
 | Supported platforms | Mandatory | VERIFIED LIMITED: DEBIAN 13 X86_64 | `JUDGE_TEST_GUIDE.md`; `environment-summary.txt` in Phase 3B evidence | Build and verification | 2026-07-20 02:00 CEST | Windows, macOS, other Linux distributions, architectures, and browser configurations unverified |
 | Judge path without complete rebuild | Mandatory | ONE-COMMAND CLEAN-CLONE PATH VERIFIED; REQUIREMENT INTERPRETATION OPEN | `JUDGE_TEST_GUIDE.md`; `pnpm judge:verify`; `84db92f9e27b6f7872495516f166a8bcaed8ef03`; Phase 3B evidence | Demo and verification | 2026-07-21 02:00 CEST | Command intentionally performs a deterministic production build; confirm this satisfies final judging interpretation |
-| Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | OPEN | Repository and license TODO | Release | 2026-07-21 02:00 CEST | Visibility path, license, and judging addresses require final verification |
-| Judge-accessible demo or sandbox | Recommended | NOT YET IMPLEMENTED | `DEMO_EVIDENCE.md` | Demo | 2026-07-21 02:00 CEST | Hosting and accessibility OPEN |
+| Public repository with relevant license, or private sharing with specified judging addresses | Mandatory | PRIVATE PATH DECIDED; ACCESS NOT YET CREATED | `OWNERSHIP.md`; `PRIVATE_RELEASE_AND_PRIVACY_DECISION.md`; `PRIVATE_REPOSITORY_RELEASE_PLAN.md` | Release | 2026-07-21 02:00 CEST | Create private repository, invite both judging accounts, and verify access; no open-source license is granted |
+| Third-party licenses and attribution | Mandatory release control | REVIEW COMPLETE FOR CURRENT TREE | `THIRD_PARTY_NOTICES.md`; `pnpm-lock.yaml`; offline `pnpm licenses list --json` | Release | 2026-07-20 02:00 CEST | Repeat only if dependencies or assets change |
+| Judge-accessible demo or sandbox | Recommended | LOCAL JUDGE PATH IMPLEMENTED; EXTERNAL ACCESS OPEN | `JUDGE_TEST_GUIDE.md`; tracked Judge Sample; Phase 3B evidence | Demo | 2026-07-21 02:00 CEST | Private repository and judging-account access are not yet created |
 | Fresh install and final link verification | Recommended | FRESH INSTALL VERIFIED ON DEBIAN; FINAL LINKS OPEN | `TEST_EVIDENCE.md`; `docs/hackathon/evidence/phase3b-clean-clone/`; checklist | Verification release gate | 2026-07-21 02:00 CEST | Public repository, demo, video, and Devpost links do not yet exist |
 | Fixed MVP Proof Bundle inventory | Mandatory internal contract | GENERATOR, REVIEWED TRACKED SAMPLE, AND CLEAN-CLONE VALIDATION COMPLETE | Canonical contract in `DEMO_EVIDENCE.md`; generator `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3`; Judge Sample `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; Phase 3B evidence | Build and evidence | 2026-07-20 02:00 CEST | Broader platforms and final public judge access remain open |
 

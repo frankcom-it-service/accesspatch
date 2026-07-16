@@ -17,11 +17,11 @@ Phase 1B adds local evidence collection and one outbound Responses API integrati
 
 Use `.env.example` only as a key-name template. Real `.env*` files, keys, certificates, logs, traces, and generated proof runs are ignored. The independently reviewed `examples/judge-sample/` is the only explicit tracked generated-evidence allowlist. If a secret is exposed, revoke it outside this repository and remove it from all artifacts before continuing.
 
-The human-supervised development key is stored outside the repository at `$HOME/.config/accesspatch/openai.env`; the file mode is `600` and its containing directory is user-private. The secret value, project and organization identifiers, and payment data must never be recorded here.
+The human-supervised development key is stored outside the repository in a user-private configuration file with mode `600`. Its precise location is intentionally omitted from public-facing documentation. The secret value, project and organization identifiers, and payment data must never be recorded here.
 
 The dedicated project is restricted to `gpt-5.6-sol`. Key permissions are model-list read, `/v1/responses` write, and no access to other endpoint groups. Cost exposure is bounded by an initial USD 5 prepaid balance with auto recharge disabled.
 
-Phase 1B sourced `$HOME/.config/accesspatch/openai.env` only in the approved one-call shell immediately before `pnpm phase1:reason`; the key value was not displayed, inspected, logged, or copied. The request used `store: false`, no tools, no retries, and only normalized evidence with narrow allowlisted source excerpts. The demo uses sample values only and stores no orders, payments, or personal data.
+Phase 1B sourced the external user-private credential file only in the approved one-call shell immediately before `pnpm phase1:reason`; the key value was not displayed, inspected, logged, or copied. The request used `store: false`, no tools, no retries, and only normalized evidence with narrow allowlisted source excerpts. The demo uses sample values only and stores no orders, payments, or personal data.
 
 The reasoner writes no raw API response. Its ignored audit record contains only timestamp, model and prompt versions, evidence and plan hashes, `store: false`, response status, token usage, policy result, and a sanitized failure category. Missing credentials fail closed; rejected or refused output produces no approved plan or repository change.
 
@@ -47,9 +47,17 @@ Phase 3B verified the committed workflow in a fresh local Git clone under isolat
 
 The first evidence archive contained sanitized file contents but retained local owner/group names in TAR headers. It was repackaged without changing evidence bytes using neutral numeric ownership, empty stored names, restrictive modes, normalized timestamps, and no PAX atime/ctime metadata. Independent review passed the final archive at `docs/hackathon/evidence/phase3b-clean-clone/`. Evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` tracks that archive as non-executable Git mode `100644`. This proves one controlled clean-clone execution, not general network isolation, security certification, or broader-platform support.
 
+## Private Release Posture
+
+Phase 4B selects a private judging repository and no open-source project license. Public-facing material must omit local usernames, home and temporary paths, credential locations, account screens, API settings, Git author email addresses, notifications, and private account data. Git history remains private and will not be rewritten because commit hashes anchor the evidence record.
+
+The release plan requires privacy verification before and after any later push, explicit approval before adding a remote, restricted judging invitations, and immediate rollback if visibility is incorrect. No remote, server, subdomain, hosting, or external repository access exists yet.
+
+The reviewed private release surface is committed at `f3953994883af959fdd80d2d5e5985b7cb987fd5`. It adds no `LICENSE` file; AccessPatch remains all-rights-reserved and is not offered under an open-source project license. The direct dependency review found no missing, unknown, or contradictory declared license.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — no public repository or contact route is configured.
 - Threat model: `TODO` before arbitrary-repository support or patch application.
-- Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before commit `207e0559d0d7664a24dcb297fb40b37700f36208`. `pnpm audit --audit-level=high` reported no known vulnerabilities, and `pnpm licenses list --json` identified licenses for OpenAI SDK `6.47.0`, Zod `4.4.3`, and the existing graph; manual review of final redistribution and attribution obligations remains `TODO` before submission.
+- Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before commit `207e0559d0d7664a24dcb297fb40b37700f36208`. `pnpm audit --audit-level=high` reported no known vulnerabilities. The 2026-07-16 offline `pnpm licenses list --json` review identified every installed license family and every direct external dependency license; no direct dependency had an unknown, missing, or contradictory declared license. Current attribution and redistribution notes are complete in `THIRD_PARTY_NOTICES.md`.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.
