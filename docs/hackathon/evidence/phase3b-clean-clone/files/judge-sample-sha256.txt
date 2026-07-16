@@ -1,0 +1,15 @@
+audit-log.json: OK
+findings.json: OK
+journey-map.json: OK
+manual-review.md: OK
+patch.diff: OK
+repair-plan.json: OK
+replay.spec.ts: OK
+report.html: OK
+summary.json: OK
+test-results/after-replay.json: OK
+test-results/before-baseline.json: OK
+test-results/model-audit.json: OK
+test-results/patch-audit.json: OK
+test-results/verification.json: OK
+wcag-map.csv: OK

@@ -1,0 +1,16 @@
+JUDGE_STAGE_START=1:repository-contract-preflight
+JUDGE_STAGE_PASS=1:repository-contract-preflight
+JUDGE_STAGE_START=2:api-free-unit-tests
+JUDGE_STAGE_PASS=2:api-free-unit-tests
+JUDGE_STAGE_START=3:typescript-type-check
+JUDGE_STAGE_PASS=3:typescript-type-check
+JUDGE_STAGE_START=4:production-build
+JUDGE_STAGE_PASS=4:production-build
+JUDGE_STAGE_START=5:application-smoke
+JUDGE_STAGE_PASS=5:application-smoke
+JUDGE_STAGE_START=6:controlled-baseline-proof
+JUDGE_STAGE_PASS=6:controlled-baseline-proof
+JUDGE_STAGE_START=7:tracked-judge-sample-validator
+JUDGE_STAGE_PASS=7:tracked-judge-sample-validator
+JUDGE_STAGE_START=8:tracked-report-smoke
+JUDGE_STAGE_PASS=8:tracked-report-smoke

@@ -1,0 +1,149 @@
+Scope: all 7 workspace projects
+? Verifying lockfile against supply-chain policies (84 entries)...
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +33
++++++++++++++++++++++++++++++++++
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 11.13.0 → 11.13.1.      │
+   │     Changelog: https://pnpm.io/v/11.13.1      │
+   │   To update, run: corepack use pnpm@11.13.1   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Progress: resolved 33, reused 0, downloaded 14, added 14
+Progress: resolved 33, reused 0, downloaded 19, added 19
+Progress: resolved 33, reused 0, downloaded 20, added 20
+Progress: resolved 33, reused 0, downloaded 22, added 22
+[WARN] Request took 17537ms: https://registry.npmjs.org/@typescript%2Ftypescript-aix-ppc64
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-arm error (EAI_AGAIN). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-loong64 error (EAI_AGAIN). Will retry in 10 seconds. 2 retries left.
+[WARN] Request took 19732ms: https://registry.npmjs.org/picocolors
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-arm64 error (UND_ERR_SOCKET). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-darwin-arm64 error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-ppc64 error (ETIMEDOUT). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-mips64el error (ETIMEDOUT). Will retry in 10 seconds. 2 retries left.
+[WARN] Request took 33563ms: https://registry.npmjs.org/@typescript%2Ftypescript-freebsd-arm64
+[WARN] Request took 57608ms: https://registry.npmjs.org/@typescript%2Ftypescript-freebsd-x64
+[WARN] GET https://registry.npmjs.org/@playwright%2Ftest error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@rolldown%2Fbinding-linux-x64-gnu error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@rolldown%2Fbinding-wasm32-wasi error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@rolldown%2Fbinding-win32-arm64-msvc error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@rolldown%2Fbinding-win32-x64-msvc error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@tybys%2Fwasm-util error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@types%2Fnode error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@types%2Freact-dom error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@types%2Freact error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-darwin-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-riscv64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-linux-s390x error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-netbsd-arm64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-netbsd-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-openbsd-arm64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-openbsd-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-sunos-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-win32-arm64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript%2Ftypescript-win32-x64 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@vitejs%2Fplugin-react error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/axe-core error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.1.5.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/zod/-/zod-4.4.3.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/openai/-/openai-6.47.0.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/playwright-core/-/playwright-core-1.61.1.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/playwright/-/playwright-1.61.1.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/react/-/react-19.2.7.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/react-dom/-/react-dom-19.2.7.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@types/node/-/node-26.1.1.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/lightningcss-win32-x64-msvc error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/nanoid error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/picomatch error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/playwright-core error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/playwright error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/postcss error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/react-dom error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/react error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/rolldown error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/scheduler error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/source-map-js error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/tinyglobby error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/tslib error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/typescript error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-android-arm64@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/undici-types error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/vite error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/zod error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-darwin-arm64@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-freebsd-x64@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-darwin-x64@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-ppc64-gnu@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-arm64-musl@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-arm64-gnu@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-openharmony-arm64@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-s390x-gnu@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-x64-musl@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/-/npm/v1/attestations/@rolldown/binding-linux-arm-gnueabihf@1.1.5 error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] Request took 78164ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-arm
+[WARN] Request took 78257ms: https://registry.npmjs.org/@typescript%2Ftypescript-darwin-arm64
+[WARN] Request took 78270ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-arm64
+[WARN] Request took 78298ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-loong64
+[WARN] Request took 81101ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-ppc64
+[WARN] Request took 11320ms: https://registry.npmjs.org/@rolldown%2Fbinding-linux-x64-gnu
+[WARN] Request took 80780ms: https://registry.npmjs.org/zod
+[WARN] Request took 11455ms: https://registry.npmjs.org/@rolldown%2Fbinding-win32-arm64-msvc
+[WARN] Request took 11462ms: https://registry.npmjs.org/@rolldown%2Fbinding-wasm32-wasi
+[WARN] Request took 11590ms: https://registry.npmjs.org/@tybys%2Fwasm-util
+[WARN] Request took 11624ms: https://registry.npmjs.org/@playwright%2Ftest
+[WARN] Request took 11641ms: https://registry.npmjs.org/@rolldown%2Fbinding-win32-x64-msvc
+[WARN] Request took 11707ms: https://registry.npmjs.org/@types%2Freact-dom
+[WARN] Request took 11788ms: https://registry.npmjs.org/@typescript%2Ftypescript-darwin-x64
+[WARN] Request took 11891ms: https://registry.npmjs.org/@types%2Freact
+[WARN] Request took 11899ms: https://registry.npmjs.org/@types%2Fnode
+[WARN] Request took 81974ms: https://registry.npmjs.org/@typescript%2Ftypescript-netbsd-arm64
+[WARN] Request took 81993ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-s390x
+[WARN] Request took 82069ms: https://registry.npmjs.org/@typescript%2Ftypescript-netbsd-x64
+[WARN] Request took 82114ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-riscv64
+[WARN] Request took 82125ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-x64
+[WARN] Request took 82224ms: https://registry.npmjs.org/@typescript%2Ftypescript-openbsd-arm64
+[WARN] Request took 82341ms: https://registry.npmjs.org/@typescript%2Ftypescript-openbsd-x64
+[WARN] Request took 82347ms: https://registry.npmjs.org/@typescript%2Ftypescript-sunos-x64
+[WARN] Request took 82358ms: https://registry.npmjs.org/@vitejs%2Fplugin-react
+[WARN] Request took 82423ms: https://registry.npmjs.org/@typescript%2Ftypescript-win32-arm64
+[WARN] Request took 82508ms: https://registry.npmjs.org/axe-core
+[WARN] Request took 82569ms: https://registry.npmjs.org/@typescript%2Ftypescript-win32-x64
+Progress: resolved 33, reused 0, downloaded 23, added 22
+[WARN] Request took 13500ms: https://registry.npmjs.org/lightningcss-win32-x64-msvc
+[WARN] Request took 83770ms: https://registry.npmjs.org/picomatch
+[WARN] Request took 13827ms: https://registry.npmjs.org/nanoid
+Progress: resolved 33, reused 0, downloaded 30, added 30
+[WARN] Request took 84352ms: https://registry.npmjs.org/postcss
+[WARN] Request took 84879ms: https://registry.npmjs.org/rolldown
+Progress: resolved 33, reused 0, downloaded 31, added 31
+[WARN] Request took 84973ms: https://registry.npmjs.org/source-map-js
+[WARN] Request took 85269ms: https://registry.npmjs.org/tinyglobby
+[WARN] Request took 85293ms: https://registry.npmjs.org/tslib
+[WARN] Request took 15428ms: https://registry.npmjs.org/react
+[WARN] Request took 85565ms: https://registry.npmjs.org/scheduler
+[WARN] Request took 85599ms: https://registry.npmjs.org/undici-types
+[WARN] Request took 85928ms: https://registry.npmjs.org/react-dom
+[WARN] Request took 85996ms: https://registry.npmjs.org/playwright
+Progress: resolved 33, reused 0, downloaded 32, added 32
+[WARN] Request took 85844ms: https://registry.npmjs.org/vite
+[WARN] Request took 85994ms: https://registry.npmjs.org/typescript
+[WARN] Request took 86550ms: https://registry.npmjs.org/@typescript%2Ftypescript-linux-mips64el
+[WARN] Request took 16523ms: https://registry.npmjs.org/playwright-core
+Progress: resolved 33, reused 0, downloaded 33, added 33, done
+✓ Lockfile passes supply-chain policies (84 entries in 1m 30.2s)
+
+devDependencies:
++ @axe-core/playwright 4.12.1
++ @playwright/test 1.61.1
++ @types/node 26.1.1
++ typescript 7.0.2
+
+Done in 1m 30.9s using pnpm v11.13.0

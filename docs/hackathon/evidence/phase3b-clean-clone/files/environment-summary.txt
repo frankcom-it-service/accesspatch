@@ -1,0 +1,8 @@
+OS=Debian GNU/Linux 13
+ARCHITECTURE=x86_64
+NODE=v24.18.0
+PNPM=11.13.0
+GIT=2.47.3
+CHROMIUM_SELECTION=system Chromium
+CHROMIUM_VERSION=Chromium 148.0.7778.178 built on Debian GNU/Linux 13 (trixie)
+ENVIRONMENT_ISOLATION=temporary HOME, XDG config/cache/state, TMPDIR, empty Git/npm configs, noninteractive Git, isolated npm/pnpm config
