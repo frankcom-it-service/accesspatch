@@ -13,6 +13,7 @@ const resolveChromiumExecutablePath = () => {
 };
 
 const chromiumExecutablePath = resolveChromiumExecutablePath();
+const judgeWorkflow = process.env.ACCESSPATCH_JUDGE_WORKFLOW === '1';
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -20,14 +21,19 @@ export default defineConfig({
   forbidOnly: true,
   retries: 0,
   workers: 1,
-  reporter: [
-    ['list'],
-    ['html', { open: 'never', outputFolder: 'playwright-report' }],
-  ],
+  reporter: judgeWorkflow
+    ? [['line']]
+    : [
+        ['list'],
+        ['html', { open: 'never', outputFolder: 'playwright-report' }],
+      ],
+  ...(judgeWorkflow
+    ? { outputDir: '.accesspatch/work/judge-verify/application-tests' }
+    : {}),
   use: {
     baseURL: 'http://127.0.0.1:4173',
-    screenshot: 'only-on-failure',
-    trace: 'retain-on-failure',
+    screenshot: judgeWorkflow ? 'off' : 'only-on-failure',
+    trace: judgeWorkflow ? 'off' : 'retain-on-failure',
   },
   projects: [
     {

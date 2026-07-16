@@ -4,6 +4,7 @@ import { defineConfig } from '@playwright/test';
 const configuredPath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 const systemPath = '/usr/bin/chromium';
 const executablePath = configuredPath || (existsSync(systemPath) ? systemPath : undefined);
+const judgeWorkflow = process.env.ACCESSPATCH_JUDGE_WORKFLOW === '1';
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -12,7 +13,9 @@ export default defineConfig({
   retries: 0,
   workers: 1,
   reporter: [['line']],
-  outputDir: 'test-results/report-smoke',
+  outputDir: judgeWorkflow
+    ? '.accesspatch/work/judge-verify/report-test'
+    : 'test-results/report-smoke',
   use: {
     screenshot: 'off',
     trace: 'off',

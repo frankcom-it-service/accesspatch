@@ -16,10 +16,12 @@
     "phase2:bundle": "node --experimental-strip-types packages/proof-bundle/src/run.ts",
     "phase2:validate": "node --experimental-strip-types packages/proof-bundle/src/validate-run.ts",
     "judge:sample:validate": "node --experimental-strip-types packages/proof-bundle/src/validate-judge-sample-run.ts",
+    "judge:verify": "node --experimental-strip-types scripts/judge-verify.ts",
     "test:unit": "node --experimental-strip-types --test --test-isolation=none tests/unit/*.test.ts",
-    "typecheck": "pnpm --filter @accesspatch/demo-checkout typecheck && pnpm --filter './packages/**' typecheck && tsc --noEmit -p tests/e2e/tsconfig.json && tsc --noEmit -p tests/unit/tsconfig.json",
+    "typecheck": "pnpm --filter @accesspatch/demo-checkout typecheck && pnpm --filter './packages/**' typecheck && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p tests/e2e/tsconfig.json && tsc --noEmit -p tests/unit/tsconfig.json",
     "test:smoke": "playwright test tests/e2e/smoke.spec.ts",
     "test:baseline": "playwright test tests/e2e/keyboard-baseline.spec.ts",
+    "test:judge-baseline": "playwright test tests/e2e/judge-baseline.spec.ts",
     "test:report": "playwright test tests/e2e/report-smoke.spec.ts --config=playwright.report.config.ts",
     "test:judge-sample-report": "playwright test tests/e2e/judge-sample-report.spec.ts --config=playwright.report.config.ts"
   },

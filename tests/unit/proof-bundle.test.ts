@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { copyFile, lstat, mkdir, mkdtemp, readFile, readdir, rm, symlink, unlink, writeFile } from 'node:fs/promises';
+import { lstat, mkdir, mkdtemp, readFile, readdir, rm, symlink, unlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, test } from 'node:test';
@@ -15,7 +15,6 @@ import {
   createReportHtml,
   createWcagMap,
   generateProofBundle,
-  loadReviewedBundleSources,
   scanGeneratedText,
   serializeJson,
   sha256,
@@ -33,6 +32,7 @@ import {
 } from '../../packages/shared-types/src/index.ts';
 
 const repositoryRoot = process.cwd();
+const trackedBundle = join(repositoryRoot, 'examples/judge-sample/proof-bundle');
 const generatedAtUtc = '2026-07-15T18:00:00.000Z';
 const repositoryHead = 'e5fd8646b04d1e3a8153799389597d1e69b90391';
 const temporaryRoots: string[] = [];
@@ -43,11 +43,78 @@ async function createTemporaryRoot(): Promise<string> {
   return root;
 }
 
+async function readTrackedReviewedBytes(): Promise<ReviewedSourceBytes> {
+  const proofFindings = ProofFindingsSchema.parse(
+    JSON.parse(await readFile(join(trackedBundle, 'findings.json'), 'utf8')),
+  );
+  const findings = proofFindings.findings.map((proofFinding) => {
+    const {
+      repairStatus: _repairStatus,
+      verificationArtifact: _verificationArtifact,
+      wcagMappings: _wcagMappings,
+      ...finding
+    } = proofFinding;
+    return finding;
+  });
+  const evidence = Buffer.from(
+    serializeJson({
+      schemaVersion: '1.0.0',
+      capturedAtUtc: '2026-07-15T15:04:08.957Z',
+      journey: {
+        journeyId: 'demo-checkout-keyboard-v1',
+        name: 'Controlled demo checkout keyboard journey',
+        steps: [
+          'Open the product screen.',
+          'Focus and activate Add product to cart with the keyboard.',
+          'Focus and activate Open checkout with the keyboard.',
+          'Enter shipping and contact sample data with the keyboard.',
+          'Inspect the focused primary action and checkout accessibility state.',
+          'Activate Continue to confirmation with the keyboard.',
+        ],
+        confirmationReached: true,
+      },
+      sourceContextPolicy: {
+        allowedFiles: [
+          'apps/demo-checkout/src/App.tsx',
+          'apps/demo-checkout/src/styles.css',
+        ],
+        maximumCharactersPerFinding: 1200,
+        completeFilesIncluded: false,
+      },
+      axeSummary: {
+        violationCount: 1,
+        ruleIds: ['label'],
+        targets: ['#email'],
+      },
+      findings,
+    }),
+  );
+  assert.equal(sha256(evidence), REVIEWED_SOURCE_HASHES.evidence);
+
+  return {
+    evidence,
+    repairPlan: await readFile(join(trackedBundle, 'repair-plan.json')),
+    modelAudit: await readFile(join(trackedBundle, 'test-results/model-audit.json')),
+    patch: await readFile(join(trackedBundle, 'patch.diff')),
+    replay: await readFile(join(trackedBundle, 'replay.spec.ts')),
+    verification: await readFile(join(trackedBundle, 'test-results/verification.json')),
+    patchAudit: await readFile(join(trackedBundle, 'test-results/patch-audit.json')),
+    manualReview: await readFile(join(trackedBundle, 'manual-review.md')),
+  };
+}
+
+async function loadTrackedReviewedSources(): Promise<ReviewedBundleSources> {
+  return validateReviewedSourceBytes(await readTrackedReviewedBytes());
+}
+
 async function copyReviewedSources(root: string): Promise<void> {
-  for (const path of Object.values(SOURCE_ARTIFACT_PATHS)) {
-    const destination = join(root, path);
+  const bytes = await readTrackedReviewedBytes();
+  for (const key of Object.keys(SOURCE_ARTIFACT_PATHS) as Array<
+    keyof typeof SOURCE_ARTIFACT_PATHS
+  >) {
+    const destination = join(root, SOURCE_ARTIFACT_PATHS[key]);
     await mkdir(dirname(destination), { recursive: true });
-    await copyFile(join(repositoryRoot, path), destination);
+    await writeFile(destination, bytes[key]);
   }
 }
 
@@ -67,12 +134,7 @@ async function generateFixture(): Promise<{ root: string; bundle: string }> {
 }
 
 async function readReviewedBytes(): Promise<ReviewedSourceBytes> {
-  const entries = await Promise.all(
-    (Object.keys(SOURCE_ARTIFACT_PATHS) as Array<keyof typeof SOURCE_ARTIFACT_PATHS>).map(
-      async (key) => [key, await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS[key]))] as const,
-    ),
-  );
-  return Object.fromEntries(entries) as unknown as ReviewedSourceBytes;
+  return readTrackedReviewedBytes();
 }
 
 afterEach(async () => {
@@ -144,7 +206,7 @@ test('rejects a reviewed source symlink without following it', async (context) =
   const path = join(root, SOURCE_ARTIFACT_PATHS.patch);
   await unlink(path);
   try {
-    await symlink(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.patch), path);
+    await symlink(join(trackedBundle, 'patch.diff'), path);
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'EPERM') {
       context.skip('symlink creation is unavailable');
@@ -182,7 +244,7 @@ test('copies the patch byte for byte', async () => {
   const { bundle } = await generateFixture();
   assert.deepEqual(
     await readFile(join(bundle, 'patch.diff')),
-    await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.patch)),
+    await readFile(join(trackedBundle, 'patch.diff')),
   );
 });
 
@@ -190,12 +252,12 @@ test('copies the replay byte for byte', async () => {
   const { bundle } = await generateFixture();
   assert.deepEqual(
     await readFile(join(bundle, 'replay.spec.ts')),
-    await readFile(join(repositoryRoot, SOURCE_ARTIFACT_PATHS.replay)),
+    await readFile(join(trackedBundle, 'replay.spec.ts')),
   );
 });
 
 test('escapes commas and quotes in CSV cells', async () => {
-  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const sources = await loadTrackedReviewedSources();
   const changed = {
     ...sources,
     evidence: {
@@ -217,7 +279,7 @@ async function createWcagFixture(): Promise<{
   csv: string;
   html: string;
 }> {
-  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const sources = await loadTrackedReviewedSources();
   const findings = ProofFindingsSchema.parse(createFindings(sources));
   return {
     findings,
@@ -355,7 +417,7 @@ test('rejects an absolute local path leak', () => {
 });
 
 test('creates a sanitized seven-entry audit log', async () => {
-  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const sources = await loadTrackedReviewedSources();
   const audit = createAuditLog(sources, generatedAtUtc, { 'findings.json': 'a'.repeat(64) });
   const serialized = serializeJson(audit);
   assert.equal(audit.entries.length, 7);
@@ -384,7 +446,7 @@ test('preserves the previous final directory when regeneration fails', async () 
 });
 
 test('report HTML contains structural and accessibility smoke requirements', async () => {
-  const sources = await loadReviewedBundleSources(repositoryRoot);
+  const sources = await loadTrackedReviewedSources();
   const findings = ProofFindingsSchema.parse(createFindings(sources));
   const html = createReportHtml(sources, findings);
   assert.doesNotThrow(() => validateReportHtml(html, findings));
