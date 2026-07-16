@@ -16,7 +16,7 @@
 - Codex model: `gpt-5.6-sol`.
 - Reasoning setting: `high`.
 - Node.js: `v24.18.0`; npm: `11.16.0`; pnpm: `11.13.0`; Git: `2.47.3`.
-- Primary build-thread `/feedback` Session ID: **PENDING**; collect from this continuing session before submission and never invent it.
+- Primary build-thread `/feedback` returned identifier: Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`; feedback status `Feedback recorded`; logs uploaded: no.
 
 ## Purpose
 
@@ -127,3 +127,11 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - Final clean clone: committed HEAD `d75954b672cbc88569d5502198effc57c4390c63` passed 17/17 stages once. One offline frozen installation reused 33 packages and downloaded zero; the temporary clone-only `trustLockfile: true` setting was restored byte-for-byte before one passing Mutation Guard and one passing Judge Workflow execution.
 - Platform and evidence: Debian GNU/Linux 13, x86_64, Node `v24.18.0`, pnpm `11.13.0`, Git `2.47.3`, Chromium `148.0.7778.178`; sanitized archive SHA-256 `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6` is tracked with its extracted records under `docs/hackathon/evidence/phase5a-clean-clone/`.
 - The immutable baseline, Proof Bundle evidence, Judge Sample, and Phase 3B evidence remain unchanged. No OpenAI call, credential inspection, reasoner, repair run, bundle generation, retained fixture mutation, invitation or permission change, `/feedback`, video, external Devpost action, server access, deployment, public source release, or submission occurred.
+
+## Codex Feedback Record
+
+- The central-session `/feedback` action completed successfully with status `Feedback recorded` and a positive feedback classification.
+- Returned identifier: Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`. No separate Session ID was returned or invented.
+- Codex session logs and diagnostic files were not uploaded.
+- The submitted feedback described Codex as the primary implementation environment and summarized deliberate scope control, security review, deterministic verification, the Accessibility Mutation Guard, clean-clone verification, and the decision not to proceed with Journey Gate before submission.
+- This governance record changes no implementation, test, fixture, evidence, runtime behavior, repository permission, or remote reference.

@@ -18,6 +18,8 @@ Phase 4C is complete in `079b191ade0ee8eee457c0f8060586488386213a`. It verified 
 
 Optional Phase 5A is **CLEAN-CLONE VERIFIED / MERGED INTO `main`**. Reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` was integrated by strict fast-forward without a merge commit. Its clean clone passed all 17 acceptance stages once: one offline frozen installation reused 33 packages and downloaded zero; a disposable-clone-only `trustLockfile: true` key was restored byte-for-byte before runtime execution; Mutation Guard injection/detection was `1/1`; and all eight Judge Workflow stages plus 178 tests passed. The independently reviewed archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`, tracked under `docs/hackathon/evidence/phase5a-clean-clone/`. The local feature branch remains retained but unpublished. No existing checklist item represents this bounded optional extension or its merge, and it does not complete broad mutation testing, accepted judge access, deployment, video, `/feedback`, Devpost, or submission gates. No checkbox changes: 45 checked, 72 unchecked, 117 total.
 
+The central-session `/feedback` action completed successfully with status `Feedback recorded`, positive classification, no uploaded logs, and returned Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`. The three internal Codex-evidence items below are now complete. The Thread ID has not yet been entered into Devpost, so the Devpost field and final Session-ID verification items remain unchecked. The checklist now has 48 checked and 69 unchecked items, 117 total.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -100,9 +102,9 @@ Optional Phase 5A is **CLEAN-CLONE VERIFIED / MERGED INTO `main`**. Reviewed Pha
 ## Codex Evidence
 
 - [x] One central Codex primary session is maintained.
-- [ ] Primary session or thread identifier is recorded internally when available.
-- [ ] `/feedback` is executed in time.
-- [ ] Returned `/feedback` Session ID is stored.
+- [x] Primary session or thread identifier is recorded internally when available.
+- [x] `/feedback` is executed in time.
+- [x] Returned `/feedback` Thread ID is stored.
 - [x] Majority of core development exists in the primary session.
 - [x] Important prompts and results are documented chronologically.
 - [x] Codex contributions are linked to commits and files.
