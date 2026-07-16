@@ -71,11 +71,11 @@ Contained-copy removal and external-browser-runtime removal are attempted indepe
 
 This optional guard makes no broad mutation-testing, complete WCAG, certification, compliance, retained-application, fallback, rollback, or human-review replacement claim. It calls no model or external API and does not modify the Proof Bundle contract or Judge Sample.
 
-Phase 5A is **CLEAN-CLONE VERIFIED / COMMITTED ON FEATURE BRANCH** in implementation commit `b05541f147a08cb0b38ecbda5ae5802db065a3d2`. Final implementation review passed with archive SHA-256 `d2d63d1c708b57e000fe915092ac70c4f457608eededf0e96757b7a0c56a3c91`.
+Phase 5A implementation commit `b05541f147a08cb0b38ecbda5ae5802db065a3d2` passed final review with archive SHA-256 `d2d63d1c708b57e000fe915092ac70c4f457608eededf0e96757b7a0c56a3c91`.
 
 The final clean clone at `d75954b672cbc88569d5502198effc57c4390c63` used isolated Git/npm/home/cache/temp configuration and closed external proxies. Its single offline frozen installation reused 33 packages and downloaded zero. A temporary clone-only `trustLockfile: true` key skipped unavailable lockfile trust-metadata revalidation without weakening frozen-lockfile or tarball-integrity checks; the original workspace file was restored byte-for-byte before runtime execution. The Mutation Guard detected one mutation, the eight-stage Judge Workflow passed with 178 tests, and no residual process or runtime path remained.
 
-The independently reviewed sanitized archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`, tracked with its extracted checksum-protected files under `docs/hackathon/evidence/phase5a-clean-clone/`. Fixture, Judge Sample, Phase 3B, immutable refs, and external backup bytes remained unchanged. This proves only the fixed Debian/Chromium demonstration. The branch remains local-only and merge is separately gated.
+The independently reviewed sanitized archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`, tracked with its extracted checksum-protected files under `docs/hackathon/evidence/phase5a-clean-clone/`. Reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` was integrated into `main` by strict fast-forward without a merge commit; the local feature branch remains retained but unpublished. Fixture, Judge Sample, Phase 3B, immutable refs, and external backup bytes remained unchanged. This proves only the fixed Debian/x86_64 Chromium demonstration and makes no broad mutation, arbitrary-repository, certification, retained-application, fallback, or rollback claim.
 
 ## Reporting and Open Work
 

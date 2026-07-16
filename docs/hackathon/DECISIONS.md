@@ -151,7 +151,8 @@
 - Product boundary: no fuzzing, broad mutation framework, arbitrary repository rewriting, Proof Bundle change, certification, legal assurance, retained mutation, fallback, rollback, or replacement for human review.
 - Clean-clone decision: accept the optional feature only after a fresh local clone of committed HEAD `d75954b672cbc88569d5502198effc57c4390c63` passes one offline frozen installation, one Mutation Guard execution, and one complete Judge Workflow. A temporary clone-only `trustLockfile: true` setting may bypass unavailable trust-metadata revalidation only when the original workspace file is restored byte-for-byte before runtime execution.
 - Acceptance evidence: all 17 stages passed exactly once; 33 packages were reused and zero downloaded; injection/detection was `1/1`; all eight Judge stages and 178 tests passed. The sanitized archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6` under `docs/hackathon/evidence/phase5a-clean-clone/`.
-- Status: **CLEAN-CLONE VERIFIED / COMMITTED ON FEATURE BRANCH** in `b05541f147a08cb0b38ecbda5ae5802db065a3d2`. The branch remains local-only; `main` remains the independently usable submission version, and merge requires separate approval.
+- Integration decision: reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` is approved for `main` after final clean-clone acceptance. Integrate only by strict fast-forward, create no merge commit, retain the local feature branch without publishing it, and preserve the immutable emergency baseline separately.
+- Status: **CLEAN-CLONE VERIFIED / MERGED INTO `main`**. The implementation remains limited to mutation `CONTROLLED_MUTATION_ARIA_HIDDEN_FOCUSABLE`, detector rule `FOCUSABLE_ELEMENT_ARIA_HIDDEN`, one fixed fixture, and the verified Debian/x86_64 Chromium path.
 
 ## Open Decisions
 
