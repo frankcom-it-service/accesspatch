@@ -140,6 +140,17 @@
 - Invitation state: both required read invitations were issued and remain pending. Acceptance and independent judge cloning are separate verification gates.
 - Status: **COMPLETE** in `079b191ade0ee8eee457c0f8060586488386213a` (`docs: record private repository access state`). Phase 4C changed no invitation, collaborator, role, organization member, visibility, permission, implementation, evidence, or immutable baseline reference.
 
+## D-019 — Limit Mutation Guard to One Disposable Regression
+
+- Date: 2026-07-16
+- Decision: support only mutation `CONTROLLED_MUTATION_ARIA_HIDDEN_FOCUSABLE` on the existing checkout submit button, detected by rule `FOCUSABLE_ELEMENT_ARIA_HIDDEN`.
+- Injection boundary: apply an exact deterministic source template only inside an allowlisted disposable fixture copy; require one target and reject zero, multiple, or already-mutated matches.
+- Detection boundary: require browser-confirmed keyboard focus, native enabled button semantics, nonnegative tab index, visibility, and `aria-hidden="true"`. Do not depend solely on a variable third-party rule result.
+- Fixture boundary: bind `demo-checkout-controlled-v1` to approved internal four-file SHA-256 `50a88ce11e4afc62f66c595b313156f2f1a7f1fc98eb2f6ad1206b8260fbbfd4`; reject drift, missing files, or retained mutation before runtime creation or old-evidence deletion.
+- Isolation boundary: reject source and `.accesspatch` work/evidence symlinks, non-directory ancestors, containment escapes, credentials, real user configuration, and unrelated repository content. The disposable source copy stays under the validated work chain; Chromium-compatible child HOME/config/cache/temp/application-data paths exist only below a separate unique system-temporary runtime root. Complete all detector/config/browser preparation before Vite spawn, place every post-spawn operation under immediate bounded process cleanup, and attempt plus verify the contained and external root removals independently. Signal or cleanup failure writes no success artifact.
+- Product boundary: no fuzzing, broad mutation framework, arbitrary repository rewriting, Proof Bundle change, certification, legal assurance, retained mutation, fallback, rollback, or replacement for human review.
+- Status: **COMPLETE ON FEATURE BRANCH** in `b05541f147a08cb0b38ecbda5ae5802db065a3d2`. Final independent review passed with archive SHA-256 `d2d63d1c708b57e000fe915092ac70c4f457608eededf0e96757b7a0c56a3c91`. The branch remains local-only; `main` remains the independently usable submission version, and merge requires separate approval.
+
 ## Open Decisions
 
 - `OPEN`: supported journey input and broader proof-bundle formats beyond the fixed controlled contract.

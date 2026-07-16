@@ -57,6 +57,22 @@ Both required judging invitations were issued with read permission and remain pe
 
 The reviewed private release surface is committed at `f3953994883af959fdd80d2d5e5985b7cb987fd5`. It adds no `LICENSE` file; AccessPatch remains all-rights-reserved and is not offered under an open-source project license. The direct dependency review found no missing, unknown, or contradictory declared license.
 
+## Accessibility Mutation Guard
+
+Phase 5A copies only four allowlisted controlled fixture files as regular files, rejects symlinks and traversal, and omits Git metadata, credentials, environment files, dependencies, prior runs, caches, tests, documentation, and unrelated user content. Fixture ID `demo-checkout-controlled-v1` is bound to approved aggregate SHA-256 `50a88ce11e4afc62f66c595b313156f2f1a7f1fc98eb2f6ad1206b8260fbbfd4`; drift, missing input, or an already-mutated target fails before runtime creation or old-evidence deletion.
+
+Child Vite and Playwright processes receive isolated HOME, configuration, cache, application-data, and temporary directories beneath one unique system-temporary runtime root. Real parent user/config/temp paths and credential-like variables are not propagated. Only required executable environment is retained, external proxy destinations are closed, and localhost remains allowed. The browser runtime is separate from the contained repository work copy because the verified system Chromium worker terminates when its Playwright profile is placed in repository work storage.
+
+The fixed `.accesspatch`, work, runs, Phase 5A, and final-output chains are inspected with `lstat`, reject symlinks and non-directory ancestors, and require real-path containment inside the repository before creation, deletion, rename, or evidence writes. Unsafe external targets remain untouched.
+
+The only transformation is an exact one-match injection of `aria-hidden="true"` on `.controlled-focus-defect` inside the disposable copy. Deterministic browser evidence must confirm one enabled visible native button, nonnegative tab index, active keyboard focus, one `aria-hidden="true"` match, and one accepted detector result. All isolated directories, Vite configuration, detector source, Chromium selection, Playwright configuration, and child environment are prepared before Vite spawn. The successful spawn returns only after an error listener is installed, and the caller immediately enters bounded process cleanup protection. Server waiting uses the supplied abort signal, asynchronous spawn errors are reduced to a stable category, and no raw child output or absolute runtime path is exposed.
+
+Contained-copy removal and external-browser-runtime removal are attempted independently. Both roots must then be absent; a failure or remaining root produces a sanitized cleanup error and prevents success evidence. The retained fixture hash is still verified after operation and cleanup failures. Focused tests cover post-start exceptions, abort during server waiting, spawn error handling, and each independent cleanup-failure direction. Ignored evidence is written atomically only after cleanup and retained-fixture hash verification.
+
+This optional guard makes no broad mutation-testing, complete WCAG, certification, compliance, retained-application, fallback, rollback, or human-review replacement claim. It calls no model or external API and does not modify the Proof Bundle contract or Judge Sample.
+
+Phase 5A is **COMPLETE ON FEATURE BRANCH** in implementation commit `b05541f147a08cb0b38ecbda5ae5802db065a3d2`. Final independent review passed with archive SHA-256 `d2d63d1c708b57e000fe915092ac70c4f457608eededf0e96757b7a0c56a3c91`. The 178-test API-free suite and full eight-stage Judge Workflow passed after the final lifecycle correction. Fixture, Judge Sample, Phase 3B, immutable refs, and external backup bytes remained unchanged. The branch remains local-only and merge is separately gated.
+
 ## Reporting and Open Work
 
 - Vulnerability reporting channel: `OPEN` — the private repository has no public contact route.

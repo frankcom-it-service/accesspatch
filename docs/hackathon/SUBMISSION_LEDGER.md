@@ -30,6 +30,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | One-command Judge workflow | PHASE 3A COMPLETE; LOCAL END-TO-END PROOF PASSED | `84db92f9e27b6f7872495516f166a8bcaed8ef03`; corrected second lifetime `pnpm judge:verify` run passed all eight stages with ignored runs absent; 139 tests; stable success output; no third run |
 | Clean-clone Judge verification | PHASE 3B COMPLETE; INDEPENDENT EVIDENCE REVIEW PASSED | Evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; fresh clone of `7d0653cd344cf15be448ed9ef62b41b74c0d67ef`; one frozen install and one Judge Workflow run exited `0` without retry; `docs/hackathon/evidence/phase3b-clean-clone/` |
 | Repository URL or demo URL | PRIVATE REPOSITORY URL VERIFIED; ACCESS PENDING | `https://github.com/frankcom-it-service/accesspatch`; both required read invitations remain pending; no demo deployment |
+| Accessibility Mutation Guard | PHASE 5A COMPLETE ON FEATURE BRANCH; MERGE PENDING | Implementation `b05541f147a08cb0b38ecbda5ae5802db065a3d2`; final review archive SHA-256 `d2d63d1c708b57e000fe915092ac70c4f457608eededf0e96757b7a0c56a3c91`; 178 tests and full Judge Workflow passed; stable ignored evidence; unchanged fixed fixture; local-only branch; no model call |
 
 ## Central Requirements
 
