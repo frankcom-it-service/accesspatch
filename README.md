@@ -1,14 +1,22 @@
 # AccessPatch
 
-AccessPatch is a planned **Journey Repair and Proof Agent for React/TypeScript applications**, created for the Developer Tools track of OpenAI Build Week.
+AccessPatch is a **Journey Repair and Proof Agent for React/TypeScript applications** built for the Developer Tools track of OpenAI Build Week.
 
 ## Status
 
 **Phase 1A through Phase 3B are complete.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation. Commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` adds the one-command Judge Workflow. Commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` adds the reviewed Phase 3B clean-clone evidence.
 
-The product direction is to inspect an accessibility-critical user journey, propose evidence-based repairs, apply schema validation and deterministic safety checks, and produce reviewable proof artifacts. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced a schema-valid, policy-accepted plan for the two controlled findings using bounded evidence and `store: false`. The broader workflow remains incomplete.
+The controlled end-to-end submission workflow is implemented and verified: it reproduces two defined barriers, collects bounded evidence, obtains a constrained repair plan, applies deterministic templates in an isolated copy, verifies the repaired replay, packages the reviewed proof, and provides a one-command Judge Workflow. On 2026-07-15, one approved Phase 1B `gpt-5.6-sol` call produced the schema-valid, policy-accepted plan using bounded evidence and `store: false`. General arbitrary-repository support, retained patch application, complete fallback, and rollback remain incomplete.
 
-AccessPatch will support accessibility engineering; it will not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
+AccessPatch supports accessibility engineering; it does not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
+
+## Ownership and Repository Access
+
+- Owner: Frank Heilmann, trading as “Frankcom IT Service”.
+- This repository is intended for private hackathon judging.
+- AccessPatch is not offered under an open-source project license.
+- Ownership and reuse boundaries are recorded in `OWNERSHIP.md`.
+- Private judging access will be provided later after separate approval; no repository remote or public repository URL exists yet.
 
 ## Project Record
 
@@ -21,12 +29,40 @@ AccessPatch will support accessibility engineering; it will not claim complete a
 - Phase 2C curated Judge Sample: commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` (`feat: add curated judge sample`, 2026-07-16).
 - Phase 3A one-command Judge Workflow: commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` (`feat: add one-command judge verification`, 2026-07-16).
 - Phase 3B clean-clone evidence: commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` (`docs: add Phase 3B clean-clone evidence`, 2026-07-16).
-- Codex is the principal engineering tool. This continuing Codex session is intended to become the central development session.
+- Codex is the principal engineering tool. This continuing Codex session is the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
 - Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
 - Submission facts and evidence status: `docs/hackathon/SUBMISSION_LEDGER.md`.
 - Current limitations: `docs/hackathon/LIMITATIONS.md`.
 - Security posture: `docs/hackathon/SECURITY.md`.
+
+## How Codex Accelerated the Work
+
+Codex is the principal engineering tool and performed the majority of implementation and verification work under human coordination. Concrete contributions include:
+
+- pnpm workspace and controlled React checkout scaffolding;
+- normalized evidence and versioned schema design;
+- deterministic reasoner policy and isolated patch-engine implementation;
+- API-free unit tests and Playwright journey tests;
+- canonical Proof Bundle generation and validation;
+- tracked Judge Sample verification;
+- the one-command Judge Workflow;
+- Git, npm/pnpm, symlink, credential, and clean-clone isolation hardening;
+- security, audit, evidence, and reproducibility documentation.
+
+Codex accelerated engineering work; it did not make autonomous product, legal, privacy, licensing, or submission decisions.
+
+## Important Human Decisions
+
+Human coordination deliberately limited the submission scope to one controlled journey, exactly two original barriers, and exactly two deterministic repair classes. The user approved one bounded GPT-5.6 product reasoning call and required model output never to be applied directly as source code. Deterministic templates and policy gates implement the approved strategies.
+
+The original fixture remains broken for reproducibility, while repaired replay runs only in an isolated disposable copy. Human review remains required, and the project makes no accessibility certification or legal-compliance claim. The user also chose private repository judging, declined broad arbitrary-repository support before submission, and created immutable emergency baseline references and backups before further release work.
+
+## GPT-5.6 and Codex Contribution Boundary
+
+GPT-5.6 produced one bounded structured repair plan using `store: false`; the reviewed token usage is recorded in the committed governance and audit evidence. Deterministic code validated and implemented the approved strategies. No raw prompt, raw response, API key, project ID, or organization ID is included in the repository.
+
+Codex performed the majority of implementation and verification work under human coordination. Final product, scope, safety, privacy, licensing, and submission decisions remained human-controlled.
 
 ## Canonical Proof Bundle Contract
 
@@ -92,7 +128,7 @@ The committed Phase 2B mapping is limited to WCAG 2.2 criteria `1.3.1` and `4.1.
 
 ## Phase 2C Curated Judge Sample
 
-`examples/judge-sample/` is the committed, independently reviewed Judge Sample. Its 17 tracked files comprise `README.md`, `SHA256SUMS`, and 15 Proof Bundle files byte-identical to the reviewed Phase 2B run. Run `pnpm judge:sample:validate` for read-only, network-free validation and `pnpm test:judge-sample-report` for the tracked report smoke. Phase 2C is not the final clean-machine or one-command judge workflow.
+`examples/judge-sample/` is the committed, independently reviewed Judge Sample. Its 17 tracked files comprise `README.md`, `SHA256SUMS`, and 15 Proof Bundle files byte-identical to the reviewed Phase 2B run. Run `pnpm judge:sample:validate` for read-only, network-free validation and `pnpm test:judge-sample-report` for the tracked report smoke. Phase 3A and Phase 3B separately provide the one-command workflow and one verified clean Debian clone.
 
 ## Phase 3A Judge Workflow
 
@@ -115,6 +151,25 @@ On 2026-07-16, a fresh clone created from committed Git history at source HEAD `
 
 The independently reviewed sanitized evidence archive and extracted checksum-protected records are committed under `docs/hackathon/evidence/phase3b-clean-clone/` in `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. The archive is tracked as non-executable Git mode `100644`. Installation used package-registry access and emitted transient retry warnings; the Judge Workflow itself remained API-free, and its monitor observed no external TCP connection. Other operating systems and browser configurations remain unverified.
 
+## Judge Paths
+
+Full verified path:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm judge:verify
+```
+
+Read-only evidence path without rebuilding:
+
+```bash
+pnpm judge:sample:validate
+```
+
+Then open `examples/judge-sample/proof-bundle/report.html`.
+
+The full path is verified only on Debian GNU/Linux 13 x86_64 with the environment recorded in Phase 3B evidence. Windows, macOS, other Linux distributions, other architectures, broader browsers, and the Playwright-managed Chromium fallback remain **NOT YET VERIFIED**.
+
 ## Next Phase
 
-`OPEN`: verify additional operating systems and browser configurations; design retained user-selected patch handling, fallback, and rollback; and prepare submission assets. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.
+`OPEN`: create and verify the private judging repository after separate approval; collect `/feedback`; produce and publish the reviewed video; enter and verify Devpost fields and links; verify additional operating systems and browser configurations; and design retained user-selected patch handling, fallback, and rollback. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the currently stated official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as the completed AccessPatch product.

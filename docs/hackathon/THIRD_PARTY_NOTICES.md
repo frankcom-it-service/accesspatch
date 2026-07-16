@@ -1,17 +1,59 @@
 # Third-Party Notices
 
-## Current Inventory
+AccessPatch ownership and repository-use terms are recorded in `OWNERSHIP.md`. AccessPatch itself is not currently offered under an open-source license. Third-party packages remain governed by their own licenses.
 
-Phase 1A adds package-managed React, Vite, TypeScript, Playwright, axe, and type-definition dependencies. Phase 1B adds the official OpenAI JavaScript SDK `6.47.0` under Apache-2.0 and Zod `4.4.3` under MIT. Direct external versions are exact in manifests and `pnpm-lock.yaml`. No vendored asset, dataset, copied code, external font, icon pack, image, music, trademarked media, or remotely loaded asset was added.
+## Direct External Dependencies
 
-Resolved direct versions: React `19.2.7`, React DOM `19.2.7`, Vite `8.1.4`, `@vitejs/plugin-react` `6.0.3`, TypeScript `7.0.2`, Playwright `1.61.1`, `@axe-core/playwright` `4.12.1`, `@types/node` `26.1.1`, `@types/react` `19.2.17`, and `@types/react-dom` `19.2.3`.
+Exact versions are committed in package manifests and `pnpm-lock.yaml`.
 
-The Phase 1A `pnpm licenses list --json` inventory identified all installed licenses as MIT, Apache-2.0, MPL-2.0, ISC, or BSD-3-Clause. Direct dependencies use MIT, Apache-2.0, or MPL-2.0; none had a missing or unknown license, and no GPL/AGPL direct dependency was present. `@axe-core/playwright` is the expected direct MPL-2.0 dependency. This inventory does not replace final manual review of obligations.
+| Package | Version | Direct role | Declared license |
+| --- | --- | --- | --- |
+| `@axe-core/playwright` | `4.12.1` | Accessibility integration; dependency and development dependency | MPL-2.0 |
+| `@playwright/test` | `1.61.1` | Browser journey testing; dependency and development dependency | Apache-2.0 |
+| `@types/node` | `26.1.1` | Development types | MIT |
+| `@types/react` | `19.2.17` | Development types | MIT |
+| `@types/react-dom` | `19.2.3` | Development types | MIT |
+| `@vitejs/plugin-react` | `6.0.3` | Development build integration | MIT |
+| `openai` | `6.47.0` | Official JavaScript SDK for the bounded Responses API integration | Apache-2.0 |
+| `react` | `19.2.7` | Demo application runtime | MIT |
+| `react-dom` | `19.2.7` | Demo application runtime | MIT |
+| `typescript` | `7.0.2` | Development compiler and type checking | Apache-2.0 |
+| `vite` | `8.1.4` | Development and production build tool | MIT |
+| `zod` | `4.4.3` | Runtime schema validation | MIT |
 
-Codex CLI `0.144.4` with model `gpt-5.6-sol` and reasoning `high` is used as the principal engineering tool. A separate Phase 1B runtime call used `gpt-5.6-sol` with low reasoning for bounded repair planning; the broader workflow remains incomplete. The optional Devpost Hackathon plugin may be used for submission support only.
+Internal `@accesspatch/*` workspace packages are part of AccessPatch, are not separate third-party packages, and are not separately licensed.
 
-Committed Phase 2B implementation `e3811c8bf968dc78701f8d264dc1377543059d64` references the official W3C WCAG 2.2 Recommendation and W3C Understanding documents by URL. No W3C code, asset, stylesheet, font, image, or document body is vendored. The exact source record and normative/informative distinction are in `WCAG_MAPPING_SOURCES.md`.
+## Transitive Dependencies
 
-## Required Before Submission
+The offline `pnpm licenses list --json` inventory on 2026-07-16 identified the installed dependency graph under these declared license families:
 
-`TODO`: inventory every dependency and asset with name, version, source, license, modifications, and required attribution. Verify that demo inputs and media can be redistributed. Generated lockfiles and license reports do not replace manual review of obligations.
+- Apache-2.0
+- BSD-3-Clause
+- ISC
+- MIT
+- MPL-2.0
+
+Direct external dependencies have declared MIT, Apache-2.0, or MPL-2.0 licenses. No direct dependency had an unknown, missing, or contradictory declared license, and no GPL or AGPL direct dependency was identified.
+
+Dependency license texts and attribution details can be obtained from installed package metadata, the pnpm lockfile, package registry metadata, or the linked upstream repositories. This summary does not replace the applicable third-party license texts.
+
+## Standards Sources
+
+The controlled WCAG mapping cites official W3C material:
+
+- https://www.w3.org/TR/WCAG22/#info-and-relationships
+- https://www.w3.org/TR/WCAG22/#focus-visible
+- https://www.w3.org/TR/WCAG22/#name-role-value
+- https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html
+- https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html
+- https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html
+- https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html
+
+The WCAG Recommendation is normative; Understanding documents are informative. No W3C specification body is redistributed. Mapping provenance and claim boundaries are recorded in `docs/hackathon/WCAG_MAPPING_SOURCES.md`.
+
+## Assets and Evidence
+
+- No third-party images, music, fonts, screenshots, logos, video assets, datasets, icon packs, or remotely loaded assets are included.
+- Chromium is used for verification but is not distributed in the repository.
+- The sanitized Phase 3B archive contains project-generated text evidence only.
+- Package names and trademarks remain the property of their respective owners.

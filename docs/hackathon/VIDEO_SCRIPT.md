@@ -2,21 +2,30 @@
 
 ## Status
 
-**DRAFT ONLY.** No product footage or verified runtime exists.
+**DRAFT / RECORDING PENDING.** A verified controlled runtime, tracked Proof Bundle and report, one-command Judge Workflow, and successful Debian clean-clone verification now exist. The main fixture remains deliberately broken; repair and replay occur only in an isolated disposable copy.
 
-## Planned Outline
+## Planned Content
 
-1. **Problem:** show a specific accessibility-critical journey failure in a controlled React/TypeScript fixture.
-2. **Evidence:** show how AccessPatch collects relevant journey and source context.
-3. **Reasoning:** show a structured GPT-5.6 repair proposal, clearly labeled as model output, with evidence references.
-4. **Safety:** show schema validation and deterministic rejection of an invalid or disallowed change.
-5. **Repair:** show a human-approved patch in the controlled fixture.
-6. **Proof:** rerun the same journey and compare bounded before/after evidence.
-7. **Limits:** state that results do not establish complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
+1. **Problem:** show the two controlled barriers in the React/TypeScript checkout journey.
+2. **Evidence:** show normalized journey evidence and bounded source context.
+3. **Reasoning:** show the reviewed structured GPT-5.6 repair plan as model output.
+4. **Safety:** explain schema validation, deterministic policy gates, and why model prose is never applied directly.
+5. **Repair:** show the deterministic two-file patch produced in the isolated copy.
+6. **Proof:** show the passing repaired replay, Proof Bundle report, and `pnpm judge:verify` result.
+7. **Limits:** state the controlled scope and required human review; do not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
 
-## Production Checklist
+This is not yet the final timed narration or shot list.
 
-- `TODO`: keep the public YouTube video at three minutes or less, with voiceover explaining the project, Codex usage, and actual GPT-5.6 usage.
-- `TODO`: record only the feature-frozen build and use actual outputs.
-- `TODO`: remove credentials, personal data, notifications, and unrelated windows.
-- `TODO`: add captions, readable zoom, narration transcript, and verified links.
+## Production Requirements
+
+- `TODO`: keep the public YouTube video under three minutes and include clear English audio.
+- `TODO`: explain the project, concrete Codex collaboration, the one bounded GPT-5.6 use, deterministic repair, and human decisions.
+- `TODO`: use only actual reviewed outputs and the feature-frozen repository state.
+- `TODO`: add captions, readable zoom, a reviewed narration transcript, and verified links.
+
+## Public-Capture Privacy
+
+- Do not show local paths or a shell prompt containing a username.
+- Do not show an API dashboard, API settings, API key, or environment file.
+- Do not show a Git author email, notifications, private account data, or unrelated windows.
+- Do not use unauthorized music, logos, trademarks, or third-party media.

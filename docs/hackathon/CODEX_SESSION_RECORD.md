@@ -4,7 +4,7 @@
 
 - User-recorded session start: 2026-07-15 at 14:11 Europe/Berlin.
 - Captured environment time: `2026-07-15T14:11:53+02:00`.
-- Working directory: `/home/frank/accesspatch`.
+- Working directory: `<repository-root>`.
 - Branch at start: `main`.
 - Initial status: clean.
 - Git remote at start: none configured.
@@ -98,3 +98,10 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - An initial evidence archive exposed local owner/group names only in TAR metadata. The byte-identical replacement uses neutral ownership and normalized metadata and passed independent review.
 - The sanitized evidence record is **COMPLETE** in commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; the archive is tracked as non-executable Git mode `100644`.
 - No installation, Judge Workflow, OpenAI call, credential access, reasoner, repair, bundle generation, implementation change, fixture repair, commit, push, remote, deployment, publication, or video work occurred in this integration task.
+
+## Phase 4B Record
+
+- Human decisions: retain a private judging repository, use the ownership attribution `Frank Heilmann, trading as “Frankcom IT Service”`, grant no open-source project license, and preserve Git history and immutable baseline references.
+- Codex documentation contribution: added the ownership record, private-release and privacy decision, private repository release plan, complete third-party notice, README collaboration and human-decision explanation, current Devpost draft, and corrected video status.
+- Privacy correction: replaced the tracked local absolute repository path with `<repository-root>`; Git author metadata remains only in private Git history and must not be repeated in public-facing material.
+- Status: **VALIDATED / UNCOMMITTED**. No remote, publication, `/feedback`, video, server access, subdomain work, model call, mutation, implementation change, or baseline-reference change occurred.
