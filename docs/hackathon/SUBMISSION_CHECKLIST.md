@@ -24,6 +24,8 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 
 The completed form-ready English Devpost source copy and the tracked final-video production, narration, and evidence records support nineteen additional existing items: the read-only no-rebuild evidence path; eleven product-story video items; the duplicate Codex and GPT-5.6 video-evidence items; and five final content/evidence checks. Media-rights confirmation, readable zoom, private judge access, external Devpost entry, final rules and signed-out link review, approval, submission, and receipt retention remain unchecked. The checklist now has 74 checked and 43 unchecked items, 117 total.
 
+A human-browser verification confirmed that the `testing@devpost.com` invitation for `frankcom-it-service/accesspatch` resolves to GitHub account `devposttesting` and remains pending, while the direct `build-week-event@openai.com` repository invitation also remains pending. Neither invitation was cancelled, changed, duplicated, or resent. Acceptance is controlled by the invited recipients, so repository access and independent judge cloning remain unverified. No existing checkbox represents correct pending-recipient resolution without acceptance; no checkbox changes, and the checklist remains at 74 checked and 43 unchecked items, 117 total.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
