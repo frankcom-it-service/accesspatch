@@ -1,5 +1,11 @@
 # Video Privacy Checklist
 
+## Completion Record
+
+The project owner reports that the complete final export was reviewed outside Clipchamp and passed, and that public playback, thumbnail, audio, duration, and selectable English captions were verified in a logged-out/incognito browser. The public video is `https://www.youtube.com/watch?v=eCHig9YUwU0`. This records owner verification; it does not claim an independent automated YouTube fetch.
+
+The unchecked template below is retained as the fail-closed production procedure; it is not a reconstructed item-by-item attestation after recording.
+
 The recording fails closed if any required item cannot be confirmed. Stop the capture, discard the affected take, correct the environment, and begin a new take only after review.
 
 ## Before Recording

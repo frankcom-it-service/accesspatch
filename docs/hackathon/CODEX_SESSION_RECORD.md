@@ -136,3 +136,12 @@ On 2026-07-15, the human-supervised setup verified dedicated-project authenticat
 - The submitted feedback described Codex as the primary implementation environment and summarized deliberate scope control, security review, deterministic verification, the Accessibility Mutation Guard, clean-clone verification, and the decision not to proceed with Journey Gate before submission.
 - The bounded Journey Gate feasibility review concluded `PHASE5B_RECOMMENDATION=NO_GO`; Journey Gate was not implemented.
 - This governance record changes no implementation, test, fixture, evidence, runtime behavior, repository permission, or remote reference.
+
+## Final Submission Video Record
+
+- The final public video is titled `AccessPatch — Journey Repair and Proof Agent | OpenAI Build Week 2026` and is available at `https://www.youtube.com/watch?v=eCHig9YUwU0`.
+- The final export is `2:49`; local filename `AccessPatch Build Week Video.mp4`; Clipchamp-reported size `28.28 MB`.
+- The complete export was reviewed outside Clipchamp and passed after the Clipchamp visual-gap repair. A custom AccessPatch thumbnail and corrected timed English SRT subtitles were added.
+- The project owner verified public playback, thumbnail, audio, duration, and selectable English captions in a logged-out/incognito browser. This is owner verification; no independent automated YouTube fetch is claimed.
+- Recording used no live GPT-5.6 call and showed only tracked, reviewed evidence.
+- This documentation record changes no implementation, test, fixture, evidence, backup, baseline reference, permission, invitation, Devpost, deployment, or submission state.

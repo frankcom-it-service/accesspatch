@@ -1,5 +1,9 @@
 # Final Video Shot List
 
+## Production Result
+
+The final `2:49` video was produced and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed owner review outside Clipchamp after the visual-gap repair. A custom thumbnail and corrected timed English captions were added. No live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
+
 ## Production Boundary
 
 - Planned total: `02:46`.

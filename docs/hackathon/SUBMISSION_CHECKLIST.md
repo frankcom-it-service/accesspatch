@@ -20,6 +20,8 @@ Optional Phase 5A is **CLEAN-CLONE VERIFIED / MERGED INTO `main`**. Reviewed Pha
 
 The central-session `/feedback` action completed successfully with status `Feedback recorded`, positive classification, no uploaded logs, and returned Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`. The three internal Codex-evidence items below are now complete. The Thread ID has not yet been entered into Devpost, so the Devpost field and final Session-ID verification items remain unchecked. The checklist now has 48 checked and 69 unchecked items, 117 total.
 
+The final submission video was recorded, edited, reviewed, and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The `2:49` export is below the three-minute limit; its audio, public playback, thumbnail, duration, and selectable corrected English captions were verified by the project owner while logged out/incognito. The reviewed video uses only tracked evidence and exposes no private data or secrets. Exactly seven existing checklist items are newly complete; Devpost entry, final rule review, invitation acceptance, independent judge access, and submission remain open. The checklist now has 55 checked and 62 unchecked items, 117 total.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -75,14 +77,14 @@ The central-session `/feedback` action completed successfully with status `Feedb
 - [x] Judge Test Instructions are clear and complete.
 - [ ] Expected inputs, outputs, duration, failure behavior, and cleanup are documented.
 - [ ] Demo credentials or fallback instructions are safe, minimal, and verified if needed.
-- [ ] Demo content exposes no private data or secrets.
+- [x] Demo content exposes no private data or secrets.
 
 ## Video
 
-- [ ] YouTube video is public.
-- [ ] Video is no longer than three minutes; internal target is 2:35–2:50.
-- [ ] Voiceover is clear.
-- [ ] Narration is in English or has a complete English translation.
+- [x] YouTube video is public.
+- [x] Video is no longer than three minutes; internal target is 2:35–2:50.
+- [x] Voiceover is clear.
+- [x] Narration is in English or has a complete English translation.
 - [ ] Working product is shown.
 - [ ] Problem is explained.
 - [ ] Before state is shown.
@@ -96,7 +98,7 @@ The central-session `/feedback` action completed successfully with status `Feedb
 - [ ] Honest limitations are mentioned.
 - [ ] Video contains no unlicensed music.
 - [ ] Video contains no unauthorized third-party brands or media.
-- [ ] Public video link is tested in a signed-out or private-browser context.
+- [x] Public video link is tested in a signed-out or private-browser context.
 - [ ] Captions and readable zoom are provided.
 
 ## Codex Evidence
@@ -134,7 +136,7 @@ The central-session `/feedback` action completed successfully with status `Feedb
 - [ ] Demo or judge test path is accessible.
 - [ ] No links are broken.
 - [x] Clean-environment test is completed.
-- [ ] YouTube video is public.
+- [x] YouTube video is public.
 - [ ] Submission texts are complete in English.
 - [ ] Session ID is correct.
 - [x] License information is complete.

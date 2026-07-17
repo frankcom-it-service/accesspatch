@@ -1,5 +1,16 @@
 # Video Asset Manifest
 
+## Final Produced Asset
+
+- Title: `AccessPatch — Journey Repair and Proof Agent | OpenAI Build Week 2026`.
+- Public URL: `https://www.youtube.com/watch?v=eCHig9YUwU0`.
+- Local filename, without a private path: `AccessPatch Build Week Video.mp4`.
+- Final duration: `2:49`.
+- Clipchamp-reported export size: `28.28 MB`.
+- Finalization: Clipchamp visual-gap repair applied, custom AccessPatch thumbnail added, and corrected timed English SRT subtitles uploaded.
+- Review: the complete export passed review outside Clipchamp; the project owner then verified public playback, thumbnail, audio, duration, and selectable English captions logged out/incognito.
+- Runtime boundary: no live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
+
 ## Command Plan
 
 These commands are preparation instructions only. They were not executed while this production pack was created.

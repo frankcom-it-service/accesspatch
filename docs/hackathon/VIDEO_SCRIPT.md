@@ -2,9 +2,18 @@
 
 ## Status and Timing
 
-**FINAL PRODUCTION SCRIPT / RECORDING PENDING.**
+**FINAL VIDEO PRODUCED / PUBLICATION OWNER-VERIFIED.**
 
-- Target narration and edited duration: `2:46`.
+- Final title: `AccessPatch — Journey Repair and Proof Agent | OpenAI Build Week 2026`.
+- Public URL: `https://www.youtube.com/watch?v=eCHig9YUwU0`.
+- Final exported duration: `2:49`.
+- Local export filename: `AccessPatch Build Week Video.mp4`; Clipchamp-reported size: `28.28 MB`.
+- The complete export was reviewed outside Clipchamp and passed after the Clipchamp visual-gap repair.
+- A custom AccessPatch thumbnail and corrected timed English SRT subtitles were added.
+- The project owner verified public playback, thumbnail, audio, duration, and selectable English captions in a logged-out/incognito browser. No independent automated YouTube fetch is claimed.
+- Recording used no live GPT-5.6 call and showed only tracked, reviewed evidence.
+
+- Planned narration and edited duration: `2:46`; final exported duration: `2:49`.
 - Acceptable narration range: `2:40–2:48`.
 - Hard planning maximum: `2:50`.
 - Official video maximum: under three minutes.

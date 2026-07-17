@@ -1,6 +1,10 @@
 # Video Recording Worksheet
 
-Use this worksheet only after recording is separately approved. Do not improvise commands, evidence, claims, or account actions.
+## Completion Status
+
+Recording and final export are complete. The final `2:49` video is public at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed review outside Clipchamp after the visual-gap repair; a custom thumbnail and corrected timed English SRT subtitles were added; and the project owner verified public playback, thumbnail, audio, duration, and selectable captions while logged out/incognito. Retain the worksheet below as the production and fallback record.
+
+The steps below are retained as the completed production and fallback procedure. Do not reuse them to improvise commands, evidence, claims, or account actions.
 
 ## 1. Prepare the Computer
 

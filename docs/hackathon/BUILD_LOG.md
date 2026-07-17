@@ -225,3 +225,13 @@
 - Privacy: no Codex session logs or diagnostic files were uploaded.
 - Feedback scope: Codex as the primary implementation environment; narrow product scope; security and isolation review; deterministic verification; Accessibility Mutation Guard; clean-clone verification; and the NO-GO decision for Journey Gate before submission.
 - Repository effect: governance documentation only; no project implementation, runtime behavior, evidence, fixture, baseline reference, permission, invitation, or remote reference changed.
+
+## 2026-07-17 — Final Submission Video Publication Record
+
+- Final title: `AccessPatch — Journey Repair and Proof Agent | OpenAI Build Week 2026`.
+- Public URL: `https://www.youtube.com/watch?v=eCHig9YUwU0`.
+- Export: `AccessPatch Build Week Video.mp4`, duration `2:49`, Clipchamp-reported size `28.28 MB`.
+- Production result: the complete final export was reviewed outside Clipchamp and passed; the Clipchamp visual-gap repair was applied before final export; a custom AccessPatch thumbnail was added; and corrected English subtitles were uploaded as a timed SRT track.
+- Owner verification: the project owner verified public playback, thumbnail, audio, duration, and selectable English captions in a logged-out/incognito browser. No independent automated YouTube fetch is claimed.
+- Evidence boundary: no live GPT-5.6 call was used during recording, and only tracked, reviewed evidence was shown.
+- Preservation: this record changes documentation only. It does not change implementation, tests, fixtures, evidence, backups, baseline references, permissions, invitations, Devpost, deployment, or submission state.

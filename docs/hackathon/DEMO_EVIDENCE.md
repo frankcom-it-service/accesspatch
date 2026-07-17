@@ -38,6 +38,15 @@ The independently reviewed Phase 2B bundle replaces `UNMAPPED` with exactly thre
 
 Phase 2C commits that reviewed bundle in the explicit tracked location without changing any canonical file. Recursive `diff -qr --no-dereference` returned exit `0` with no output. The read-only, network-free validator uses only tracked content, and the tracked report smoke reported zero axe violations. Phase 3A integrates that sample into the one-command workflow, and Phase 3B verifies the committed path in one fresh Debian GNU/Linux 13 x86_64 clone. Broader-platform behavior and public judge access remain open.
 
+## Published Submission Video
+
+- Title: `AccessPatch — Journey Repair and Proof Agent | OpenAI Build Week 2026`.
+- Public URL: `https://www.youtube.com/watch?v=eCHig9YUwU0`.
+- Final duration: `2:49`, below the official three-minute maximum.
+- Evidence boundary: no live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
+- Production verification: the complete final export passed review outside Clipchamp after the visual-gap repair. A custom thumbnail and corrected timed English SRT subtitles were added.
+- Public verification: the project owner verified playback, thumbnail, audio, duration, and selectable English captions in a logged-out/incognito browser. This is owner verification, not an independent automated YouTube fetch.
+
 ## Required Demo Record
 
 Before a demo claim is made, record:
