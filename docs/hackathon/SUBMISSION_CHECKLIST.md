@@ -28,6 +28,8 @@ A human-browser verification confirmed that the `testing@devpost.com` invitation
 
 The project owner completed the AccessPatch Devpost entry, reviewed the final preview, selected Developer Tools, entered the complete English project story and required links, entered the internal `/feedback` identifier only in its dedicated field, read and accepted the official rules and Devpost terms, explicitly approved submission, and confirmed the project as submitted to OpenAI Build Week. The confirmation page and public project URL `https://devpost.com/software/accesspatch` were retained. Exactly twenty existing checklist items are newly complete. Invitation acceptance, repository accessibility, independent judge cloning, the broader signed-out link review, and other intentionally open release controls remain unchecked. The checklist now has 94 checked and 23 unchecked items, 117 total.
 
+The project owner then opened `https://devpost.com/software/accesspatch` while signed out/incognito. The page loaded without authentication; the complete project story, public thumbnail, and presentation were visible; and the embedded `https://www.youtube.com/watch?v=eCHig9YUwU0` video was playable. No internal `/feedback` identifier, private judge instruction, credential or token, or private local path was publicly visible. This directly completes the public-link integrity item. The broader checkbox requiring repository, demo, YouTube, documentation, and Devpost links all to work signed out remains unchecked because private repository access, invitation acceptance, and an independent judge clone are unverified. The checklist now has 95 checked and 22 unchecked items, 117 total.
+
 ## Devpost
 
 - [x] Hackathon participation is confirmed.
@@ -140,7 +142,7 @@ The project owner completed the AccessPatch Devpost entry, reviewed the final pr
 
 - [ ] Repository is accessible.
 - [ ] Demo or judge test path is accessible.
-- [ ] No links are broken.
+- [x] No links are broken.
 - [x] Clean-environment test is completed.
 - [x] YouTube video is public.
 - [x] Submission texts are complete in English.
