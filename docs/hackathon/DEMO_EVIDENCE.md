@@ -13,8 +13,8 @@
 - Curated tracked Judge Sample: PHASE 2C COMPLETE in `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce`; exactly 17 tracked files comprising `README.md`, `SHA256SUMS`, and 15 byte-identical reviewed Proof Bundle files
 - One-command Judge Workflow: PHASE 3A COMPLETE in `84db92f9e27b6f7872495516f166a8bcaed8ef03`
 - Clean-clone proof: PHASE 3B COMPLETE in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`; one frozen install and one Judge Workflow run passed from committed source with ignored runs absent
-- Complete AccessPatch repair workflow and final demo evidence: NOT YET IMPLEMENTED
-- Hosted or judge-accessible demo: NOT YET AVAILABLE
+- Controlled AccessPatch repair workflow and final submission evidence: IMPLEMENTED AND VERIFIED for the fixed checkout journey; arbitrary repositories and retained patch application remain unsupported
+- Hosted application demo: NOT AVAILABLE; the private repository judge path exists but invitation acceptance and an independent judge clone remain pending; the public submission video is owner-verified
 
 ## Canonical Proof Bundle Contract
 
@@ -60,4 +60,4 @@ Before a demo claim is made, record:
 - Human accessibility review scope and unresolved limitations.
 - Artifact hashes or manifest, capture date, and link availability check.
 
-`TODO`: populate only with artifacts produced by the implemented, feature-frozen build.
+The controlled record is populated by the tracked Judge Sample, Phase 3B and Phase 5A clean-clone evidence, the published-video record above, and their linked hashes and commits. External Devpost entry, accepted private judge access, final link verification, and submission remain pending human actions.

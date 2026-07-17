@@ -22,6 +22,8 @@ The central-session `/feedback` action completed successfully with status `Feedb
 
 The final submission video was recorded, edited, reviewed, and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The `2:49` export is below the three-minute limit; its audio, public playback, thumbnail, duration, and selectable corrected English captions were verified by the project owner while logged out/incognito. The reviewed video uses only tracked evidence and exposes no private data or secrets. Exactly seven existing checklist items are newly complete; Devpost entry, final rule review, invitation acceptance, independent judge access, and submission remain open. The checklist now has 55 checked and 62 unchecked items, 117 total.
 
+The completed form-ready English Devpost source copy and the tracked final-video production, narration, and evidence records support nineteen additional existing items: the read-only no-rebuild evidence path; eleven product-story video items; the duplicate Codex and GPT-5.6 video-evidence items; and five final content/evidence checks. Media-rights confirmation, readable zoom, private judge access, external Devpost entry, final rules and signed-out link review, approval, submission, and receipt retention remain unchecked. The checklist now has 74 checked and 43 unchecked items, 117 total.
+
 ## Devpost
 
 - [ ] Hackathon participation is confirmed.
@@ -70,7 +72,7 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 
 - [x] Installation instructions are clear.
 - [x] Supported operating systems and platforms are stated from actual tests.
-- [ ] A simple test path works without a complete rebuild.
+- [x] A simple test path works without a complete rebuild.
 - [x] A one-command demo or comparably simple path is documented.
 - [x] A working demo, sandbox, or test build is available.
 - [ ] Judge access remains free during evaluation.
@@ -85,17 +87,17 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 - [x] Video is no longer than three minutes; internal target is 2:35–2:50.
 - [x] Voiceover is clear.
 - [x] Narration is in English or has a complete English translation.
-- [ ] Working product is shown.
-- [ ] Problem is explained.
-- [ ] Before state is shown.
-- [ ] AccessPatch repair is shown.
-- [ ] Actual code diff is shown.
-- [ ] Tests and replay are shown.
-- [ ] Proof Bundle is shown.
-- [ ] Concrete Codex usage is explained.
-- [ ] Concrete GPT-5.6 usage is explained.
-- [ ] Human decisions are mentioned.
-- [ ] Honest limitations are mentioned.
+- [x] Working product is shown.
+- [x] Problem is explained.
+- [x] Before state is shown.
+- [x] AccessPatch repair is shown.
+- [x] Actual code diff is shown.
+- [x] Tests and replay are shown.
+- [x] Proof Bundle is shown.
+- [x] Concrete Codex usage is explained.
+- [x] Concrete GPT-5.6 usage is explained.
+- [x] Human decisions are mentioned.
+- [x] Honest limitations are mentioned.
 - [ ] Video contains no unlicensed music.
 - [ ] Video contains no unauthorized third-party brands or media.
 - [x] Public video link is tested in a signed-out or private-browser context.
@@ -112,7 +114,7 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 - [x] Codex contributions are linked to commits and files.
 - [x] README explains where Codex accelerated work.
 - [x] README explains relevant human decisions.
-- [ ] Video concretely explains the Codex workflow.
+- [x] Video concretely explains the Codex workflow.
 
 ## GPT-5.6 Evidence
 
@@ -124,7 +126,7 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 - [x] GPT-5.6 output is technically validated.
 - [x] Unsafe model suggestions are never applied directly without review.
 - [x] README explains the GPT-5.6 task.
-- [ ] Video shows or explains the GPT-5.6 function.
+- [x] Video shows or explains the GPT-5.6 function.
 - [x] Repository contains a traceable GPT-5.6 implementation.
 - [ ] Missing-model-access fallback is documented honestly.
 - [x] Account API access and billing readiness are verified independently of Codex credits.
@@ -137,14 +139,14 @@ The final submission video was recorded, edited, reviewed, and published at `htt
 - [ ] No links are broken.
 - [x] Clean-environment test is completed.
 - [x] YouTube video is public.
-- [ ] Submission texts are complete in English.
+- [x] Submission texts are complete in English.
 - [ ] Session ID is correct.
 - [x] License information is complete.
 - [ ] Final repository contains no secrets.
-- [ ] Submission contains no unsupported legal claims.
-- [ ] Before/after evidence uses the same journey and states its scope.
-- [ ] Disabled-user testing, qualified human review, and unresolved limitations are described honestly.
-- [ ] Product behaves as shown in the video.
+- [x] Submission contains no unsupported legal claims.
+- [x] Before/after evidence uses the same journey and states its scope.
+- [x] Disabled-user testing, qualified human review, and unresolved limitations are described honestly.
+- [x] Product behaves as shown in the video.
 - [x] Devpost draft is complete.
 - [ ] Final submission is confirmed.
 - [ ] Submission receipt, confirmation, or timestamped screenshot is retained.

@@ -1,6 +1,6 @@
 # Submission Ledger
 
-Last updated: 2026-07-16
+Last updated: 2026-07-17
 
 This is the canonical ledger for claims, proof, and submission readiness. A claim may be presented as complete only when its evidence is linked here and reproducible.
 
@@ -33,6 +33,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | Accessibility Mutation Guard | PHASE 5A CLEAN-CLONE VERIFIED / MERGED INTO `main` | Implementation `b05541f147a08cb0b38ecbda5ae5802db065a3d2`; integrated HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` by strict fast-forward without merge commit; mutation `CONTROLLED_MUTATION_ARIA_HIDDEN_FOCUSABLE`; rule `FOCUSABLE_ELEMENT_ARIA_HIDDEN`; clean clone `d75954b672cbc88569d5502198effc57c4390c63`; 17/17 stages; one offline install with 33 reused and zero downloaded; temporary clone-only trust override restored before runtime; mutation `1/1`; 178 tests and all eight Judge stages; archive SHA-256 `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`; `docs/hackathon/evidence/phase5a-clean-clone/`; local feature branch retained unpublished; no model call |
 | Central Codex `/feedback` record | COMPLETE; POSITIVE; NO LOGS UPLOADED | Status `Feedback recorded`; Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`; `CODEX_SESSION_RECORD.md`; no separate Session ID invented |
 | Final submission video | COMPLETE; PUBLIC; OWNER-VERIFIED LOGGED OUT | `https://www.youtube.com/watch?v=eCHig9YUwU0`; duration `2:49`; custom thumbnail; corrected 67-block timed English track `VIDEO_CAPTIONS.srt`; final caption end `00:02:48,662`; SRT SHA-256 `1d8bd5e0c3bac69e1fb07072a2c50b8cb5fe8a06bc266bc8986030f9d839730d`; `VIDEO_SCRIPT.md`; `VIDEO_PRIVACY_CHECKLIST.md` |
+| Devpost source copy | COMPLETE; FORM-READY ENGLISH; EXTERNAL ENTRY PENDING | `DEVPOST_SUBMISSION_DRAFT.md`; title, category, tagline, short description, motivation, product, implementation, Codex, GPT-5.6, challenges, accomplishments, learning, next steps, technologies, judge access, limitations, and internal-only `/feedback` field data |
 
 ## Central Requirements
 
@@ -40,7 +41,7 @@ This is the canonical ledger for claims, proof, and submission readiness. A clai
 | --- | --- | --- | --- | --- | --- | --- |
 | Working project using Codex and GPT-5.6 | Mandatory | CONTROLLED END-TO-END FEASIBILITY WORKFLOW COMMITTED | Phase 1–3 commits; tracked Judge Sample; Phase 3B evidence | Build and integration | 2026-07-20 02:00 CEST | Retained application, broad repositories, fallback/rollback, and production hosting remain open |
 | One selected track | Mandatory | VERIFIED: Developer Tools | This ledger; `DECISIONS.md` | Phase 0 | 2026-07-15 | Recheck final Devpost selection |
-| Project description | Mandatory | CURRENT ENGLISH DRAFT; EXTERNAL FORM PENDING | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Final form limits and official rules require recheck |
+| Project description | Mandatory | COMPLETE FORM-READY ENGLISH SOURCE COPY; EXTERNAL FORM PENDING | `DEVPOST_SUBMISSION_DRAFT.md` | Submission | 2026-07-21 02:00 CEST | Manual form transfer, final field limits, and official rules require recheck |
 | Public YouTube demo, at most three minutes | Mandatory | COMPLETE; PUBLIC; OWNER-VERIFIED LOGGED OUT | `https://www.youtube.com/watch?v=eCHig9YUwU0`; final duration `2:49`; corrected uploaded `VIDEO_CAPTIONS.srt`; 67 blocks ending `00:02:48,662` | Demo and submission | 2026-07-21 02:00 CEST | Devpost video-link entry remains pending; no independent automated YouTube fetch is claimed |
 | Voiceover explains project, Codex use, and GPT-5.6 use | Mandatory | FINAL VIDEO PRODUCED AND OWNER-REVIEWED | `VIDEO_SCRIPT.md` actual published narration; corrected uploaded `VIDEO_CAPTIONS.srt`; public video URL above; no live GPT-5.6 call; tracked evidence only | Demo and submission | 2026-07-21 02:00 CEST | Devpost entry and final submission remain pending |
 | Code repository URL | Mandatory | CANONICAL PRIVATE URL VERIFIED; FORM ENTRY PENDING | `https://github.com/frankcom-it-service/accesspatch`; `PRIVATE_REPOSITORY_RELEASE_PLAN.md` | Submission | 2026-07-21 02:00 CEST | Devpost form entry, invitation acceptance, and independent clone verification remain open |

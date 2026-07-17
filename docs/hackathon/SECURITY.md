@@ -51,9 +51,9 @@ The first evidence archive contained sanitized file contents but retained local 
 
 Phase 4B selects a private judging repository and no open-source project license. Public-facing material must omit local usernames, home and temporary paths, credential locations, account screens, API settings, Git author email addresses, notifications, and private account data. Git history remains private and will not be rewritten because commit hashes anchor the evidence record.
 
-The canonical repository is `https://github.com/frankcom-it-service/accesspatch`. It remains private under the `frankcom-it-service` organization, whose default repository permission is `none`; the repository owner retains admin access. Only `main`, the immutable baseline backup branch, and the immutable baseline tag are present remotely. The Phase 4B release branch remains local-only.
+The canonical repository is `https://github.com/frankcom-it-service/accesspatch`. It remains private under the `frankcom-it-service` organization, whose default repository permission is `none`; the repository owner retains admin access. Exactly five approved references are present remotely: `main`, two immutable baseline backup branches, and their two matching lightweight tags. Local feature and release branches remain unpublished.
 
-Both required judging invitations were issued with read permission and remain pending. Invitation acceptance and independent judge cloning are not yet verified. No public repository, open-source project license, server, subdomain, Pages site, deployment, release, or public hosting exists.
+Both required judging invitations were issued with read permission and remain pending. Invitation acceptance and independent judge cloning are not yet verified. The submission video is public on YouTube, but no public source repository, publicly hosted application demo, open-source project license, server, subdomain, Pages site, deployment, or software release exists.
 
 The reviewed private release surface is committed at `f3953994883af959fdd80d2d5e5985b7cb987fd5`. It adds no `LICENSE` file; AccessPatch remains all-rights-reserved and is not offered under an open-source project license. The direct dependency review found no missing, unknown, or contradictory declared license.
 
