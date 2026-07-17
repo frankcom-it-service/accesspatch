@@ -290,6 +290,16 @@ These checks validate Phase 0 repository hygiene only; they are not application,
 - Final commit gate: independent review passed the exact 16-file evidence directory, all 14 checksum entries, archive metadata and byte identity, supported governance claims, and the unchanged eight checklist selections. The archive content remained SHA-256 `27ac06541e02d3bfd554581beafaca4541dc8953316a6a5e4acc0572c5bdf0fd` while its tracked mode was corrected to non-executable `100644`.
 - Status: **COMPLETE** in evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed`. No installation, Judge Workflow, API call, credential access, reasoner run, repair run, bundle generation, implementation change, fixture repair, push, remote, deployment, publication, or video occurred during evidence integration.
 
+## Final Frozen-Tree Security Gate — 2026-07-17
+
+- Source: clean `main` at `a6923d3294a62f1e2b7061c448a1629abce8f77b`, matching `origin/main`; both immutable baseline generations and exactly five approved remote references were unchanged.
+- Tracked-file review: `.env.example` was the only tracked sensitive-name match and contains template names rather than secret values. No tracked credential file, private key, certificate, token file, password file, or real local user path was found.
+- Pattern scans: no high-risk private-key or service-token pattern, non-empty OpenAI/GitHub/npm credential assignment, unexpected public-facing email address, or sensitive personal path was found.
+- Dependency review: `pnpm audit --audit-level=high` exited `0` and reported `No known vulnerabilities found`; no install, fix, update, or dependency change occurred.
+- Existing security validation: `pnpm judge:sample:validate` exited `0`, validated 15 Proof Bundle files, two findings, three WCAG mappings, and passed manifest, policy, and security checks with `JUDGE_SAMPLE_VALID`.
+- Repository integrity: `git diff --check` passed. HEAD, tracked tree, index, worktree, immutable baseline references, and remote inventory were unchanged after the gate.
+- Scope: this is a frozen-tree release hygiene and known-advisory gate, not a penetration test, security certification, dependency guarantee, or replacement for ongoing vulnerability response.
+
 ## Future Evidence Standard
 
 Each test record must include date, commit, environment, exact command, exit status, relevant output, artifact location, and known limitations. Accessibility evidence must distinguish automated signals from disabled-user testing and qualified human review. It must not be presented as complete accessibility, WCAG certification, or BFSG/EAA legal assurance.

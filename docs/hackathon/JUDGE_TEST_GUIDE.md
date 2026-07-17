@@ -6,7 +6,7 @@
 
 The verified clean-clone environment is Debian GNU/Linux 13, x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 selected from `/usr/bin/chromium`. A clean environment without system Chromium can run `pnpm browser:install` to install Playwright Chromium only. That fallback and other operating systems or browser configurations remain **NOT YET VERIFIED**.
 
-The current FAQ and official announcement, checked 2026-07-15, require Developer Tools entries to document installation, supported platforms, and a judge testing path that does not require a complete rebuild.
+The current official Rules, FAQ, and Dates pages were rechecked on 2026-07-17. Developer Tools entries must document installation, supported platforms, and a judge testing path that does not require rebuilding from scratch.
 
 ## Repository Access
 
@@ -30,7 +30,9 @@ The repository is not publicly cloneable. Judges require granted GitHub access. 
 
 3. Optionally open `examples/judge-sample/proof-bundle/report.html` directly.
 
-The workflow order is repository preflight, 139 API-free unit tests, type-check, build, smoke, passing controlled-baseline proof, tracked-sample validation, and tracked-report smoke. It creates empty restricted Git and npm/pnpm configuration below the reserved ignored workflow directory before preflight, redirects child configuration away from home and system files, disables credential prompts, and removes the runtime configuration afterward. `pnpm test:baseline` remains the intentionally failing developer diagnostic; `pnpm test:judge-baseline` passes only when those same two controlled defects are reproduced exactly. No credential is required for this judge path.
+The workflow order is repository preflight, 178 API-free unit tests, type-check, build, smoke, passing controlled-baseline proof, tracked-sample validation, and tracked-report smoke. It creates empty restricted Git and npm/pnpm configuration below the reserved ignored workflow directory before preflight, redirects child configuration away from home and system files, disables credential prompts, and removes the runtime configuration afterward. `pnpm test:baseline` remains the intentionally failing developer diagnostic; `pnpm test:judge-baseline` passes only when those same two controlled defects are reproduced exactly. No credential is required for this judge path.
+
+The numbered commands above are the start instructions for the verified judge workflow. If GPT-5.6 model access is unavailable, judges can still use the API-free tracked-evidence path: run `pnpm judge:sample:validate` and open `examples/judge-sample/proof-bundle/report.html`. That fallback validates reviewed evidence only; it does not create a new repair plan or make a new model call.
 
 Successful final output:
 
@@ -58,5 +60,5 @@ The reviewed evidence is tracked under `docs/hackathon/evidence/phase5a-clean-cl
 ## Open Requirements
 
 - `TODO`: confirm supported platforms beyond the verified Debian GNU/Linux 13 x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 environment.
-- `TODO`: verify the Playwright-managed Chromium fallback and final public links after feature freeze.
+- `TODO`: verify the Playwright-managed Chromium fallback. The public Devpost and YouTube links were verified by the project owner while signed out on 2026-07-17.
 - `TODO`: verify both judging invitations are accepted and a judge can clone the private repository.

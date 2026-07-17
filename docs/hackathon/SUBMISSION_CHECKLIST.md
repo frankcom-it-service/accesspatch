@@ -30,6 +30,8 @@ The project owner completed the AccessPatch Devpost entry, reviewed the final pr
 
 The project owner then opened `https://devpost.com/software/accesspatch` while signed out/incognito. The page loaded without authentication; the complete project story, public thumbnail, and presentation were visible; and the embedded `https://www.youtube.com/watch?v=eCHig9YUwU0` video was playable. No internal `/feedback` identifier, private judge instruction, credential or token, or private local path was publicly visible. This directly completes the public-link integrity item. The broader checkbox requiring repository, demo, YouTube, documentation, and Devpost links all to work signed out remains unchecked because private repository access, invitation acceptance, and an independent judge clone are unverified. The checklist now has 95 checked and 22 unchecked items, 117 total.
 
+On 2026-07-17, the project owner manually confirmed that the dedicated Devpost `/feedback` Session ID exactly matches the internal record and that the final video contains no unlicensed music or unauthorized third-party brands or media. The current official Rules, FAQ, and Dates pages were rechecked, and the frozen submission tree passed consolidated secret, high-risk token, sensitive-path, dependency-vulnerability, Judge Sample security, and diff checks without a file change. Existing start instructions and the API-free missing-model fallback were also reconciled. These eight owner-controlled gates bring the checklist to 103 checked and 14 unchecked items, 117 total. Invitation acceptance, private judge access, and an independent judge clone remain externally controlled and unchecked.
+
 ## Devpost
 
 - [x] Hackathon participation is confirmed.
@@ -59,7 +61,7 @@ The project owner then opened `https://devpost.com/software/accesspatch` while s
 - [x] README is in English.
 - [x] Installation instructions are documented.
 - [x] Supported platforms are documented.
-- [ ] Start instructions are documented.
+- [x] Start instructions are documented.
 - [x] Test instructions are documented.
 - [x] Example data or fixtures are included and documented.
 - [x] Security boundaries are documented.
@@ -104,8 +106,8 @@ The project owner then opened `https://devpost.com/software/accesspatch` while s
 - [x] Concrete GPT-5.6 usage is explained.
 - [x] Human decisions are mentioned.
 - [x] Honest limitations are mentioned.
-- [ ] Video contains no unlicensed music.
-- [ ] Video contains no unauthorized third-party brands or media.
+- [x] Video contains no unlicensed music.
+- [x] Video contains no unauthorized third-party brands or media.
 - [x] Public video link is tested in a signed-out or private-browser context.
 - [ ] Captions and readable zoom are provided.
 
@@ -134,7 +136,7 @@ The project owner then opened `https://devpost.com/software/accesspatch` while s
 - [x] README explains the GPT-5.6 task.
 - [x] Video shows or explains the GPT-5.6 function.
 - [x] Repository contains a traceable GPT-5.6 implementation.
-- [ ] Missing-model-access fallback is documented honestly.
+- [x] Missing-model-access fallback is documented honestly.
 - [x] Account API access and billing readiness are verified independently of Codex credits.
 - [x] Structured output, schema validation, deterministic safety checks, and negative cases are evidenced.
 
@@ -146,9 +148,9 @@ The project owner then opened `https://devpost.com/software/accesspatch` while s
 - [x] Clean-environment test is completed.
 - [x] YouTube video is public.
 - [x] Submission texts are complete in English.
-- [ ] Session ID is correct.
+- [x] Session ID is correct.
 - [x] License information is complete.
-- [ ] Final repository contains no secrets.
+- [x] Final repository contains no secrets.
 - [x] Submission contains no unsupported legal claims.
 - [x] Before/after evidence uses the same journey and states its scope.
 - [x] Disabled-user testing, qualified human review, and unresolved limitations are described honestly.
@@ -164,9 +166,9 @@ The project owner then opened `https://devpost.com/software/accesspatch` while s
 - [ ] Post-freeze changes are limited to evidence, documentation, or critical correctness/security fixes.
 - [ ] Affected proof is rerun after every accepted post-freeze change.
 - [ ] Submission-ready state is reached by 2026-07-21 at 02:00 CEST and the final 24 hours remain reserved for fixes, evidence, video, links, Devpost, and submission issues.
-- [ ] All official sources, the inconsistent Rules page, deadlines, judging addresses, and field requirements receive a fresh final check.
+- [x] All official sources, the inconsistent Rules page, deadlines, judging addresses, and field requirements receive a fresh final check.
 - [ ] Repository, demo, YouTube, documentation, and Devpost links are tested in a signed-out context.
 - [x] Generated proof runs remain ignored; any curated judge sample uses an explicitly reviewed tracked location or allowlist.
-- [ ] Secret, high-risk token, dependency, and security checks are run on the frozen tree.
+- [x] Secret, high-risk token, dependency, and security checks are run on the frozen tree.
 - [ ] Optional Devpost Hackathon plugin output is manually reviewed and used only for submission support.
 - [x] Submission occurs only with explicit human approval by the current 2026-07-22 02:00 CEST deadline.
