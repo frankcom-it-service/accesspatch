@@ -10,6 +10,12 @@ The controlled end-to-end submission workflow is implemented and verified: it re
 
 AccessPatch supports accessibility engineering; it does not claim complete accessibility, WCAG certification, BFSG or EAA legal assurance, or replacement of disabled-user testing or qualified human review.
 
+## Why this matters to me
+
+I believe many more digital projects should have a practical path to improving accessibility. Smaller development teams in particular need support that makes concrete barriers easier to identify, repair, and verify without pretending that automation can replace expert human review.
+
+I see AccessPatch not as a complete solution, but as a deliberately limited first step toward making more digital experiences usable by more people.
+
 ## Ownership and Repository Access
 
 - Owner: Frank Heilmann, trading as “Frankcom IT Service”.

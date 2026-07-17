@@ -16,6 +16,12 @@ This English draft is ready for later human review and form entry. External URLs
 
 Accessibility barriers often break an end-to-end user journey rather than a single isolated component. Developers need a reviewable way to connect a real observed failure to bounded source context, a constrained repair strategy, deterministic changes, and reproducible before-and-after evidence.
 
+## Why this matters to me
+
+I believe many more digital projects should have a practical path to improving accessibility. Smaller development teams in particular need support that makes concrete barriers easier to identify, repair, and verify without pretending that automation can replace expert human review.
+
+I see AccessPatch not as a complete solution, but as a deliberately limited first step toward making more digital experiences usable by more people.
+
 ## Target Users
 
 AccessPatch is designed for React and TypeScript developers, accessibility engineers, QA engineers, and reviewers who need traceable evidence for a defined keyboard journey. The current feasibility scope is one controlled checkout fixture, not arbitrary repositories.
