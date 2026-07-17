@@ -2,7 +2,7 @@
 
 ## Production Result
 
-The final `2:49` video was produced and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed owner review outside Clipchamp after the visual-gap repair. A custom thumbnail and corrected timed English captions were added. No live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
+The final `2:49` video was produced and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed owner review outside Clipchamp after the visual-gap repair. A custom thumbnail and corrected timed English captions were added. No live GPT-5.6 call was used; only tracked, reviewed evidence was shown. The authoritative published transcript is the corrected 67-block `VIDEO_CAPTIONS.srt`, ending at `00:02:48,662`; the plan below is retained as the original production shot list rather than an exact transcript.
 
 ## Production Boundary
 
@@ -12,7 +12,7 @@ The final `2:49` video was produced and published at `https://www.youtube.com/wa
 - Mutation Guard is a short prevention bonus, not the main product story.
 - Every evidence crop comes from the tracked Judge Sample or tracked Phase 5A evidence.
 
-## Second-by-Second Plan
+## Original Second-by-Second Production Plan
 
 | Shot | Start–End | Duration | Screen shown | Action performed | Matching narration | Exact visible text | Zoom or crop | Transition | Privacy risk | Fallback asset |
 | --- | --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- |

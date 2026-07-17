@@ -46,6 +46,7 @@ Phase 2C commits that reviewed bundle in the explicit tracked location without c
 - Evidence boundary: no live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
 - Production verification: the complete final export passed review outside Clipchamp after the visual-gap repair. A custom thumbnail and corrected timed English SRT subtitles were added.
 - Public verification: the project owner verified playback, thumbnail, audio, duration, and selectable English captions in a logged-out/incognito browser. This is owner verification, not an independent automated YouTube fetch.
+- Published narration record: `VIDEO_CAPTIONS.srt` is the corrected SRT uploaded to YouTube. It contains 67 sequential, non-overlapping caption blocks from `00:00:00,190` through `00:02:48,662` and has SHA-256 `1d8bd5e0c3bac69e1fb07072a2c50b8cb5fe8a06bc266bc8986030f9d839730d`. `VIDEO_SCRIPT.md` distinguishes the actual shortened narration from the original production script.
 
 ## Required Demo Record
 

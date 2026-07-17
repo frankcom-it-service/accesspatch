@@ -2,7 +2,7 @@
 
 ## Completion Status
 
-Recording and final export are complete. The final `2:49` video is public at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed review outside Clipchamp after the visual-gap repair; a custom thumbnail and corrected timed English SRT subtitles were added; and the project owner verified public playback, thumbnail, audio, duration, and selectable captions while logged out/incognito. Retain the worksheet below as the production and fallback record.
+Recording and final export are complete. The final `2:49` video is public at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The complete export passed review outside Clipchamp after the visual-gap repair; a custom thumbnail and corrected timed English SRT subtitles were added; and the project owner verified public playback, thumbnail, audio, duration, and selectable captions while logged out/incognito. The corrected 67-block `VIDEO_CAPTIONS.srt`, ending at `00:02:48,662`, is the uploaded YouTube caption track and the authoritative timed narration record. Retain the worksheet below as the original production and fallback procedure, not as a word-for-word transcript.
 
 The steps below are retained as the completed production and fallback procedure. Do not reuse them to improvise commands, evidence, claims, or account actions.
 

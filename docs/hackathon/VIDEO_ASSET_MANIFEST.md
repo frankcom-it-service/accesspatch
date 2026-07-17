@@ -10,6 +10,10 @@
 - Finalization: Clipchamp visual-gap repair applied, custom AccessPatch thumbnail added, and corrected timed English SRT subtitles uploaded.
 - Review: the complete export passed review outside Clipchamp; the project owner then verified public playback, thumbnail, audio, duration, and selectable English captions logged out/incognito.
 - Runtime boundary: no live GPT-5.6 call was used; only tracked, reviewed evidence was shown.
+- Published caption source: `docs/hackathon/VIDEO_CAPTIONS.srt`.
+- Caption integrity: 67 sequential, non-overlapping blocks; first start `00:00:00,190`; final end `00:02:48,662`; SHA-256 `1d8bd5e0c3bac69e1fb07072a2c50b8cb5fe8a06bc266bc8986030f9d839730d`.
+- Caption publication: this corrected SRT is the timed English track uploaded to YouTube.
+- Narration distinction: `VIDEO_SCRIPT.md` preserves both the actual shortened published narration and the earlier production script; the earlier script was not spoken word-for-word.
 
 ## Command Plan
 
