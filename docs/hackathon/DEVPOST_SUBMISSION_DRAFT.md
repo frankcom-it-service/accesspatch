@@ -1,15 +1,20 @@
-# Devpost Submission Draft
+# Devpost Submission Record
 
-This English source copy is complete and ready for later manual transfer into Devpost. External form entry, final field-limit review, link verification, and submission remain human actions.
+This English source copy records the content entered for the completed AccessPatch submission to OpenAI Build Week. The project owner reviewed the final Devpost preview, read and accepted the official rules and Devpost terms, and successfully submitted the project.
 
 ## Project
 
 - **Title:** AccessPatch
+- **Event:** OpenAI Build Week
 - **Category:** Developer Tools
+- **Submitter type:** Individual
+- **Country of residence:** Germany
 - **Tagline:** Evidence-guided journey repair and reproducible proof for React and TypeScript applications.
 - **Short description:** AccessPatch reproduces a broken keyboard journey, creates a bounded GPT-5.6 repair plan, applies deterministic fixes in an isolated copy, replays the same journey, and produces a verifiable Proof Bundle.
+- **Devpost project:** `https://devpost.com/software/accesspatch`
 - **Private repository:** `https://github.com/frankcom-it-service/accesspatch`
 - **Public video:** `https://www.youtube.com/watch?v=eCHig9YUwU0`
+- **Submission status:** Submitted to OpenAI Build Week; confirmation page reviewed and public project URL retained.
 
 ## Inspiration / Why this matters to me
 
@@ -77,7 +82,7 @@ Clean-clone and failure-path testing also showed that reproducibility is a produ
 
 ## What’s Next
 
-Before submission, the remaining work is external: transfer this copy into Devpost, verify the final form and rules, confirm both required private-repository judging invitations are accepted, complete an independent judge-access clone, test final links, and submit with explicit human approval.
+The Devpost submission is complete. Both required private-repository judging invitations remain pending, so invitation acceptance, repository access, and an independent judge clone are not yet verified.
 
 Potential later product work includes user-selected retained patch application, a complete fallback and rollback workflow, broader fixture and platform support, and additional human accessibility evaluation. Those capabilities are not claimed by this submission.
 
@@ -131,10 +136,10 @@ AccessPatch uses package-managed React, Vite, TypeScript, Playwright, axe-core i
 
 ## Internal Form-Entry Data — Do Not Copy Into Public Narrative
 
-- Enter the recorded `/feedback` Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275` only in the dedicated Devpost Codex Session ID or `/feedback` field.
+- The recorded `/feedback` Thread ID was entered only in the dedicated Devpost Codex Session ID or `/feedback` field.
 - Do not copy that identifier into the public project description, README, YouTube text, captions, screenshots, or other public-facing material.
-- The final Devpost project URL does not exist until the external project entry is created; record and verify it after that human action.
+- The retained public Devpost project URL is `https://devpost.com/software/accesspatch`.
 
 ## Final Human Review
 
-Before external form entry, recheck the current official rules, deadline, judging accounts, field limits, private repository access, link permissions, video visibility, disclosures, and every factual claim. Devpost form entry and final submission require explicit human action.
+The project owner reviewed the final Devpost preview, read and accepted the official rules and Devpost terms, explicitly approved submission, and confirmed the resulting OpenAI Build Week submission page. Required judging invitations remain pending; no invitation acceptance or independent repository clone is claimed.

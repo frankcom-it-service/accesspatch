@@ -1,6 +1,6 @@
 # Submission Checklist
 
-Core requirements and the deadline were checked against the current FAQ, overview, and announcement on 2026-07-15. The official Rules-page body is inconsistent and must be checked again with all official sources immediately before submission. Keep every unfinished item unchecked.
+Core requirements and the deadline were checked against the current FAQ, overview, and announcement on 2026-07-15. The Rules-page body observed during preparation was inconsistent. Before submitting, the project owner reviewed the final Devpost preview and read and accepted the official rules and Devpost terms. Keep every unfinished item unchecked.
 
 The controlled Phase 1C feasibility implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. This does not complete any unchecked canonical Proof Bundle, judge-path, clean-install, video, publication, `/feedback`, or submission gate.
 
@@ -18,33 +18,35 @@ Phase 4C is complete in `079b191ade0ee8eee457c0f8060586488386213a`. It verified 
 
 Optional Phase 5A is **CLEAN-CLONE VERIFIED / MERGED INTO `main`**. Reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` was integrated by strict fast-forward without a merge commit. Its clean clone passed all 17 acceptance stages once: one offline frozen installation reused 33 packages and downloaded zero; a disposable-clone-only `trustLockfile: true` key was restored byte-for-byte before runtime execution; Mutation Guard injection/detection was `1/1`; and all eight Judge Workflow stages plus 178 tests passed. The independently reviewed archive SHA-256 is `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6`, tracked under `docs/hackathon/evidence/phase5a-clean-clone/`. The local feature branch remains retained but unpublished. No existing checklist item represents this bounded optional extension or its merge, and it does not complete broad mutation testing, accepted judge access, deployment, video, `/feedback`, Devpost, or submission gates. No checkbox changes: 45 checked, 72 unchecked, 117 total.
 
-The central-session `/feedback` action completed successfully with status `Feedback recorded`, positive classification, no uploaded logs, and returned Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`. The three internal Codex-evidence items below are now complete. The Thread ID has not yet been entered into Devpost, so the Devpost field and final Session-ID verification items remain unchecked. The checklist now has 48 checked and 69 unchecked items, 117 total.
+The central-session `/feedback` action completed successfully with status `Feedback recorded`, positive classification, no uploaded logs, and returned Thread ID `019f65ad-d02e-7ce3-9029-bb6a480c3275`. At that checkpoint, the three internal Codex-evidence items below became complete while Devpost form entry remained open. The checklist then had 48 checked and 69 unchecked items, 117 total; the later Devpost submission completion is recorded below.
 
-The final submission video was recorded, edited, reviewed, and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The `2:49` export is below the three-minute limit; its audio, public playback, thumbnail, duration, and selectable corrected English captions were verified by the project owner while logged out/incognito. The reviewed video uses only tracked evidence and exposes no private data or secrets. Exactly seven existing checklist items are newly complete; Devpost entry, final rule review, invitation acceptance, independent judge access, and submission remain open. The checklist now has 55 checked and 62 unchecked items, 117 total.
+The final submission video was recorded, edited, reviewed, and published at `https://www.youtube.com/watch?v=eCHig9YUwU0`. The `2:49` export is below the three-minute limit; its audio, public playback, thumbnail, duration, and selectable corrected English captions were verified by the project owner while logged out/incognito. The reviewed video uses only tracked evidence and exposes no private data or secrets. At that checkpoint, exactly seven existing checklist items became complete while Devpost entry, invitation acceptance, independent judge access, and submission remained open. The checklist then had 55 checked and 62 unchecked items, 117 total.
 
 The completed form-ready English Devpost source copy and the tracked final-video production, narration, and evidence records support nineteen additional existing items: the read-only no-rebuild evidence path; eleven product-story video items; the duplicate Codex and GPT-5.6 video-evidence items; and five final content/evidence checks. Media-rights confirmation, readable zoom, private judge access, external Devpost entry, final rules and signed-out link review, approval, submission, and receipt retention remain unchecked. The checklist now has 74 checked and 43 unchecked items, 117 total.
 
 A human-browser verification confirmed that the `testing@devpost.com` invitation for `frankcom-it-service/accesspatch` resolves to GitHub account `devposttesting` and remains pending, while the direct `build-week-event@openai.com` repository invitation also remains pending. Neither invitation was cancelled, changed, duplicated, or resent. Acceptance is controlled by the invited recipients, so repository access and independent judge cloning remain unverified. No existing checkbox represents correct pending-recipient resolution without acceptance; no checkbox changes, and the checklist remains at 74 checked and 43 unchecked items, 117 total.
 
+The project owner completed the AccessPatch Devpost entry, reviewed the final preview, selected Developer Tools, entered the complete English project story and required links, entered the internal `/feedback` identifier only in its dedicated field, read and accepted the official rules and Devpost terms, explicitly approved submission, and confirmed the project as submitted to OpenAI Build Week. The confirmation page and public project URL `https://devpost.com/software/accesspatch` were retained. Exactly twenty existing checklist items are newly complete. Invitation acceptance, repository accessibility, independent judge cloning, the broader signed-out link review, and other intentionally open release controls remain unchecked. The checklist now has 94 checked and 23 unchecked items, 117 total.
+
 ## Devpost
 
-- [ ] Hackathon participation is confirmed.
-- [ ] Devpost project draft is created.
-- [ ] Developer Tools is selected as the final track.
-- [ ] English project title is entered.
-- [ ] English tagline is entered.
-- [ ] English short description is entered.
-- [ ] English long description is entered.
-- [ ] Functional description is entered.
-- [ ] Problem and target audience are explained.
-- [ ] Codex usage is explained.
-- [ ] GPT-5.6 usage is explained.
-- [ ] Repository link is entered.
-- [ ] Demo or judge-test link is entered.
-- [ ] YouTube link is entered.
-- [ ] `/feedback` Codex Session ID is entered.
-- [ ] Final official-rule check is completed.
-- [ ] Final submission is confirmed before the deadline.
+- [x] Hackathon participation is confirmed.
+- [x] Devpost project draft is created.
+- [x] Developer Tools is selected as the final track.
+- [x] English project title is entered.
+- [x] English tagline is entered.
+- [x] English short description is entered.
+- [x] English long description is entered.
+- [x] Functional description is entered.
+- [x] Problem and target audience are explained.
+- [x] Codex usage is explained.
+- [x] GPT-5.6 usage is explained.
+- [x] Repository link is entered.
+- [x] Demo or judge-test link is entered.
+- [x] YouTube link is entered.
+- [x] `/feedback` Codex Session ID is entered.
+- [x] Final official-rule check is completed.
+- [x] Final submission is confirmed before the deadline.
 
 ## Repository
 
@@ -150,8 +152,8 @@ A human-browser verification confirmed that the `testing@devpost.com` invitation
 - [x] Disabled-user testing, qualified human review, and unresolved limitations are described honestly.
 - [x] Product behaves as shown in the video.
 - [x] Devpost draft is complete.
-- [ ] Final submission is confirmed.
-- [ ] Submission receipt, confirmation, or timestamped screenshot is retained.
+- [x] Final submission is confirmed.
+- [x] Submission receipt, confirmation, or timestamped screenshot is retained.
 
 ## Release Controls
 
@@ -165,4 +167,4 @@ A human-browser verification confirmed that the `testing@devpost.com` invitation
 - [x] Generated proof runs remain ignored; any curated judge sample uses an explicitly reviewed tracked location or allowlist.
 - [ ] Secret, high-risk token, dependency, and security checks are run on the frozen tree.
 - [ ] Optional Devpost Hackathon plugin output is manually reviewed and used only for submission support.
-- [ ] Submission occurs only with explicit human approval by the current 2026-07-22 02:00 CEST deadline.
+- [x] Submission occurs only with explicit human approval by the current 2026-07-22 02:00 CEST deadline.
