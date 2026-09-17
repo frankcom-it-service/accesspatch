@@ -50,7 +50,7 @@ I see AccessPatch not as a complete solution, but as a deliberately limited firs
 - Phase 4C private repository access state: commit `079b191ade0ee8eee457c0f8060586488386213a` (`docs: record private repository access state`, 2026-07-16).
 - Codex is the principal engineering tool. This continuing Codex session is the central development session.
 - The Devpost Hackathon plugin is a planned optional submission-support tool only; it does not replace the Codex engineering session.
-- Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. The returned official Rules-page body appears stale and remains an open source inconsistency requiring a fresh pre-submission check.
+- Core submission requirements and the deadline were checked on 2026-07-15 against the current FAQ, overview, and announcement. During Build Week preparation, the returned official Rules-page body appeared stale and was treated as a source inconsistency requiring re-verification before submission. The final official Rules, FAQ, and Dates review was completed on 2026-07-17.
 - Submission facts and evidence status: `docs/hackathon/SUBMISSION_LEDGER.md`.
 - Current limitations: `docs/hackathon/LIMITATIONS.md`.
 - Security posture: `docs/hackathon/SECURITY.md`.
