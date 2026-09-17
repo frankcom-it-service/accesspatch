@@ -47,7 +47,9 @@ Phase 3B verified the committed workflow in a fresh local Git clone under isolat
 
 The first evidence archive contained sanitized file contents but retained local owner/group names in TAR headers. It was repackaged without changing evidence bytes using neutral numeric ownership, empty stored names, restrictive modes, normalized timestamps, and no PAX atime/ctime metadata. Independent review passed the final archive at `docs/hackathon/evidence/phase3b-clean-clone/`. Evidence commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` tracks that archive as non-executable Git mode `100644`. This proves one controlled clean-clone execution, not general network isolation, security certification, or broader-platform support.
 
-## Private Release Posture
+## Historical Private Release Posture — Build Week Submission
+
+This section records the repository state at the original July 2026 Build Week submission. It no longer describes current visibility or licensing: AccessPatch is now public and released under Apache License 2.0 (`LICENSE`). The recorded access checks, decisions, and audit provenance remain historical; no invitation state is newly verified here.
 
 Phase 4B selects a private judging repository and no open-source project license. Public-facing material must omit local usernames, home and temporary paths, credential locations, account screens, API settings, Git author email addresses, notifications, and private account data. Git history remains private and will not be rewritten because commit hashes anchor the evidence record.
 
@@ -85,7 +87,7 @@ The project owner separately confirmed that the dedicated Devpost `/feedback` Se
 
 ## Reporting and Open Work
 
-- Vulnerability reporting channel: `OPEN` — the private repository has no public contact route.
+- Dedicated confidential vulnerability reporting channel: `OPEN` — no such channel is documented. Public repository availability does not establish a confidential reporting route; do not disclose secrets in public issues.
 - Threat model: `TODO` before arbitrary-repository support or patch application.
 - Application code and package dependencies now exist. Phase 1B hardening secret-pattern and repository-hygiene scans passed before commit `207e0559d0d7664a24dcb297fb40b37700f36208`. The frozen-tree 2026-07-17 `pnpm audit --audit-level=high` gate reported no known vulnerabilities. The 2026-07-16 offline `pnpm licenses list --json` review identified every installed license family and every direct external dependency license; no direct dependency had an unknown, missing, or contradictory declared license. Current attribution and redistribution notes are complete in `THIRD_PARTY_NOTICES.md`.
 - Authentication, authorization, sandboxing, retention, and deletion behavior: `NOT YET IMPLEMENTED`.

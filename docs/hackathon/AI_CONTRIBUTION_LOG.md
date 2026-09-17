@@ -149,3 +149,9 @@ The Devpost Hackathon plugin remains optional submission support and does not re
 - Evidence integration: the independently reviewed 16-file sanitized archive SHA-256 `eec0095939e73ccf623b5d5f8d75af73a6b7f5d16e686c34dad0000629fd97d6` and its exact extracted files are tracked under `docs/hackathon/evidence/phase5a-clean-clone/`; the directory contains 17 files total including the archive.
 - Merge completion: reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` was integrated into `main` by strict fast-forward without a merge commit. The local feature branch is retained but unpublished.
 - Preservation: the immutable emergency baseline remains separately preserved. No OpenAI or external API call, credential inspection, Proof Bundle change, fixture mutation, invitation or permission change, server access, `/feedback`, video, external Devpost action, deployment, public source release, or submission occurred.
+
+## 2026-09-17 — Public Apache-2.0 Documentation Transition
+
+- Human decision: continue AccessPatch as a public open-source project under Apache License 2.0, retaining Frank Heilmann, trading as “Frankcom IT Service”, as original creator and copyright holder.
+- Codex contribution: added the official unmodified license text, updated current ownership/access notices, and explicitly contextualized historical private-release and submission documents.
+- Scope: documentation and licensing only; implementation, tests, dependencies, fixture, proof contracts, curated evidence bytes, hashes, historical Git commits, and immutable baseline references are unchanged. No maturity, adoption, certification, or new accessibility result is claimed.

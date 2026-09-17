@@ -1,8 +1,16 @@
 # AccessPatch
 
-AccessPatch is a **Journey Repair and Proof Agent for React/TypeScript applications** built for the Developer Tools track of OpenAI Build Week.
+AccessPatch is a **Journey Repair and Proof Agent for React/TypeScript applications**. It originated during OpenAI Build Week in the Developer Tools track and is now being continued as a public open-source project.
 
-## Status
+## Current Open-Source Project Status
+
+AccessPatch is publicly available at https://github.com/frankcom-it-service/accesspatch and released under [Apache License 2.0](LICENSE). Frank Heilmann, trading as “Frankcom IT Service”, remains the original creator and copyright holder; third-party components retain their own licenses.
+
+The implementation remains deliberately constrained to one controlled checkout journey and the verified Debian/x86_64 Chromium path. Broader arbitrary-repository support is future work. Open-source availability does not imply production readiness, complete accessibility coverage, certification, or replacement of expert human review.
+
+The dated records under `docs/hackathon/` preserve the original private Build Week submission state; they are not current access or licensing instructions.
+
+## Build Week Implementation Status
 
 **Phase 1A through Phase 5A are complete; optional Phase 5A is clean-clone verified and integrated into `main`.** Commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf` contains the controlled checkout baseline. Commit `207e0559d0d7664a24dcb297fb40b37700f36208` adds real normalized evidence and a bounded GPT-5.6 repair-plan reasoner. Commit `79ed0e60b2c7145f4113ecac3797a119ccb696ee` adds deterministic isolated patching and a successfully verified repaired replay for the two controlled findings. Commit `61b4b90a93c52c8e93fd4b539176e9f828c9f3b3` adds the canonical Proof Bundle generator. Commit `e3811c8bf968dc78701f8d264dc1377543059d64` adds the source-backed controlled WCAG 2.2 mappings. Commit `e7286d6e14cefcc95faea31a5dfb4a7ca303f4ce` adds the curated tracked Judge Sample and read-only validation. Commit `84db92f9e27b6f7872495516f166a8bcaed8ef03` adds the one-command Judge Workflow. Commit `8d2afef856d48d07ffb77013ad7385dd3810a4ed` adds the reviewed Phase 3B clean-clone evidence. Commit `f3953994883af959fdd80d2d5e5985b7cb987fd5` adds the private release surface, ownership record, privacy decision, third-party notices, and current submission drafts. Commit `079b191ade0ee8eee457c0f8060586488386213a` records the verified canonical private repository and pending read-only judging access. Commit `b05541f147a08cb0b38ecbda5ae5802db065a3d2` adds the isolated Accessibility Mutation Guard; reviewed Phase 5A HEAD `e7701516f07c204c8ba5792dcf2c100c9b508222` was integrated into `main` by strict fast-forward without a merge commit.
 
@@ -19,13 +27,13 @@ I see AccessPatch not as a complete solution, but as a deliberately limited firs
 ## Ownership and Repository Access
 
 - Owner: Frank Heilmann, trading as “Frankcom IT Service”.
-- Canonical private repository: `https://github.com/frankcom-it-service/accesspatch`.
-- The repository is owned by the `frankcom-it-service` organization, remains private, and uses `main` as its default branch.
-- AccessPatch is not offered under an open-source project license.
+- Canonical public repository: `https://github.com/frankcom-it-service/accesspatch`.
+- The repository is owned by the `frankcom-it-service` organization, is public, and uses `main` as its default branch.
+- AccessPatch is released under Apache License 2.0; see `LICENSE`.
 - Ownership and reuse boundaries are recorded in `OWNERSHIP.md`.
 - The immutable baseline backup branch and tag are present remotely. The Phase 4B release branch remains local-only.
-- Both required judging invitations were issued with read permission and remain pending. Acceptance and independent judge cloning are not yet verified.
-- The organization repository URL above is the only canonical repository URL; no public source-code release exists.
+- At the original submission, both required judging invitations were pending; acceptance and independent judge cloning were not verified. This historical state does not restrict current public repository access.
+- The organization repository URL above is the only canonical repository URL.
 
 ## Project Record
 
@@ -67,7 +75,7 @@ Codex accelerated engineering work; it did not make autonomous product, legal, p
 
 Human coordination deliberately limited the submission scope to one controlled journey, exactly two original barriers, and exactly two deterministic repair classes. The user approved one bounded GPT-5.6 product reasoning call and required model output never to be applied directly as source code. Deterministic templates and policy gates implement the approved strategies.
 
-The original fixture remains broken for reproducibility, while repaired replay runs only in an isolated disposable copy. Human review remains required, and the project makes no accessibility certification or legal-compliance claim. The user also chose private repository judging, declined broad arbitrary-repository support before submission, and created immutable emergency baseline references and backups before further release work.
+The original fixture remains broken for reproducibility, while repaired replay runs only in an isolated disposable copy. Human review remains required, and the project makes no accessibility certification or legal-compliance claim. For the original Build Week submission, the user chose private repository judging, declined broad arbitrary-repository support before submission, and created immutable emergency baseline references and backups before further release work.
 
 ## GPT-5.6 and Codex Contribution Boundary
 
@@ -205,10 +213,10 @@ The final video, **AccessPatch — Journey Repair and Proof Agent | OpenAI Build
 
 ## Devpost Submission
 
-AccessPatch was submitted to the **Developer Tools** category of **OpenAI Build Week**. The public project page is `https://devpost.com/software/accesspatch`. The source repository remains private, and both required judging invitations remain pending; invitation acceptance, repository access, and an independent judge clone are not yet verified.
+AccessPatch was submitted to the **Developer Tools** category of **OpenAI Build Week**. The public project page is `https://devpost.com/software/accesspatch`. At submission, the source repository was private and both required judging invitations were pending; invitation acceptance and an independent judge clone were not verified. The repository is now public and Apache-2.0 licensed; the submitted historical record has not been rewritten.
 
 No live GPT-5.6 call was used during recording; the video shows only tracked, reviewed evidence. The local export filename is `AccessPatch Build Week Video.mp4`, with Clipchamp reporting `28.28 MB`; no private local video path is recorded.
 
 ## Next Phase
 
-`/feedback` completed successfully without uploaded logs. The bounded Journey Gate feasibility review ended with `PHASE5B_RECOMMENDATION=NO_GO`, and Journey Gate was not implemented. The final submission video is produced, published, captioned, and owner-verified, and the Devpost project was submitted successfully. `OPEN`: verify acceptance of both pending read-only judging invitations and an independent judge clone; verify additional operating systems and browser configurations; and design retained user-selected patch handling, fallback, and rollback. Broad-repository support remains open. Internal feature freeze is 2026-07-20 at 02:00 CEST; submission-ready target is 2026-07-21 at 02:00 CEST; the recorded official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as a complete general-purpose accessibility product.
+`/feedback` completed successfully without uploaded logs. The bounded Journey Gate feasibility review ended with `PHASE5B_RECOMMENDATION=NO_GO`, and Journey Gate was not implemented. The final submission video is produced, published, captioned, and owner-verified, and the Devpost project was submitted successfully. `OPEN`: verify additional operating systems and browser configurations; and design retained user-selected patch handling, fallback, and rollback. Broad-repository support remains open. The historical Build Week internal feature freeze was 2026-07-20 at 02:00 CEST; submission-ready target was 2026-07-21 at 02:00 CEST; the recorded official deadline is 2026-07-22 at 02:00 CEST. Do not interpret the controlled fixture, feasibility repair, Judge Sample, or bounded judge workflow as a complete general-purpose accessibility product.

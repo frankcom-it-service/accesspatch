@@ -1,5 +1,7 @@
 # Demo Evidence
 
+**Historical Build Week record:** This document preserves the July 2026 submission/production state, including then-private access and licensing decisions. Those descriptions are not current repository policy. As recorded on 2026-09-17, AccessPatch is now public and Apache-2.0 licensed; see root `README.md`, `OWNERSHIP.md`, and `LICENSE`. Historical checklist results and evidence are not retroactively changed.
+
 ## Current Status
 
 - Controlled local demo fixture: PHASE 1A COMPLETE in commit `18c3828431348c8eadfc93aaae3e4d92ec4f3bcf`

@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-AccessPatch ownership and repository-use terms are recorded in `OWNERSHIP.md`. AccessPatch itself is not currently offered under an open-source license. Third-party packages remain governed by their own licenses.
+AccessPatch ownership is recorded in `OWNERSHIP.md`. AccessPatch is released under Apache License 2.0; the unmodified license text is in the root `LICENSE`. Third-party packages remain governed by their own licenses.
 
 ## Direct External Dependencies
 
@@ -21,7 +21,7 @@ Exact versions are committed in package manifests and `pnpm-lock.yaml`.
 | `vite` | `8.1.4` | Development and production build tool | MIT |
 | `zod` | `4.4.3` | Runtime schema validation | MIT |
 
-Internal `@accesspatch/*` workspace packages are part of AccessPatch, are not separate third-party packages, and are not separately licensed.
+Internal `@accesspatch/*` workspace packages are part of AccessPatch, are not separate third-party packages, and are covered by the project's Apache License 2.0 rather than a separate workspace license.
 
 ## Transitive Dependencies
 

@@ -1,5 +1,7 @@
 # Submission Checklist
 
+**Historical Build Week record:** This document preserves the July 2026 submission/production state, including then-private access and licensing decisions. Those descriptions are not current repository policy. As recorded on 2026-09-17, AccessPatch is now public and Apache-2.0 licensed; see root `README.md`, `OWNERSHIP.md`, and `LICENSE`. Historical checklist results and evidence are not retroactively changed.
+
 Core requirements and the deadline were checked against the current FAQ, overview, and announcement on 2026-07-15. The Rules-page body observed during preparation was inconsistent. Before submitting, the project owner reviewed the final Devpost preview and read and accepted the official rules and Devpost terms. Keep every unfinished item unchecked.
 
 The controlled Phase 1C feasibility implementation is committed at `79ed0e60b2c7145f4113ecac3797a119ccb696ee`. This does not complete any unchecked canonical Proof Bundle, judge-path, clean-install, video, publication, `/feedback`, or submission gate.

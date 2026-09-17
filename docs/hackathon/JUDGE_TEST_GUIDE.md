@@ -10,9 +10,9 @@ The current official Rules, FAQ, and Dates pages were rechecked on 2026-07-17. D
 
 ## Repository Access
 
-Canonical private repository: `https://github.com/frankcom-it-service/accesspatch`.
+Canonical public repository: `https://github.com/frankcom-it-service/accesspatch`.
 
-The repository is not publicly cloneable. Judges require granted GitHub access. Read-only invitations to the two required judging recipients remain pending, so acceptance and an independent judge clone are not yet verified.
+The repository is now public and released under Apache License 2.0 (`LICENSE`). At the original Build Week submission it was private, and the two required read-only invitations were pending; their acceptance and an independent judge clone were not verified. This preserves the historical access record without claiming a new clean-clone test after the public transition.
 
 ## Current Evaluation Path
 
@@ -61,4 +61,4 @@ The reviewed evidence is tracked under `docs/hackathon/evidence/phase5a-clean-cl
 
 - `TODO`: confirm supported platforms beyond the verified Debian GNU/Linux 13 x86_64, Node.js 24.18.0, pnpm 11.13.0, Git 2.47.3, and Chromium 148.0.7778.178 environment.
 - `TODO`: verify the Playwright-managed Chromium fallback. The public Devpost and YouTube links were verified by the project owner while signed out on 2026-07-17.
-- `TODO`: verify both judging invitations are accepted and a judge can clone the private repository.
+- Historical submission access check: both judging invitations were pending and an independent judge clone was not verified. The public transition does not retroactively complete that check.

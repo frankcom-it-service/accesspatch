@@ -1,6 +1,8 @@
 # Submission Ledger
 
-Last updated: 2026-07-17
+**Current repository transition — 2026-09-17:** The owner confirms that https://github.com/frankcom-it-service/accesspatch is now public and approves continuation as an open-source project under Apache License 2.0. `LICENSE` and `OWNERSHIP.md` record current terms. The July 2026 submission facts, private-access checks, pending invitations, deadlines, and readiness matrix below remain historical; no new invitation acceptance or judge clone is inferred.
+
+Last updated: 2026-09-17 (repository-status transition only; submission evidence remains dated July 2026)
 
 This is the canonical ledger for claims, proof, and submission readiness. A claim may be presented as complete only when its evidence is linked here and reproducible.
 

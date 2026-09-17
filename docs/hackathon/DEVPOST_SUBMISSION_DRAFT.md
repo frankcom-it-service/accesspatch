@@ -1,5 +1,7 @@
 # Devpost Submission Record
 
+**Historical Build Week record:** This document preserves the July 2026 submission/production state, including then-private access and licensing decisions. Those descriptions are not current repository policy. As recorded on 2026-09-17, AccessPatch is now public and Apache-2.0 licensed; see root `README.md`, `OWNERSHIP.md`, and `LICENSE`. Historical checklist results and evidence are not retroactively changed.
+
 This English source copy records the content entered for the completed AccessPatch submission to OpenAI Build Week. The project owner reviewed the final Devpost preview, read and accepted the official rules and Devpost terms, and successfully submitted the project.
 
 ## Project

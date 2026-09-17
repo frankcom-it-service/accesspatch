@@ -1,5 +1,7 @@
 # Private Release and Privacy Decision
 
+**Historical Build Week record:** This document preserves the July 2026 submission/production state, including then-private access and licensing decisions. Those descriptions are not current repository policy. As recorded on 2026-09-17, AccessPatch is now public and Apache-2.0 licensed; see root `README.md`, `OWNERSHIP.md`, and `LICENSE`. Historical checklist results and evidence are not retroactively changed.
+
 - Decision date: 2026-07-16
 - Legal owner: Frank Heilmann
 - Approved attribution: Frank Heilmann, trading as “Frankcom IT Service”
